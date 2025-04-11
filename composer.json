@@ -1,0 +1,19 @@
+{
+	"name": "oliverthiele/ot-sitekit-base",
+	"type": "typo3-cms-extension",
+	"description": "TYPO3 Sitekit: Basic files for the sitekit extensions",
+	"homepage": "https://www.oliver-thiele.de/",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Oliver Thiele",
+			"email": "mail@oliver-thiele.de",
+			"role": "Developer"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "ot_sitekitbase"
+		}
+	}
+}

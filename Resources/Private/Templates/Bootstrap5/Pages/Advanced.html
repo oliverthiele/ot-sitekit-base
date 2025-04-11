@@ -12,7 +12,7 @@
 <f:layout name="DefaultLayout"/>
 
 <f:section name="Main">
-    <main id="mainContent" class="container{f:if(condition: '{content.hero-image.records}', then: ' ot-page-padding-top')}">
+    <main id="mainContent" class="container mt-{settings.sitekit.defaultGutterSize}">
         <f:for each="{content.main.records}" as="contentElement">
             <f:cObject
                 typoscriptObjectPath="{contentElement.mainType}"

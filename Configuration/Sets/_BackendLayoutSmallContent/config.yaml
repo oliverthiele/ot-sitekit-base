@@ -1,0 +1,4 @@
+name: oliverthiele/ot-sitekit-base-backend-layout-small-content
+label: 'Configuration Backend Layout: Small Content'
+dependencies:
+  - oliverthiele/ot-sitekit-base

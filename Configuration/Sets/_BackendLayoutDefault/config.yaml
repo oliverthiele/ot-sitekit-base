@@ -1,0 +1,4 @@
+name: oliverthiele/ot-sitekit-base-backend-layout-default
+label: 'Configuration Backend Layouts: Default'
+dependencies:
+  - oliverthiele/ot-sitekit-base

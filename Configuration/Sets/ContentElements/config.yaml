@@ -1,0 +1,5 @@
+name: oliverthiele/ot-sitekit-base-content-elements
+label: Content Element import
+dependencies:
+  - oliverthiele/ot-sitekit-base
+  - oliverthiele/ot-heroimage

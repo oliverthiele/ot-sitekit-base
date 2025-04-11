@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<f:spaceless>
+<div class="content-element-wrapper mb-{settings.defaultGutterSize}">
+    <f:render section="Header" optional="true">
+        <f:render partial="Header/All" arguments="{_all}"/>
+    </f:render>
+    <f:render section="Main" optional="true"/>
+</div>
+</f:spaceless>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de"
+		  datatype="plaintext" date="2025-03-11T12:37:17Z"
+		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf" product-name="ot-sitekit-base">
+		<header/>
+		<body>
+			<!-- Set -->
+			<trans-unit id="set.label.basicConfiguration" resname="set.label.basicConfiguration">
+				<source>Basic Configuration</source>
+				<target>Grundkonfiguration</target>
+			</trans-unit>
+			<!-- pages -->
+			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label">
+				<source>Icon Identifier</source>
+				<target>Icon Identifier</target>
+			</trans-unit>
+			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description">
+				<source> </source>
+				<target> </target>
+			</trans-unit>
+			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label">
+				<source>Menu Image</source>
+			</trans-unit>
+			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description">
+				<source> </source>
+				<target> </target>
+			</trans-unit>
+			<!-- tt_content -->
+			<trans-unit id="header_layout.default" resname="header.default" approved="yes">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="header_layout.h1" resname="header_layout.h1" approved="yes">
+				<source>Heading 1. Order</source>
+				<target>Überschrift 1. Ordnung</target>
+			</trans-unit>
+			<trans-unit id="header_layout.h2" resname="header_layout.h2" approved="yes">
+				<source>Heading 2. Order</source>
+				<target>Überschrift 2. Ordnung</target>
+			</trans-unit>
+			<trans-unit id="header_layout.h3" resname="header_layout.h3" approved="yes">
+				<source>Heading 3. Order</source>
+				<target>Überschrift 3. Ordnung</target>
+			</trans-unit>
+			<trans-unit id="header_layout.h4" resname="header_layout.h4" approved="yes">
+				<source>Heading 4. Order</source>
+				<target>Überschrift 4. Ordnung</target>
+			</trans-unit>
+			<trans-unit id="header_layout.h5" resname="header_layout.h5" approved="yes">
+				<source>Heading 5. Order</source>
+				<target>Überschrift 5. Ordnung</target>
+			</trans-unit>
+			<trans-unit id="header_style" resname="header_style" approved="yes">
+				<source>Style</source>
+				<target>Darstellung</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader" approved="yes">
+				<source>Header</source>
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay" approved="yes">
+				<source>Display Classes</source>
+				<target>Display Klassen</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupSpecial" resname="header_style.groupSpecial" approved="yes">
+				<source>Special</source>
+				<target>Spezial</target>
+			</trans-unit>
+			<trans-unit id="header_style.default" resname="header_style.default" approved="yes">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="header_style.description" resname="header_style.description" approved="yes">
+				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
+				<target>Die Klasse visually-hidden kann verwendet werden, wenn z.B. die Hierarchie in untergeordneten Akkordeons korrekt ausgegeben werden soll.</target>
+			</trans-unit>
+			<trans-unit id="header_style.h1" resname="header_style.h1" approved="yes">
+				<source>h1</source>
+				<target>h1</target>
+			</trans-unit>
+			<trans-unit id="header_style.h2" resname="header_style.h2" approved="yes">
+				<source>h2</source>
+				<target>h2</target>
+			</trans-unit>
+			<trans-unit id="header_style.h3" resname="header_style.h3" approved="yes">
+				<source>h3</source>
+				<target>h3</target>
+			</trans-unit>
+			<trans-unit id="header_style.h4" resname="header_style.h4" approved="yes">
+				<source>h4</source>
+				<target>h4</target>
+			</trans-unit>
+			<trans-unit id="header_style.h5" resname="header_style.h5" approved="yes">
+				<source>h5</source>
+				<target>h5</target>
+			</trans-unit>
+			<trans-unit id="header_style.h6" resname="header_style.h6" approved="yes">
+				<source>h6</source>
+				<target>h6</target>
+			</trans-unit>
+			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden" approved="yes">
+				<source>Visually Hidden</source>
+				<target>Visuell verborgen</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,4 @@
+tt_content.div =< lib.contentElement
+tt_content.div {
+  templateName = Div
+}

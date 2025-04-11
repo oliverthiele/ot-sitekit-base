@@ -1,0 +1,42 @@
+page = PAGE
+page {
+  config {
+    sendCacheHeaders = 1
+    cache_period = 86400
+  }
+
+  10 = PAGEVIEW
+  10 {
+    paths {
+      100 = EXT:ot_sitekitbase/Resources/Private/Templates/{$sitekit.frameworks.frontend.directory}/
+      # 400 = EXT:my_sitepackage/Resources/Private/Templates/…
+    }
+
+    dataProcessing {
+
+      100 = page-content
+      100 {
+        as = content
+      }
+
+      200 = menu
+      200 {
+        special = directory
+        special.value = {$sitekit.project.root}
+        as = mainMenu
+      }
+
+      300 = menu
+      300 {
+        special = rootline
+        as = breadcrumb
+      }
+
+      400 = language-menu
+      400 {
+        as = languageMenu
+      }
+
+    }
+  }
+}

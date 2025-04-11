@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext"
+		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang.xlf" date="2025-04-11T18:40:24Z"
+		  product-name="ot-sitekit-base">
+		<header/>
+		<body>
+			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation">
+				<source>Skip to main navigation</source>
+			</trans-unit>
+			<trans-unit id="skipToMainContent" resname="skipToMainContent">
+				<source>Skip to main content</source>
+			</trans-unit>
+			<trans-unit id="skipToPageFooter" resname="skipToPageFooter">
+				<source>Skip to page footer</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Header</title>
+</head>
+<body>
+
+<f:section name="Main">
+    <f:variable name="headerStyle" value="{f:if(condition:'{data.header_style}', then: '{data.header_style} ')}" />
+    <f:variable name="headerDisturber" value="{f:if(condition:'{data.header_disturber} == \'disturber\'', then: '{data.header_disturber} ')}" />
+    <f:switch expression="{data.header_position}">
+        <f:case value="left">
+            <f:variable name="class"
+                        value="{headerStyle}{headerDisturber}text-start"
+            />
+        </f:case>
+        <f:case value="center">
+            <f:variable name="class"
+                        value="{headerStyle}{headerDisturber}text-center"/>
+        </f:case>
+        <f:case value="right">
+            <f:variable name="class"
+                        value="{headerStyle}{headerDisturber}text-end"/>
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="class" value="{headerStyle}{headerDisturber}"/>
+        </f:defaultCase>
+    </f:switch>
+
+    <f:if condition="{data.header_layout} != 100">
+
+        <f:if condition="{data.header_layout} == 0">
+            <f:then>
+                <f:variable name="headerLayout" value="{settings.defaultHeaderType}"/>
+            </f:then>
+            <f:else>
+                <f:variable name="headerLayout" value="{data.header_layout}"/>
+            </f:else>
+        </f:if>
+
+        <f:if condition="{data.date}">
+            <f:then>
+                <header>
+                    <f:render section="HeaderContent" arguments="{data:data, headerLayout:headerLayout, class:class}" />
+                    <time datetime="{data.date -> f:format.date(format: 'Y-m-d h:i')}">{data.date -> f:format.date()}</time>
+                </header>
+            </f:then>
+            <f:else>
+                <header>
+                    <f:render section="HeaderContent" arguments="{data:data, headerLayout:headerLayout, class:class}" />
+                </header>
+            </f:else>
+        </f:if>
+    </f:if>
+
+</f:section>
+
+<f:section name="HeaderContent">
+    <f:if condition="{data.header_disturber} == 'disturber-full-width'">
+        <f:then>
+            <div class="disturber-full-width">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <f:render section="HeaderContentInner" arguments="{data:data, headerLayout:headerLayout, class:class}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <f:render section="HeaderContentInner" arguments="{data:data, headerLayout:headerLayout, class:class}" />
+        </f:else>
+    </f:if>
+</f:section>
+
+<f:section name="HeaderContentInner">
+    <h{headerLayout}{f:if(condition: '{class}', then: ' class="{class}"')}>
+        <f:link.typolink parameter="{data.header_link}">
+            {data.header -> f:format.nl2br()}
+            <f:if condition="{data.subheader}">
+                <br><small>{data.subheader}</small>
+            </f:if>
+        </f:link.typolink>
+    </h{headerLayout}>
+</f:section>
+</body>
+</html>

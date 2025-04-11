@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Breadcrumb</title>
+</head>
+<body>
+<f:section name="Main">
+    <f:if condition="{breadcrumb}">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <f:for each="{breadcrumb}" as="page">
+                    <f:if condition="{page.current} == 1">
+                        <f:then>
+                            <li class="breadcrumb-item active" aria-current="page">{page.title}</li>
+                        </f:then>
+                        <f:else>
+                            <li class="breadcrumb-item"><a href="{page.link}">{page.title}</a></li>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </ol>
+        </nav>
+    </f:if>
+</f:section>
+</body>
+</html>
+
+

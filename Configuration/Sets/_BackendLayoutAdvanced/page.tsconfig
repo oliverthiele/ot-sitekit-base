@@ -1,0 +1,33 @@
+mod {
+  web_layout {
+    BackendLayouts {
+      Advanced {
+        title = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:backendLayout.advanced.title
+        config {
+          backend_layout {
+            colCount = 1
+            rowCount = 1
+            rows {
+              1 {
+                columns {
+                  1 {
+                    identifier = main
+                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:column.main
+                    colPos = 0
+                    colspan = 1
+                    disallowed = *
+                    allowed {
+                      CType = header,text,div
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        # icon = EXT:ot_sitekitbase/Resources/Public/Images/BackendLayouts/Advanced.svg
+      }
+    }
+  }
+}

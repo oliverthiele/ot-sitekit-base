@@ -1,0 +1,48 @@
+mod {
+  web_layout {
+    BackendLayouts {
+      Default {
+        title = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:backendLayout.default.title
+        config {
+          backend_layout {
+            colCount = 1
+            rowCount = 2
+            rows {
+              1 {
+                columns {
+                  1 {
+                    identifier = hero-image
+                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:column.heroContent
+                    colPos = 3
+                    colspan = 1
+                    disallowed = *
+                    allowed {
+                      CType = header,ot_heroimage
+                    }
+                  }
+                }
+              }
+
+              2 {
+                columns {
+                  1 {
+                    identifier = main
+                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:column.main
+                    colPos = 0
+                    colspan = 1
+                    disallowed = *
+                    allowed {
+                      CType = header,text,div
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        # icon = EXT:ot_sitekitbase/Resources/Public/Images/BackendLayouts/Default.svg
+      }
+    }
+  }
+}

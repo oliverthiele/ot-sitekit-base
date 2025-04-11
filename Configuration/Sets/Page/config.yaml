@@ -1,0 +1,4 @@
+name: oliverthiele/ot-sitekit-base-page
+label: Page configuration
+dependencies:
+  - oliverthiele/ot-sitekit-base

@@ -1,0 +1,24 @@
+# Default configuration for content elements which are using FLUIDTEMPLATE directly
+lib.contentElement >
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+  templateName = Default
+  templateRootPaths {
+    100 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Templates/
+  }
+
+  partialRootPaths {
+    100 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Partials/
+  }
+
+  layoutRootPaths {
+    100 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Layouts/
+  }
+
+  settings {
+    defaultHeaderType = 2
+    defaultGutterSize = {$sitekit.defaultGutterSize}
+  }
+}
+
+@import "EXT:ot_sitekitbase/Configuration/Sets/ContentElements/CTypes/*"

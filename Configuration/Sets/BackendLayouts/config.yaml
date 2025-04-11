@@ -1,0 +1,8 @@
+name: oliverthiele/ot-sitekit-base-backend-layouts
+label: Configuration Backend Layouts
+dependencies:
+  - oliverthiele/ot-sitekit-base
+  - oliverthiele/ot-sitekit-base-backend-layout-advanced
+  - oliverthiele/ot-sitekit-base-backend-layout-default
+  - oliverthiele/ot-sitekit-base-backend-layout-homepage
+  - oliverthiele/ot-sitekit-base-backend-layout-small-content

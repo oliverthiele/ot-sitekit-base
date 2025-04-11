@@ -1,0 +1,123 @@
+categories:
+  Sitekit:
+    label: 'Sitekit'
+  Sitekit.project:
+    label: 'Project'
+    parent: Sitekit
+  Sitekit.pages:
+    label: 'Pages'
+    parent: Sitekit
+  Sitekit.templates:
+    label: 'Templates'
+    parent: Sitekit
+  SocialMedia.settings:
+    label: 'Social Media'
+    parent: Sitekit
+
+settings:
+  sitekit.project.companyName:
+    label: 'Company Name'
+    category: Sitekit.project
+    description: 'The name of the company will be used in the Navbar, Footer, ….'
+    type: string
+    default: 'Company Name'
+
+  sitekit.project.addressLine1:
+    label: 'Address Line 1'
+    category: Sitekit.project
+    description: 'Street and House number'
+    type: string
+    default: ''
+
+  sitekit.project.addressLine2:
+    label: 'Address Line 2'
+    category: Sitekit.project
+    description: 'Additional address information'
+    type: string
+    default: ''
+
+  sitekit.project.postalCode:
+    label: 'Postal Code'
+    category: Sitekit.project
+    type: string
+    default: ''
+
+  sitekit.project.city:
+    label: 'City'
+    category: Sitekit.project
+    type: string
+    default: ''
+
+  sitekit.pages.root:
+    label: 'Root Page Id'
+    category: Sitekit.pages
+    description: 'The root page id for this website. It is the parent page id of the main navigation.'
+    type: int
+    default: 1
+
+  sitekit.pages.termsAndConditions:
+    label: 'Terms and conditions'
+    category: Sitekit.pages
+    type: int
+    default: 0
+
+  sitekit.pages.legalDisclosure:
+    label: 'Legal Disclosure'
+    category: Sitekit.pages
+    type: int
+    default: 0
+
+  sitekit.pages.privacyPolicy:
+    label: 'Privacy Policy'
+    category: Sitekit.pages
+    type: int
+    default: 0
+
+  sitekit.frameworks.frontend.directory:
+    label: 'Frontend Framework Directory'
+    category: Sitekit.templates
+    description: 'Parent directory to templates files. This path is also used by many content elements.'
+    type: string
+    default: 'Bootstrap5'
+
+  sitekit.defaultGutterSize:
+    label: 'Gutter Size'
+    category: Sitekit.templates
+    description: 'THe default gutter size (e.g. for card decks)'
+    type: string
+    default: 3
+    enum:
+      0: '0'
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+
+  socialMedia.facebook.account:
+    label: 'Facebook Account'
+    category: SocialMedia.settings
+    description: 'Name of the Facebook Account'
+    type: string
+    default: ''
+
+  socialMedia.x.account:
+    label: 'X/Twitter Account'
+    category: SocialMedia.settings
+    description: 'Name of the X/Twitter Account'
+    type: string
+    default: ''
+
+  socialMedia.instagram.account:
+    label: 'Instagram Account'
+    category: SocialMedia.settings
+    description: 'Name of the Instagram Account'
+    type: string
+    default: ''
+
+  socialMedia.linkedIn.account:
+    label: 'LinkedIn Account'
+    category: SocialMedia.settings
+    description: 'Name of the LinkedIn Account'
+    type: string
+    default: ''

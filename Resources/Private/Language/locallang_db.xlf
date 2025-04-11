@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en"
+		  datatype="plaintext" date="2025-03-11T12:37:17Z"
+		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf" product-name="ot-sitekit-base">
+		<header/>
+		<body>
+			<!-- Set -->
+			<trans-unit id="set.label.basicConfiguration" resname="set.label.basicConfiguration">
+				<source>Basic Configuration</source>
+			</trans-unit>
+			<!-- pages -->
+			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label">
+				<source>Icon Identifier</source>
+			</trans-unit>
+			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description">
+				<source> </source>
+			</trans-unit>
+			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label">
+				<source>Menu Image</source>
+			</trans-unit>
+			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description">
+				<source> </source>
+			</trans-unit>
+			<!-- tt_content -->
+			<trans-unit id="header_layout.default" resname="header.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="header_layout.h1" resname="header_layout.h1">
+				<source>Heading 1. Order</source>
+			</trans-unit>
+			<trans-unit id="header_layout.h2" resname="header_layout.h2">
+				<source>Heading 2. Order</source>
+			</trans-unit>
+			<trans-unit id="header_layout.h3" resname="header_layout.h3">
+				<source>Heading 3. Order</source>
+			</trans-unit>
+			<trans-unit id="header_layout.h4" resname="header_layout.h4">
+				<source>Heading 4. Order</source>
+			</trans-unit>
+			<trans-unit id="header_layout.h5" resname="header_layout.h5">
+				<source>Heading 5. Order</source>
+			</trans-unit>
+			<trans-unit id="header_style" resname="header_style">
+				<source>Style</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay">
+				<source>Display Classes</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupSpecial" resname="header_style.groupSpecial">
+				<source>Special</source>
+			</trans-unit>
+			<trans-unit id="header_style.default" resname="header_style.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="header_style.description" resname="header_style.description">
+				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
+			</trans-unit>
+			<trans-unit id="header_style.h1" resname="header_style.h1">
+				<source>h1</source>
+			</trans-unit>
+			<trans-unit id="header_style.h2" resname="header_style.h2">
+				<source>h2</source>
+			</trans-unit>
+			<trans-unit id="header_style.h3" resname="header_style.h3">
+				<source>h3</source>
+			</trans-unit>
+			<trans-unit id="header_style.h4" resname="header_style.h4">
+				<source>h4</source>
+			</trans-unit>
+			<trans-unit id="header_style.h5" resname="header_style.h5">
+				<source>h5</source>
+			</trans-unit>
+			<trans-unit id="header_style.h6" resname="header_style.h6">
+				<source>h6</source>
+			</trans-unit>
+			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden">
+				<source>Visually Hidden</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

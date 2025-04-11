@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: PageFooter</title>
+</head>
+<body>
+
+<f:section name="Main">
+    <footer id="pageFooter" class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <address>
+                        {settings.sitekit.project.companyName}<br />
+                        {settings.sitekit.project.addressLine1}<br />
+                        {settings.sitekit.project.addressLine2}<br />
+                        {settings.sitekit.project.postalCode} {settings.sitekit.project.city}<br />
+                    </address>
+
+                    <f:comment> <!-- <![CDATA[
+                    <p>
+                        <f:translate key="fon.reception" extensionName="OtSitekitbase"/> <a href="tel:+49...">+49 ...</a><br />
+                        <br />
+                        E-Mail: <f:link.email email=""></f:link.email><br />
+                        Internet: <f:link.external uri=""></f:link.external>
+                    </p>
+
+                    <f:link.external uri="https://www.linkedin.com/company/.../"
+                                     target="_blank"
+                                     title="Visit our LinkedIn profile!"
+                                     rel="noopener noreferrer">
+                            <f:image class="img-fluid ot-icon-linkedin"
+                                     loading="lazy"
+                                     alt="LinkedIn Logo"
+                                     src="EXT:ot_sitekitbase/Resources/Public/Icons/FabLinkedIn.svg" />
+                    </f:link.external>
+
+                        <f:link.external uri="https://www.youtube.com/..."
+                                         target="_blank"
+                                         class="ms-3"
+                                         title="Visit our YouTube channel!"
+                                         rel="noopener noreferrer">
+                        </f:link.external>
+                    ]]>	--> </f:comment>
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0 col-lg-4 offset-lg-4">
+                    <f:if condition="{footerNavigation}">
+                        <p><strong><f:translate key="legal"  extensionName="OtSitekitbase"/></strong></p>
+                        <ul id="footerNavigation" class="nav flex-column">
+                            <f:for each="{footerNavigation}" as="item">
+                                <li class="nav-item">
+                                    <a class="nav-link {f:if(condition: '{item.current} == 1 || {item.active} == 1', then: ' active')}" href="{item.link}">
+                                        {item.title}
+                                    </a>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </div>
+
+                <div class="col-12 text-center">
+                    <div class="mt-4 mb-0">© {settings.sitekit.project.companyName} <f:format.date date="now" format="Y"/></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</f:section>
+
+</body>
+</html>

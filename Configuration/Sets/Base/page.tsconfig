@@ -1,0 +1,21 @@
+TCEFORM {
+  pages {
+    doktype {
+      # Remove Mountpoint (7)
+      removeItems = 7
+    }
+
+    layout.disabled = 1
+    newUntil.disabled = 1
+  }
+
+  tt_content {
+    date.disabled = 1
+    layout.disabled = 1
+    frame_class.disabled = 1
+    space_before_class.disabled = 1
+    space_after_class.disabled = 1
+    linkToTop.disabled = 1
+    categories.disabled = 1
+  }
+}

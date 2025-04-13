@@ -1,6 +1,9 @@
 categories:
   Sitekit:
     label: 'Sitekit'
+  Sitekit.brand:
+    label: 'Brand'
+    parent: Sitekit
   Sitekit.project:
     label: 'Project'
     parent: Sitekit
@@ -10,11 +13,27 @@ categories:
   Sitekit.templates:
     label: 'Templates'
     parent: Sitekit
+  Sitekit.menus:
+    label: 'Menus'
+    parent: Sitekit
+  Sitekit.menus.mainMenu:
+    label: 'MainMenu'
+    parent: Sitekit.menus
+  Sitekit.search:
+    label: 'Search'
+    parent: Sitekit
   SocialMedia.settings:
     label: 'Social Media'
     parent: Sitekit
 
 settings:
+  sitekit.brand.logo:
+    label: 'Logo'
+    category: Sitekit.brand
+    description: 'e.g. EXT:ot_sitekitbase/Resources/Public/Icons/Extension.svg'
+    type: string
+    default: 'EXT:ot_sitekitbase/Resources/Public/Icons/Extension.svg'
+
   sitekit.project.companyName:
     label: 'Company Name'
     category: Sitekit.project
@@ -72,6 +91,58 @@ settings:
     category: Sitekit.pages
     type: int
     default: 0
+
+  sitekit.menus.mainMenu.collapsing:
+    label: 'Responsive Collapsing'
+    category: Sitekit.menus.mainMenu
+    description: 'Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing.'
+    type: string
+    default: 'lg'
+    enum:
+      'sm': 'sm'
+      'md': 'md'
+      'lg': 'lg'
+      'xl': 'xl'
+      'xxl': 'xxl'
+
+  sitekit.menus.mainMenu.levels:
+    label: 'Levels'
+    category: Sitekit.menus.mainMenu
+    description: ''
+    type: string
+    default: 2
+    enum:
+      1: 1
+      2: 2
+      3: 3
+
+  sitekit.menus.mainMenu.includeSpacer:
+    label: 'Include Spacer'
+    category: Sitekit.menus.mainMenu
+    description: ''
+    type: bool
+    default: false
+
+  sitekit.menus.mainMenu.logo.width:
+    label: 'Logo Width'
+    category: Sitekit.menus.mainMenu
+    description: 'Width in Pixels, e.g. {40} for 40px.'
+    type: int
+    default: 40
+
+  sitekit.menus.mainMenu.logo.height:
+    label: 'Logo Height'
+    category: Sitekit.menus.mainMenu
+    description: 'Height in Pixels, e.g. {40} for 40px.'
+    type: int
+    default: 40
+
+  sitekit.search.enabled:
+    label: 'Enabled'
+    category: Sitekit.search
+    description: 'Enables parts of the search in the frontend.'
+    type: bool
+    default: false
 
   sitekit.frameworks.frontend.directory:
     label: 'Frontend Framework Directory'

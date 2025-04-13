@@ -1,1 +1,85 @@
-[todo]
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Menus/Main/Default</title>
+</head>
+<body>
+<f:section name="Default">
+
+    <f:debug>{_all}</f:debug>
+
+    <f:variable name="navbarExpand" value="navbar-expand-{settings.sitekit.menus.mainMenu.collapsing}"/>
+
+    <div id="main-navigation" class="bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <nav class="navbar {navbarExpand} bg-body-primary text sticky-top" data-bs-theme="dark">
+                <div class="container-fluid g-0">
+                    <f:render partial="Menus/Main/Brand" section="Default" arguments="{_all}"/>
+                    <f:render partial="Menus/Main/Toggle" section="Default" arguments="{_all}"/>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <f:if condition="{mainMenu}">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <f:for each="{mainMenu}" as="item">
+                                    <f:if condition="{item.hasSubpages}">
+                                        <f:then>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                                    {item.title}
+                                                </a>
+                                                <ul class="dropdown-menu shadow-sm">
+                                                    <f:for each="{item.children}" as="subitem">
+                                                        <f:if condition="{subitem.spacer} == 1">
+                                                            <f:then>
+                                                                <li>
+                                                                    <hr class="dropdown-divider">
+                                                                </li>
+                                                            </f:then>
+                                                            <f:else>
+                                                                <li><a
+                                                                    class="dropdown-item{f:if(condition: '{subitem.current} == 1', then: ' active')}"
+                                                                    href="{subitem.link}">{subitem.title}</a></li>
+                                                            </f:else>
+                                                        </f:if>
+                                                    </f:for>
+                                                </ul>
+                                            </li>
+                                        </f:then>
+                                        <f:else>
+                                            <f:render section="NavItem" arguments="{item: item}"/>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </ul>
+                        </f:if>
+                        <f:render partial="Menus/Main/Search" section="Default" arguments="{item: item}"/>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</f:section>
+
+
+<f:section name="NavItem">
+    <f:if condition="{item.active} == 1 || {item.current} == 1">
+        <f:then>
+            <f:variable name="classActive" value=" active"/>
+            <f:if condition="{item.current} == 1">
+                <f:variable name="ariaCurrent" value=" aria-current=page"/>
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:variable name="classActive" value=""/>
+            <f:variable name="ariaCurrent" value=""/>
+        </f:else>
+    </f:if>
+    <li class="nav-item">
+        <a class="nav-link{classActive}" {ariaCurrent} href="{item.link}" target="{item.target}">{item.title}</a>
+    </li>
+</f:section>
+</body>
+</html>

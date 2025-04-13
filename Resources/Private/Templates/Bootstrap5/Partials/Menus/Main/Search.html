@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Menus/Main/Search</title>
+</head>
+<body>
+<f:section name="Default">
+    <f:if condition="{settings.sitekit.search.enabled}">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </f:if>
+</f:section>
+</body>
+</html>

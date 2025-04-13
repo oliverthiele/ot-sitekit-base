@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Menus/Main/Brand</title>
+</head>
+<body>
+<f:section name="Default">
+    <f:link.page class="navbar-brand" pageUid="{settings.sitekit.pages.root}">
+        <f:if condition="{settings.sitekit.brand.logo}">
+            <f:image src="{settings.sitekit.brand.logo}"
+                     alt="{settings.sitekit.project.companyName}"
+                     width="{settings.sitekit.menus.mainMenu.logo.width}"
+                     height="{settings.sitekit.menus.mainMenu.logo.height}"/>
+        </f:if>
+        {settings.sitekit.project.companyName}
+    </f:link.page>
+</f:section>
+</html>

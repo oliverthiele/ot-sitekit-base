@@ -22,7 +22,9 @@ page {
       200 = menu
       200 {
         special = directory
-        special.value = {$sitekit.project.root}
+        special.value = {$sitekit.pages.root}
+        includeSpacer = {$sitekit.menus.mainMenu.includeSpacer}
+        levels = {$sitekit.menus.mainMenu.levels}
         as = mainMenu
       }
 

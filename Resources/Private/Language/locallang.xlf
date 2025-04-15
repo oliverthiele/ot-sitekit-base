@@ -14,6 +14,9 @@
 			<trans-unit id="skipToPageFooter" resname="skipToPageFooter">
 				<source>Skip to page footer</source>
 			</trans-unit>
+			<trans-unit id="openInNewTab" resname="openInNewTab">
+				<source>open in new tab</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

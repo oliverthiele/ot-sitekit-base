@@ -114,7 +114,6 @@ settings:
     enum:
       1: 1
       2: 2
-      3: 3
 
   sitekit.menus.mainMenu.includeSpacer:
     label: 'Include Spacer'

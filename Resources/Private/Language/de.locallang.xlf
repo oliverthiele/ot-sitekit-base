@@ -17,6 +17,10 @@
 				<source>Skip to page footer</source>
 				<target>Zum Seitenende springen</target>
 			</trans-unit>
+			<trans-unit id="openInNewTab" resname="openInNewTab">
+				<source>open in new tab</source>
+				<target>öffnet im neuen Tab</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

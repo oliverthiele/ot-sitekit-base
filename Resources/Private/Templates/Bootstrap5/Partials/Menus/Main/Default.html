@@ -25,28 +25,7 @@
                                 <f:for each="{mainMenu}" as="item">
                                     <f:if condition="{item.hasSubpages}">
                                         <f:then>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                                    {item.title}
-                                                </a>
-                                                <ul class="dropdown-menu shadow-sm">
-                                                    <f:for each="{item.children}" as="subitem">
-                                                        <f:if condition="{subitem.spacer} == 1">
-                                                            <f:then>
-                                                                <li>
-                                                                    <hr class="dropdown-divider">
-                                                                </li>
-                                                            </f:then>
-                                                            <f:else>
-                                                                <li><a
-                                                                    class="dropdown-item{f:if(condition: '{subitem.current} == 1', then: ' active')}"
-                                                                    href="{subitem.link}">{subitem.title}</a></li>
-                                                            </f:else>
-                                                        </f:if>
-                                                    </f:for>
-                                                </ul>
-                                            </li>
+                                            <f:render section="NavItemDropdown" arguments="{item: item}"/>
                                         </f:then>
                                         <f:else>
                                             <f:render section="NavItem" arguments="{item: item}"/>
@@ -65,21 +44,71 @@
 
 
 <f:section name="NavItem">
-    <f:if condition="{item.active} == 1 || {item.current} == 1">
-        <f:then>
-            <f:variable name="classActive" value=" active"/>
-            <f:if condition="{item.current} == 1">
-                <f:variable name="ariaCurrent" value=" aria-current=page"/>
-            </f:if>
-        </f:then>
-        <f:else>
-            <f:variable name="classActive" value=""/>
-            <f:variable name="ariaCurrent" value=""/>
-        </f:else>
+    <f:variable name="targetBlankLabel" value=""/>
+    <f:if condition="{item.target} == '_blank'">
+        <f:variable name="targetBlankLabel" value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
     </f:if>
+
     <li class="nav-item">
-        <a class="nav-link{classActive}" {ariaCurrent} href="{item.link}" target="{item.target}">{item.title}</a>
+        <a class="nav-link{f:if(condition: '{item.active} == 1', then: ' active')}"
+           href="{item.link}"
+           aria-label="{item.title}{targetBlankLabel}"
+           {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
+        {f:if(condition: '{item.current}', then: ' aria-current="page"')}>{item.title}
+        </a>
     </li>
+</f:section>
+
+
+<f:section name="NavItemDropdown">
+    <f:variable name="targetBlankLabel" value=""/>
+    <f:if condition="{item.target} == '_blank'">
+        <f:variable name="targetBlankLabel" value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
+    </f:if>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link{f:if(condition: '{item.active} == 1', then: ' active')} dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false"
+           aria-label="{item.title}{targetBlankLabel}"
+           {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
+        {f:if(condition: '{item.current}', then: ' aria-current="page"')}>{item.title}
+        </a>
+        <f:render section="NavSubItems" arguments="{item: item}"/>
+    </li>
+</f:section>
+
+
+<f:section name="NavSubItems">
+    <ul class="dropdown-menu shadow-sm">
+        <f:for each="{item.children}" as="subitem">
+
+            <f:variable name="targetBlankLabel" value=""/>
+            <f:if condition="{subitem.target} == '_blank'">
+                <f:variable name="targetBlankLabel" value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
+            </f:if>
+
+            <f:if condition="{subitem.spacer} == 1">
+                <f:then>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                </f:then>
+                <f:else>
+                    <li>
+                        <a class="dropdown-item{f:if(condition: '{subitem.active} == 1', then: ' active')}"
+                           href="{subitem.link}"
+                           aria-label="{item.title}{targetBlankLabel}"
+                           {f:if(condition: '{subitem.target}', then: ' target="{subitem.target}"')}
+                        {f:if(condition: '{subitem.current}', then: ' aria-current="page"')}>{subitem.title}
+                        </a>
+                    </li>
+                </f:else>
+            </f:if>
+        </f:for>
+    </ul>
 </f:section>
 </body>
 </html>

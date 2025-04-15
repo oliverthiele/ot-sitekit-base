@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de"
+		  original="EXT:ot_kolbcommon/Resources/Private/Language/locallang_be.xlf" date="2025-01-12T13:00:00Z"
+		  datatype="plaintext" product-name="ot-kolbcommon">
+		<header/>
+		<body>
+
+
+			<trans-unit id="backendLayout.advanced.title" resname="backendLayout.advanced.title">
+				<source>Advanced</source>
+				<target>Fortgeschrittes Layout</target>
+			</trans-unit>
+			<trans-unit id="backendLayout.default.title" resname="backendLayout.default.title">
+				<source>Standard</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="backendLayout.homepage.title" resname="backendLayout.homepage.title">
+				<source>Homepage</source>
+				<target>Homepage</target>
+			</trans-unit>
+			<trans-unit id="backendLayout.smallContent.title" resname="backendLayout.smallContent.title">
+				<source>Small Column</source>
+				<target>Kleine Spalte</target>
+			</trans-unit>
+
+			<trans-unit id="column.heroContent" resname="column.heroContent">
+				<source>Hero Image</source>
+				<target>Hero Bild</target>
+			</trans-unit>
+			<trans-unit id="column.main" resname="column.main">
+				<source>Main Content</source>
+				<target>Haupt-Inhalt</target>
+			</trans-unit>
+			<trans-unit id="column.aside" resname="column.aside">
+				<source>Aside Content</source>
+				<target>Seiteninhalt</target>
+			</trans-unit>
+
+			<trans-unit id="tca.group.extras" resname="tca.group.extras" approved="yes">
+				<source>Extras</source>
+				<target>Extras</target>
+			</trans-unit>
+			<trans-unit id="container.pageContainer" resname="container.pageContainer">
+				<source>Container [Page]</source>
+				<target>Container [Seite]</target>
+			</trans-unit>
+			<trans-unit id="container.page.container" resname="container.page.container">
+				<source>Page Container: div.container</source>
+				<target>Seiten-Container: div.container</target>
+			</trans-unit>
+			<trans-unit id="container.page.containerFluid" resname="container.page.containerFluid">
+				<source>Page Container: div.container-fluid</source>
+				<target>Seiten-Container: div.container-fluid</target>
+			</trans-unit>
+			<trans-unit id="container.1col" resname="container.1col">
+				<source>Container [1 column]</source>
+				<target>Container [1 Spalte]</target>
+			</trans-unit>
+			<trans-unit id="container.2cols" resname="container.2cols">
+				<source>Container [2 columns]</source>
+				<target>Container [2 Spalten]</target>
+			</trans-unit>
+			<trans-unit id="container.special" resname="container.special">
+				<source>Container [Special]</source>
+				<target>Container [Spezial]</target>
+			</trans-unit>
+			<trans-unit id="container.cols.2.6-6" resname="container.cols.2.6-6">
+				<source>Content Container: 2 cols 6-6</source>
+				<target>Content Container: 2 Spalten 6-6</target>
+			</trans-unit>
+			<trans-unit id="container.cols.2.4-8" resname="container.cols.2.4-8">
+				<source>Content Container: 2 cols 4-8</source>
+				<target>Content Container: 2 Spalten 4-8</target>
+			</trans-unit>
+			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4">
+				<source>Content Container: 2 cols 8-4</source>
+				<target>Content Container: 2 Spalten 8-4</target>
+			</trans-unit>
+			<trans-unit id="container.labels.twoColumns" resname="container.labels.twoColumns">
+				<source>Two columns</source>
+				<target>Zwei Spalten</target>
+			</trans-unit>
+			<trans-unit id="container.labels.leftColumn" resname="container.labels.leftColumn">
+				<source>Left column</source>
+				<target>Linke Spalte</target>
+			</trans-unit>
+			<trans-unit id="container.labels.rightColumn" resname="container.labels.rightColumn">
+				<source>Right column</source>
+				<target>Rechte Spalte</target>
+			</trans-unit>
+
+			<trans-unit id="header_style" resname="header_style" approved="yes">
+				<source>Style</source>
+				<target>Darstellung</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay" approved="yes">
+				<source>Display Classes</source>
+				<target>Display Klassen</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupAccessibility" resname="header_style.groupAccessibility" approved="yes">
+				<source>Accessibility</source>
+				<target>Barrierearm</target>
+			</trans-unit>
+			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden" approved="yes">
+				<source>Visually Hidden</source>
+				<target>Visuell verborgen</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeaderColor" resname="header_style.groupHeaderColor" approved="yes">
+				<source>Header Color</source>
+				<target>Überschrift Farbe</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeaderSizePrimaryColor" resname="header_style.groupHeaderSizePrimaryColor" approved="yes">
+				<source>Header size and primary color</source>
+				<target>Überschrift Größe und Primärfarbe</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader" approved="yes">
+				<source>Header</source>
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="header_style.default" resname="header_style.default" approved="yes">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="header_style.description" resname="header_style.description" approved="yes">
+				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
+				<target>Die Klasse visually-hidden kann verwendet werden, wenn z.B. die Hierarchie in untergeordneten Akkordeons korrekt ausgegeben werden soll.</target>
+			</trans-unit>
+			<trans-unit id="header.default" resname="header.default" approved="yes">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="h1" resname="h1" approved="yes">
+				<source>h1</source>
+				<target>h1</target>
+			</trans-unit>
+			<trans-unit id="h2" resname="h2" approved="yes">
+				<source>h2</source>
+				<target>h2</target>
+			</trans-unit>
+			<trans-unit id="h3" resname="h3" approved="yes">
+				<source>h3</source>
+				<target>h3</target>
+			</trans-unit>
+			<trans-unit id="h4" resname="h4" approved="yes">
+				<source>h4</source>
+				<target>h4</target>
+			</trans-unit>
+			<trans-unit id="h5" resname="h5" approved="yes">
+				<source>h5</source>
+				<target>h5</target>
+			</trans-unit>
+			<trans-unit id="h6" resname="h6" approved="yes">
+				<source>h6</source>
+				<target>h6</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

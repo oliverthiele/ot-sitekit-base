@@ -9,6 +9,11 @@
 			"name": "Oliver Thiele",
 			"email": "mail@oliver-thiele.de",
 			"role": "Developer"
+		},
+		{
+			"name": "Axel Hempelt",
+			"email": "a.hempelt@fiz-soft.de",
+			"role": "Developer"
 		}
 	],
 	"extra": {

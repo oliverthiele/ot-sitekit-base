@@ -21,6 +21,18 @@
 				<source>open in new tab</source>
 				<target>öffnet im neuen Tab</target>
 			</trans-unit>
+			<trans-unit id="subNavigationForPage" resname="subNavigationForPage">
+				<source>Subnavigation for page</source>
+				<target>Untermenü zu Seite</target>
+			</trans-unit>
+			<trans-unit id="showSubNavigationForPage" resname="showSubNavigationForPage">
+				<source>Show subnavigation for page</source>
+				<target>Öffne Untermenü zu Seite</target>
+			</trans-unit>
+			<trans-unit id="toggleNavigation" resname="toggleNavigation">
+				<source>Toggle navigation</source>
+				<target>Navigation ein- oder ausklappen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

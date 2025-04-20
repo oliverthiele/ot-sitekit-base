@@ -7,108 +7,121 @@
 </head>
 <body>
 <f:section name="Default">
+    <f:if condition="{mainMenu}">
+        <f:asset.css identifier="otSitekitBase-MenuMainDefault" href="EXT:ot_sitekitbase/Resources/Public/Css/5-Menus/Main/Default.css"/>
+        <f:asset.script identifier="otSitekitBase-OrderOfFocusNavigation" src="EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/Main/OrderOfFocusNavigation.js"/>
 
-    <f:debug>{_all}</f:debug>
+        <f:variable name="navbarExpand" value="navbar-expand-{settings.sitekit.menus.mainMenu.collapsing}"/>
 
-    <f:variable name="navbarExpand" value="navbar-expand-{settings.sitekit.menus.mainMenu.collapsing}"/>
+        <div id="main-navigation" class="bg-primary shadow-sm sticky-top">
+            <div class="container">
+                <nav class="navbar {navbarExpand} bg-body-primary text sticky-top __mainmenu" data-bs-theme="dark">
+                    <div class="container-fluid g-0">
+                        <f:render partial="Menus/Main/Brand" section="Default" arguments="{_all}"/>
+                        <f:render partial="Menus/Main/Toggler" section="Default" arguments="{_all}"/>
 
-    <div id="main-navigation" class="bg-primary shadow-sm sticky-top">
-        <div class="container">
-            <nav class="navbar {navbarExpand} bg-body-primary text sticky-top" data-bs-theme="dark">
-                <div class="container-fluid g-0">
-                    <f:render partial="Menus/Main/Brand" section="Default" arguments="{_all}"/>
-                    <f:render partial="Menus/Main/Toggler" section="Default" arguments="{_all}"/>
-
-                    <div class="collapse navbar-collapse" id="navbarMain">
-                        <f:if condition="{mainMenu}">
+                        <div class="collapse navbar-collapse" id="navbarMain">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <f:for each="{mainMenu}" as="item">
-                                    <f:if condition="{item.hasSubpages}">
-                                        <f:then>
-                                            <f:render section="NavItemDropdown" arguments="{item: item}"/>
-                                        </f:then>
-                                        <f:else>
-                                            <f:render section="NavItem" arguments="{item: item}"/>
-                                        </f:else>
-                                    </f:if>
+                                    <f:render section="NavItem_Level_0" arguments="{_all}"/>
                                 </f:for>
                             </ul>
-                        </f:if>
-                        <f:render partial="Menus/Main/Search" section="Default" arguments="{item: item}"/>
+                            <f:render partial="Menus/Main/Search" section="Default" arguments="{item: item}"/>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
-    </div>
+    </f:if>
 </f:section>
 
 
-<f:section name="NavItem">
+<f:section name="NavItem_Level_0">
+    <f:if condition="{item.hasSubpages}">
+        <f:then>
+            <li class="nav-item dropdown{f:if(condition: '{item.active}', then: ' active')}">
+                <f:render section="NavLink_Level_0" arguments="{item: item}"/>
+                <f:render section="DropdownToggleButton" arguments="{item: item}"/>
+                <ul class="dropdown-menu"
+                    id="submenu-u{item.data.uid}"
+                    role="menu"
+                    aria-label="{f:translate(key: 'subNavigationForPage', extensionName: 'OtSitekitbase', default: 'Subnavigation for page')} {item.title}"
+                    aria-labelledby="dropdown-toggle-btn-u{item.data.uid}">
+                    <f:for each="{item.children}" as="child">
+                        <f:render section="NavLink_Level_1" arguments="{child: child}"/>
+                    </f:for>
+                </ul>
+            </li>
+        </f:then>
+        <f:else>
+            <li class="nav-item{f:if(condition: '{item.active}', then: ' active')}">
+                <f:render section="NavLink_Level_0" arguments="{item: item}"/>
+            </li>
+        </f:else>
+    </f:if>
+</f:section>
+
+
+<f:section name="NavLink_Level_0">
     <f:variable name="targetBlankLabel" value=""/>
     <f:if condition="{item.target} == '_blank'">
-        <f:variable name="targetBlankLabel" value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
+        <f:variable name="targetBlankLabel"
+                    value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
     </f:if>
 
-    <li class="nav-item">
-        <a class="nav-link{f:if(condition: '{item.active} == 1', then: ' active')}"
-           href="{item.link}"
-           aria-label="{item.title}{targetBlankLabel}"
-           {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
-        {f:if(condition: '{item.current}', then: ' aria-current="page"')}>{item.title}
-        </a>
-    </li>
+    <a href="{item.link}"
+       {f:if(condition: '{item.current}', then: ' aria-current="page"')}
+       {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
+       aria-label="{item.title}{targetBlankLabel}"
+       class="nav-link{f:if(condition: '{item.active}', then: ' active')}{f:if(condition: '{item.current}', then: ' current')}"
+       title="">{item.title}
+    </a>
 </f:section>
 
 
-<f:section name="NavItemDropdown">
-    <f:variable name="targetBlankLabel" value=""/>
-    <f:if condition="{item.target} == '_blank'">
-        <f:variable name="targetBlankLabel" value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
-    </f:if>
-
-    <li class="nav-item dropdown">
-        <a class="nav-link{f:if(condition: '{item.active} == 1', then: ' active')} dropdown-toggle"
-           href="#"
-           role="button"
-           data-bs-toggle="dropdown"
-           aria-expanded="false"
-           aria-label="{item.title}{targetBlankLabel}"
-           {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
-        {f:if(condition: '{item.current}', then: ' aria-current="page"')}>{item.title}
-        </a>
-        <f:render section="NavSubItems" arguments="{item: item}"/>
-    </li>
-</f:section>
-
-
-<f:section name="NavSubItems">
-    <ul class="dropdown-menu shadow-sm">
-        <f:for each="{item.children}" as="subitem">
-
+<f:section name="NavLink_Level_1">
+    <f:if condition="{child.spacer} == 1">
+        <f:then>
+            <li role="separator" class="dropdown-divider" aria-hidden="true"></li>
+        </f:then>
+        <f:else>
             <f:variable name="targetBlankLabel" value=""/>
-            <f:if condition="{subitem.target} == '_blank'">
-                <f:variable name="targetBlankLabel" value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
+            <f:if condition="{child.target} == '_blank'">
+                <f:variable name="targetBlankLabel"
+                            value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
             </f:if>
 
-            <f:if condition="{subitem.spacer} == 1">
-                <f:then>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                </f:then>
-                <f:else>
-                    <li>
-                        <a class="dropdown-item{f:if(condition: '{subitem.active} == 1', then: ' active')}"
-                           href="{subitem.link}"
-                           aria-label="{item.title}{targetBlankLabel}"
-                           {f:if(condition: '{subitem.target}', then: ' target="{subitem.target}"')}
-                        {f:if(condition: '{subitem.current}', then: ' aria-current="page"')}>{subitem.title}
-                        </a>
-                    </li>
-                </f:else>
-            </f:if>
-        </f:for>
-    </ul>
+            <li role="none">
+                <a href="{child.link}"
+                   {f:if(condition: '{child.current}', then: ' aria-current="page"')}
+                   {f:if(condition: '{child.target}', then: ' target="{child.target}"')}
+                   aria-label="{child.title}{targetBlankLabel}"
+                   role="menuitem"
+                   class="dropdown-item{f:if(condition: '{child.active}', then: ' active')}{f:if(condition: '{child.current}', then: ' current')}"
+                   title="">{child.title}
+                </a>
+            </li>
+        </f:else>
+    </f:if>
 </f:section>
+
+
+<f:section name="DropdownToggleButton">
+    <button class="dropdown-toggle-btn"
+            type="button"
+            id="dropdown-toggle-btn-u{item.data.uid}"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="submenu-u{item.data.uid}"
+            aria-label='{f:translate(key: 'showSubNavigationForPage', extensionName: 'OtSitekitbase', default: 'Show subnavigation for page')} {item.title}'
+            data-bs-toggle="dropdown"
+            data-bs-display="static">
+        <span class="visually-hidden">Untermenü anzeigen</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+        </svg>
+    </button>
+</f:section>
+
 </body>
 </html>

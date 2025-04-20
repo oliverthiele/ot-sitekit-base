@@ -17,6 +17,15 @@
 			<trans-unit id="openInNewTab" resname="openInNewTab">
 				<source>open in new tab</source>
 			</trans-unit>
+			<trans-unit id="subNavigationForPage" resname="subNavigationForPage">
+				<source>Subnavigation for page</source>
+			</trans-unit>
+			<trans-unit id="showSubNavigationForPage" resname="showSubNavigationForPage">
+				<source>Show subnavigation for page</source>
+			</trans-unit>
+			<trans-unit id="toggleNavigation" resname="toggleNavigation">
+				<source>Toggle navigation</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

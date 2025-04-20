@@ -1,0 +1,30 @@
+// Einstellungen (Nur Definitionen, keine scss Anweisungen
+// @import "1-Settings/Mixins";
+
+// Bibliotheken (Externe Libraries)
+// @import "2-Libraries/bootstrap/scss/bootstrap";
+// @import "2-Libraries/";
+
+// generelle Komponenten (seitenweite Geltung)
+// @import "3-Base/";
+
+// Einstellungen für Seitenbereiche (für Unterbereiche der Seite)
+// @import "4-Zones/";
+
+// Menüs
+// @import "5-Menus/";
+
+// Seitenelemente (alle TYPO3-Elemente und eigene Elemente, wie z. B. Mask)
+// @import "6-Components/";
+
+
+// Extensions (z. B.  news, tt_address)
+// @import "7-Extensions/";
+
+
+// Hacks für einzelne Seiten
+// @import "8-Specific/shame";
+// @import "8-Specific/";
+// enthält peinliche Hacks, !important wenn gar nichts mehr greift
+// für max. Unordnung einfach das alte css reinkopieren ;-)
+// @import "8-Specific/shame";

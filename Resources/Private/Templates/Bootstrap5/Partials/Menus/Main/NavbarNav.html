@@ -1,0 +1,81 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:section name="Default">
+        <div id="header_fixed_top" class="fixed-top">
+            <nav class="navbar navbar-expand-3xl __mainmenu"
+                 aria-label="{f:translate(key: 'LLL:EXT:sp23/Resources/Private/Language/locallang.xlf:mainMenu')}">
+                <div class="container g-0">
+                    <f:render partial="NavbarBrand" section="Default" arguments="{_all}"/>
+                    <f:render partial="NavbarAdditionalItems" section="Default" arguments="{_all}"/>
+                    <f:render partial="NavbarToggler" section="TogglerTurnStile" arguments="{_all}"/>
+                    <div class="collapse navbar-collapse mainmenu" id="navbarMain">
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                            <f:for each="{mainMenu}" as="item">
+                                <f:render section="NavItem_Level_0" arguments="{_all}"/>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <f:render partial="Hotline" section="Default" arguments="{_all}"/>
+        </div>
+        <f:render partial="ReadingBar" section="Default" arguments="{_all}"/>
+    </f:section>
+
+
+    <f:section name="NavItem_Level_0">
+        <f:if condition="{item.hasSubpages}">
+            <f:then>
+                <li class="nav-item dropdown{f:if(condition: '{item.active}', then: ' active')}">
+                    <f:render section="NavLink_Level_0" arguments="{item: item}"/>
+                    <f:render section="DropdownToggleButton" arguments="{item: item}"/>
+                    <ul class="dropdown-menu">
+                        <f:for each="{item.children}" as="child">
+                            <li>
+                                <f:render section="NavLink_Level_1" arguments="{child: child}"/>
+                            </li>
+                        </f:for>
+                    </ul>
+                </li>
+            </f:then>
+            <f:else>
+                <li class="nav-item{f:if(condition: '{item.active}', then: ' active')}">
+                    <f:render section="NavLink_Level_0" arguments="{item: item}"/>
+                </li>
+            </f:else>
+        </f:if>
+    </f:section>
+
+
+    <f:section name="NavLink_Level_0">
+        <a href="{item.link}"
+           {f:if(condition: '{item.current}', then: ' aria-current="page"')}
+           class="nav-link{f:if(condition: '{item.active}', then: ' active')}{f:if(condition: '{item.current}', then: ' current')}"
+           title="">{item.title}
+        </a>
+    </f:section>
+
+
+    <f:section name="NavLink_Level_1">
+        <a href="{child.link}"
+           class="dropdown-item{f:if(condition: '{child.active}', then: ' active')}{f:if(condition: '{child.current}', then: ' current')}"
+           title=""><i class="fa-light fa-chevron-right"></i>{child.title}
+        </a>
+    </f:section>
+
+
+    <f:section name="DropdownToggleButton">
+        <button class="dropdown-toggle-btn"
+                type="button"
+                aria-label='{f:translate(extensionName: "fiz_navbar", key: "show_submenu_for")} "{item.title}"'
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-haspopup="true"
+                aria-expanded="false">
+            <i class="fa-light fa-chevron-down"></i>
+        </button>
+    </f:section>
+
+</f:spaceless>
+</html>

@@ -1,0 +1,14 @@
+.__mainmenu .navbar-collapse .navbar-nav .nav-item .dropdown-toggle-btn {
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.__mainmenu .navbar-collapse .navbar-nav .nav-item .nav-link {
+  display: inline-flex;
+}
+
+/*# sourceMappingURL=Default.css.map */

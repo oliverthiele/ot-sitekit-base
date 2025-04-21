@@ -8,6 +8,14 @@
 <body>
 <f:section name="Default">
     <f:if condition="{languageMenu}">
+
+        <f:asset.script identifier="LanguageMenu" src="EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/LanguageMenu/Default.js"/>
+
+        <f:variable name="class-dropdownToggle-label" value="d-none"/>
+        <f:if condition="{settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled}">
+            <f:variable name="class-dropdownToggle-label" value="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline"/>
+        </f:if>
+
         <li class="nav-item px-2">
             <div class="dropdown __languageMenu" role="group"
                  aria-label="{f:translate(key: 'languageMenu', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
@@ -17,8 +25,8 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         aria-haspopup="true">
-                    <span class="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline language-menu-label">{f:translate(key: 'language', extensionName: 'ot_sitekitbase')}</span>
-                    <span class="current-language-iso-code">
+                    <span class="{class-dropdownToggle-label} dropdown-toggle-label">{f:translate(key: 'language', extensionName: 'ot_sitekitbase')}</span>
+                    <span class="dropdown-toggle-icon">
                         <f:for each="{languageMenu}" as="language" key="key">
                             <f:if condition="{language.active} == 1">
                                 {language.twoLetterIsoCode}
@@ -33,10 +41,10 @@
                                 <f:then>
                                     <li>
                                         <a class="dropdown-item disabled active"
-                                           aria-disabled="true" aria-current="true">
+                                           aria-disabled="true" aria-current="page">
                                             <span
-                                                class="d-none language-twoLetterIsoCode">{language.twoLetterIsoCode}</span>
-                                            <span class="language-label">{language.navigationTitle}</span>
+                                                class="dropdown-item-icon">{language.twoLetterIsoCode}</span>
+                                            <span class="ms-2 dropdown-item-label" lang="{language.twoLetterIsoCode}">{language.navigationTitle}</span>
                                         </a>
                                     </li>
                                 </f:then>
@@ -46,8 +54,8 @@
                                            title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
                                            class="dropdown-item">
                                             <span
-                                                class="d-none language-twoLetterIsoCode">{language.twoLetterIsoCode}</span>
-                                            {language.navigationTitle}
+                                                class="dropdown-item-icon">{language.twoLetterIsoCode}</span>
+                                            <span class="ms-2 dropdown-item-label" lang="{language.twoLetterIsoCode}">{language.navigationTitle}</span>
                                         </a>
                                     </li>
                                 </f:else>

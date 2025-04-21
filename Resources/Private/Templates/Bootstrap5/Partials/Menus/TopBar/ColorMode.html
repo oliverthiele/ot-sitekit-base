@@ -8,6 +8,16 @@
 <body>
 <f:section name="Default">
     <f:if condition="{settings.sitekit.menus.topMenu.colorMode.enabled}">
+
+        <f:asset.script identifier="ColorMode" src="EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/TopBar/ColorMode/Default.js"/>
+
+
+        <f:variable name="class-dropdownToggle-label" value="d-none"/>
+        <f:if condition="{settings.sitekit.menus.topMenu.colorMode.dropdownToggle.label.enabled}">
+            <f:variable name="class-dropdownToggle-label" value="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline"/>
+        </f:if>
+
+
         <li class="nav-item px-2">
             <div class="dropdown __colorMode" role="group"
                  aria-label="{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
@@ -17,8 +27,8 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         aria-haspopup="true">
-                    <span class="theme-icon-active"><i class="fa-regular fa-sun-bright" aria-hidden="true"></i></span>
-                    <span class="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline" id="bd-theme-text">{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')}</span>
+                    <span class="{class-dropdownToggle-label} dropdown-toggle-label" id="bd-theme-text">{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')}</span>
+                    <span class="theme-icon-active dropdown-toggle-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="colorModeDropdown">
                     <li>
@@ -47,8 +57,8 @@
             aria-label="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
             title="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}"
             aria-pressed="false">
-        <i class="fa-regular fa-sun-bright" aria-hidden="true"></i>
-        <span class="d-none d-md-inline">{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}</span>
+        <span class="dropdown-item-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        <span class="d-none d-md-inline ps-2 dropdown-item-label">{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}</span>
     </button>
 </f:section>
 
@@ -60,8 +70,8 @@
             aria-label="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
             title="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}"
             aria-pressed="false">
-        <i class="fa-regular fa-moon" aria-hidden="true"></i>
-        <span class="d-none d-md-inline">{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}</span>
+        <span class="dropdown-item-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></span>
+        <span class="d-none d-md-inline ps-2 dropdown-item-label">{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}</span>
     </button>
 </f:section>
 

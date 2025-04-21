@@ -6,5 +6,13 @@
   position: relative;
   z-index: var(--zindex-topNavigation);
 }
+.__topmenu .__colorMode .dropdown-toggle .dropdown-toggle-icon,
+.__topmenu .__colorMode .dropdown-menu .dropdown-item-icon,
+.__topmenu .__languageMenu .dropdown-toggle .dropdown-toggle-icon,
+.__topmenu .__languageMenu .dropdown-menu .dropdown-item-icon {
+  display: inline-flex;
+  width: 1.5rem;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=main.css.map */

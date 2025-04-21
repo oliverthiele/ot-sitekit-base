@@ -7,6 +7,16 @@
     position: relative;
     z-index: var(--zindex-topNavigation);
 
+    .__colorMode,
+    .__languageMenu {
+        .dropdown-toggle .dropdown-toggle-icon,
+        .dropdown-menu .dropdown-item-icon {
+            display: inline-flex;
+            width: 1.5rem;
+            justify-content: center;
+        }
+    }
+
 
     @media(min-width: 576px) {
         // breakpoint: Small

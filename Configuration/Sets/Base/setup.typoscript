@@ -9,7 +9,6 @@ page {
   }
 
   includeJSFooterlibs {
-    colorMode = EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/TopBar/ColorMode/Default.js
-    languageMenu = EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/TopBar/LanguageMenu/Default.js
+
   }
 }

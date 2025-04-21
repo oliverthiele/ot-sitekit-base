@@ -17,14 +17,17 @@ categories:
     label: 'Menus'
     parent: Sitekit
   Sitekit.menus.mainMenu:
-    label: 'MainMenu'
+    label: 'Main Menu'
     parent: Sitekit.menus
   Sitekit.menus.topMenu:
-    label: 'TopMenu'
+    label: 'Top Menu'
     parent: Sitekit.menus
   Sitekit.menus.topMenu.colorMode:
     label: 'Color Mode'
     parent: Sitekit.menus.topMenu
+  Sitekit.menus.languageMenu:
+    label: 'Language Menu'
+    parent: Sitekit.menus
   Sitekit.search:
     label: 'Search'
     parent: Sitekit
@@ -134,6 +137,20 @@ settings:
     description: ''
     type: bool
     default: true
+
+  sitekit.menus.topMenu.colorMode.dropdownToggle.label.enabled:
+    label: 'Enabled'
+    category: Sitekit.menus.topMenu.colorMode
+    description: ''
+    type: bool
+    default: false
+
+  sitekit.menus.languageMenu.dropdownToggle.label.enabled:
+    label: 'Enabled'
+    category: Sitekit.menus.languageMenu
+    description: ''
+    type: bool
+    default: false
 
   sitekit.menus.mainMenu.logo.width:
     label: 'Logo Width'

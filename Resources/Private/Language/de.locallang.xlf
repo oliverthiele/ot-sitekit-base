@@ -41,9 +41,17 @@
 				<source>Breadcrumb navigation</source>
 				<source>Navigationspfad</source>
 			</trans-unit>
+			<trans-unit id="languageMenu" resname="languageMenu">
+				<source>Language menu</source>
+				<target>Sprachmenü</target>
+			</trans-unit>
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>
 				<target>Zusatznavigation</target>
+			</trans-unit>
+			<trans-unit id="language" resname="language">
+				<source>Language</source>
+				<target>Sprache</target>
 			</trans-unit>
 			<trans-unit id="colorMode" resname="colorMode">
 				<source>Color mode</source>

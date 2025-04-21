@@ -1,3 +1,10 @@
+:root {
+  --zindex-topNavigation: 1022;
+}
 
+.__topmenu {
+  position: relative;
+  z-index: var(--zindex-topNavigation);
+}
 
 /*# sourceMappingURL=main.css.map */

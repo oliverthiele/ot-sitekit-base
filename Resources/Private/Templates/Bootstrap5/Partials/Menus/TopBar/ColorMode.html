@@ -8,7 +8,7 @@
 <body>
 <f:section name="Default">
     <f:if condition="{settings.sitekit.menus.topMenu.colorMode.enabled}">
-        <li class="nav-item">
+        <li class="nav-item px-2">
             <div class="dropdown __colorMode" role="group"
                  aria-label="{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
                 <button class="btn btn-link nav-link dropdown-toggle"
@@ -17,8 +17,8 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         aria-haspopup="true">
-                    <i class="fa-regular fa-circle-half-stroke" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline">Farbmodus</span>
+                    <span class="theme-icon-active"><i class="fa-regular fa-sun-bright" aria-hidden="true"></i></span>
+                    <span class="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline" id="bd-theme-text">{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')}</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="colorModeDropdown">
                     <li>

@@ -28,7 +28,7 @@
       }
     })
 
-    // Optional: Inhalt des versteckten Status-Textes anpassen
+    // Aktualisiere den versteckten Screenreader-Status
     const activeThemeStatus = document.getElementById('activeTheme')
     if (activeThemeStatus) {
       const readable = theme === 'light'
@@ -38,14 +38,26 @@
     }
   }
 
+  const updateActiveIcon = (theme) => {
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const icon = btnToActive?.querySelector('i')
+    const activeIconTarget = document.querySelector('.theme-icon-active')
+
+    if (icon && activeIconTarget) {
+      activeIconTarget.innerHTML = icon.outerHTML
+    }
+  }
+
   const setTheme = theme => {
     if (theme === 'auto') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
       document.documentElement.setAttribute('data-bs-theme', systemTheme)
       updateAriaPressedAndDescribedBy(systemTheme)
+      updateActiveIcon(systemTheme)
     } else {
       document.documentElement.setAttribute('data-bs-theme', theme)
       updateAriaPressedAndDescribedBy(theme)
+      updateActiveIcon(theme)
     }
   }
 
@@ -56,22 +68,23 @@
     }
 
     const themeSwitcherText = document.querySelector('#bd-theme-text')
-    const activeThemeIcon = document.querySelector('.theme-icon-active use')
     const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
 
     document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
       element.classList.remove('active')
     })
 
     btnToActive.classList.add('active')
-    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+
+    // Setze optional aria-label auf dem Umschalter
     const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
     themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
     if (focus) {
       themeSwitcher.focus()
     }
+
+    updateActiveIcon(theme)
   }
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {

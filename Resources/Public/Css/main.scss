@@ -1,5 +1,6 @@
 // Einstellungen (Nur Definitionen, keine scss Anweisungen
 // @import "1-Settings/Mixins";
+@import "1-Settings/ZIndex";
 
 // Bibliotheken (Externe Libraries)
 // @import "2-Libraries/bootstrap/scss/bootstrap";
@@ -13,6 +14,7 @@
 
 // Menüs
 // @import "5-Menus/";
+@import "5-Menus/TopBar/TopMenu";
 
 // Seitenelemente (alle TYPO3-Elemente und eigene Elemente, wie z. B. Mask)
 // @import "6-Components/";

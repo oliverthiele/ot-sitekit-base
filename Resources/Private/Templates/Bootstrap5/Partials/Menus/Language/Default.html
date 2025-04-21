@@ -8,33 +8,54 @@
 <body>
 <f:section name="Default">
     <f:if condition="{languageMenu}">
-        <li class="nav-item">
-            [ToDo]
-            <f:comment><!--
-            <ul id="language-navigation" class="nav justify-content-end">
-                <f:for each="{languageMenu}" as="language" key="key">
-                    <f:if condition="{language.available} == 1">
-                        <f:if condition="{language.active} == 1">
-                            <f:then>
-                                <li class="nav-item d-none d-sm-block">
-                                    <a class="nav-link py-0 disabled active"
-                                       aria-disabled="true">{language.navigationTitle}</a>
-                                </li>
-                            </f:then>
-                            <f:else>
-                                <li class="nav-item ">
-                                    <a href="{language.link}"
-                                       title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
-                                       class="nav-link py-0">
-                                        {language.navigationTitle}
-                                    </a>
-                                </li>
-                            </f:else>
+        <li class="nav-item px-2">
+            <div class="dropdown __languageMenu" role="group"
+                 aria-label="{f:translate(key: 'languageMenu', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
+                <button class="btn btn-link nav-link dropdown-toggle"
+                        type="button"
+                        id="languageMenuDropdown"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="true">
+                    <span class="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline language-menu-label">{f:translate(key: 'language', extensionName: 'ot_sitekitbase')}</span>
+                    <span class="current-language-iso-code">
+                        <f:for each="{languageMenu}" as="language" key="key">
+                            <f:if condition="{language.active} == 1">
+                                {language.twoLetterIsoCode}
+                            </f:if>
+                        </f:for>
+                    </span>
+                </button>
+                <ul id="language-navigation" class="dropdown-menu" aria-labelledby="languageMenuDropdown">
+                    <f:for each="{languageMenu}" as="language" key="key">
+                        <f:if condition="{language.available} == 1">
+                            <f:if condition="{language.active} == 1">
+                                <f:then>
+                                    <li>
+                                        <a class="dropdown-item disabled active"
+                                           aria-disabled="true" aria-current="true">
+                                            <span
+                                                class="d-none language-twoLetterIsoCode">{language.twoLetterIsoCode}</span>
+                                            <span class="language-label">{language.navigationTitle}</span>
+                                        </a>
+                                    </li>
+                                </f:then>
+                                <f:else>
+                                    <li>
+                                        <a href="{language.link}"
+                                           title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
+                                           class="dropdown-item">
+                                            <span
+                                                class="d-none language-twoLetterIsoCode">{language.twoLetterIsoCode}</span>
+                                            {language.navigationTitle}
+                                        </a>
+                                    </li>
+                                </f:else>
+                            </f:if>
                         </f:if>
-                    </f:if>
-                </f:for>
-            </ul>
-            --></f:comment>
+                    </f:for>
+                </ul>
+            </div>
         </li>
     </f:if>
 </f:section>

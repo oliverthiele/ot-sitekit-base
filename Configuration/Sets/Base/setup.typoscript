@@ -4,7 +4,12 @@ config {
 
 page = PAGE
 page {
+  includeCSS {
+    main = EXT:ot_sitekitbase/Resources/Public/Css/main.css
+  }
+
   includeJSFooterlibs {
     colorMode = EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/TopBar/ColorMode/Default.js
+    languageMenu = EXT:ot_sitekitbase/Resources/Public/JavaScripts/Menus/TopBar/LanguageMenu/Default.js
   }
 }

@@ -1,0 +1,64 @@
+// per default, here stylesheets for mobile devices only
+// breakpoint: X-small
+// Class inifix: None
+// Dimensions <576px
+
+.__topmenu {
+    position: relative;
+    z-index: var(--zindex-topNavigation);
+
+
+    @media(min-width: 576px) {
+        // breakpoint: Small
+        // Class inifix: sm
+        // Dimensions ≥576px
+
+    }
+
+    @media(min-width: 768px) {
+        // breakpoint: Medium
+        // Class inifix: md
+        // Dimensions ≥768px
+
+    }
+
+    @media(min-width: 992px) {
+        // breakpoint: Large
+        // Class inifix: lg
+        // Dimensions ≥992px
+
+    }
+
+    @media(min-width: 1200px) {
+        // breakpoint: Extra large
+        // Class inifix: xl
+        // Dimensions ≥1200px
+
+    }
+
+    @media(min-width: 1400px) {
+        // breakpoint: Extra extra large
+        // Class inifix: xxl
+        // Dimensions ≥1400px
+        // this Dimension requires bootstrap v5
+
+    }
+
+    @media(min-width: 1600px) {
+
+    }
+
+    @media(min-width: 1920px) {
+        // breakpoint:
+        // Class inifix: FullHD
+        // Dimensions ≥1920px
+
+    }
+
+    @media(min-width: 2560px) {
+        // breakpoint:
+        // Class inifix: WQHD
+        // Dimensions ≥2560px
+
+    }
+}

@@ -19,6 +19,11 @@ page {
         as = content
       }
 
+      120 = site
+      120 {
+        as = site
+      }
+
       200 = menu
       200 {
         special = directory

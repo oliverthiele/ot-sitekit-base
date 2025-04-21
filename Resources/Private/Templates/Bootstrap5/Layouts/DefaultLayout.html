@@ -4,9 +4,7 @@
 <f:spaceless>
     <f:render partial="Header/SkipNavigation" section="Main"/>
 
-    <f:comment> <!-- <![CDATA[
-        <f:render partial="Header/TopNavigation" section="Main" arguments="{languageMenu : languageMenu}"/>
-    ]]>	--> </f:comment>
+    <f:render partial="Header/TopNavigation" section="Main" arguments="{languageMenu : languageMenu, settings: settings}"/>
     <f:render partial="Header/MainNavigation" section="Main" arguments="{mainMenu : mainMenu, settings : settings}"/>
 
     <f:if condition="{content.hero-image.records}">

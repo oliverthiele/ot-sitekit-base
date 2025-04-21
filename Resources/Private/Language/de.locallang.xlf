@@ -5,6 +5,10 @@
 		  product-name="ot-sitekit-base">
 		<header/>
 		<body>
+			<trans-unit id="mainNavigation" resname="mainNavigation">
+				<source>Main navigation</source>
+				<target>Hauptmenü</target>
+			</trans-unit>
 			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation">
 				<source>Skip to main navigation</source>
 				<target>Zum Hauptmenü springen</target>
@@ -32,6 +36,46 @@
 			<trans-unit id="toggleNavigation" resname="toggleNavigation">
 				<source>Toggle navigation</source>
 				<target>Navigation ein- oder ausklappen</target>
+			</trans-unit>
+			<trans-unit id="breadcrumbNavigation" resname="breadcrumbNavigation">
+				<source>Breadcrumb navigation</source>
+				<source>Navigationspfad</source>
+			</trans-unit>
+			<trans-unit id="serviceNavigation" resname="serviceNavigation">
+				<source>Service navigation</source>
+				<target>Zusatznavigation</target>
+			</trans-unit>
+			<trans-unit id="colorMode" resname="colorMode">
+				<source>Color mode</source>
+				<target>Farbmodus</target>
+			</trans-unit>
+			<trans-unit id="colorMode_light" resname="colorMode_light">
+				<source>Light mode</source>
+				<target>Heller Modus</target>
+			</trans-unit>
+			<trans-unit id="colorMode_dark" resname="colorMode_dark">
+				<source>Dark mode</source>
+				<target>Dunkler Modus</target>
+			</trans-unit>
+			<trans-unit id="colorMode_current_light" resname="colorMode_current_light">
+				<source>Current color mode: light</source>
+				<target>Aktueller Farbmodus: Hell</target>
+			</trans-unit>
+			<trans-unit id="colorMode_current_dark" resname="colorMode_current_dark">
+				<source>Current color mode: dark</source>
+				<target>Aktueller Farbmodus: Dunkel</target>
+			</trans-unit>
+			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings">
+				<source>Current color mode: system settings</source>
+				<target>Aktueller Farbmodus: Systemeinstellungen</target>
+			</trans-unit>
+			<trans-unit id="activate" resname="activate">
+				<source>activate</source>
+				<target>aktivieren</target>
+			</trans-unit>
+			<trans-unit id="choose" resname="choose">
+				<source>choose</source>
+				<target>auswählen</target>
 			</trans-unit>
 		</body>
 	</file>

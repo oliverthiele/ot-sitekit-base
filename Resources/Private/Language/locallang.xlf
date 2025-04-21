@@ -5,6 +5,9 @@
 		  product-name="ot-sitekit-base">
 		<header/>
 		<body>
+			<trans-unit id="mainNavigation" resname="mainNavigation">
+				<source>Main navigation</source>
+			</trans-unit>
 			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation">
 				<source>Skip to main navigation</source>
 			</trans-unit>
@@ -25,6 +28,36 @@
 			</trans-unit>
 			<trans-unit id="toggleNavigation" resname="toggleNavigation">
 				<source>Toggle navigation</source>
+			</trans-unit>
+			<trans-unit id="breadcrumbNavigation" resname="breadcrumbNavigation">
+				<source>Breadcrumb navigation</source>
+			</trans-unit>
+			<trans-unit id="serviceNavigation" resname="serviceNavigation">
+				<source>Service navigation</source>
+			</trans-unit>
+			<trans-unit id="colorMode" resname="colorMode">
+				<source>Color mode</source>
+			</trans-unit>
+			<trans-unit id="colorMode_light" resname="colorMode_light">
+				<source>Light mode</source>
+			</trans-unit>
+			<trans-unit id="colorMode_dark" resname="colorMode_dark">
+				<source>Dark mode</source>
+			</trans-unit>
+			<trans-unit id="colorMode_current_light" resname="colorMode_current_light">
+				<source>Current color mode: light</source>
+			</trans-unit>
+			<trans-unit id="colorMode_current_dark" resname="colorMode_current_dark">
+				<source>Current color mode: dark</source>
+			</trans-unit>
+			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings">
+				<source>Current color mode: system settings</source>
+			</trans-unit>
+			<trans-unit id="activate" resname="activate">
+				<source>activate</source>
+			</trans-unit>
+			<trans-unit id="choose" resname="choose">
+				<source>choose</source>
 			</trans-unit>
 		</body>
 	</file>

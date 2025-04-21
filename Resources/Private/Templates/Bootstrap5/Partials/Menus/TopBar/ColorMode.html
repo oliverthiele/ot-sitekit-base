@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Menus/Main/Default</title>
+</head>
+<body>
+<f:section name="Default">
+    <div class="__colorMode" role="group" aria-label="{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
+        <f:render section="Light" arguments="{_all}"/>
+        <f:render section="Dark" arguments="{_all}"/>
+        <span id="activeTheme"
+              class="visually-hidden"
+              data-text-light="{f:translate(key: 'colorMode_current_light', extensionName: 'ot_sitekitbase')}"
+              data-text-dark="{f:translate(key: 'colorMode_current_dark', extensionName: 'ot_sitekitbase')}">
+            {f:translate(key: 'colorMode_current_systemSettings', extensionName: 'ot_sitekitbase', default: 'Current color mode: system settings')}
+        </span>
+    </div>
+</f:section>
+
+
+<f:section name="Light">
+    <button type="button"
+            class="btn btn-link"
+            data-bs-theme-value="light"
+            aria-label="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
+            title="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}"
+            aria-pressed="false">
+        <i class="fa-regular fa-sun-bright" aria-hidden="true"></i>
+        <span class="d-none d-md-inline">{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}</span>
+    </button>
+</f:section>
+
+
+<f:section name="Dark">
+    <button type="button"
+            class="btn btn-link"
+            data-bs-theme-value="dark"
+            aria-label="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
+            title="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}"
+            aria-pressed="false">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+        <span class="d-none d-md-inline">{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}</span>
+    </button>
+</f:section>
+
+</body>
+</html>

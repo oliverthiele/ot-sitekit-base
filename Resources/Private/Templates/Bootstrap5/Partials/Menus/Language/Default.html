@@ -7,33 +7,36 @@
 </head>
 <body>
 <f:section name="Default">
-    <f:comment><!--
     <f:if condition="{languageMenu}">
-        <ul id="language-navigation" class="nav justify-content-end">
-            <f:for each="{languageMenu}" as="language" key="key">
-                <f:if condition="{language.available} == 1">
-                    <f:if condition="{language.active} == 1">
-                        <f:then>
-                            <li class="nav-item d-none d-sm-block">
-                                <a class="nav-link py-0 disabled active"
-                                   aria-disabled="true">{language.navigationTitle}</a>
-                            </li>
-                        </f:then>
-                        <f:else>
-                            <li class="nav-item ">
-                                <a href="{language.link}"
-                                   title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
-                                   class="nav-link py-0">
-                                    {language.navigationTitle}
-                                </a>
-                            </li>
-                        </f:else>
+        <li class="nav-item">
+            [ToDo]
+            <f:comment><!--
+            <ul id="language-navigation" class="nav justify-content-end">
+                <f:for each="{languageMenu}" as="language" key="key">
+                    <f:if condition="{language.available} == 1">
+                        <f:if condition="{language.active} == 1">
+                            <f:then>
+                                <li class="nav-item d-none d-sm-block">
+                                    <a class="nav-link py-0 disabled active"
+                                       aria-disabled="true">{language.navigationTitle}</a>
+                                </li>
+                            </f:then>
+                            <f:else>
+                                <li class="nav-item ">
+                                    <a href="{language.link}"
+                                       title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
+                                       class="nav-link py-0">
+                                        {language.navigationTitle}
+                                    </a>
+                                </li>
+                            </f:else>
+                        </f:if>
                     </f:if>
-                </f:if>
-            </f:for>
-        </ul>
+                </f:for>
+            </ul>
+            --></f:comment>
+        </li>
     </f:if>
-    --></f:comment>
 </f:section>
 
 </body>

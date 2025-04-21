@@ -9,14 +9,12 @@
 <f:section name="Default">
     <div id="top-navigation">
         <div class="container g-0">
-            <ul class="nav list-unstyled __topmenu" aria-label="{f:translate(key: 'serviceNavigation', extensionName: 'ot_sitekitbase')}">
-                <li class="d-flex align-items-center gap-2">
-                    [ToDo]
-                </li>
+            <ul class="navbar-nav flex-row flex-wrap ms-md-auto __topmenu"
+                aria-label="{f:translate(key: 'serviceNavigation', extensionName: 'ot_sitekitbase')}">
+                <f:render partial="Menus/Language/Default" section="Default" arguments="{_all}"/>
+                <f:render partial="Menus/TopBar/ColorMode" section="Default" arguments="{_all}"/>
             </ul>
 
-            <f:render partial="Menus/TopBar/ColorMode" section="Default" arguments="{_all}"/>
-            <f:render partial="Menus/Language/Default" section="Default" arguments="{_all}"/>
         </div>
     </div>
 </f:section>

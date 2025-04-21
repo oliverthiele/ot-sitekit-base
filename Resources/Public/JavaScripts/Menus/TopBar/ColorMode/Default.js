@@ -19,6 +19,7 @@
       const isActive = document.documentElement.getAttribute('data-bs-theme') === value
 
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false')
+      btn.classList.toggle('active', isActive)
 
       if (isActive) {
         btn.setAttribute('aria-describedby', 'activeTheme')

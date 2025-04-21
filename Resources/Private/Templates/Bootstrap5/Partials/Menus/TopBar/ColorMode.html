@@ -7,22 +7,42 @@
 </head>
 <body>
 <f:section name="Default">
-    <div class="__colorMode" role="group" aria-label="{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
-        <f:render section="Light" arguments="{_all}"/>
-        <f:render section="Dark" arguments="{_all}"/>
-        <span id="activeTheme"
-              class="visually-hidden"
-              data-text-light="{f:translate(key: 'colorMode_current_light', extensionName: 'ot_sitekitbase')}"
-              data-text-dark="{f:translate(key: 'colorMode_current_dark', extensionName: 'ot_sitekitbase')}">
+    <f:if condition="{settings.sitekit.menus.topMenu.colorMode.enabled}">
+        <li class="nav-item">
+            <div class="dropdown __colorMode" role="group"
+                 aria-label="{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
+                <button class="btn btn-link nav-link dropdown-toggle"
+                        type="button"
+                        id="colorModeDropdown"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="true">
+                    <i class="fa-regular fa-circle-half-stroke" aria-hidden="true"></i>
+                    <span class="d-none d-md-inline">Farbmodus</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="colorModeDropdown">
+                    <li>
+                        <f:render section="Light" arguments="{_all}"/>
+                    </li>
+                    <li>
+                        <f:render section="Dark" arguments="{_all}"/>
+                    </li>
+                </ul>
+                <span id="activeTheme"
+                      class="visually-hidden"
+                      data-text-light="{f:translate(key: 'colorMode_current_light', extensionName: 'ot_sitekitbase')}"
+                      data-text-dark="{f:translate(key: 'colorMode_current_dark', extensionName: 'ot_sitekitbase')}">
             {f:translate(key: 'colorMode_current_systemSettings', extensionName: 'ot_sitekitbase', default: 'Current color mode: system settings')}
         </span>
-    </div>
+            </div>
+        </li>
+    </f:if>
 </f:section>
 
 
 <f:section name="Light">
     <button type="button"
-            class="btn btn-link"
+            class="dropdown-item"
             data-bs-theme-value="light"
             aria-label="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
             title="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}"
@@ -35,7 +55,7 @@
 
 <f:section name="Dark">
     <button type="button"
-            class="btn btn-link"
+            class="dropdown-item"
             data-bs-theme-value="dark"
             aria-label="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
             title="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}"

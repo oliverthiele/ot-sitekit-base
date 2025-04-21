@@ -19,6 +19,12 @@ categories:
   Sitekit.menus.mainMenu:
     label: 'MainMenu'
     parent: Sitekit.menus
+  Sitekit.menus.topMenu:
+    label: 'TopMenu'
+    parent: Sitekit.menus
+  Sitekit.menus.topMenu.colorMode:
+    label: 'Color Mode'
+    parent: Sitekit.menus.topMenu
   Sitekit.search:
     label: 'Search'
     parent: Sitekit
@@ -121,6 +127,13 @@ settings:
     description: ''
     type: bool
     default: false
+
+  sitekit.menus.topMenu.colorMode.enabled:
+    label: 'Enabled'
+    category: Sitekit.menus.topMenu.colorMode
+    description: ''
+    type: bool
+    default: true
 
   sitekit.menus.mainMenu.logo.width:
     label: 'Logo Width'

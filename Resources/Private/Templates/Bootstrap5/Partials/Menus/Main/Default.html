@@ -73,7 +73,7 @@
        {f:if(condition: '{item.current}', then: ' aria-current="page"')}
        {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
        aria-label="{item.title}{targetBlankLabel}"
-       class="nav-link{f:if(condition: '{item.active}', then: ' active')}{f:if(condition: '{item.current}', then: ' current')}"
+       class="nav-link me-1{f:if(condition: '{item.active}', then: ' active')}{f:if(condition: '{item.current}', then: ' current')}"
        title="">{item.title}
     </a>
 </f:section>
@@ -107,7 +107,7 @@
 
 
 <f:section name="DropdownToggleButton">
-    <button class="dropdown-toggle-btn"
+    <button class="dropdown-toggle-btn h-100"
             type="button"
             id="dropdown-toggle-btn-u{item.data.uid}"
             aria-haspopup="true"

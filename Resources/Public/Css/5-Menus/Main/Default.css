@@ -1,4 +1,5 @@
 .__mainmenu .navbar-collapse .navbar-nav .nav-item .dropdown-toggle-btn {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   background: none;
   cursor: pointer;
   display: inline-flex;
@@ -9,6 +10,9 @@
 }
 .__mainmenu .navbar-collapse .navbar-nav .nav-item .nav-link {
   display: inline-flex;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
 }
 
 /*# sourceMappingURL=Default.css.map */

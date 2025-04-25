@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<f:if condition="{page}">
+    <f:if condition="{images -> f:count()} > 0">
+        <div class="alert alert-info">
+            <strong>Bilder auf dieser Seite:</strong><br>
+            <f:for each="{images}" as="image">
+                <f:if condition="{image.properties.hidden} == 0 && {image.properties.deleted} == 0">
+                    <f:media file="{image}" width="120" height="80" class="img-thumbnail disabled"/>
+                </f:if>
+            </f:for>
+        </div>
+    </f:if>
+    <f:if condition="{page.description} == '' && {page.doktype} == 1">
+        <div class="alert alert-warning">
+            <div class="d-flex align-items-center">
+                <strong class="me-2">Achtung:</strong> Die Seite hat keine Meta Description!
+                <a href="{editLink}" class="ms-4 btn btn-sm btn-link">
+                    <core:icon identifier="actions-open" /> Seite bearbeiten
+                </a>
+            </div>
+        </div>
+    </f:if>
+</f:if>
+</html>

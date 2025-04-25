@@ -2,6 +2,7 @@
 
 defined('TYPO3') or die();
 
+use OliverThiele\OtSitekitbase\Backend\Preview\GenericPreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
@@ -108,11 +109,11 @@ $tempColumns = [
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['onChange'] = 'reload';
 $GLOBALS['TCA']['tt_content']['columns']['header_position']['displayCond'] = 'FIELD:header_layout:!=:100';
 
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][1]['icon'] ='ot-icon-h1-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][2]['icon'] ='ot-icon-h2-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][3]['icon'] ='ot-icon-h3-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][4]['icon'] ='ot-icon-h4-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][5]['icon'] ='ot-icon-h5-regular';
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][1]['icon'] = 'ot-icon-h1-regular';
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][2]['icon'] = 'ot-icon-h2-regular';
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][3]['icon'] = 'ot-icon-h3-regular';
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][4]['icon'] = 'ot-icon-h4-regular';
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][5]['icon'] = 'ot-icon-h5-regular';
 
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][0]['label'] = $ll . 'header_layout.default';
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][1]['label'] = $ll . 'header_layout.h1';
@@ -137,3 +138,19 @@ ExtensionManagementUtility::addFieldsToPalette(
     'header_style',
     'after:header_layout'
 );
+
+
+// Eigener generischer Preview Renderer
+foreach (
+    [
+        'header',
+        'text',
+        'textmedia',
+        'html',
+        'div',
+        'ot_cefluidtemplates',
+        'ot_responsiveimages',
+    ] as $cType
+) {
+    $GLOBALS['TCA']['tt_content']['types'][$cType]['previewRenderer'] = GenericPreviewRenderer::class;
+}

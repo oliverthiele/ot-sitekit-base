@@ -1,0 +1,149 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:variable name="columns" value="{record.bootstrap_col_xs}{record.bootstrap_col_sm}{record.bootstrap_col_md}{record.bootstrap_col_lg}{record.bootstrap_col_xl}{record.bootstrap_col_xxl}"/>
+<f:variable name="contentCheck" value="{record.bootstrap_css_outer}{record.bootstrap_css_outer}{record.disable_div_wrapper}{columns}"/>
+
+<f:if condition="{contentCheck} != '000000'">
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-sm">
+        <thead >
+            <tr>
+                <th colspan="2" style="background-color: #5c5c5c; color: #fff;">[{record.uid}]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <f:if condition="{record.disable_div_wrapper} == 1">
+                    <f:then>
+                        <th style="width: 300px">Layout</th>
+                        <td>
+                            Dieses Element verwendet keinen umschließenden &lt;div&gt;-Container und ignoriert daher die
+                            Einstellungen für die Breakpoints und zusätzlichen CSS-Klassen.
+                        </td>
+                    </f:then>
+                    <f:else>
+                        <f:comment> <!-- <![CDATA[
+                            <f:if condition="{columns} != '00000'">
+                                <th style="width: 300px">Layout</th>
+                                <td>
+                                    <f:switch expression="{record.bootstrap_col_xs}">
+                                        <f:case value="100">
+                                            <f:variable name="colXsValue" value="Auto"/>
+                                            <f:variable name="colXsClass" value="primary"/>
+                                        </f:case>
+                                        <f:case value="0">
+                                            <f:variable name="colXsValue" value="12"/>
+                                            <f:variable name="colXsClass" value="light"/>
+                                        </f:case>
+                                        <f:defaultCase>
+                                            <f:variable name="colXsValue" value="{record.bootstrap_col_xs}"/>
+                                            <f:variable name="colXsClass" value="primary"/>
+                                        </f:defaultCase>
+                                    </f:switch>
+                                    <span class="badge text-bg-{colXsClass} me-2"><b>XS:</b> {colXsValue}</span>
+
+                                    <f:switch expression="{record.bootstrap_col_sm}">
+                                        <f:case value="100">
+                                            <f:variable name="colSmValue" value="Auto"/>
+                                            <f:variable name="colSmClass" value="primary"/>
+                                        </f:case>
+                                        <f:case value="0">
+                                            <f:variable name="colSmValue" value="{colXsValue}"/>
+                                            <f:variable name="colSmClass" value="light"/>
+                                        </f:case>
+                                        <f:defaultCase>
+                                            <f:variable name="colSmValue" value="{record.bootstrap_col_sm}"/>
+                                            <f:variable name="colSmClass" value="primary"/>
+                                        </f:defaultCase>
+                                    </f:switch>
+                                    <span class="badge text-bg-{colSmClass} me-2"><b>SM:</b> {colSmValue}</span>
+
+                                    <f:switch expression="{record.bootstrap_col_md}">
+                                        <f:case value="100">
+                                            <f:variable name="colMdValue" value="Auto"/>
+                                            <f:variable name="colMdClass" value="primary"/>
+                                        </f:case>
+                                        <f:case value="0">
+                                            <f:variable name="colMdValue" value="{colSmValue}"/>
+                                            <f:variable name="colMdClass" value="light"/>
+                                        </f:case>
+                                        <f:defaultCase>
+                                            <f:variable name="colMdValue" value="{record.bootstrap_col_md}"/>
+                                            <f:variable name="colMdClass" value="primary"/>
+                                        </f:defaultCase>
+                                    </f:switch>
+                                    <span class="badge text-bg-{colMdClass} me-2"><b>MD:</b> {colMdValue}</span>
+
+                                    <f:switch expression="{record.bootstrap_col_lg}">
+                                        <f:case value="100">
+                                            <f:variable name="colLgValue" value="Auto"/>
+                                            <f:variable name="colLgClass" value="primary"/>
+                                        </f:case>
+                                        <f:case value="0">
+                                            <f:variable name="colLgValue" value="{colMdValue}"/>
+                                            <f:variable name="colLgClass" value="light"/>
+                                        </f:case>
+                                        <f:defaultCase>
+                                            <f:variable name="colLgValue" value="{record.bootstrap_col_lg}"/>
+                                            <f:variable name="colLgClass" value="primary"/>
+                                        </f:defaultCase>
+                                    </f:switch>
+                                    <span class="badge text-bg-{colLgClass} me-2"><b>LG:</b> {colLgValue}</span>
+
+                                    <f:switch expression="{record.bootstrap_col_xl}">
+                                        <f:case value="100">
+                                            <f:variable name="colXlValue" value="Auto"/>
+                                            <f:variable name="colXlClass" value="primary"/>
+                                        </f:case>
+                                        <f:case value="0">
+                                            <f:variable name="colXlValue" value="{colLgValue}"/>
+                                            <f:variable name="colXlClass" value="light"/>
+                                        </f:case>
+                                        <f:defaultCase>
+                                            <f:variable name="colXlValue" value="{record.bootstrap_col_xl}"/>
+                                            <f:variable name="colXlClass" value="primary"/>
+                                        </f:defaultCase>
+                                    </f:switch>
+                                    <span class="badge text-bg-{colXlClass} me-2"><b>XL:</b> {colXlValue}</span>
+
+                                    <f:switch expression="{record.bootstrap_col_xxl}">
+                                        <f:case value="100">
+                                            <f:variable name="colXxlValue" value="Auto"/>
+                                            <f:variable name="colXxlClass" value="primary"/>
+                                        </f:case>
+                                        <f:case value="0">
+                                            <f:variable name="colXxlValue" value="{colXlValue}"/>
+                                            <f:variable name="colXxlClass" value="light"/>
+                                        </f:case>
+                                        <f:defaultCase>
+                                            <f:variable name="colXxlValue" value="{record.bootstrap_col_xxl}"/>
+                                            <f:variable name="colXxlClass" value="primary"/>
+                                        </f:defaultCase>
+                                    </f:switch>
+                                    <span class="badge text-bg-{colXxlClass} me-2"><b>XXL:</b> {colXxlValue}</span>
+                                </td>
+                            </f:if>
+                        ]]>	--> </f:comment>
+
+                    </f:else>
+                </f:if>
+            </tr>
+            <f:if condition="{record.bootstrap_css_outer} && {record.disable_div_wrapper} == 0">
+                <tr>
+                    <th>CSS (äußerer &lt;div&gt;-Container)</th>
+                    <td>{record.bootstrap_css_outer}</td>
+                </tr>
+            </f:if>
+            <f:if condition="{record.bootstrap_css_inner} && {record.disable_div_wrapper} == 0">
+            <tr>
+                <th>CSS (innerer &lt;div&gt;-Container)</th>
+                <td>{record.bootstrap_css_inner}</td>
+            </tr>
+            </f:if>
+        </tbody>
+    </table>
+</div>
+</f:if>
+</html>

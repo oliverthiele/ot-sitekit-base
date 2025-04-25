@@ -11,6 +11,11 @@
 			"role": "Developer"
 		}
 	],
+	"autoload": {
+		"psr-4": {
+			"OliverThiele\\OtSitekitbase\\": "Classes/"
+		}
+	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "ot_sitekitbase"

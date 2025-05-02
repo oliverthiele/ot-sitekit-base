@@ -21,10 +21,20 @@
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false')
       btn.classList.toggle('active', isActive)
 
+      // Neu: Button (de)aktivieren
+      btn.disabled = isActive
+
+      // Neu: aria-describedby setzen/entfernen
       if (isActive) {
         btn.setAttribute('aria-describedby', 'activeTheme')
       } else {
         btn.removeAttribute('aria-describedby')
+      }
+
+      // Neu: Sichtbarkeit des .dropdown-item-label-is-active anpassen
+      const checkIcon = btn.querySelector('.dropdown-item-label-is-active')
+      if (checkIcon) {
+        checkIcon.classList.toggle('d-none', !isActive)
       }
     })
 
@@ -62,7 +72,7 @@
   }
 
   const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#bd-theme')
+    const themeSwitcher = document.querySelector('#colorModeDropdown')
     if (!themeSwitcher) {
       return
     }

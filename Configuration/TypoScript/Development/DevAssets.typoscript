@@ -1,0 +1,26 @@
+# DevAssets.typoscript
+# Automatically integrates LiveAssets from the Webpack Dev Server (port 3334) in DDEV
+#
+# Add this to your sitepackage, if you use HMR (Hot Module Replacement)
+# [applicationContext == "Development/Local"]
+#   @import "EXT:ot_sitekitbase/Configuration/TypoScript/Development/DevAssets.typoscript"
+# [END]
+
+
+page {
+  includeCSSLibs.main >
+  includeJSLibs.main >
+
+  headerData {
+    1745923441 = COA
+    1745923441 {
+      10 = TEXT
+      10.value = <link rel="stylesheet" href="{getIndpEnv:TYPO3_REQUEST_HOST}:3334/Styles/Example.css" />
+      10.stdWrap.insertData = 1
+
+      20 = TEXT
+      20.value = <script src="{getIndpEnv:TYPO3_REQUEST_HOST}:3334/JavaScript/Example.js"></script>
+      20.stdWrap.insertData = 1
+    }
+  }
+}

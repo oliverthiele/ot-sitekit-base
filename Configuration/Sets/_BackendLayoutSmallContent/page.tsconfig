@@ -32,7 +32,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = header,text,div
+                      CType = div,felogin_login,form_formframework,header,list,otfaq_list,text
                     }
                   }
                 }

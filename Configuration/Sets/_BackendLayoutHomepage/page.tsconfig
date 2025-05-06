@@ -16,7 +16,7 @@ mod {
                     colPos = 3
                     colspan = 1
                     allowed {
-                      CType =  header,ot_heroimage
+                      CType = header,ot_heroimage
                     }
                   }
                 }
@@ -31,7 +31,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = header,text,div
+                      CType = div,felogin_login,form_formframework,header,list,otfaq_list,text
                     }
                   }
                 }

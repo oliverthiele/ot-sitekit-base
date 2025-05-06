@@ -1,0 +1,80 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:flashMessages/>
+
+<f:if condition="{messageKey}">
+    <h3>
+        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_header'}"/>
+    </h3>
+    <p>
+        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_message'}"/>
+    </p>
+</f:if>
+
+<f:form target="_top" fieldNamePrefix="" action="login" requestToken="{requestToken}" spellcheck="false">
+    <f:render section="content" arguments="{_all}"/>
+</f:form>
+
+<f:if condition="{settings.showForgotPassword}">
+    <f:link.action action="recovery" controller="PasswordRecovery" class="btn btn-link mb-3">
+        <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
+    </f:link.action>
+</f:if>
+
+<f:section name="content">
+    <fieldset class="mb-3">
+        <legend>
+            <f:translate key="login"/>
+        </legend>
+        <div class="row mb-3">
+            <label for="tx-felogin-input-username" class="col-sm-2 col-form-label"><f:translate key="username"/></label>
+            <div class="col-sm-10">
+                <f:form.textfield class="form-control" name="user" required="true" autocomplete="username" id="tx-felogin-input-username"/>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="tx-felogin-input-password" class="col-sm-2 col-form-label"><f:translate key="password"/></label>
+            <div class="col-sm-10">
+                <f:form.password class="form-control" name="pass" required="required"
+                                 autocomplete="current-password" id="tx-felogin-input-password"/>
+            </div>
+        </div>
+
+        <f:if condition="{permaloginStatus} > -1">  </f:if>
+            <div class="form-check mb-3">
+                <f:if condition="{permaloginStatus} == 1">
+                    <f:then>
+                        <f:form.hidden name="permalogin" value="0" disabled="disabled"/>
+                        <f:form.checkbox name="permalogin" id="permalogin" value="1" checked="checked" class="form-check-input"/>
+                    </f:then>
+                    <f:else>
+                        <f:form.hidden name="permalogin" value="0"/>
+                        <f:form.checkbox name="permalogin" id="permalogin" value="1" class="form-check-input"/>
+                    </f:else>
+                </f:if>
+                <label class="form-check-label"  for="permalogin"><f:translate id="permalogin"/></label>
+            </div>
+
+
+        <div>
+            <f:form.submit value="{f:translate(key: 'login')}" name="submit" class="btn btn-primary"/>
+        </div>
+
+        <div class="felogin-hidden">
+            <f:form.hidden name="logintype" value="login"/>
+            <f:if condition="{redirectURL}!=''">
+                <f:form.hidden name="redirect_url" value="{redirectURL}" />
+            </f:if>
+            <f:if condition="{referer}!=''">
+                <f:form.hidden name="referer" value="{referer}" />
+            </f:if>
+            <f:if condition="{redirectReferrer}!=''">
+                <f:form.hidden name="redirectReferrer" value="off" />
+            </f:if>
+            <f:if condition="{noRedirect}!=''">
+                <f:form.hidden name="noredirect" value="1" />
+            </f:if>
+        </div>
+    </fieldset>
+</f:section>
+</html>

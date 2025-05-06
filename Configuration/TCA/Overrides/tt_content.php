@@ -140,16 +140,17 @@ ExtensionManagementUtility::addFieldsToPalette(
 );
 
 
-// Eigener generischer Preview Renderer
+// Own generic preview renderer
 foreach (
     [
-        'header',
-        'text',
-        'textmedia',
-        'html',
         'div',
+        'header',
+        'html',
+        'list',
         'ot_cefluidtemplates',
         'ot_responsiveimages',
+        'text',
+        'textmedia',
     ] as $cType
 ) {
     $GLOBALS['TCA']['tt_content']['types'][$cType]['previewRenderer'] = GenericPreviewRenderer::class;

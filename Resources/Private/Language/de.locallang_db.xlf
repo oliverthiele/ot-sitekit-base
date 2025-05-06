@@ -5,6 +5,11 @@
 		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf" product-name="ot-sitekit-base">
 		<header/>
 		<body>
+			<!-- Backend -->
+			<trans-unit id="backend.preview.listType" resname="backend.preview.listType" approved="yes">
+				<source>List Type:</source>
+				<target>List Type:</target>
+			</trans-unit>
 			<!-- Set -->
 			<trans-unit id="set.label.basicConfiguration" resname="set.label.basicConfiguration">
 				<source>Basic Configuration</source>
@@ -73,7 +78,7 @@
 			</trans-unit>
 			<trans-unit id="header_style.description" resname="header_style.description" approved="yes">
 				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
-				<target>Die Klasse visually-hidden kann verwendet werden, wenn z.B. die Hierarchie in untergeordneten Akkordeons korrekt ausgegeben werden soll.</target>
+				<target>Die Klasse visually-hidden kann verwendet werden, wenn z. B. die Hierarchie in untergeordneten Akkordeons korrekt ausgegeben werden soll.</target>
 			</trans-unit>
 			<trans-unit id="header_style.h1" resname="header_style.h1" approved="yes">
 				<source>h1</source>

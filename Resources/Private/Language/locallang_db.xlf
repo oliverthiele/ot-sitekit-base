@@ -5,6 +5,10 @@
 		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf" product-name="ot-sitekit-base">
 		<header/>
 		<body>
+			<!-- Backend -->
+			<trans-unit id="backend.preview.listType" resname="backend.preview.listType">
+				<source>List Type:</source>
+			</trans-unit>
 			<!-- Set -->
 			<trans-unit id="set.label.basicConfiguration" resname="set.label.basicConfiguration">
 				<source>Basic Configuration</source>

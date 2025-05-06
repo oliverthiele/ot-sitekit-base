@@ -106,21 +106,22 @@ $tempColumns = [
     ],
 ];
 
+$headerItems = [
+    1 => ['label' => $ll . 'header_layout.h1', 'value' => '1', 'icon' => 'ot-icon-h1-regular'],
+    2 => ['label' => $ll . 'header_layout.h2', 'value' => '2', 'icon' => 'ot-icon-h2-regular'],
+    3 => ['label' => $ll . 'header_layout.h3', 'value' => '3', 'icon' => 'ot-icon-h3-regular'],
+    4 => ['label' => $ll . 'header_layout.h4', 'value' => '4', 'icon' => 'ot-icon-h4-regular'],
+    5 => ['label' => $ll . 'header_layout.h5', 'value' => '5', 'icon' => 'ot-icon-h5-regular']
+];
+
+foreach ($headerItems as $key => $item) {
+    $GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][$key] = $item;
+}
+
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['onChange'] = 'reload';
+
+
 $GLOBALS['TCA']['tt_content']['columns']['header_position']['displayCond'] = 'FIELD:header_layout:!=:100';
-
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][1]['icon'] = 'ot-icon-h1-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][2]['icon'] = 'ot-icon-h2-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][3]['icon'] = 'ot-icon-h3-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][4]['icon'] = 'ot-icon-h4-regular';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][5]['icon'] = 'ot-icon-h5-regular';
-
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][0]['label'] = $ll . 'header_layout.default';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][1]['label'] = $ll . 'header_layout.h1';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][2]['label'] = $ll . 'header_layout.h2';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][3]['label'] = $ll . 'header_layout.h3';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][4]['label'] = $ll . 'header_layout.h4';
-$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][5]['label'] = $ll . 'header_layout.h5';
 
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);

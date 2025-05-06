@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en"
+		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf" date="2025-04-07T13:01:00Z"
+		  datatype="plaintext" product-name="ot-sitekit-base">
+		<header/>
+		<body>
+
+			<trans-unit id="backendLayout.advanced.title" resname="backendLayout.advanced.title">
+				<source>Advanced</source>
+			</trans-unit>
+			<trans-unit id="backendLayout.default.title" resname="backendLayout.default.title">
+				<source>Standard</source>
+			</trans-unit>
+			<trans-unit id="backendLayout.homepage.title" resname="backendLayout.homepage.title">
+				<source>Homepage</source>
+			</trans-unit>
+			<trans-unit id="backendLayout.smallContent.title" resname="backendLayout.smallContent.title">
+				<source>Small Content Column</source>
+			</trans-unit>
+
+			<trans-unit id="column.heroContent" resname="column.heroContent">
+				<source>Hero Image</source>
+			</trans-unit>
+			<trans-unit id="column.main" resname="column.main">
+				<source>Main Content</source>
+			</trans-unit>
+			<trans-unit id="column.aside" resname="column.aside">
+				<source>Aside Content</source>
+			</trans-unit>
+
+			<trans-unit id="tca.group.extras" resname="tca.group.extras">
+				<source>Extras</source>
+			</trans-unit>
+			<trans-unit id="container.pageContainer" resname="container.pageContainer">
+				<source>Container [Page]</source>
+			</trans-unit>
+			<trans-unit id="container.page.container" resname="container.page.container">
+				<source>Page Container: div.container</source>
+			</trans-unit>
+			<trans-unit id="container.page.containerFluid" resname="container.page.containerFluid">
+				<source>Page Container: div.container-fluid</source>
+			</trans-unit>
+			<trans-unit id="container.1col" resname="container.1col">
+				<source>Container [1 column]</source>
+			</trans-unit>
+			<trans-unit id="container.2cols" resname="container.2cols">
+				<source>Container [2 columns]</source>
+			</trans-unit>
+			<trans-unit id="container.special" resname="container.special">
+				<source>Container [Special]</source>
+			</trans-unit>
+
+			<trans-unit id="container.cols.1.article" resname="container.cols.1.article">
+				<source>Article-Container</source>
+			</trans-unit>
+			<trans-unit id="container.cols.1.section" resname="container.cols.1.section">
+				<source>Section-Container</source>
+			</trans-unit>
+
+
+			<trans-unit id="container.cols.2.6-6" resname="container.cols.2.6-6">
+				<source>Content Container: 2 cols 6-6</source>
+			</trans-unit>
+			<trans-unit id="container.cols.2.4-8" resname="container.cols.2.4-8">
+				<source>Content Container: 2 cols 4-8</source>
+			</trans-unit>
+			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4">
+				<source>Content Container: 2 cols 8-4</source>
+			</trans-unit>
+			<trans-unit id="container.cols.fixed-background" resname="container.cols.fixed-background">
+				<source>Content Container: Fixed Background</source>
+			</trans-unit>
+			<trans-unit id="container.labels.fixedBackgroundColumn" resname="container.labels.fixedBackgroundColumn">
+				<source>Container with fixed background</source>
+			</trans-unit>
+			<trans-unit id="container.labels.twoColumns" resname="container.labels.twoColumns">
+				<source>Two columns</source>
+			</trans-unit>
+			<trans-unit id="container.labels.leftColumn" resname="container.labels.leftColumn">
+				<source>Left column</source>
+			</trans-unit>
+			<trans-unit id="container.labels.rightColumn" resname="container.labels.rightColumn">
+				<source>Right column</source>
+			</trans-unit>
+
+			<trans-unit id="header_style" resname="header_style">
+				<source>Style</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay">
+				<source>Display Classes</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupAccessibility" resname="header_style.groupAccessibility">
+				<source>Accessibility</source>
+			</trans-unit>
+			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden">
+				<source>Visually Hidden</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeaderColor" resname="header_style.groupHeaderColor">
+				<source>Header Color</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeaderSizePrimaryColor" resname="header_style.groupHeaderSizePrimaryColor">
+				<source>Header size and primary color</source>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="header_style.default" resname="header_style.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="header_style.description" resname="header_style.description">
+				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
+			</trans-unit>
+			<trans-unit id="header.default" resname="header.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="h1" resname="h1">
+				<source>h1</source>
+			</trans-unit>
+			<trans-unit id="h2" resname="h2">
+				<source>h2</source>
+			</trans-unit>
+			<trans-unit id="h3" resname="h3">
+				<source>h3</source>
+			</trans-unit>
+			<trans-unit id="h4" resname="h4">
+				<source>h4</source>
+			</trans-unit>
+			<trans-unit id="h5" resname="h5">
+				<source>h5</source>
+			</trans-unit>
+			<trans-unit id="h6" resname="h6">
+				<source>h6</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

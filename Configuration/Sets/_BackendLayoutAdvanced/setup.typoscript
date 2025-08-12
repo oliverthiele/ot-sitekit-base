@@ -1,0 +1,28 @@
+# 1 column container / container-fluid
+
+tt_content.ot-sitekit-base-container-1-col-container =< lib.contentElement
+tt_content.ot-sitekit-base-container-1-col-container {
+  templateName = 1ColContainer
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+}
+
+tt_content.ot-sitekit-base-container-1-col-container-fluid =< tt_content.ot-sitekit-base-container-1-col-container
+tt_content.ot-sitekit-base-container-1-col-container-fluid {
+  templateName = 1ColContainerFluid
+}
+
+tt_content.ot-sitekit-base-container-1-col-article =< tt_content.ot-sitekit-base-container-1-col-container
+tt_content.ot-sitekit-base-container-1-col-article {
+  templateName = 1ColArticle
+}
+
+tt_content.ot-sitekit-base-container-1-col-section =< tt_content.ot-sitekit-base-container-1-col-container
+tt_content.ot-sitekit-base-container-1-col-section {
+  templateName = 1ColSection
+}

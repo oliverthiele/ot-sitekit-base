@@ -25,6 +25,12 @@
 			<trans-unit id="column.main" resname="column.main">
 				<source>Main Content</source>
 			</trans-unit>
+			<trans-unit id="column.left" resname="column.left">
+				<source>Left Column</source>
+			</trans-unit>
+			<trans-unit id="column.right" resname="column.right">
+				<source>Right Column</source>
+			</trans-unit>
 			<trans-unit id="column.aside" resname="column.aside">
 				<source>Aside Content</source>
 			</trans-unit>
@@ -82,6 +88,28 @@
 			</trans-unit>
 			<trans-unit id="container.labels.rightColumn" resname="container.labels.rightColumn">
 				<source>Right column</source>
+			</trans-unit>
+
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.CType.label" resname="container.ot-sitekit-base-container-grid-cards.CType.label">
+				<source>Container: Grid</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.CType.description" resname="container.ot-sitekit-base-container-grid-cards.CType.description">
+				<source><![CDATA[Container for "Card" and "Text & Icon" Elements]]></source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.colPos.300" resname="container.ot-sitekit-base-container-grid-cards.colPos.300">
+				<source><![CDATA[Allowed: "Card" and "Text & Icon"]]></source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.0" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.0">
+				<source>Standard (maximum four columns)</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.1" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.1">
+				<source>Maximum two columns</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.2" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.2">
+				<source>Maximum three columns</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.3" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.3">
+				<source>Maximum four columns</source>
 			</trans-unit>
 
 			<trans-unit id="header_style" resname="header_style">

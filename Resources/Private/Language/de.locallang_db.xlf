@@ -10,24 +10,19 @@
 				<source>List Type:</source>
 				<target>List Type:</target>
 			</trans-unit>
-			<!-- Set -->
-			<trans-unit id="set.label.basicConfiguration" resname="set.label.basicConfiguration">
-				<source>Basic Configuration</source>
-				<target>Grundkonfiguration</target>
-			</trans-unit>
 			<!-- pages -->
-			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label">
+			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label" approved="yes">
 				<source>Icon Identifier</source>
 				<target>Icon Identifier</target>
 			</trans-unit>
-			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description">
+			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description" approved="yes">
 				<source> </source>
 				<target> </target>
 			</trans-unit>
-			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label">
+			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label" approved="yes">
 				<source>Menu Image</source>
 			</trans-unit>
-			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description">
+			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description" approved="yes">
 				<source> </source>
 				<target> </target>
 			</trans-unit>
@@ -107,6 +102,14 @@
 			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden" approved="yes">
 				<source>Visually Hidden</source>
 				<target>Visuell verborgen</target>
+			</trans-unit>
+			<trans-unit id="ot_layout" resname="ot_layout" approved="yes">
+				<source>Layout</source>
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="ot_layout.default" resname="ot_layout.default" approved="yes">
+				<source>Default</source>
+				<target>Standard</target>
 			</trans-unit>
 		</body>
 	</file>

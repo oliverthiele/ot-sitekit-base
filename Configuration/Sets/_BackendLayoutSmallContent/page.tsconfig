@@ -17,7 +17,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType =  header,ot_heroimage
+                      CType = {$sitekit.content.contentElementsHero}
                     }
                   }
                 }
@@ -32,7 +32,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = div,felogin_login,form_formframework,header,list,otfaq_list,text
+                      CType = {$sitekit.content.contentElementsFullWidthContainer}
                     }
                   }
                 }

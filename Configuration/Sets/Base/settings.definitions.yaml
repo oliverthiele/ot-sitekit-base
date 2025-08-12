@@ -81,6 +81,24 @@ settings:
     type: int
     default: 0
 
+  sitekit.content.contentElementsPageAdvanced:
+    label: 'Content Elements for Backend Layout "Advanced"'
+    category: Sitekit.templates
+    type: string
+    default: 'ot-sitekit-base-container-1-col-container,ot-sitekit-base-container-1-col-container-fluid,ot-sitekit-base-container-1-col-article,ot-sitekit-base-container-1-col-section,html'
+
+  sitekit.content.contentElementsHero:
+    label: 'Content Elements in hero section'
+    category: Sitekit.templates
+    type: string
+    default: ' header,ot_heroimage'
+
+  sitekit.content.contentElementsFullWidthContainer:
+    label: 'Content Elements in full width container'
+    category: Sitekit.templates
+    type: string
+    default: 'header,text,div,felogin_login,form_formframework,list,container,ot_jobs,otfaq_list,ot_cefluidtemplates,ot_sitekitceimgtextoverlay,ot_sitekitcetexticon,ot-sitekit-base-container-grid-cards,ot-sitekit-base-container-2-cols-50-50,ot-sitekit-base-container-2-cols-33-66,ot-sitekit-base-container-2-cols-66-33,ot-sitekit-base-container-3-cols-33-33-33'
+
   sitekit.frameworks.frontend.directory:
     category: Sitekit.templates
     description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.frameworks.frontend.directory.description'

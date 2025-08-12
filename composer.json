@@ -8,7 +8,8 @@
 		{
 			"name": "Oliver Thiele",
 			"email": "mail@oliver-thiele.de",
-			"role": "Developer"
+			"role": "Developer",
+			"homepage": "https://www.oliver-thiele.de/"
 		}
 	],
 	"autoload": {

@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<f:for each="{files}" as="file">
+    <f:comment> <!-- <![CDATA[
+        Types:
+        2 = Image
+    ]]>	--> </f:comment>
+    <f:link.typolink parameter="{file.link}">
+        <f:switch expression="{file.type}">
+            <f:case value="2">
+                <f:render partial="Media/Type/Image" arguments="{file: file}"/>
+            </f:case>
+            <f:case value="video">
+                <f:render partial="Media/Type/Video" arguments="{file: file}"/>
+            </f:case>
+            <f:case value="audio">
+                <f:render partial="Media/Type/Audio" arguments="{file: file}"/>
+            </f:case>
+        </f:switch>
+    </f:link.typolink>
+</f:for>
+</html>
+

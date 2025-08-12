@@ -9,17 +9,15 @@ use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Core\View\ViewFactoryData;
+use TYPO3\CMS\Core\View\ViewFactoryInterface;
 
-
-final class PagePropertiesAboveContentListener
+final readonly class PagePropertiesAboveContentListener
 {
     public function __construct(
-        private readonly FileRepository $fileRepository,
-        private readonly ViewFactoryInterface $viewFactory
-    ) {
-    }
+        private FileRepository $fileRepository,
+        private ViewFactoryInterface $viewFactory
+    ) {}
 
     public function __invoke(ModifyPageLayoutContentEvent $event): void
     {

@@ -5,17 +5,25 @@
 		  product-name="ot-sitekit-base">
 		<header/>
 		<body>
-			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation">
+			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation" approved="yes">
 				<source>Skip to main navigation</source>
 				<target>Zum Hauptmenü springen</target>
 			</trans-unit>
-			<trans-unit id="skipToMainContent" resname="skipToMainContent">
+			<trans-unit id="skipToMainContent" resname="skipToMainContent" approved="yes">
 				<source>Skip to main content</source>
 				<target>Zum Hauptinhalt springen</target>
 			</trans-unit>
-			<trans-unit id="skipToPageFooter" resname="skipToPageFooter">
+			<trans-unit id="skipToPageFooter" resname="skipToPageFooter" approved="yes">
 				<source>Skip to page footer</source>
 				<target>Zum Seitenende springen</target>
+			</trans-unit>
+			<trans-unit id="telephone" resname="telephone" approved="yes">
+				<source>Telephone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="email" resname="email" approved="yes">
+				<source>Email</source>
+				<target>E-Mail</target>
 			</trans-unit>
 		</body>
 	</file>

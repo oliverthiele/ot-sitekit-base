@@ -8,8 +8,9 @@ page {
   10 = PAGEVIEW
   10 {
     paths {
-      100 = EXT:ot_sitekitbase/Resources/Private/Templates/{$sitekit.frameworks.frontend.directory}/
-      # 400 = EXT:my_sitepackage/Resources/Private/Templates/…
+      60 = EXT:ot_sitekitbase/Resources/Private/Templates/{$sitekit.frameworks.frontend.directory}/
+      # 70 = EXT:ot_sitekitbasetheme123/Resources/Private/Templates/…
+      # 80 = EXT:my_sitepackage/Resources/Private/Templates/…
     }
 
     dataProcessing {
@@ -22,7 +23,8 @@ page {
       200 = menu
       200 {
         special = directory
-        special.value = {$sitekit.project.root}
+        special.value = {$sitekit.pages.root}
+        levels = 2
         as = mainMenu
       }
 
@@ -40,3 +42,16 @@ page {
     }
   }
 }
+
+# If the root page for the footer navigation is set, the data processor is activated
+[traverse(site('configuration'), 'settings/sitekit/pages/footerNavigationRootPage') > 0]
+  page.10.dataProcessing {
+    1749220162 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1749220162 {
+      special = directory
+      special.value = {$sitekit.pages.footerNavigationRootPage}
+      levels = 1
+      as = footerNavigation
+    }
+  }
+[GLOBAL]

@@ -5,7 +5,7 @@
 <f:variable name="columns" value="{record.bootstrap_col_xs}{record.bootstrap_col_sm}{record.bootstrap_col_md}{record.bootstrap_col_lg}{record.bootstrap_col_xl}{record.bootstrap_col_xxl}"/>
 <f:variable name="contentCheck" value="{record.bootstrap_css_outer}{record.bootstrap_css_outer}{record.disable_div_wrapper}{columns}"/>
 
-<f:if condition="{contentCheck} != '000000'">
+<f:if condition="{contentCheck} != '000000' &&  {contentCheck} != ''">
 <div class="table-responsive">
     <table class="table table-bordered table-condensed table-striped table-sm">
         <thead >

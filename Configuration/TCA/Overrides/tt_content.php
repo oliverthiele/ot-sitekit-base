@@ -4,10 +4,38 @@ defined('TYPO3') or die();
 
 use OliverThiele\OtSitekitbase\Backend\Preview\GenericPreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 
+/**
+ * # Load Container Extension Configuration
+ */
+require_once GeneralUtility::getFileAbsFileName(
+    'EXT:ot_sitekitbase/Configuration/TCA/Container/CardGroup.php'
+);
+require_once GeneralUtility::getFileAbsFileName(
+    'EXT:ot_sitekitbase/Configuration/TCA/Container/GridCards.php'
+);
+require_once GeneralUtility::getFileAbsFileName(
+    'EXT:ot_sitekitbase/Configuration/TCA/Container/Columns.php'
+);
+
 $tempColumns = [
+    'ot_layout' => [
+        'exclude' => true,
+        'label' => $ll . 'ot_layout',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                [
+                    'label' => $ll . 'ot_layout.default',
+                    'value' => '',
+                ],
+            ],
+        ],
+    ],
     'header_style' => [
         'exclude' => true,
         'label' => $ll . 'header_style',

@@ -30,5 +30,5 @@ return [
     'ot-icon-h6-regular' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:ot_sitekitbase/Resources/Public/Icons/H6.svg',
-    ]
+    ],
 ];

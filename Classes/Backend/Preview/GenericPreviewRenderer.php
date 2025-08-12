@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace OliverThiele\OtSitekitbase\Backend\Preview;
 
+use OliverThiele\OtSitekitbase\Backend\Traits\ShowitemFieldDetectionTrait;
 use TYPO3\CMS\Backend\Preview\PreviewRendererInterface;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\View\ViewFactoryData;
-use OliverThiele\OtSitekitbase\Backend\Traits\ShowitemFieldDetectionTrait;
 use TYPO3\CMS\Core\View\ViewFactoryInterface;
 
 final class GenericPreviewRenderer implements PreviewRendererInterface
 {
-
     use ShowitemFieldDetectionTrait;
 
     public function renderPageModulePreviewHeader(GridColumnItem $item): string
@@ -34,7 +33,6 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
             throw new \RuntimeException('FileRepository not properly injected');
         }
     }
-
 
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {

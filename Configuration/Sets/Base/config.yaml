@@ -1,2 +1,3 @@
 name: oliverthiele/ot-sitekit-base
-label: 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:set.label.basicConfiguration'
+dependencies:
+  - typo3/fluid-styled-content

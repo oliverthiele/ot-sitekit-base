@@ -17,6 +17,10 @@
 				<source>Skip to page footer</source>
 				<target>Zum Seitenende springen</target>
 			</trans-unit>
+			<trans-unit id="legal" resname="legal" approved="yes">
+				<source>Legal</source>
+				<target>Rechtliches</target>
+			</trans-unit>
 			<trans-unit id="telephone" resname="telephone" approved="yes">
 				<source>Telephone</source>
 				<target>Telefon</target>

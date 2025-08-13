@@ -1,0 +1,15 @@
+plugin.tx_felogin_login {
+  view {
+    templateRootPaths.100 = EXT:ot_sitekitbase/Resources/Private/Extensions/FeLogin/Bootstrap5/Templates/
+    partialRootPaths.100 = EXT:ot_sitekitbase/Resources/Private/Extensions/FeLogin/Bootstrap5/Partials/
+    # layoutRootPaths.100 =  EXT:ot_sitekitbase/Resources/Private/Extensions/FeLogin/Bootstrap5/Layouts/
+  }
+  _LOCAL_LANG {
+    default {
+      permalogin = Stay logged in?
+    }
+    de {
+      permalogin = Angemeldet bleiben?
+    }
+  }
+}

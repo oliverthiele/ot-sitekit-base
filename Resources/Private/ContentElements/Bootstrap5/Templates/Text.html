@@ -11,6 +11,9 @@
 
 <f:section name="Main">
     {data.bodytext -> f:format.html()}
+    <f:if condition="{irreButtons}">
+        <f:render partial="IrreButtons" section="Main" arguments="{data : data, irreButtons : irreButtons}"/>
+    </f:if>
 </f:section>
 
 </body>

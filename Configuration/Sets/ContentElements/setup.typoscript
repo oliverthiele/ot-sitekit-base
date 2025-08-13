@@ -1,23 +1,64 @@
 # Default configuration for content elements which are using FLUIDTEMPLATE directly
-lib.contentElement >
 lib.contentElement = FLUIDTEMPLATE
 lib.contentElement {
   templateName = Default
   templateRootPaths {
-    100 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Templates/
+    60 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Templates/
   }
 
   partialRootPaths {
-    100 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Partials/
+    60 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Partials/
   }
 
   layoutRootPaths {
-    100 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Layouts/
+    60 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Layouts/
   }
 
   settings {
     defaultHeaderType = 2
-    defaultGutterSize = {$sitekit.defaultGutterSize}
+    sitekit {
+      gutterSize = {$sitekit.gutterSize}
+    }
+  }
+}
+
+# Render definition for SiteKit content elements
+lib.sitekitContentElement < lib.contentElement
+lib.sitekitContentElement {
+  templateRootPaths {
+    15 = EXT:ot_irrebuttons/Resources/Private/{$sitekit.frameworks.frontend.directory}/Templates/
+    60 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Templates/
+  }
+
+  partialRootPaths {
+    15 = EXT:ot_irrebuttons/Resources/Private/{$sitekit.frameworks.frontend.directory}/Partials/
+    60 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Partials/
+  }
+
+  layoutRootPaths {
+    15 = EXT:ot_irrebuttons/Resources/Private/{$sitekit.frameworks.frontend.directory}/Layouts/
+    60 = EXT:ot_sitekitbase/Resources/Private/ContentElements/{$sitekit.frameworks.frontend.directory}/Layouts/
+  }
+
+  settings {
+    defaultHeaderType = 2
+    sitekit {
+      gutterSize = {$sitekit.gutterSize}
+    }
+  }
+
+  dataProcessing {
+    1701706720 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    1701706720 {
+      if.isTrue.field = tx_otirrebuttons_domain_model_buttons
+      table = tx_otirrebuttons_domain_model_button
+      where.data = field:_ORIG_uid // field:uid
+      where.intval = 1
+      where.wrap = tx_otirrebuttons_domain_model_button.parent_id=|
+
+      orderBy = sorting
+      as = irreButtons
+    }
   }
 }
 

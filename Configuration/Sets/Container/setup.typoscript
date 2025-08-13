@@ -1,0 +1,29 @@
+# Cards
+
+## Card Groups
+tt_content.ot-sitekit-base-container-card-group =< lib.contentElement
+tt_content.ot-sitekit-base-container-card-group {
+  templateName = CardGroup
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+}
+
+## Grid Cards
+tt_content.ot-sitekit-base-container-grid-cards < lib.contentElement
+tt_content.ot-sitekit-base-container-grid-cards {
+  templateName = GridCards
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+
+  dataProcessing {
+    300 = B13\Container\DataProcessing\ContainerProcessor
+  }
+}
+
+

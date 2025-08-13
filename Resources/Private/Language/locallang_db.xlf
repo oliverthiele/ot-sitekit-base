@@ -5,80 +5,86 @@
 		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf" product-name="ot-sitekit-base">
 		<header/>
 		<body>
-			<!-- Set -->
-			<trans-unit id="set.label.basicConfiguration" resname="set.label.basicConfiguration">
-				<source>Basic Configuration</source>
+			<!-- Backend -->
+			<trans-unit id="backend.preview.listType" resname="backend.preview.listType" approved="yes">
+				<source>List Type:</source>
 			</trans-unit>
 			<!-- pages -->
-			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label">
+			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label" approved="yes">
 				<source>Icon Identifier</source>
 			</trans-unit>
-			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description">
+			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description" approved="yes">
 				<source> </source>
 			</trans-unit>
-			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label">
+			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label" approved="yes">
 				<source>Menu Image</source>
 			</trans-unit>
-			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description">
+			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description" approved="yes">
 				<source> </source>
 			</trans-unit>
 			<!-- tt_content -->
-			<trans-unit id="header_layout.default" resname="header.default">
+			<trans-unit id="header_layout.default" resname="header.default" approved="yes">
 				<source>Default</source>
 			</trans-unit>
-			<trans-unit id="header_layout.h1" resname="header_layout.h1">
+			<trans-unit id="header_layout.h1" resname="header_layout.h1" approved="yes">
 				<source>Heading 1. Order</source>
 			</trans-unit>
-			<trans-unit id="header_layout.h2" resname="header_layout.h2">
+			<trans-unit id="header_layout.h2" resname="header_layout.h2" approved="yes">
 				<source>Heading 2. Order</source>
 			</trans-unit>
-			<trans-unit id="header_layout.h3" resname="header_layout.h3">
+			<trans-unit id="header_layout.h3" resname="header_layout.h3" approved="yes">
 				<source>Heading 3. Order</source>
 			</trans-unit>
-			<trans-unit id="header_layout.h4" resname="header_layout.h4">
+			<trans-unit id="header_layout.h4" resname="header_layout.h4" approved="yes">
 				<source>Heading 4. Order</source>
 			</trans-unit>
-			<trans-unit id="header_layout.h5" resname="header_layout.h5">
+			<trans-unit id="header_layout.h5" resname="header_layout.h5" approved="yes">
 				<source>Heading 5. Order</source>
 			</trans-unit>
-			<trans-unit id="header_style" resname="header_style">
+			<trans-unit id="header_style" resname="header_style" approved="yes">
 				<source>Style</source>
 			</trans-unit>
-			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader">
+			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader" approved="yes">
 				<source>Header</source>
 			</trans-unit>
-			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay">
+			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay" approved="yes">
 				<source>Display Classes</source>
 			</trans-unit>
-			<trans-unit id="header_style.groupSpecial" resname="header_style.groupSpecial">
+			<trans-unit id="header_style.groupSpecial" resname="header_style.groupSpecial" approved="yes">
 				<source>Special</source>
 			</trans-unit>
-			<trans-unit id="header_style.default" resname="header_style.default">
+			<trans-unit id="header_style.default" resname="header_style.default" approved="yes">
 				<source>Default</source>
 			</trans-unit>
-			<trans-unit id="header_style.description" resname="header_style.description">
+			<trans-unit id="header_style.description" resname="header_style.description" approved="yes">
 				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
 			</trans-unit>
-			<trans-unit id="header_style.h1" resname="header_style.h1">
+			<trans-unit id="header_style.h1" resname="header_style.h1" approved="yes">
 				<source>h1</source>
 			</trans-unit>
-			<trans-unit id="header_style.h2" resname="header_style.h2">
+			<trans-unit id="header_style.h2" resname="header_style.h2" approved="yes">
 				<source>h2</source>
 			</trans-unit>
-			<trans-unit id="header_style.h3" resname="header_style.h3">
+			<trans-unit id="header_style.h3" resname="header_style.h3" approved="yes">
 				<source>h3</source>
 			</trans-unit>
-			<trans-unit id="header_style.h4" resname="header_style.h4">
+			<trans-unit id="header_style.h4" resname="header_style.h4" approved="yes">
 				<source>h4</source>
 			</trans-unit>
-			<trans-unit id="header_style.h5" resname="header_style.h5">
+			<trans-unit id="header_style.h5" resname="header_style.h5" approved="yes">
 				<source>h5</source>
 			</trans-unit>
-			<trans-unit id="header_style.h6" resname="header_style.h6">
+			<trans-unit id="header_style.h6" resname="header_style.h6" approved="yes">
 				<source>h6</source>
 			</trans-unit>
-			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden">
+			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden" approved="yes">
 				<source>Visually Hidden</source>
+			</trans-unit>
+			<trans-unit id="ot_layout" resname="ot_layout" approved="yes">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="ot_layout.default" resname="ot_layout.default" approved="yes">
+				<source>Default</source>
 			</trans-unit>
 		</body>
 	</file>

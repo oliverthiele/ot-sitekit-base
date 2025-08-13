@@ -4,16 +4,19 @@
 <head>
     <meta charset="utf-8">
     <title>Template: Default</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 <f:layout name="DefaultLayout"/>
 
 <f:section name="Main">
-    <div class="container mt-{settings.sitekit.defaultGutterSize}">
-
-        <f:render partial="Menus/Breadcrumb/Default" section="Main" arguments="{breadcrumb : breadcrumb}"/>
-
+    <div id="breadcrump-wrapper" class="bg-light">
+        <div class="container py-{settings.sitekit.gutterSize}">
+            <f:render partial="Menus/Breadcrumb/Default" section="Main" arguments="{breadcrumb : breadcrumb}"/>
+        </div>
+    </div>
+    <div class="container mt-{settings.sitekit.gutterSize}">
         <main id="mainContent">
             <f:for each="{content.main.records}" as="contentElement">
                 <f:cObject

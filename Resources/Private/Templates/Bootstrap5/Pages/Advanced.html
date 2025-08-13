@@ -12,7 +12,12 @@
 <f:layout name="DefaultLayout"/>
 
 <f:section name="Main">
-    <main id="mainContent" class="container{f:if(condition: '{content.hero-image.records}', then: ' ot-page-padding-top')}">
+    <div id="breadcrump-wrapper" class="bg-light">
+        <div class="container py-{settings.sitekit.gutterSize}">
+            <f:render partial="Menus/Breadcrumb/Default" section="Main" arguments="{breadcrumb : breadcrumb}"/>
+        </div>
+    </div>
+    <main id="mainContent" class="mt-{settings.sitekit.gutterSize}">
         <f:for each="{content.main.records}" as="contentElement">
             <f:cObject
                 typoscriptObjectPath="{contentElement.mainType}"

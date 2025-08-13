@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>Template: Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 <f:layout name="DefaultLayout"/>
 
 <f:section name="Main">
-    <main id="mainContent" class="container{f:if(condition: '{content.hero-image.records}', then: ' ot-page-padding-top')}">
+    <main id="mainContent" class="container mt-{settings.sitekit.gutterSize}">
         <f:for each="{content.main.records}" as="contentElement">
             <f:cObject
                 typoscriptObjectPath="{contentElement.mainType}"

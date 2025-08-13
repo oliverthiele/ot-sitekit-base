@@ -1,0 +1,79 @@
+# 2 columns
+
+tt_content.ot-sitekit-base-container =< lib.contentElement
+tt_content.ot-sitekit-base-container {
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+  settings {
+    breakpoint =
+    col1 =
+    col2 =
+    col3 =
+  }
+}
+
+## 50 % / 50 %
+
+tt_content.ot-sitekit-base-container-2-cols-50-50 =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-2-cols-50-50 {
+  templateName = 2Cols
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+
+  settings {
+    breakpoint = xl
+    col1 = 6
+    col2 = 6
+  }
+}
+
+
+## 33 % / 66 %
+
+tt_content.ot-sitekit-base-container-2-cols-33-66 =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-2-cols-33-66 {
+  templateName = 2Cols
+  settings {
+    breakpoint = xl
+    col1 = 4
+    col2 = 8
+  }
+}
+
+
+## 66 % / 33 %
+
+tt_content.ot-sitekit-base-container-2-cols-66-33 =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-2-cols-66-33 {
+  templateName = 2Cols
+  settings {
+    breakpoint = xl
+    col1 = 8
+    col2 = 4
+  }
+}
+
+
+# 3 columns
+
+## 33 % / 33% / 33%
+
+tt_content.ot-sitekit-base-container-3-cols-33-33-33 =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-3-cols-33-33-33 {
+  templateName = 3Cols
+  settings {
+    breakpoint = xl
+    col1 = 4
+    col2 = 4
+    col3 = 4
+  }
+}

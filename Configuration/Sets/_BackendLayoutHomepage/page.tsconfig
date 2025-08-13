@@ -15,8 +15,9 @@ mod {
                     name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:column.heroContent
                     colPos = 3
                     colspan = 1
+                    disallowed = *
                     allowed {
-                      CType =  header,ot_heroimage
+                      CType = {$sitekit.content.contentElementsHero}
                     }
                   }
                 }
@@ -31,7 +32,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = header,text,div
+                      CType = {$sitekit.content.contentElementsFullWidthContainer}
                     }
                   }
                 }

@@ -14,9 +14,35 @@
                 <div class="col-md-6 col-lg-4">
                     <address>
                         {settings.sitekit.project.companyName}<br />
+                        <f:if condition="{settings.sitekit.project.companyName2}">
+                            {settings.sitekit.project.companyName2}<br />
+                        </f:if>
+                        <br />
                         {settings.sitekit.project.addressLine1}<br />
-                        {settings.sitekit.project.addressLine2}<br />
-                        {settings.sitekit.project.postalCode} {settings.sitekit.project.city}<br />
+                        <f:if condition="{settings.sitekit.project.addressLine2}">
+                            {settings.sitekit.project.addressLine2}<br />
+                        </f:if>
+                        {settings.sitekit.project.postalCode} {settings.sitekit.project.city}
+
+                        <f:if condition="{settings.sitekit.project.telephone} || {settings.sitekit.project.email}">
+                            <br />
+                        </f:if>
+
+                        <f:if condition="{settings.sitekit.project.telephone}">
+                            <br />
+                            <f:translate key="telephone" extensionName="OtSitekitbase" default="Telephone"/>:
+                            <a href="tel:{settings.sitekit.project.telephone}">
+                                {settings.sitekit.project.telephone}
+                            </a>
+                        </f:if>
+
+                        <f:if condition="{settings.sitekit.project.email}">
+                            <br />
+                            <f:translate key="email" extensionName="OtSitekitbase" default="Email"/>:
+                            <a href="mailto: {settings.sitekit.project.email}">
+                                {settings.sitekit.project.email}
+                            </a>
+                        </f:if>
                     </address>
 
                     <f:comment> <!-- <![CDATA[
@@ -47,7 +73,7 @@
                 </div>
                 <div class="col-md-6 mt-3 mt-md-0 col-lg-4 offset-lg-4">
                     <f:if condition="{footerNavigation}">
-                        <p><strong><f:translate key="legal"  extensionName="OtSitekitbase"/></strong></p>
+                        <p><strong><f:translate key="legal" extensionName="OtSitekitbase"/></strong></p>
                         <ul id="footerNavigation" class="nav flex-column">
                             <f:for each="{footerNavigation}" as="item">
                                 <li class="nav-item">

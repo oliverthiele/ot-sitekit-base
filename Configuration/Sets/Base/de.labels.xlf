@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" target-language="de" datatype="plaintext"
+		  original="EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf"
+		  date="2025-08-12T13:04:00Z" product-name="ot-sitekit-base">
+		<header/>
+		<body>
+			<trans-unit id="label" resname="label">
+				<source>Sitekit Basic Configuration</source>
+				<target>Sitekit Grundkonfiguration</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit" resname="categories.Sitekit">
+				<source>Sitekit</source>
+				<target>Sitekit</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.project" resname="categories.Sitekit.project">
+				<source>Project</source>
+				<target>Projekt</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.pages" resname="categories.Sitekit.pages">
+				<source>Pages</source>
+				<target>Seiten</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.templates" resname="categories.Sitekit.templates">
+				<source>Templates and Layout</source>
+				<target>Vorlagen und Layout</target>
+			</trans-unit>
+			<trans-unit id="categories.SocialMedia.settings" resname="categories.SocialMedia.settings">
+				<source>Social Media</source>
+				<target>Social Media</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.companyName" resname="settings.sitekit.project.companyName">
+				<source>Company Name</source>
+				<target>Firmenname</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.companyName.description" resname="settings.sitekit.project.companyName.description">
+				<source>The name of the company will be used in the Navbar, Footer, ….</source>
+				<target>Der Name des Unternehmens wird in der Navigationsleiste, der Fußzeile usw. verwendet.</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.companyName2" resname="settings.sitekit.project.companyName2">
+				<source>Company Name Row 2</source>
+				<target>Firmenname Zeile 2</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.companyName2.description" resname="settings.settings.sitekit.project.companyName2.description">
+				<source>e.g. for owner / slogan</source>
+				<target>z. B. für Eigentümer / Slogan</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.addressLine1" resname="settings.sitekit.project.addressLine1">
+				<source>Address Line 1</source>
+				<target>Adresszeile 1</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.addressLine1.description" resname="settings.settings.sitekit.project.addressLine1.description">
+				<source>Street and House number</source>
+				<target>Straße und Hausnummer</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.addressLine2" resname="settings.sitekit.project.addressLine2">
+				<source>Address Line 2</source>
+				<target>Adresszeile 2</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.addressLine2.description" resname="settings.settings.sitekit.project.addressLine2.description">
+				<source>Additional address information</source>
+				<target>Zusätzliche Adressangaben</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.postalCode" resname="settings.sitekit.project.postalCode">
+				<source>Postal Code</source>
+				<target>Postleitzahl</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.city" resname="settings.sitekit.project.city">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.telephone" resname="settings.sitekit.project.telephone">
+				<source>Telephone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.email" resname="settings.sitekit.project.email">
+				<source>Email</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.root" resname="settings.sitekit.pages.root">
+				<source>Root Page ID</source>
+				<target>Startseiten-ID</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.root.description" resname="settings.sitekit.pages.root.description">
+				<source>The root page id for this website. It is the parent page id of the main navigation.</source>
+				<target>Die Root-Seiten-ID für diese Website. Es handelt sich um die übergeordnete Seiten-ID der Hauptnavigation.</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.footerNavigationRootPage" resname="settings.sitekit.pages.footerNavigationRootPage">
+				<source>Footer Navigation Root Page</source>
+				<target>Fußzeilen-Navigation Einstiegsseite</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.footerNavigationRootPage.description" resname="settings.sitekit.pages.footerNavigationRootPage.description">
+				<source>Page ID of the start page (doktype "Directory") used for building the footer navigation.</source>
+				<target>Seiten-ID der Startseite (Dokumenttyp „Verzeichnis“), die für die Erstellung der Fußzeilennavigation verwendet wird.</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.termsAndConditions" resname="settings.sitekit.pages.termsAndConditions">
+				<source>Terms and conditions</source>
+				<target>Allgemeine Geschäftsbedingungen</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.legalNotice" resname="settings.sitekit.pages.legalNotice">
+				<source>Legal Notice</source>
+				<target>Impressum</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.privacyPolicy" resname="settings.sitekit.pages.privacyPolicy">
+				<source>Privacy Policy</source>
+				<target>Datenschutzerklärung</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.frameworks.frontend.directory" resname="settings.sitekit.frameworks.frontend.directory">
+				<source>Frontend Framework Directory</source>
+				<target>Frontend-Framework-Verzeichnis</target>
+			</trans-unit>
+			<trans-unit id="settings.frameworks.frontend.directory.description" resname="settings.frameworks.frontend.directory.description">
+				<source>Parent directory to templates files. This path is also used by many Sitekit content elements.</source>
+				<target>Übergeordnetes Verzeichnis für Vorlagendateien. Dieser Pfad wird auch von vielen Sitekit-Inhaltselementen verwendet.</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.gutterSize" resname="settings.sitekit.gutterSize">
+				<source>Gutter Size</source>
+				<target>Gutter Größe</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.gutterSize.description" resname="settings.sitekit.gutterSize.description">
+				<source>The gutter size (e.g. for card decks)</source>
+				<target>Die Gutter-Größe (z. B. für Card Container)</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMedia.facebook.account" resname="settings.socialMedia.facebook.account">
+				<source>Facebook Account</source>
+				<target>Facebook Account</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMedia.x.account" resname="settings.socialMedia.x.account">
+				<source>X/Twitter Account</source>
+				<target>X/Twitter Account</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMedia.instagram.account" resname="settings.socialMedia.instagram.account">
+				<source>Instagram Account</source>
+				<target>Instagram Account</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMedia.linkedIn.account" resname="settings.socialMedia.linkedIn.account">
+				<source>LinkedIn Account</source>
+				<target>LinkedIn Account</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

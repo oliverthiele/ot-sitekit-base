@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<h3>
+    <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
+</h3>
+<p>
+    <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_reset_message'}"/>
+</p>
+
+<f:render partial="ValidationErrors"/>
+
+<f:form action="recovery" method="post">
+    <fieldset class="mb-3">
+        <legend>
+            <f:render partial="RenderLabelOrMessage" arguments="{key: 'reset_password'}"/>
+        </legend>
+        <div class="row mb-3">
+            <label for="tx-felogin-input-data" class="col-sm-3 col-form-label"><f:translate key="enter_your_data"/></label>
+            <div class="col-sm-9">
+                <f:form.textfield class="form-control" name="userIdentifier" id="tx-felogin-input-data"/>
+            </div>
+        </div>
+        <div>
+            <f:form.submit value="{f:translate(key: 'reset_password')}" class="btn btn-primary"/>
+        </div>
+    </fieldset>
+</f:form>
+
+<f:link.action action="login" controller="Login" class="btn btn-link mb-3">
+    <f:translate key="forgot_header_backToLogin"/>
+</f:link.action>
+
+</html>

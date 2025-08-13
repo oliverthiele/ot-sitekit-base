@@ -1,0 +1,5 @@
+name: oliverthiele/ot-sitekit-base-felogin
+label: 'TYPO3 Frontend Login with layout configuration'
+dependencies:
+  - oliverthiele/ot-sitekit-base
+  - typo3/felogin

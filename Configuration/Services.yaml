@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  OliverThiele\OtSitekitbase\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  OliverThiele\OtSitekitbase\Backend\EventListener\PagePropertiesAboveContentListener:
+    tags:
+      - name: event.listener
+        identifier: 'ot_sitekitbase.page.header'
+
+  OliverThiele\OtSitekitbase\Backend\Preview\GenericPreviewRenderer:
+    public: true
+    shared: false
+    arguments:
+      $viewFactory: '@TYPO3\CMS\Core\View\ViewFactoryInterface'
+      $fileRepository: '@TYPO3\CMS\Core\Resource\FileRepository'
+

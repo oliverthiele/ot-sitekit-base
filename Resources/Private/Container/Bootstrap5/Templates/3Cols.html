@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="en">
+<div class="row">
+    <f:if condition="{settings.breakpoint} != ''">
+        <f:then>
+            <f:variable name="cssBreakpoint" value="{settings.breakpoint}-"/>
+        </f:then>
+        <f:else>
+            <f:variable name="cssBreakpoint" value=""/>
+        </f:else>
+    </f:if>
+    <div class="col-{cssBreakpoint}{settings.col1}">
+        <span class="anchor" id="c{data.uid}"></span>
+        <f:for each="{children_300}" as="record">
+            {record.renderedContent -> f:format.raw()}
+        </f:for>
+    </div>
+    <div class="col-{cssBreakpoint}{settings.col2}">
+        <f:for each="{children_301}" as="record">
+            {record.renderedContent -> f:format.raw()}
+        </f:for>
+    </div>
+    <div class="col-{cssBreakpoint}{settings.col3}">
+        <f:for each="{children_302}" as="record">
+            {record.renderedContent -> f:format.raw()}
+        </f:for>
+    </div>
+</div>
+</html>

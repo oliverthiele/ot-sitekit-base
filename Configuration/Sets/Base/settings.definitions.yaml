@@ -30,7 +30,7 @@ settings:
 
   sitekit.project.addressLine2:
     category: Sitekit.project
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.addressLine1.description'
+    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.addressLine2.description'
     type: string
     default: ''
 

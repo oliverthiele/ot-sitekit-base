@@ -30,7 +30,7 @@ settings:
 
   sitekit.project.addressLine2:
     category: Sitekit.project
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.addressLine1.description'
+    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.addressLine2.description'
     type: string
     default: ''
 
@@ -104,6 +104,16 @@ settings:
     description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.frameworks.frontend.directory.description'
     type: string
     default: 'Bootstrap5'
+
+  sitekit.components.page.mainNavigation:
+    label: 'Main Navigation Variant'
+    description: 'Based on the Bootstrap Navbar: https://getbootstrap.com/docs/5.3/components/navbar/'
+    category: Sitekit.templates
+    default: 'Default'
+    type: string
+    enum:
+      Default: 'Default'
+      Advanced: 'Advanced (WCAG)'
 
   sitekit.gutterSize:
     category: Sitekit.templates

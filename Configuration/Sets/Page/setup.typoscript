@@ -9,6 +9,7 @@ page {
   10 {
     paths {
       60 = EXT:ot_sitekitbase/Resources/Private/Templates/{$sitekit.frameworks.frontend.directory}/
+      61 = EXT:ot_sitekitbase/Resources/Private/Components/{$sitekit.frameworks.frontend.directory}/
       # 70 = EXT:ot_sitekitbasetheme123/Resources/Private/Templates/…
       # 80 = EXT:my_sitepackage/Resources/Private/Templates/…
     }

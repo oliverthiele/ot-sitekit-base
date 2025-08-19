@@ -13,7 +13,8 @@ $CTypesForSmallerColumns = '
     list,
     ot_cefluidtemplates,
     ot_sitekitceimgtextoverlay,
-    ot_sitekitcetexticon,';
+    ot_sitekitcetexticon,
+    ot_sitekitcetextmedia,';
 
 $CTypesForBackendLayoutAdvanced = '
     ot-sitekit-base-container-1-col-container,

@@ -97,7 +97,7 @@ settings:
     label: 'Content Elements in full width container'
     category: Sitekit.templates
     type: string
-    default: 'header,text,div,felogin_login,form_formframework,list,container,ot_jobs,otfaq_list,ot_cefluidtemplates,ot_sitekitceimgtextoverlay,ot_sitekitcetexticon,ot-sitekit-base-container-grid-cards,ot-sitekit-base-container-2-cols-50-50,ot-sitekit-base-container-2-cols-33-66,ot-sitekit-base-container-2-cols-66-33,ot-sitekit-base-container-3-cols-33-33-33'
+    default: 'header,text,div,felogin_login,form_formframework,list,container,ot_jobs,otfaq_list,ot_cefluidtemplates,ot_sitekitceimgtextoverlay,ot_sitekitcetexticon,ot_sitekitcetextmedia,ot-sitekit-base-container-grid-cards,ot-sitekit-base-container-2-cols-50-50,ot-sitekit-base-container-2-cols-33-66,ot-sitekit-base-container-2-cols-66-33,ot-sitekit-base-container-3-cols-33-33-33'
 
   sitekit.frameworks.frontend.directory:
     category: Sitekit.templates

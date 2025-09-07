@@ -25,6 +25,10 @@
 				<source>Templates and Layout</source>
 				<target>Vorlagen und Layout</target>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus" resname="categories.Sitekit.menus">
+				<source>Menus</source>
+				<target>Menüs</target>
+			</trans-unit>
 			<trans-unit id="categories.SocialMedia.settings" resname="categories.SocialMedia.settings">
 				<source>Social Media</source>
 				<target>Social Media</target>

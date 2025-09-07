@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Index</title>
+</head>
+<body>
+
+<f:layout name="DefaultLayout"/>
+
+<f:section name="Main">
+    <f:if condition="{languageMenu}">
+
+        <f:variable name="class-dropdownToggle-label" value="d-none"/>
+
+        <f:if condition="{settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled}">
+            <f:variable name="class-dropdownToggle-label"
+                        value="d-none d-{settings.sitekit.menus.mainMenu.collapsing}-inline"/>
+        </f:if>
+
+        <ul class="nav __languageMenu" aria-label="{f:translate(key: 'languageMenu', extensionName: 'ot_sitekitbase')}">
+            <li class="nav-item px-2">
+                <div class="dropdown" role="group"
+                     aria-label="{f:translate(key: 'languageMenu', extensionName: 'ot_sitekitbase')} {f:translate(key: 'choose', extensionName: 'ot_sitekitbase')}">
+                    <button class="btn btn-link nav-link dropdown-toggle"
+                            type="button"
+                            id="languageMenuDropdown"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            aria-haspopup="true">
+                        <span class="{class-dropdownToggle-label} dropdown-toggle-label">{f:translate(key: 'language', extensionName: 'ot_sitekitbase')}</span>
+                        <span class="dropdown-toggle-icon">
+                        <f:for each="{languageMenu}" as="language" key="key">
+                            <f:if condition="{language.active} == 1">
+                                {language.twoLetterIsoCode}
+                            </f:if>
+                        </f:for>
+                    </span>
+                    </button>
+                    <ul id="language-navigation" class="dropdown-menu" aria-labelledby="languageMenuDropdown">
+                        <f:for each="{languageMenu}" as="language" key="key">
+                            <f:if condition="{language.available} == 1">
+                                <f:if condition="{language.active} == 1">
+                                    <f:then>
+                                        <li>
+                                            <a class="dropdown-item disabled active"
+                                               aria-disabled="true" aria-current="page">
+                                            <span
+                                                class="dropdown-item-icon">{language.twoLetterIsoCode}</span>
+                                                <span class="ms-2 dropdown-item-label"
+                                                      lang="{language.twoLetterIsoCode}">{language.navigationTitle}</span>
+                                                <span class="ms-2 dropdown-item-label-is-active"><i
+                                                    class="fa-solid fa-check"></i></span>
+                                            </a>
+                                        </li>
+                                    </f:then>
+                                    <f:else>
+                                        <li>
+                                            <a href="{language.link}"
+                                               title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
+                                               class="dropdown-item">
+                                            <span
+                                                class="dropdown-item-icon">{language.twoLetterIsoCode}</span>
+                                                <span class="ms-2 dropdown-item-label"
+                                                      lang="{language.twoLetterIsoCode}">{language.navigationTitle}</span>
+                                            </a>
+                                        </li>
+                                    </f:else>
+                                </f:if>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </f:if>
+</f:section>
+
+</body>
+</html>

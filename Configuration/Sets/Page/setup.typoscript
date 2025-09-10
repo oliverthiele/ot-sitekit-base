@@ -53,6 +53,14 @@ page {
         as = mainMenu
       }
 
+      210 = menu
+      210 {
+        special = directory
+        special.value = {$sitekit.pages.topMenuRootPage}
+        levels = 1
+        as = topMenu
+      }
+
       300 = menu
       300 {
         special = rootline

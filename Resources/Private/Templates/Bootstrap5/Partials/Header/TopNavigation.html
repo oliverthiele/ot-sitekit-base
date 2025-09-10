@@ -7,33 +7,17 @@
 </head>
 <body>
 <f:section name="Main">
-    <div id="top-navigation">
-        <div class="container">
-            <f:if condition="{languageMenu}">
-                <ul id="language-navigation" class="nav justify-content-end">
-                    <f:for each="{languageMenu}" as="language" key="key">
-                        <f:if condition="{language.available} == 1">
-                            <f:if condition="{language.active} == 1">
-                                <f:then>
-                                    <li class="nav-item d-none d-sm-block">
-                                        <a class="nav-link py-0 disabled active"
-                                           aria-disabled="true">{language.navigationTitle}</a>
-                                    </li>
-                                </f:then>
-                                <f:else>
-                                    <li class="nav-item ">
-                                        <a href="{language.link}"
-                                           title="{f:translate(key: 'languageNavigation.{language.twoLetterIsoCode}.link.title', extensionName: 'ot_kolbcommon', arguments: {languageNavigationLinkTitle: language.title})}"
-                                           class="nav-link py-0">
-                                            {language.navigationTitle}
-                                        </a>
-                                    </li>
-                                </f:else>
-                            </f:if>
-                        </f:if>
-                    </f:for>
-                </ul>
-            </f:if>
+    <div id="top-navigation" aria-label="{f:translate(key: 'serviceNavigation', extensionName: 'ot_sitekitbase')}">
+        <div class="container g-0 d-flex">
+            <f:render partial="Page/Navigation/TopMenu/{settings.sitekit.components.page.topMenu}/Index"
+                      section="Main"
+                      arguments="{topMenu : topMenu, settings : settings}"/>
+            <f:render partial="Page/Navigation/LanguageMenu/{settings.sitekit.components.page.languageMenu}/Index"
+                      section="Main"
+                      arguments="{languageMenu : languageMenu, settings : settings}"/>
+            <f:render partial="Page/Features/ColorMode/{settings.sitekit.components.page.colorMode}/Index"
+                      section="Main"
+                      arguments="{_all}"/>
         </div>
     </div>
 </f:section>

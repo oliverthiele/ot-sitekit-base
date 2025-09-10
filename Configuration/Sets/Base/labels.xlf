@@ -5,6 +5,7 @@
 		  date="2025-08-12T13:04:00Z" product-name="ot-sitekit-base">
 		<header/>
 		<body>
+			<!-- Categories -->
 			<trans-unit id="label" resname="label">
 				<source>Sitekit Basic Configuration</source>
 			</trans-unit>
@@ -14,16 +15,43 @@
 			<trans-unit id="categories.Sitekit.project" resname="categories.Sitekit.project">
 				<source>Project</source>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.project.brand" resname="categories.Sitekit.project.brand">
+				<source>Brand</source>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.pages" resname="categories.Sitekit.pages">
 				<source>Pages</source>
 			</trans-unit>
 			<trans-unit id="categories.Sitekit.templates" resname="categories.Sitekit.templates">
 				<source>Templates and Layout</source>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus" resname="categories.Sitekit.menus">
+				<source>Menus</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.mainMenu" resname="categories.Sitekit.menus.mainMenu">
+				<source>Main Menu</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.topMenu" resname="categories.Sitekit.menus.topMenu">
+				<source>Top Menu</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.languageMenu" resname="categories.Sitekit.menus.languageMenu">
+				<source>Language Menu</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.features" resname="categories.Sitekit.features">
+				<source>Features</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.features.search" resname="categories.Sitekit.features.search">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.features.colorMode" resname="categories.Sitekit.features.colorMode">
+				<source>Color Mode</source>
+			</trans-unit>
 			<trans-unit id="categories.SocialMedia.settings" resname="categories.SocialMedia.settings">
 				<source>Social Media</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.project.companyName" resname="settings.sitekit.project.companyName">
+
+
+			<!-- Categorie Project -->
+			<trans-unit id="settings.Sitekit.project.companyName" resname="settings.sitekit.project.companyName">
 				<source>Company Name</source>
 			</trans-unit>
 			<trans-unit id="settings.sitekit.project.companyName.description" resname="settings.sitekit.project.companyName.description">
@@ -59,6 +87,15 @@
 			<trans-unit id="settings.sitekit.project.email" resname="settings.sitekit.project.email">
 				<source>Email</source>
 			</trans-unit>
+			<!-- Brand -->
+			<trans-unit id="settings.sitekit.project.brand.logo.file.svg" resname="settings.Sitekit.project.brand.logo.file.svg">
+				<source>Logo SVG</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.project.brand.logo.file.svg.description" resname="settings.sitekit.project.brand.logo.file.svg.description">
+				<source>e.g. EXT:ot_sitekitbase/Resources/Public/Icons/Extension.svg</source>
+			</trans-unit>
+
+			<!-- Categorie Pages -->
 			<trans-unit id="settings.sitekit.pages.root" resname="settings.sitekit.pages.root">
 				<source>Root Page ID</source>
 			</trans-unit>
@@ -80,6 +117,9 @@
 			<trans-unit id="settings.sitekit.pages.privacyPolicy" resname="settings.sitekit.pages.privacyPolicy">
 				<source>Privacy Policy</source>
 			</trans-unit>
+
+
+			<!-- Templates and Layout -->
 			<trans-unit id="settings.sitekit.frameworks.frontend.directory" resname="settings.sitekit.frameworks.frontend.directory">
 				<source>Frontend Framework Directory</source>
 			</trans-unit>
@@ -92,6 +132,114 @@
 			<trans-unit id="settings.sitekit.gutterSize.description" resname="settings.sitekit.gutterSize.description">
 				<source>The gutter size (e.g. for card decks)</source>
 			</trans-unit>
+
+
+			<!-- Menus -->
+			<!-- Main Menu -->
+			<trans-unit id="settings.sitekit.components.page.mainNavigation" resname="settings.sitekit.components.page.mainNavigation">
+				<source>Main Navigation Variant</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.components.page.mainNavigation.description" resname="settings.sitekit.components.page.mainNavigation.description">
+				<source>Based on the Bootstrap Navbar: https://getbootstrap.com/docs/5.3/components/navbar/</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.collapsing" resname="settings.sitekit.menu.mainMenu.collapsing">
+				<source>Responsive Collapsing</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menu.mainMenu.collapsing.description" resname="settings.sitekit.menu.mainMenu.collapsing.description">
+				<source>Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing.</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.levels" resname="settings.sitekit.menus.mainMenu.levels">
+				<source>Levels</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.levels.description" resname="settings.sitekit.menus.mainMenu.levels.description">
+				<source>Menu page depth</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.includeSpacer" resname="settings.sitekit.menus.mainMenu.includeSpacer">
+				<source>Include Spacer</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.includeSpacer.description" resname="settings.sitekit.menus.mainMenu.includeSpacer.description">
+				<source>Should spacers be taken into account in the menu?</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.logo.width" resname="settings.sitekit.menus.mainMenu.logo.width">
+				<source>Logo Width</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.logo.width.description" resname="settings.sitekit.menus.mainMenu.logo.width.description">
+				<source>Width in Pixels, e.g. {40} for 40px.</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.logo.height" resname="settings.sitekit.menus.mainMenu.logo.height">
+				<source>Logo Height</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.mainMenu.logo.height.description" resname="settings.sitekit.menus.mainMenu.logo.height.description">
+				<source>Height in Pixels, e.g. {40} for 40px.</source>
+			</trans-unit>
+
+
+			<!-- Top Menu -->
+			<trans-unit id="settings.sitekit.components.page.topMenu" resname="settings.sitekit.components.page.topMenu">
+				<source>Top Menu Variant</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.components.page.topMenu.description" resname="settings.sitekit.components.page.topMenu.description">
+				<source>Based on the Bootstrap Nav: https://getbootstrap.com/docs/5.3/components/navs-tabs/</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.topMenuRootPage" resname="settings.sitekit.pages.topMenuRootPage">
+				<source>Top Menu Root Page</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.pages.topMenuRootPage.description" resname="settings.sitekit.pages.topMenuRootPage.description">
+				<source>Page ID of the start page (doktype "Directory") used for building the top menu.</source>
+			</trans-unit>
+
+			<!-- Language Menu -->
+			<trans-unit id="settings.sitekit.menus.languageMenu.enabled" resname="settings.sitekit.menus.languageMenu.enabled">
+				<source>Enabled</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.languageMenu.enabled.description" resname="settings.sitekit.menus.languageMenu.enabled.description">
+				<source>Enables the Language Menu on the website.</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.components.page.languageMenu" resname="settings.sitekit.components.page.languageMenu">
+				<source>Language Menu Variant</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.components.page.languageMenu.description" resname="settings.sitekit.components.page.languageMenu.description">
+				<source>Based on the Bootstrap Dropdown: https://getbootstrap.com/docs/5.3/components/dropdowns/</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled" resname="settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled">
+				<source>Display Label</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled.description" resname="settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled.description">
+				<source>Display Label for Language Menu.</source>
+			</trans-unit>
+
+
+			<!-- Features -->
+			<!-- Search -->
+			<trans-unit id="settings.sitekit.features.search.enabled" resname="settings.sitekit.features.search.enabled">
+				<source>Enabled</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.features.search.enabled.description" resname="settings.sitekit.features.search.enabled.description">
+				<source>Enables search on the website.</source>
+			</trans-unit>
+
+			<!-- Color Mode -->
+			<trans-unit id="settings.sitekit.components.page.colorMode" resname="settings.sitekit.components.page.colorMode">
+				<source>colorMode Variant</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.components.page.colorMode.description" resname="settings.sitekit.components.page.colorMode.description">
+				<source>Based on the Bootstrap colorMode: https://getbootstrap.com/docs/5.3/customize/color-modes/</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.features.colorMode.enabled" resname="settings.sitekit.features.colorMode.enabled">
+				<source>Enabled</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.features.colorMode.enabled.description" resname="settings.sitekit.features.colorMode.enabled.description">
+				<source>Enables the Color Mode on the website (Dark Mode and Light Mode).</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.features.colorMode.dropdownToggle.label.enabled" resname="settings.sitekit.features.colorMode.dropdownToggle.label.enabled">
+				<source>Display Label</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.features.colorMode.dropdownToggle.label.enabled.description" resname="settings.sitekit.features.colorMode.dropdownToggle.label.enabled.description">
+				<source>Display Label for ColorMode.</source>
+			</trans-unit>
+
+
+			<!-- Social Media -->
 			<trans-unit id="settings.socialMedia.facebook.account" resname="settings.socialMedia.facebook.account">
 				<source>Facebook Account</source>
 			</trans-unit>
@@ -104,6 +252,7 @@
 			<trans-unit id="settings.socialMedia.linkedIn.account" resname="settings.socialMedia.linkedIn.account">
 				<source>LinkedIn Account</source>
 			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

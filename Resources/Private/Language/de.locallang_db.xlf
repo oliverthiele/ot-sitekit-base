@@ -27,7 +27,7 @@
 				<target> </target>
 			</trans-unit>
 			<!-- tt_content -->
-			<trans-unit id="header_layout.default" resname="header.default" approved="yes">
+			<trans-unit id="header_layout.default" resname="header_layout.default" approved="yes">
 				<source>Default</source>
 				<target>Standard</target>
 			</trans-unit>
@@ -110,6 +110,139 @@
 			<trans-unit id="ot_layout.default" resname="ot_layout.default" approved="yes">
 				<source>Default</source>
 				<target>Standard</target>
+			</trans-unit>
+
+			<trans-unit id="backendLayout.advanced.title" resname="backendLayout.advanced.title" approved="yes">
+				<source>Advanced</source>
+				<target>Fortgeschrittes Layout</target>
+			</trans-unit>
+			<trans-unit id="backendLayout.default.title" resname="backendLayout.default.title" approved="yes">
+				<source>Standard</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="backendLayout.homepage.title" resname="backendLayout.homepage.title" approved="yes">
+				<source>Homepage</source>
+				<target>Homepage</target>
+			</trans-unit>
+			<trans-unit id="backendLayout.smallContent.title" resname="backendLayout.smallContent.title" approved="yes">
+				<source>Small Column</source>
+				<target>Kleine Spalte</target>
+			</trans-unit>
+
+			<trans-unit id="column.heroContent" resname="column.heroContent" approved="yes">
+				<source>Hero Image</source>
+				<target>Hero Bild</target>
+			</trans-unit>
+			<trans-unit id="column.main" resname="column.main" approved="yes">
+				<source>Main Content</source>
+				<target>Haupt-Inhalt</target>
+			</trans-unit>
+			<trans-unit id="column.left" resname="column.left" approved="yes">
+				<source>Left Column</source>
+				<target>Linkee Spalte</target>
+			</trans-unit>
+			<trans-unit id="column.right" resname="column.right" approved="yes">
+				<source>Right Column</source>
+				<target>Rechte Spalte</target>
+			</trans-unit>
+			<trans-unit id="column.aside" resname="column.aside" approved="yes">
+				<source>Aside Content</source>
+				<target>Seiteninhalt</target>
+			</trans-unit>
+
+			<trans-unit id="tca.group.extras" resname="tca.group.extras" approved="yes">
+				<source>Extras</source>
+				<target>Extras</target>
+			</trans-unit>
+			<trans-unit id="container.pageContainer" resname="container.pageContainer" approved="yes">
+				<source>Container [Page]</source>
+				<target>Container [Seite]</target>
+			</trans-unit>
+			<trans-unit id="container.page.container" resname="container.page.container" approved="yes">
+				<source>Page Container: div.container</source>
+				<target>Seiten-Container: div.container</target>
+			</trans-unit>
+			<trans-unit id="container.page.containerFluid" resname="container.page.containerFluid" approved="yes">
+				<source>Page Container: div.container-fluid</source>
+				<target>Seiten-Container: div.container-fluid</target>
+			</trans-unit>
+			<trans-unit id="container.1col" resname="container.1col" approved="yes">
+				<source>Container [1 column]</source>
+				<target>Container [1 Spalte]</target>
+			</trans-unit>
+			<trans-unit id="container.2cols" resname="container.2cols" approved="yes">
+				<source>Container [2 columns]</source>
+				<target>Container [2 Spalten]</target>
+			</trans-unit>
+			<trans-unit id="container.special" resname="container.special" approved="yes">
+				<source>Container [Special]</source>
+				<target>Container [Spezial]</target>
+			</trans-unit>
+			<trans-unit id="container.cols.2.6-6" resname="container.cols.2.6-6" approved="yes">
+				<source>Content Container: 2 cols 6-6</source>
+				<target>Content Container: 2 Spalten 6-6</target>
+			</trans-unit>
+			<trans-unit id="container.cols.2.4-8" resname="container.cols.2.4-8" approved="yes">
+				<source>Content Container: 2 cols 4-8</source>
+				<target>Content Container: 2 Spalten 4-8</target>
+			</trans-unit>
+			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4" approved="yes">
+				<source>Content Container: 2 cols 8-4</source>
+				<target>Content Container: 2 Spalten 8-4</target>
+			</trans-unit>
+			<trans-unit id="container.labels.twoColumns" resname="container.labels.twoColumns" approved="yes">
+				<source>Two columns</source>
+				<target>Zwei Spalten</target>
+			</trans-unit>
+			<trans-unit id="container.labels.leftColumn" resname="container.labels.leftColumn" approved="yes">
+				<source>Left column</source>
+				<target>Linke Spalte</target>
+			</trans-unit>
+			<trans-unit id="container.labels.rightColumn" resname="container.labels.rightColumn" approved="yes">
+				<source>Right column</source>
+				<target>Rechte Spalte</target>
+			</trans-unit>
+
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.CType.label" resname="container.ot-sitekit-base-container-grid-cards.CType.label" approved="yes">
+				<source>Container: Grid</source>
+				<target>Container: Grid</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.CType.description" resname="container.ot-sitekit-base-container-grid-cards.CType.description" approved="yes">
+				<source><![CDATA[Container for "Card" and "Text & Icon" Elements]]></source>
+				<target><![CDATA[Container für „Karte“- und „Text & Icon“-Elemente]]></target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.colPos.300" resname="container.ot-sitekit-base-container-grid-cards.colPos.300" approved="yes">
+				<source><![CDATA[Allowed: "Card" and "Text & Icon"]]></source>
+				<target><![CDATA[Zulässig: „Karte“ und „Text & Icon“]]></target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.0" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.0" approved="yes">
+				<source>Standard (maximum four columns)</source>
+				<target>Standard (maximal vier Spalten)</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.1" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.1" approved="yes">
+				<source>Maximum two columns</source>
+				<target>Maximal zwei Spalten</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.2" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.2" approved="yes">
+				<source>Maximum three columns</source>
+				<target>Maximal drei Spalten</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.3" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.3" approved="yes">
+				<source>Maximum four columns</source>
+				<target>Maximal vier Spalten</target>
+			</trans-unit>
+
+			<trans-unit id="header_style.groupAccessibility" resname="header_style.groupAccessibility" approved="yes">
+				<source>Accessibility</source>
+				<target>Barrierearm</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeaderColor" resname="header_style.groupHeaderColor" approved="yes">
+				<source>Header Color</source>
+				<target>Überschrift Farbe</target>
+			</trans-unit>
+			<trans-unit id="header_style.groupHeaderSizePrimaryColor" resname="header_style.groupHeaderSizePrimaryColor" approved="yes">
+				<source>Header size and primary color</source>
+				<target>Überschrift Größe und Primärfarbe</target>
 			</trans-unit>
 		</body>
 	</file>

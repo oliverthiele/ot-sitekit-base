@@ -108,7 +108,7 @@ settings:
     label: 'Content Elements for Backend Layout "Advanced"'
     category: Sitekit.templates
     type: string
-    default: 'ot-sitekit-base-container-1-col-container,ot-sitekit-base-container-1-col-container-fluid,ot-sitekit-base-container-1-col-article,ot-sitekit-base-container-1-col-section,html'
+    default: 'ot-sitekit-base-container-1-col-container,ot-sitekit-base-container-1-col-container-fluid,ot-sitekit-base-container-1-col-bgcolor,ot-sitekit-base-container-1-col-article,ot-sitekit-base-container-1-col-section,html'
 
   sitekit.content.contentElementsHero:
     label: 'Content Elements in hero section'

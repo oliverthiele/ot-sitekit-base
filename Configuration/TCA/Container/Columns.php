@@ -4,6 +4,8 @@ use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+
 $CTypesForSmallerColumns = '
     header,
     text,
@@ -19,6 +21,7 @@ $CTypesForSmallerColumns = '
 $CTypesForBackendLayoutAdvanced = '
     ot-sitekit-base-container-1-col-container,
     ot-sitekit-base-container-1-col-container-fluid,
+    ot-sitekit-base-container-1-col-bgcolor,
     ot-sitekit-base-container-1-col-article,
     ot-sitekit-base-container-1-col-section,';
 
@@ -33,6 +36,36 @@ $CTypesFullContainerWidth =
     ot-sitekit-base-container-2-cols-33-66,
     ot-sitekit-base-container-2-cols-66-33,
     ot-sitekit-base-container-3-cols-33-33-33,';
+
+
+$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
+$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [
+    0 => [
+        'value' => '',
+        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.0', // 'Standard (Primary)',
+    ],
+    1 => [
+        'value' => 'secondary',
+        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.1',
+    ],
+    2 => [
+        'value' => 'light',
+        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.2',
+    ],
+    3 => [
+        'value' => 'dark',
+        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3',
+    ],
+];
+
+// todo fix non working showitem
+//if (isset($GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-1-col-bgcolor']['showitem'])) {
+//    $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-1-col-bgcolor']['showitem'] = str_replace(
+//        'tabs.appearance,',
+//        'tabs.appearance,ot_layout,',
+//        $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-1-col-bgcolor']['showitem']
+//    );
+//}
 
 /**
  * 1 Column (only for Backend Layout "Advanced")
@@ -99,6 +132,38 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 //</editor-fold>
 
 /**
+ * Container for <div> with background-color
+ */
+//<editor-fold desc="Container Extension Configuration: 1 Column Container with background-color">
+GeneralUtility::makeInstance(Registry::class)->configureContainer(
+    (
+    new ContainerConfiguration(
+        'ot-sitekit-base-container-1-col-bgcolor',
+        'Container <div> with background-color',
+        'This container changes the background color.',
+        [
+            [
+                [
+                    'name' => 'Container with background-color',
+                    'colPos' => 100,
+                    'allowed' => [
+                        'CType' => $CTypesFullContainerWidth .
+                            'ot-sitekit-base-container-1-col-container, ot-sitekit-base-container-1-col-container-fluid,',
+                    ],
+                    'disallowed' => [
+                        'CType' => '',
+                    ],
+                ],
+            ],
+        ]
+    )
+    )
+        ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
+//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+);
+//</editor-fold>
+
+/**
  * Container for <article>
  */
 //<editor-fold desc="Container Extension Configuration: 1 Column Container">
@@ -125,7 +190,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -156,7 +221,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 

@@ -5,6 +5,30 @@ page {
     cache_period = 86400
   }
 
+  bodyTagCObject = COA
+  bodyTagCObject {
+    10 = TEXT
+    10.value = <body
+
+    20 = TEXT
+    20.stdWrap {
+      data = page:uid
+      noTrimWrap = | id="page-|"|
+    }
+
+    30 = TEXT
+    30 {
+      stdWrap {
+        data = siteLanguage:locale.languageCode
+        noTrimWrap = | class="lang-|"|
+      }
+    }
+
+    100 = TEXT
+    100.value = >
+  }
+
+
   10 = PAGEVIEW
   10 {
     paths {
@@ -27,6 +51,14 @@ page {
         special.value = {$sitekit.pages.root}
         levels = 2
         as = mainMenu
+      }
+
+      210 = menu
+      210 {
+        special = directory
+        special.value = {$sitekit.pages.topMenuRootPage}
+        levels = 1
+        as = topMenu
       }
 
       300 = menu

@@ -2,7 +2,7 @@ mod {
   web_layout {
     BackendLayouts {
       Advanced {
-        title = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:backendLayout.advanced.title
+        title = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:backendLayout.advanced.title
         config {
           backend_layout {
             colCount = 1
@@ -12,7 +12,7 @@ mod {
                 columns {
                   1 {
                     identifier = main
-                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:column.main
+                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:column.main
                     colPos = 0
                     colspan = 1
                     disallowed = *

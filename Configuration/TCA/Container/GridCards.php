@@ -4,9 +4,8 @@ use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_be.xlf:';
 
-$lldb = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 
 /**
  * # Grid Cards
@@ -40,7 +39,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         ->setIcon('EXT:container/Resources/Public/Icons/container-4col.svg')
 );
 
-$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['columnsOverrides']['ot_layout']['label'] = $lldb . 'ot_layout';
+$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['columnsOverrides']['ot_layout']['config']['items'] = [
     0 => [
         'value' => '',

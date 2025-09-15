@@ -1,3 +1,38 @@
+# Base for all containers
+
+tt_content.ot-sitekit-base-container =< lib.contentElement
+tt_content.ot-sitekit-base-container {
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+  settings {
+    breakpoint =
+    col1 =
+    col2 =
+    col3 =
+  }
+}
+
+# 1 column
+
+tt_content.ot-sitekit-base-container-1-col-article  =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-1-col-article {
+  templateName = 1ColArticle
+}
+
+tt_content.ot-sitekit-base-container-1-col-section =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-1-col-section {
+  templateName = 1ColSection
+}
+
+tt_content.ot-sitekit-base-container-1-col-bgcolor =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-1-col-bgcolor {
+  templateName = 1ColBgColor
+}
+
 # 2 columns
 
 tt_content.ot-sitekit-base-container =< lib.contentElement

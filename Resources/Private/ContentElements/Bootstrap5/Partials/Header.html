@@ -8,53 +8,47 @@
 <body>
 
 <f:section name="Main">
-    <f:variable name="headerStyle" value="{f:if(condition:'{data.header_style}', then: '{data.header_style} ')}" />
-    <f:variable name="headerDisturber" value="{f:if(condition:'{data.header_disturber} == \'disturber\'', then: '{data.header_disturber} ')}" />
-    <f:switch expression="{data.header_position}">
-        <f:case value="left">
-            <f:variable name="class"
-                        value="{headerStyle}{headerDisturber}text-start"
-            />
-        </f:case>
-        <f:case value="center">
-            <f:variable name="class"
-                        value="{headerStyle}{headerDisturber}text-center"/>
-        </f:case>
-        <f:case value="right">
-            <f:variable name="class"
-                        value="{headerStyle}{headerDisturber}text-end"/>
-        </f:case>
-        <f:defaultCase>
-            <f:variable name="class" value="{headerStyle}{headerDisturber}"/>
-        </f:defaultCase>
-    </f:switch>
-
-    <f:if condition="{data.header_layout} != 100">
-
-        <f:if condition="{data.header_layout} == 0">
-            <f:then>
-                <f:variable name="headerLayout" value="{settings.defaultHeaderType}"/>
-            </f:then>
-            <f:else>
-                <f:variable name="headerLayout" value="{data.header_layout}"/>
-            </f:else>
+    <f:spaceless>
+        <f:variable name="headerStyle" value="{f:if(condition:'{data.header_style}', then: '{data.header_style} ')}" />
+        <f:variable name="headerDisturber" value="{f:if(condition:'{data.header_disturber} == \'disturber\'', then: '{data.header_disturber} ')}" />
+        <f:switch expression="{data.header_position}">
+            <f:case value="left">
+                <f:variable name="class" value="{headerStyle}{headerDisturber}text-start"/>
+            </f:case>
+            <f:case value="center">
+                <f:variable name="class" value="{headerStyle}{headerDisturber}text-center"/>
+            </f:case>
+            <f:case value="right">
+                <f:variable name="class" value="{headerStyle}{headerDisturber}text-end"/>
+            </f:case>
+            <f:defaultCase>
+                <f:variable name="class" value="{headerStyle}{headerDisturber}"/>
+            </f:defaultCase>
+        </f:switch>
+        <f:if condition="{data.header_layout} != 100">
+            <f:if condition="{data.header_layout} == 0">
+                <f:then>
+                    <f:variable name="headerLayout" value="{settings.defaultHeaderType}"/>
+                </f:then>
+                <f:else>
+                    <f:variable name="headerLayout" value="{data.header_layout}"/>
+                </f:else>
+            </f:if>
+            <f:if condition="{data.date}">
+                <f:then>
+                    <header>
+                        <f:render section="HeaderContent" arguments="{data:data, headerLayout:headerLayout, class:class}" />
+                        <time datetime="{data.date -> f:format.date(format: 'Y-m-d h:i')}">{data.date -> f:format.date()}</time>
+                    </header>
+                </f:then>
+                <f:else>
+                    <header>
+                        <f:render section="HeaderContent" arguments="{data:data, headerLayout:headerLayout, class:class}" />
+                    </header>
+                </f:else>
+            </f:if>
         </f:if>
-
-        <f:if condition="{data.date}">
-            <f:then>
-                <header>
-                    <f:render section="HeaderContent" arguments="{data:data, headerLayout:headerLayout, class:class}" />
-                    <time datetime="{data.date -> f:format.date(format: 'Y-m-d h:i')}">{data.date -> f:format.date()}</time>
-                </header>
-            </f:then>
-            <f:else>
-                <header>
-                    <f:render section="HeaderContent" arguments="{data:data, headerLayout:headerLayout, class:class}" />
-                </header>
-            </f:else>
-        </f:if>
-    </f:if>
-
+    </f:spaceless>
 </f:section>
 
 <f:section name="HeaderContent">

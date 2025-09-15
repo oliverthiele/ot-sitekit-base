@@ -3,3 +3,7 @@ label: Content Element import
 dependencies:
   - oliverthiele/ot-sitekit-base
   - oliverthiele/ot-heroimage
+  - oliverthiele/ot-sitekit-ce-textmedia
+  - oliverthiele/ot-sitekit-ce-imgtextoverlay
+  - oliverthiele/ot-sitekit-ce-texticon
+  - oliverthiele/ot-irrebuttons

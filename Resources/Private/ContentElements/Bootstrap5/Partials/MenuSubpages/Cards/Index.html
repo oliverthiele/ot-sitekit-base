@@ -61,7 +61,7 @@
 
                 <f:variable name="link_target_hint" value=""/>
                 <f:if condition="{page.target}">
-                    <f:variable name="link_target" value=" target={page.target}"/>
+                    <f:variable name="link_target" value=" target={page.target} rel=noopener"/>
                 </f:if>
 
                 <a href="{page.link}"
@@ -69,12 +69,15 @@
                    {link_target}
                    class="card-link stretched-link{f:if(condition: page.current, then: ' current')}{f:if(condition: '{page.target}==_blank', then: ' link-target-blank')} text-decoration-none"
                    {f:if(condition: page.current, then: ' aria-current="page"')}
-                   title="{page.title}"
-                   rel="noopener"><span class="visually-hidden" id="card-link-u{page.data.uid}"> – {f:translate(key: 'toSubpage', extensionName: 'OtSitekitbase', default: 'to subpage')}</span>
+                   title="{page.title}"><span class="visually-hidden" id="card-link-u{page.data.uid}"> – {f:translate(key: 'toSubpage', extensionName: 'OtSitekitbase', default: 'to subpage')}</span>
                 <f:if condition="{page.target} == '_blank'">
                     <span class="visually-hidden" id="card-link-hint-u{page.data.uid}"> – {f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')}</span>
                 </f:if>
-                <span aria-hidden="true">{f:translate(key: 'readMore', extensionName: 'OtSitekitbase', default: 'Read more')}</span>
+                <span aria-hidden="true">{f:translate(key: 'readMore', extensionName: 'OtSitekitbase', default: 'Read more')}
+                    <f:if condition="{page.target} == '_blank'">
+                        [x] fa-link-external-alt
+                    </f:if>
+                </span>
                 </a>
             </p>
         </div>

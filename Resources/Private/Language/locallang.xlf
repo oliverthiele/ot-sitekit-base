@@ -24,6 +24,10 @@
 				<source>Email</source>
 			</trans-unit>
 
+			<trans-unit id="readMore" resname="readMore">
+				<source>Read more</source>
+			</trans-unit>
+
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>
 			</trans-unit>

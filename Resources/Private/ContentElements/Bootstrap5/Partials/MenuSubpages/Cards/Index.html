@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <f:debug>{settings}</f:debug>
+    <f:if condition="{menu}">
+        <div class="container g-0">
+            <div class="row row-cols-1 row-cols-md-3 g-{settings.sitekit.gutterSize}">
+                <f:for each="{menu}" as="page">
+                    <div class="col">
+                        <f:render section="Card" arguments="{_all}"/>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+</f:section>
+
+
+<f:section name="Card">
+    <div class="card h-100">
+        <figure class="ratio ratio-4x3">
+            <picture>
+                <source/>
+                <img src="..." class="card-img-top" alt="...">
+            </picture>
+            <figcaption>
+
+            </figcaption>
+        </figure>
+
+        <div class="card-body">
+            <p class="h5 card-title">{page.title}</p>
+            <p class="card-text">{page.data.abstract -> f:format.html()}
+                <a href="{page.link}"
+                   class="card-link stretched-link{f:if(condition: page.current, then: ' current')}"
+                   target="{f:if(condition: page.target, then: '{page.target}')}"
+                   {f:if(condition: page.current, then: ' aria-current="page"')}
+                title="{page.title}"><span>{f:translate(key: 'readMore', extensionName: 'OtSitekitbase', default: 'Read more')}</span>
+                </a></p>
+        </div>
+    </div>
+</f:section>
+
+
+</html>

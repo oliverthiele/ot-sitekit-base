@@ -30,6 +30,11 @@
 				<target>E-Mail</target>
 			</trans-unit>
 
+			<trans-unit id="readMore" resname="readMore">
+				<source>Read more</source>
+				<target>Weiterlesen</target>
+			</trans-unit>
+
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>
 				<target>Zusatznavigation</target>

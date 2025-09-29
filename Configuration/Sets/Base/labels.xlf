@@ -36,6 +36,9 @@
 			<trans-unit id="categories.Sitekit.menus.languageMenu" resname="categories.Sitekit.menus.languageMenu">
 				<source>Language Menu</source>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.subpagesMenu" resname="categories.Sitekit.menus.subpagesMenu">
+				<source>Subpages Menu</source>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.features" resname="categories.Sitekit.features">
 				<source>Features</source>
 			</trans-unit>
@@ -206,6 +209,14 @@
 			</trans-unit>
 			<trans-unit id="settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled.description" resname="settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled.description">
 				<source>Display Label for Language Menu.</source>
+			</trans-unit>
+
+			<!-- Menu Subpages -->
+			<trans-unit id="settings.sitekit.menus.subpagesMenu" resname="settings.sitekit.menus.subpagesMenu">
+				<source>Subpages Menu Variant.</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.subpagesMenu.description" resname="settings.sitekit.menus.subpagesMenu.description">
+				<source>Layout of the menu for subpages.</source>
 			</trans-unit>
 
 

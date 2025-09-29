@@ -18,6 +18,11 @@ lib.contentElement {
     defaultHeaderType = 2
     sitekit {
       gutterSize = {$sitekit.gutterSize}
+      menus {
+        subpagesMenu {
+          variant = {$sitekit.menus.subpagesMenu}
+        }
+      }
     }
   }
 }
@@ -44,6 +49,11 @@ lib.sitekitContentElement {
     defaultHeaderType = 2
     sitekit {
       gutterSize = {$sitekit.gutterSize}
+      menus {
+        subpagesMenu {
+          variant = {$sitekit.menus.subpagesMenu}
+        }
+      }
     }
   }
 

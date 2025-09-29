@@ -30,6 +30,19 @@
 				<target>E-Mail</target>
 			</trans-unit>
 
+			<trans-unit id="readMore" resname="readMore">
+				<source>Read more</source>
+				<target>Weiterlesen</target>
+			</trans-unit>
+			<trans-unit id="toSubpage" resname="toSubpage">
+				<source>to subpage</source>
+				<target>zur Unterseite</target>
+			</trans-unit>
+			<trans-unit id="openInNewTab" resname="openInNewTab">
+				<source>open in new tab</source>
+				<target>öffnet im neuen Tab</target>
+			</trans-unit>
+
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>
 				<target>Zusatznavigation</target>

@@ -16,6 +16,8 @@ categories:
     parent: Sitekit.menus
   Sitekit.menus.languageMenu:
     parent: Sitekit.menus
+  Sitekit.menus.subpagesMenu:
+    parent: Sitekit.menus
   Sitekit.features:
     parent: Sitekit
   Sitekit.features.search:
@@ -227,6 +229,15 @@ settings:
     description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled.description'
     type: bool
     default: false
+
+  sitekit.menus.subpagesMenu:
+    category: Sitekit.menus.subpagesMenu
+    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.subpagesMenu.description'
+    default: 'Default'
+    type: string
+    enum:
+      Default: 'Default'
+      Cards: 'Cards (WCAG)'
 
 
 

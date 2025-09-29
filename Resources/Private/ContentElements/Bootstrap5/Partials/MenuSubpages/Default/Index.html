@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <f:if condition="{menu}">
+        <nav class="subpages" aria-labelledby="header-u{data.uid}">
+            <ul>
+                <f:for each="{menu}" as="page">
+                    <li>
+
+                        <f:variable name="link_target_hint" value=""/>
+                        <f:if condition="{page.target}">
+                            <f:variable name="link_target" value=" target={page.target} rel=noopener"/>
+                        </f:if>
+
+                        <a href="{page.link}"
+                           {link_target}
+                           class="text-link{f:if(condition: page.current, then: ' current')}{f:if(condition: '{page.target}==_blank', then: ' link-target-blank')}"
+                           {f:if(condition: page.current, then: ' aria-current="page"')}
+                           title="{page.title}">{page.title}
+                            <f:if condition="{page.target} == '_blank'">
+                                [x] fa-link-external-alt
+                                <span class="visually-hidden"> – {f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')}</span>
+                            </f:if>
+                        </a>
+                    </li>
+                </f:for>
+            </ul>
+        </nav>
+    </f:if>
+</f:section>
+</html>

@@ -1,0 +1,88 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <f:if condition="{menu}">
+        <nav class="container g-0" aria-labelledby="header-u{data.uid}">
+            <ul class="row row-cols-1 row-cols-md-3 g-{settings.sitekit.gutterSize} list-unstyled">
+                <f:for each="{menu}" as="page">
+                    <li class="col">
+                        <f:render section="Card" arguments="{_all}"/>
+                    </li>
+                </f:for>
+            </ul>
+        </nav>
+    </f:if>
+</f:section>
+
+
+<f:section name="Card">
+    <div class="card h-100">
+        <f:if condition="{page.files}">
+            <f:then>
+            <figure class="ratio ratio-4x3 m-0">
+
+                <picture>
+                    <source
+                        srcset="{f:uri.image(image: page.files.0, width: '600c', cropVariant: 'default')}"
+                        media="(min-width: 600px)"/>
+                    <f:image image="{page.files.0}"
+                             loading="{f:if(condition: '{data.lazy_loading_disabled}', then: 'eager', else: 'lazy')}"
+                             additionalAttributes="{decoding: 'async'}"
+                             cropVariant="{data.image_crop}"
+                             maxWidth="360"
+                             alt=""
+                             class="card-img-top img-fluid"/>
+                </picture>
+                <f:if condition="{page.files.0.description}">
+                    <figcaption>
+                        <ul class="list-unstyled">
+                            <li><span class="caption-title">{page.files.0.title}</span></li>
+                            <li><span class="caption-description">{f:if(condition: '{page.files.0.description}', then: '{page.files.0.description}', else: '{page.files.0.alternative}')}</span></li>
+                        </ul>
+                    </figcaption>
+                </f:if>
+            </figure>
+            </f:then>
+            <f:else>
+                <div class="ratio ratio-4x3 m-0" aria-hidden="true" role="presentation"></div>
+            </f:else>
+        </f:if>
+
+        <div class="card-body">
+            <p id="card-headline-u{page.data.uid}"
+               class="h5 card-title"
+               role="heading"
+               aria-level="3">{page.title}</p>
+            <f:if condition="{page.data.abstract}">
+                <p class="card-text">{page.data.abstract -> f:format.nl2br()}</p>
+            </f:if>
+            <p class="card-text">
+
+                <f:variable name="link_target_hint" value=""/>
+                <f:if condition="{page.target}">
+                    <f:variable name="link_target" value=" target={page.target} rel=noopener"/>
+                </f:if>
+
+                <a href="{page.link}"
+                   aria-labelledby="card-headline-u{page.data.uid} card-link-u{page.data.uid}{f:if(condition: '{page.target}==_blank', then: ' card-link-hint-u{page.data.uid}')}"
+                   {link_target}
+                   class="card-link stretched-link{f:if(condition: page.current, then: ' current')}{f:if(condition: '{page.target}==_blank', then: ' link-target-blank')} text-decoration-none"
+                   {f:if(condition: page.current, then: ' aria-current="page"')}
+                   title="{page.title}"><span class="visually-hidden" id="card-link-u{page.data.uid}"> – {f:translate(key: 'toSubpage', extensionName: 'OtSitekitbase', default: 'to subpage')}</span>
+                <f:if condition="{page.target} == '_blank'">
+                    <span class="visually-hidden" id="card-link-hint-u{page.data.uid}"> – {f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')}</span>
+                </f:if>
+                <span aria-hidden="true">{f:translate(key: 'readMore', extensionName: 'OtSitekitbase', default: 'Read more')}
+                    <f:if condition="{page.target} == '_blank'">
+                        [x] fa-link-external-alt
+                    </f:if>
+                </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</f:section>
+
+
+</html>

@@ -19,6 +19,11 @@ lib.contentElement {
     sitekit {
       gutterSize = {$sitekit.gutterSize}
       contentElements.menuSubpages.rowCols = {$contentElements.menuSubpages.rowCols}
+      menus {
+        subpagesMenu {
+          variant = {$sitekit.menus.subpagesMenu}
+        }
+      }
     }
   }
 }
@@ -45,6 +50,12 @@ lib.sitekitContentElement {
     defaultHeaderType = 2
     sitekit {
       gutterSize = {$sitekit.gutterSize}
+      contentElements.menuSubpages.rowCols = {$contentElements.menuSubpages.rowCols}
+      menus {
+        subpagesMenu {
+          variant = {$sitekit.menus.subpagesMenu}
+        }
+      }
     }
   }
 

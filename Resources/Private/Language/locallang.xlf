@@ -27,6 +27,12 @@
 			<trans-unit id="readMore" resname="readMore">
 				<source>Read more</source>
 			</trans-unit>
+			<trans-unit id="toSubpage" resname="toSubpage">
+				<source>to subpage</source>
+			</trans-unit>
+			<trans-unit id="openInNewTab" resname="openInNewTab">
+				<source>open in new tab</source>
+			</trans-unit>
 
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>

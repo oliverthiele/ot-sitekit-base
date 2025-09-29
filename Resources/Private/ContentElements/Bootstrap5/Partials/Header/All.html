@@ -24,23 +24,24 @@
         </f:defaultCase>
     </f:switch>
     <f:variable name="headerClass">{data.header_style}{classPosition}</f:variable>
+
     <f:if condition="{headerClass} !== ''">
         <f:then>
-            <h{headerLayout} class="{headerClass}">
+            <h{headerLayout} id="header-u{data.uid}" class="{headerClass}">
                 <f:link.typolink parameter="{data.header_link}">
                     {data.header}
                     <f:if condition="{data.subheader}">
-                        <br /><small>{data.subheader}</small>
+                        <br /><small id="subheader-u{data.uid}">{data.subheader}</small>
                     </f:if>
                 </f:link.typolink>
             </h{headerLayout}>
         </f:then>
         <f:else>
-            <h{headerLayout}>
+            <h{headerLayout} id="header-u{data.uid}">
                 <f:link.typolink parameter="{data.header_link}">
                     {data.header}
                     <f:if condition="{data.subheader}">
-                        <br /><small>{data.subheader}</small>
+                        <br /><small id="subheader-u{data.uid}">{data.subheader}</small>
                     </f:if>
                 </f:link.typolink>
             </h{headerLayout}>

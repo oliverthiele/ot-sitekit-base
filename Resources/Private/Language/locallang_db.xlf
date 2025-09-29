@@ -202,6 +202,18 @@
 			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.3" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.3">
 				<source>Maximum four columns</source>
 			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.0" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.0">
+				<source>Standard (Primary)</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.1" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.1">
+				<source>Secondary</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.2" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.2">
+				<source>Light</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3">
+				<source>Dark</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

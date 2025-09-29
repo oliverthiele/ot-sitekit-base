@@ -16,13 +16,3 @@ tt_content.ot-sitekit-base-container-1-col-container-fluid =< tt_content.ot-site
 tt_content.ot-sitekit-base-container-1-col-container-fluid {
   templateName = 1ColContainerFluid
 }
-
-tt_content.ot-sitekit-base-container-1-col-article =< tt_content.ot-sitekit-base-container-1-col-container
-tt_content.ot-sitekit-base-container-1-col-article {
-  templateName = 1ColArticle
-}
-
-tt_content.ot-sitekit-base-container-1-col-section =< tt_content.ot-sitekit-base-container-1-col-container
-tt_content.ot-sitekit-base-container-1-col-section {
-  templateName = 1ColSection
-}

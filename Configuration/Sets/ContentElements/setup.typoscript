@@ -18,6 +18,7 @@ lib.contentElement {
     defaultHeaderType = 2
     sitekit {
       gutterSize = {$sitekit.gutterSize}
+      contentElements.menuSubpages.rowCols = {$contentElements.menuSubpages.rowCols}
     }
   }
 }

@@ -9,13 +9,13 @@
     <f:link.typolink parameter="{file.link}">
         <f:switch expression="{file.type}">
             <f:case value="2">
-                <f:render partial="Media/Type/Image" arguments="{file: file}"/>
+                <f:render partial="Media/Type/Image" arguments="{file:file,data:data}"/>
             </f:case>
             <f:case value="video">
-                <f:render partial="Media/Type/Video" arguments="{file: file}"/>
+                <f:render partial="Media/Type/Video" arguments="{file:file,data:data}"/>
             </f:case>
             <f:case value="audio">
-                <f:render partial="Media/Type/Audio" arguments="{file: file}"/>
+                <f:render partial="Media/Type/Audio" arguments="{file:file,data:data}"/>
             </f:case>
         </f:switch>
     </f:link.typolink>

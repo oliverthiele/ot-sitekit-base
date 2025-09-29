@@ -24,6 +24,9 @@
 			<trans-unit id="categories.Sitekit.templates" resname="categories.Sitekit.templates">
 				<source>Templates and Layout</source>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.contentElements" resname="categories.Sitekit.contentElements">
+				<source>Content Elements</source>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.menus" resname="categories.Sitekit.menus">
 				<source>Menus</source>
 			</trans-unit>
@@ -251,6 +254,11 @@
 			</trans-unit>
 			<trans-unit id="settings.socialMedia.linkedIn.account" resname="settings.socialMedia.linkedIn.account">
 				<source>LinkedIn Account</source>
+			</trans-unit>
+
+			<!-- Content Elements -->
+			<trans-unit id="settings.contentElements.menuSubpages.rowCols" resname="settings.contentElements.menuSubpages.rowCols">
+				<source>Row Cols</source>
 			</trans-unit>
 
 		</body>

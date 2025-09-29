@@ -10,7 +10,7 @@ $tempColumns = [
     'icon_identifier' => [
         'exclude' => true,
         'label' => $ll . 'pages.iconIdentifier.label',
-        //        'description' => $ll . 'pages.iconIdentifier.description', // 'This icon can be displayed in the navigation.',
+        // 'description' => $ll . 'pages.iconIdentifier.description', // 'This icon can be displayed in the navigation.',
         'config' => [
             'type' => 'input',
         ],
@@ -18,24 +18,10 @@ $tempColumns = [
     'menu_image' => [
         'exclude' => true,
         'label' => $ll . 'pages.menuImage.label',
-        //        'description' => $ll . 'pages.menuImage.description',
+        // 'description' => $ll . 'pages.menuImage.description',
         'config' => [
             'type' => 'file',
-            'appearance' => [
-                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-            ],
-            'overrideChildTca' => [
-                'columns' => [
-                    'uid_local' => [
-                        'config' => [
-                            'appearance' => [
-                                'elementBrowserAllowed' => 'jpg,jpeg,png,gif,svg,webp,avif',
-                                'elementBrowserType' => 'file',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            'allowed' => ['jpg','jpeg','png','gif','svg'],
             'maxitems' => 1,
         ],
     ],

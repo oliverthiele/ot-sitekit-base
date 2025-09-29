@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:i="http://typo3.org/ns/OliverThiele/OtIcons/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
 <head>
     <meta charset="utf-8">
@@ -30,7 +31,9 @@
                             aria-expanded="false"
                             aria-haspopup="true">
                         <span class="{class-dropdownToggle-label} dropdown-toggle-label" id="bd-theme-text">{f:translate(key: 'colorMode', extensionName: 'ot_sitekitbase')}</span>
-                        <span class="theme-icon-active dropdown-toggle-icon">[!!!fa-sun]<i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+                        <span class="theme-icon-active dropdown-toggle-icon">
+                              <i:icon identifier="sun" aria-hidden="true"/>
+                        </span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="colorModeDropdown">
                         <li>
@@ -60,12 +63,18 @@
             aria-label="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
             title="{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}"
             aria-pressed="false">
-        <span class="dropdown-item-icon">[!!!fa-sun]<i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        <span class="dropdown-item-icon">
+            <i:icon identifier="sun" aria-hidden="true"/>
+        </span>
         <span class="d-none d-md-inline ps-2 dropdown-item-label">{f:translate(key: 'colorMode_light', extensionName: 'ot_sitekitbase')}</span>
-        <span class="ms-2 dropdown-item-label-is-active d-none"><i class="fa-solid fa-check"></i></span>
+        <span class="ms-2 dropdown-item-label-is-active d-none">
+            <i:icon identifier="check" aria-hidden="true" />
+    <f:comment> <!-- <![CDATA[
+                <i class="fa-solid fa-check"></i>
+    ]]>	--> </f:comment>
+        </span>
     </button>
 </f:section>
-
 
 <f:section name="Dark">
     <button type="button"
@@ -74,7 +83,9 @@
             aria-label="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')} {f:translate(key: 'activate', extensionName: 'ot_sitekitbase')}"
             title="{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}"
             aria-pressed="false">
-        <span class="dropdown-item-icon">[!!!fa-moon]<i class="fa-solid fa-moon" aria-hidden="true"></i></span>
+        <span class="dropdown-item-icon">
+            <i:icon identifier="moon" aria-hidden="true" />
+        </span>
         <span class="d-none d-md-inline ps-2 dropdown-item-label">{f:translate(key: 'colorMode_dark', extensionName: 'ot_sitekitbase')}</span>
         <span class="ms-2 dropdown-item-label-is-active d-none"><i class="fa-solid fa-check"></i></span>
     </button>

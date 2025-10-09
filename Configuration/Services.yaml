@@ -20,3 +20,7 @@ services:
       $viewFactory: '@TYPO3\CMS\Core\View\ViewFactoryInterface'
       $fileRepository: '@TYPO3\CMS\Core\Resource\FileRepository'
 
+  OliverThiele\OtSitekitbase\DataProcessing\ParentContentElementProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'parent-content-element'

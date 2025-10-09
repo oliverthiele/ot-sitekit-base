@@ -92,6 +92,18 @@
 				<source>Current color mode: system settings</source>
 				<target>Aktueller Farbmodus: Systemeinstellungen</target>
 			</trans-unit>
+
+			<!-- Content Elements -->
+
+			<!-- Uploads -->
+			<trans-unit id="contentElements.uploads.fileType" resname="contentElements.uploads.fileType" approved="yes">
+				<source>File Type:</source>
+				<target>Dateityp:</target>
+			</trans-unit>
+			<trans-unit id="contentElements.uploads.fileSize" resname="contentElements.uploads.fileSize" approved="yes">
+				<source>File Size:</source>
+				<target>Dateigröße:</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -71,6 +71,12 @@ lib.sitekitContentElement {
       orderBy = sorting
       as = irreButtons
     }
+    1760003339 = parent-content-element
+    1760003339 {
+      parentField = tx_container_parent
+      fields = uid,CType,ot_layout,header,frame_class
+      maxDepth = 3
+    }
   }
 }
 

@@ -244,6 +244,15 @@
 				<source>Header size and primary color</source>
 				<target>Überschrift Größe und Primärfarbe</target>
 			</trans-unit>
+			<!-- TCA tt_content -->
+			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label">
+				<source>Crop Variants</source>
+				<target>Bildausschnitt-Varianten</target>
+			</trans-unit>
+			<trans-unit id="palette.ot-crop-variants.description" resname="palette.ot-crop-variants.description">
+				<source>Select the crop variant for the different breakpoints.</source>
+				<target>Wählen Sie die Bildausschnitt-Variante für die verschiedenen Breakpoints aus.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

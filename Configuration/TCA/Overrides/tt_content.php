@@ -21,6 +21,27 @@ require_once GeneralUtility::getFileAbsFileName(
     'EXT:ot_sitekitbase/Configuration/TCA/Container/Columns.php'
 );
 
+$ceWithResponsiveImages = [
+    'OR' => [
+        'FIELD:CType:=:ot_sitekitcetextmedia',
+        'FIELD:CType:=:ot_card', // deprecated, use ot_sitekitcecard instead
+        'FIELD:CType:=:ot_sitekitcecard',
+    ],
+];
+
+$cropVariants =  [
+    ['label' => 'vererbt', 'value' => ''],
+    ['label' => 'Original', 'value' => 'org'],
+    ['label' => 'Free', 'value' => 'free'],
+    // ['label' => 'Hero', 'value' => 'hero'],
+    ['label' => '1:1', 'value' => '1:1'],
+    ['label' => '16:9', 'value' => '16:9'],
+    ['label' => '4:3', 'value' => '4:3'],
+    ['label' => '3:2', 'value' => '3:2'],
+    ['label' => '3:4', 'value' => '3:4'],
+    ['label' => '2:3', 'value' => '2:3'],
+];
+
 $tempColumns = [
     'ot_layout' => [
         'exclude' => true,
@@ -132,6 +153,84 @@ $tempColumns = [
             'maxitems' => 1,
         ],
     ],
+    'crop_variant_xs' => [
+        'exclude' => true,
+        'label' => 'Crop Variant XS',
+        'displayCond' => $ceWithResponsiveImages,
+        'onChange' => 'reload',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => $cropVariants,
+            'size' => 1,
+            'maxitems' => 1,
+        ],
+    ],
+    'crop_variant_sm' => [
+        'exclude' => true,
+        'label' => 'Crop Variant SM',
+        'displayCond' => $ceWithResponsiveImages,
+        'onChange' => 'reload',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => $cropVariants,
+            'size' => 1,
+            'maxitems' => 1,
+        ],
+    ],
+    'crop_variant_md' => [
+        'exclude' => true,
+        'label' => 'Crop Variant MD',
+        'displayCond' => $ceWithResponsiveImages,
+        'onChange' => 'reload',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => $cropVariants,
+            'size' => 1,
+            'maxitems' => 1,
+        ],
+    ],
+    'crop_variant_lg' => [
+        'exclude' => true,
+        'label' => 'Crop Variant LG',
+        'displayCond' => $ceWithResponsiveImages,
+        'onChange' => 'reload',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => $cropVariants,
+            'size' => 1,
+            'maxitems' => 1,
+        ],
+    ],
+    'crop_variant_xl' => [
+        'exclude' => true,
+        'label' => 'Crop Variant XL',
+        'displayCond' => $ceWithResponsiveImages,
+        'onChange' => 'reload',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => $cropVariants,
+            'size' => 1,
+            'maxitems' => 1,
+        ],
+    ],
+    'crop_variant_xxl' => [
+        'exclude' => true,
+        'label' => 'Crop Variant XXL',
+        'displayCond' => $ceWithResponsiveImages,
+        'onChange' => 'reload',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => $cropVariants,
+            'size' => 1,
+            'maxitems' => 1,
+        ],
+    ],
 ];
 
 $headerItems = [
@@ -165,6 +264,12 @@ ExtensionManagementUtility::addFieldsToPalette(
     'header_style',
     'after:header_layout'
 );
+
+$GLOBALS['TCA']['tt_content']['palettes']['ot-crop-variants'] = [
+    'label' => $ll . 'palette.ot-crop-variants.label',
+    'description' =>  $ll . 'palette.ot-crop-variants.description',
+    'showitem' => 'crop_variant_xs, crop_variant_sm, crop_variant_md, crop_variant_lg, crop_variant_xl, crop_variant_xxl',
+];
 
 // Own generic preview renderer
 foreach (

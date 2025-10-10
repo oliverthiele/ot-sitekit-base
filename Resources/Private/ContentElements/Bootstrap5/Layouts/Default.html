@@ -2,7 +2,8 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
 <f:spaceless>
-    <div class="ot-content-element-margin-bottom">
+    <div id="ce-{data.uid}" class="ot-content-element-margin-bottom ctype-{data.CType}">
+        <span class="anchor" id="c{data.uid}"></span>
         <!-- Default Layout ot-sitekit-base/Resources/Private/ContentElements/Bootstrap5/Layouts/Default.html -->
         <f:render section="Header" optional="true">
             <f:render partial="Header/All" arguments="{_all}"/>

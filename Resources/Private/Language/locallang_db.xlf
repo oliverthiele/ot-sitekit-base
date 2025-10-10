@@ -214,6 +214,13 @@
 			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3">
 				<source>Dark</source>
 			</trans-unit>
+			<!-- TCA tt_content -->
+			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label">
+				<source>Crop Variants</source>
+			</trans-unit>
+			<trans-unit id="palette.ot-crop-variants.description" resname="palette.ot-crop-variants.description">
+				<source>Select the crop variant for the different breakpoints.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

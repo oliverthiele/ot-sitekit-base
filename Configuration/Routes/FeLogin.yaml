@@ -1,0 +1,18 @@
+routeEnhancers:
+  Login:
+    type: Extbase
+    extension: Felogin
+    plugin: Login
+    routes:
+      - routePath: '/'
+        _controller: 'Login::login'
+      - routePath: '/abmelden'
+        _controller: 'Login::logout'
+      - routePath: '/angemeldet'
+        _controller: 'Login::success'
+      - routePath: '/passwort-vergessen'
+        _controller: 'PasswordRecovery::recovery'
+      - routePath: '/passwort-zuruecksetzen'
+        _controller: 'PasswordRecovery::change'
+    defaultController: 'Login::login'
+    aspects: { }

@@ -9,6 +9,7 @@ $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 $CTypesForSmallerColumns = '
     header,
     text,
+    menu_subpages,
     div,
     felogin_login,
     form_formframework,
@@ -36,7 +37,6 @@ $CTypesFullContainerWidth =
     ot-sitekit-base-container-2-cols-33-66,
     ot-sitekit-base-container-2-cols-66-33,
     ot-sitekit-base-container-3-cols-33-33-33,';
-
 
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [
@@ -159,7 +159,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -190,7 +190,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -221,7 +221,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 

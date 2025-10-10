@@ -24,6 +24,16 @@
 				<source>Email</source>
 			</trans-unit>
 
+			<trans-unit id="readMore" resname="readMore">
+				<source>Read more</source>
+			</trans-unit>
+			<trans-unit id="toSubpage" resname="toSubpage">
+				<source>to subpage</source>
+			</trans-unit>
+			<trans-unit id="openInNewTab" resname="openInNewTab">
+				<source>open in new tab</source>
+			</trans-unit>
+
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>
 			</trans-unit>
@@ -61,6 +71,17 @@
 			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings">
 				<source>Current color mode: system settings</source>
 			</trans-unit>
+
+			<!-- Content Elements -->
+
+			<!-- Uploads -->
+			<trans-unit id="contentElements.uploads.fileType" resname="contentElements.uploads.fileType">
+				<source>File Type:</source>
+			</trans-unit>
+			<trans-unit id="contentElements.uploads.fileSize" resname="contentElements.uploads.fileSize">
+				<source>File Size:</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

@@ -25,6 +25,10 @@
 				<source>Templates and Layout</source>
 				<target>Vorlagen und Layout</target>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.contentElements" resname="categories.Sitekit.contentElements">
+				<source>Content Elements</source>
+				<target>Inhaltselemente</target>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.menus" resname="categories.Sitekit.menus">
 				<source>Menus</source>
 				<target>Menüs</target>
@@ -140,6 +144,11 @@
 			<trans-unit id="settings.socialMedia.linkedIn.account" resname="settings.socialMedia.linkedIn.account">
 				<source>LinkedIn Account</source>
 				<target>LinkedIn Account</target>
+			</trans-unit>
+
+			<trans-unit id="settings.contentElements.menuSubpages.rowCols" resname="settings.contentElements.menuSubpages.rowCols">
+				<source>Row Cols</source>
+				<target>Row Cols</target>
 			</trans-unit>
 		</body>
 	</file>

@@ -1,6 +1,6 @@
 # Base for all containers
 
-tt_content.ot-sitekit-base-container =< lib.contentElement
+tt_content.ot-sitekit-base-container =< lib.sitekitContentElement
 tt_content.ot-sitekit-base-container {
   templateRootPaths {
     10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
@@ -35,7 +35,7 @@ tt_content.ot-sitekit-base-container-1-col-bgcolor {
 
 # 2 columns
 
-tt_content.ot-sitekit-base-container =< lib.contentElement
+tt_content.ot-sitekit-base-container =< lib.sitekitContentElement
 tt_content.ot-sitekit-base-container {
   templateRootPaths {
     10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/

@@ -16,6 +16,8 @@ categories:
     parent: Sitekit.menus
   Sitekit.menus.languageMenu:
     parent: Sitekit.menus
+  Sitekit.menus.subpagesMenu:
+    parent: Sitekit.menus
   Sitekit.features:
     parent: Sitekit
   Sitekit.features.search:
@@ -23,6 +25,8 @@ categories:
   Sitekit.features.colorMode:
     parent: Sitekit.features
   SocialMedia.settings:
+    parent: Sitekit
+  Sitekit.contentElements:
     parent: Sitekit
 
 settings:
@@ -114,13 +118,13 @@ settings:
     label: 'Content Elements in hero section'
     category: Sitekit.templates
     type: string
-    default: ' header,ot_heroimage'
+    default: 'header,ot_heroimage'
 
   sitekit.content.contentElementsFullWidthContainer:
     label: 'Content Elements in full width container'
     category: Sitekit.templates
     type: string
-    default: 'header,text,div,felogin_login,form_formframework,list,container,ot_jobs,otfaq_list,ot_cefluidtemplates,ot_sitekitceimgtextoverlay,ot_sitekitcetexticon,ot_sitekitcetextmedia,ot-sitekit-base-container-grid-cards,ot-sitekit-base-container-2-cols-50-50,ot-sitekit-base-container-2-cols-33-66,ot-sitekit-base-container-2-cols-66-33,ot-sitekit-base-container-3-cols-33-33-33'
+    default: 'header,text,menu_subpages,div,uploads,felogin_login,form_formframework,list,container,otfaq_list,otjobs_list,otjobs_show,ot_cefluidtemplates,ot_sitekitceimgtextoverlay,ot_sitekitcetexticon,ot_sitekitcecard,ot_sitekitcetextmedia,ot-sitekit-base-container-grid-cards,ot-sitekit-base-container-2-cols-50-50,ot-sitekit-base-container-2-cols-33-66,ot-sitekit-base-container-2-cols-66-33,ot-sitekit-base-container-3-cols-33-33-33'
 
   sitekit.frameworks.frontend.directory:
     category: Sitekit.templates
@@ -226,6 +230,15 @@ settings:
     type: bool
     default: false
 
+  sitekit.menus.subpagesMenu:
+    category: Sitekit.menus.subpagesMenu
+    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.subpagesMenu.description'
+    default: 'Default'
+    type: string
+    enum:
+      Default: 'Default'
+      Cards: 'Cards (WCAG)'
+
 
 
 
@@ -276,3 +289,8 @@ settings:
     category: SocialMedia.settings
     type: string
     default: ''
+
+  contentElements.menuSubpages.rowCols:
+    category: Sitekit.contentElements
+    type: string
+    default: 'row-cols-1 row-cols-md-2  row-cols-xl-3'

@@ -4,7 +4,6 @@ use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 
 /**
@@ -28,7 +27,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.ot-sitekit-base-container-grid-cards.colPos.300', //Grid Cards',
                     'colPos' => 300,
                     'allowed' => [
-                        'CType' => 'ot_card, ot_sitekitcetexticon',
+                        'CType' => 'ot_card, ot_sitekitcecard, ot_sitekitcetexticon,',
                     ],
                 ],
             ],

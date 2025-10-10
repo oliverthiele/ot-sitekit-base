@@ -27,7 +27,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.ot-sitekit-base-container-grid-cards.colPos.300', //Grid Cards',
                     'colPos' => 300,
                     'allowed' => [
-                        'CType' => 'ot_card, ot_sitekitcetexticon',
+                        'CType' => 'ot_card, ot_sitekitcecard, ot_sitekitcetexticon,',
                     ],
                 ],
             ],

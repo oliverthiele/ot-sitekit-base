@@ -1,0 +1,110 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:i="http://typo3.org/ns/OliverThiele/OtIcons/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+    <f:spaceless>
+        <f:if condition="{files}">
+            <section class="download-section" aria-labelledby="ce{data.uid}-title" aria-label="{data.header}">
+                <f:comment> <!-- <![CDATA[
+                todo Header h1-h6
+            ]]>	--> </f:comment>
+                <h2 id="ce{data.uid}-title">{data.header}</h2>
+                <f:if condition="{files -> f:count() > 1}">
+                    <f:then>
+                        <f:variable name="wrapperStart" value='<div role="list" class="download-list">'/>
+                        <f:variable name="wrapperEnd" value="</div>"/>
+                        <f:variable name="roleListItem" value=' role="listitem"'/>
+                    </f:then>
+                    <f:else>
+                        <f:variable name="wrapperStart" value=""/>
+                        <f:variable name="wrapperEnd" value=""/>
+                        <f:variable name="roleListItem" value=""/>
+                    </f:else>
+                </f:if>
+                {wrapperStart -> f:format.raw()}
+                <f:for each="{files}" as="file" iteration="fileIterator">
+                    <f:if condition="{file.properties.title} != ''">
+                        <f:then>
+                            <f:variable name="titleOrFileName" value="{file.properties.title}"/>
+                        </f:then>
+                        <f:else>
+                            <f:variable name="titleOrFileName" value="{file.properties.name}"/>
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{file.mimeType} != ''">
+                        <f:then>
+                            <f:variable name="mimeTypeAttr" value=" type='{file.mimeType}'"/>
+                        </f:then>
+                        <f:else>
+                            <f:variable name="mimeTypeAttr" value=""/>
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{file.extension} != 'pdf'">
+                        <f:then>
+                            <f:variable name="targetAttr" value=""/>
+                            <f:variable name="downloadAttr" value=" download"/>
+                        </f:then>
+                        <f:else>
+                            <f:variable name="targetAttr"> target="_blank"</f:variable>
+                            <f:variable name="downloadAttr" value=""/>
+                        </f:else>
+                    </f:if>
+
+                    <f:variable name="fileType" value="{file.extension -> f:format.case(mode: 'upper')}"/>
+                    <f:variable name="fileSize" value="{file.size -> f:format.bytes()}"/>
+
+                    <figure class="download-item" {roleListItem -> f:format.raw()}>
+                        <a href="{file.publicUrl}" rel="noopener noreferrer" class="download-link"
+                           {targetAttr -> f:format.raw()}{mimeTypeAttr -> f:format.raw()}{downloadAttr ->
+                            f:format.raw()}>
+                            <i:icon identifier="download"/>
+                            <span class="download-title">{titleOrFileName}</span>
+                            <span class="visually-hidden">
+                            <f:translate key="contentElements.uploads.fileType" extensionName="OtSitekitbase" default="Dateityp:"/> {fileType},
+                            <f:translate key="contentElements.uploads.fileSize" extensionName="OtSitekitbase"
+                                         default="Größe:"/> {fileSize}</span>
+                            <span aria-hidden="true">({fileType}, {fileSize})</span>
+                        </a>
+                        <f:if condition="{file.properties.description}">
+                            <figcaption>{file.properties.description}</figcaption>
+                        </f:if>
+                    </figure>
+                </f:for>
+                {wrapperEnd -> f:format.raw()}
+            </section>
+        </f:if>
+
+        <f:asset.css identifier="ot-uploads">
+            .download-item { margin-block: 1rem; }
+            .download-link {
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            /* Bessere Lesbarkeit */
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+            }
+            .download-link:is(:hover, :focus) {
+            text-decoration: underline;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            }
+            .download-meta {
+            font-size: .875rem;
+            color: #555;
+            }
+            .download-item figcaption {
+            margin-top: .25rem;
+            font-size: .875rem;
+            color: #666;
+            }
+        </f:asset.css>
+    </f:spaceless>
+</f:section>
+</html>

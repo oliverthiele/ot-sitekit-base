@@ -30,65 +30,65 @@
 				<target>E-Mail</target>
 			</trans-unit>
 
-			<trans-unit id="readMore" resname="readMore">
+			<trans-unit id="readMore" resname="readMore" approved="yes">
 				<source>Read more</source>
 				<target>Weiterlesen</target>
 			</trans-unit>
-			<trans-unit id="toSubpage" resname="toSubpage">
+			<trans-unit id="toSubpage" resname="toSubpage" approved="yes">
 				<source>to subpage</source>
 				<target>zur Unterseite</target>
 			</trans-unit>
-			<trans-unit id="openInNewTab" resname="openInNewTab">
+			<trans-unit id="openInNewTab" resname="openInNewTab" approved="yes">
 				<source>open in new tab</source>
 				<target>öffnet im neuen Tab</target>
 			</trans-unit>
 
-			<trans-unit id="serviceNavigation" resname="serviceNavigation">
+			<trans-unit id="serviceNavigation" resname="serviceNavigation" approved="yes">
 				<source>Service navigation</source>
 				<target>Zusatznavigation</target>
 			</trans-unit>
-			<trans-unit id="topMenu" resname="topMenu">
+			<trans-unit id="topMenu" resname="topMenu" approved="yes">
 				<source>Top menu</source>
 				<target>Menü oben</target>
 			</trans-unit>
-			<trans-unit id="languageMenu" resname="languageMenu">
+			<trans-unit id="languageMenu" resname="languageMenu" approved="yes">
 				<source>Language menu</source>
 				<target>Sprachmenü</target>
 			</trans-unit>
-			<trans-unit id="language" resname="language">
+			<trans-unit id="language" resname="language" approved="yes">
 				<source>Language</source>
 				<target>Sprache</target>
 			</trans-unit>
-			<trans-unit id="activate" resname="activate">
+			<trans-unit id="activate" resname="activate" approved="yes">
 				<source>activate</source>
 				<target>aktivieren</target>
 			</trans-unit>
-			<trans-unit id="choose" resname="choose">
+			<trans-unit id="choose" resname="choose" approved="yes">
 				<source>choose</source>
 				<target>auswählen</target>
 			</trans-unit>
 
-			<trans-unit id="colorMode" resname="colorMode">
+			<trans-unit id="colorMode" resname="colorMode" approved="yes">
 				<source>Color mode</source>
 				<target>Farbmodus</target>
 			</trans-unit>
-			<trans-unit id="colorMode_light" resname="colorMode_light">
+			<trans-unit id="colorMode_light" resname="colorMode_light" approved="yes">
 				<source>Light mode</source>
 				<target>Heller Modus</target>
 			</trans-unit>
-			<trans-unit id="colorMode_dark" resname="colorMode_dark">
+			<trans-unit id="colorMode_dark" resname="colorMode_dark" approved="yes">
 				<source>Dark mode</source>
 				<target>Dunkler Modus</target>
 			</trans-unit>
-			<trans-unit id="colorMode_current_light" resname="colorMode_current_light">
+			<trans-unit id="colorMode_current_light" resname="colorMode_current_light" approved="yes">
 				<source>Current color mode: light</source>
 				<target>Aktueller Farbmodus: Hell</target>
 			</trans-unit>
-			<trans-unit id="colorMode_current_dark" resname="colorMode_current_dark">
+			<trans-unit id="colorMode_current_dark" resname="colorMode_current_dark" approved="yes">
 				<source>Current color mode: dark</source>
 				<target>Aktueller Farbmodus: Dunkel</target>
 			</trans-unit>
-			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings">
+			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings" approved="yes">
 				<source>Current color mode: system settings</source>
 				<target>Aktueller Farbmodus: Systemeinstellungen</target>
 			</trans-unit>

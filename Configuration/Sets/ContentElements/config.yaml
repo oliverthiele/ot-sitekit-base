@@ -6,4 +6,5 @@ dependencies:
   - oliverthiele/ot-sitekit-ce-textmedia
   - oliverthiele/ot-sitekit-ce-imgtextoverlay
   - oliverthiele/ot-sitekit-ce-texticon
+  - oliverthiele/ot-sitekit-ce-card
   - oliverthiele/ot-irrebuttons

@@ -24,7 +24,8 @@ require_once GeneralUtility::getFileAbsFileName(
 $ceWithResponsiveImages = [
     'OR' => [
         'FIELD:CType:=:ot_sitekitcetextmedia',
-        'FIELD:CType:=:ot_card',
+        'FIELD:CType:=:ot_card', // deprecated, use ot_sitekitcecard instead
+        'FIELD:CType:=:ot_sitekitcecard',
     ],
 ];
 

@@ -93,6 +93,13 @@ class ParentContentElementProcessor implements DataProcessorInterface
         $processedData['parentElements'] = $parents;
         $processedData['directParent'] = $parents[0] ?? null;
 
+        // todo: Add card group
+        if($processedData['directParent']['CType'] === 'ot-sitekit-base-container-grid-cards') {
+            $processedData['isInCardsContainer'] = true;
+        } else {
+            $processedData['isInCardsContainer'] = false;
+        }
+
         return $processedData;
     }
 

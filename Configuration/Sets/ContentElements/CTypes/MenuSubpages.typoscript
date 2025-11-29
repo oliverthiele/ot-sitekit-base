@@ -1,6 +1,5 @@
-# Menu of subpages of selected pages:
-# ...
-#
+# Menu of subpages of selected pages additional menuImage(s)
+# (Only one menu image is allowed)
 # CType: menu_subpages
 
 tt_content.menu_subpages =< lib.contentElement
@@ -14,8 +13,8 @@ tt_content.menu_subpages {
             dataProcessing {
                 10 = files
                 10 {
-                    # media -> menu_image
                     references.fieldName = menu_image
+                    as = menuImages
                 }
             }
         }

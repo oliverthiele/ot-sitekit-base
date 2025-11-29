@@ -1,15 +1,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
-<f:switch expression="{data.ot_layout}">
-    <f:case value="100-media-100-text">
-        <f:variable name="maxImageWidth" value="1296"/>
-    </f:case>
-    <f:defaultCase>
-        <f:variable name="maxImageWidth" value="636"/>
-    </f:defaultCase>
-</f:switch>
 
+<f:comment> <!-- <![CDATA[
+    The default is an image with rounded corners. A different class name can be specified in the content element.
+]]>	--> </f:comment>
+<f:if condition="{class}">
+    <f:then>
+        <f:variable name="class" value="{class}"/>
+    </f:then>
+    <f:else>
+        <f:variable name="class" value="img-fluid rounded"/>
+    </f:else>
+</f:if>
+
+<f:if condition="!{maxImageWidth}">
+    <f:variable name="maxImageWidth" value="1269"/>
+</f:if>
+
+<f:comment> <!-- <![CDATA[
+    Die kleinste Crop-Variante bzw. Bildschirm-Auflösung bestimmt das Aspect Ratio
+]]>	--> </f:comment>
 <f:if condition="{data.crop_variant_xs} != 'org' && {data.crop_variant_xs} != ''">
     <f:variable name="cropVariant" value="{data.crop_variant_xs}"/>
     <f:variable name="ratioStart">
@@ -27,21 +38,25 @@
     <f:variable name="ratioEnd" value="</div></div>"/>
 </f:if>
 
+
 <f:if condition="{file.description}">
     <f:then>
         <figure class="figure">
-            {ratioStart -> f:format.raw()}
-            <f:image image="{file}" width="1296" maxWidth="{maxImageWidth}" cropVariant="{cropVariant}" class="figure-img img-fluid rounded"/>
-            {ratioEnd -> f:format.raw()}
+            <f:render section="SingleImage" arguments="{file: file, cropVariant: cropVariant, maxImageWidth: maxImageWidth, class: 'figure-img {class}'}"/>
             <figcaption class="figure-caption">
                 {file.description}
             </figcaption>
         </figure>
     </f:then>
     <f:else>
-        {ratioStart -> f:format.raw()}
-        <f:image image="{file}" width="1296" maxWidth="{maxImageWidth}" cropVariant="{cropVariant}"  class="img-fluid rounded"/>
-        {ratioEnd -> f:format.raw()}
+        <f:render section="SingleImage" arguments="{file: file, cropVariant: cropVariant, maxImageWidth: maxImageWidth, class: '{class}'}"/>
     </f:else>
 </f:if>
+
+
+<f:section name="SingleImage">
+    {ratioStart -> f:format.raw()}
+    <f:image image="{file}" maxWidth="{maxImageWidth}" cropVariant="{cropVariant}"  class="{class}"/>
+    {ratioEnd -> f:format.raw()}
+</f:section>
 </html>

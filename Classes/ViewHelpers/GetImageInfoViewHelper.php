@@ -2,6 +2,25 @@
 
 declare(strict_types=1);
 
+/**
+ * Copyright notice
+ *
+ * (c) 2025 Oliver Thiele <mail@oliver-thiele.de>, Web Development Oliver Thiele
+ * All rights reserved
+ * This script is part of the TYPO3 project. The TYPO3 project is
+ * free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * The GNU General Public License can be found at
+ * http://www.gnu.org/copyleft/gpl.html.
+ * This script is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * This copyright notice MUST APPEAR in all copies of the script!
+ */
+
 namespace OliverThiele\OtSitekitbase\ViewHelpers;
 
 use Psr\Log\LoggerAwareInterface;
@@ -23,11 +42,40 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
 
     public function initializeArguments(): void
     {
-        $this->registerArgument('image', 'mixed', 'Path to file or FileReference object', true);
-        $this->registerArgument('data', 'array', 'The tt_content data array for crop variants', false, []);
-        $this->registerArgument('defaultCropVariant', 'string', 'Fallback crop variant identifier', false, 'default');
-        $this->registerArgument('maxWidth', 'mixed', 'Explicit width in pixels (int or array)', false, null);
-        $this->registerArgument('numColumns', 'mixed', 'Number of columns to divide container width by (int or array)', false, null);
+        $this->registerArgument(
+            'image',
+            'mixed',
+            'Path to file or FileReference object',
+            true
+        );
+        $this->registerArgument(
+            'data',
+            'array',
+            'The tt_content data array for crop variants',
+            false,
+            []
+        );
+        $this->registerArgument(
+            'defaultCropVariant',
+            'string',
+            'Fallback crop variant identifier',
+            false,
+            'default'
+        );
+        $this->registerArgument(
+            'maxWidth',
+            'mixed',
+            'Explicit width in pixels (int or array)',
+            false,
+            null
+        );
+        $this->registerArgument(
+            'numColumns',
+            'mixed',
+            'Number of columns to divide container width by (int or array)',
+            false,
+            null
+        );
     }
 
     /**
@@ -58,7 +106,6 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             'original' => $image
         ];
 
-        // 1. Existenzprüfung
         if (empty($image)) {
             return $result;
         }
@@ -94,7 +141,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
         $result['exists'] = true;
 
 
-        // 2. Breiten-Berechnung (Smart Inheritance & Columns)
+        // 2. Width calculation (Smart Inheritance & Columns)
         $breakpoints = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
         $defaultBootstrapWidths = [
@@ -106,7 +153,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             'xxl' => 1296
         ];
 
-        // Inputs normalisieren
+        // Normalise inputs
         $inputWidths = [];
         if (is_array($maxWidthInput)) {
             $inputWidths = $maxWidthInput;
@@ -121,39 +168,37 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             $inputCols = ['xs' => (int)$numColumnsInput];
         }
 
-        // State Tracking für Vererbung
-        // Wir tracken entweder eine explizite Pixelbreite ODER eine Spaltenanzahl
+        // State tracking for inheritance
+        // track either an explicit pixel width OR a number of columns.
         $currentColCount = 1;
         $currentPixelOverride = null;
 
         foreach ($breakpoints as $bp) {
-            // 1. Check auf neue Column-Definition (setzt neuen Standard)
+            // 1. Check for new column definition (sets new standard)
             if (isset($inputCols[$bp]) && $inputCols[$bp] > 0) {
-                $currentColCount = (float)$inputCols[$bp]; // float erlaubt auch 1.5 Spalten theoretisch
-                $currentPixelOverride = null; // Spalten-Modus gewinnt, Pixel-Override resetten
+                $currentColCount = (float)$inputCols[$bp]; // float also allows 1.5 columns in theory
+                $currentPixelOverride = null; // Column mode wins, reset pixel override
             }
 
-            // 2. Check auf neue Pixel-Definition (setzt neuen Standard und überschreibt Col-Modus)
+            // 2. Check for new pixel definition (sets new standard and overwrites Col mode)
             if (isset($inputWidths[$bp]) && $inputWidths[$bp] > 0) {
                 $currentPixelOverride = (int)$inputWidths[$bp];
             }
 
-            // 3. Berechnung für diesen Breakpoint
+            // 3. Calculation for this breakpoint
             if ($currentPixelOverride !== null) {
                 $result['widths'][$bp] = $currentPixelOverride;
             } else {
                 // Berechne basierend auf Default Container Width / Spalten
-                // ceil() verwenden, damit wir bei krummen Werten immer leicht größer sind (Performance vs. Schärfe -> Schärfe gewinnt)
+                // ceil() verwenden, damit wir bei krummen Werten immer leicht größer sind
+                // (Performance vs. Schärfe -> Schärfe gewinnt)
                 $result['widths'][$bp] = (int)ceil($defaultBootstrapWidths[$bp] / $currentColCount);
             }
         }
 
-
-        // 3. Crop Varianten & Ratio Berechnung
+        // 3. Crop variants & ratio calculation
         $currentVariant = $defaultCrop;
         $ratiosFound = [];
-        
-//        DebuggerUtility::var_dump($data, __METHOD__);
 
         foreach ($breakpoints as $bp) {
             $fieldName = 'crop_variant_' . $bp;
@@ -169,15 +214,15 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             }
         }
 
-        // Picture Tag Entscheidung
-        // Sobald wir unterschiedliche Crops haben -> Picture Tag
+        // Picture Tag Decision
+        // As soon as we have different crops -> Picture Tag
         $uniqueVariants = array_unique($result['variants']);
         if (count($uniqueVariants) > 1) {
             $result['suggestPictureTag'] = true;
         }
 
-        // Ratio Class Entscheidung
-        // Nur wenn ALLE Breakpoints dasselbe Ratio haben
+        // Ratio Class Decision
+        // Only if ALL breakpoints have the same ratio
         $uniqueRatios = array_unique($ratiosFound);
         if (count($uniqueRatios) === 1 && $uniqueRatios[0] !== 'free') {
             // Wandelt z.B. 16:9 in 16x9 um für Bootstrap Ratio Klasse

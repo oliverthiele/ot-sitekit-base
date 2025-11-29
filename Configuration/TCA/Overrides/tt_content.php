@@ -142,7 +142,6 @@ $tempColumns = [
                     'value' => 'visually-hidden',
                     'group' => 'groupSpecial',
                     'icon' => 'ot-icon-universal-access-regular',
-
                 ],
             ],
             'itemGroups' => [

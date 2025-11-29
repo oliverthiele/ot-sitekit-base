@@ -51,11 +51,11 @@ export function initColorModeDropdown() {
 
   const updateActiveIcon = (theme) => {
     const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const icon = btnToActive?.querySelector('i')
+    const iconContainer = btnToActive?.querySelector('.dropdown-item-icon')
     const activeIconTarget = document.querySelector('.theme-icon-active')
 
-    if (icon && activeIconTarget) {
-      activeIconTarget.innerHTML = icon.outerHTML
+    if (iconContainer && activeIconTarget) {
+      activeIconTarget.innerHTML = iconContainer.innerHTML
     }
   }
 

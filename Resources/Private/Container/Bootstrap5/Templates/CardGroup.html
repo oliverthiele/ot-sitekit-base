@@ -2,9 +2,11 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true" lang="en">
 <f:spaceless>
-    <div class="card-group">
+    <div class="card-group ot-content-element-margin-bottom">
         <f:for each="{children_300}" as="record">
-            {record.renderedContent -> f:format.raw()}
+            <div class="col">
+                {record.renderedContent -> f:format.raw()}
+            </div>
         </f:for>
     </div>
 </f:spaceless>

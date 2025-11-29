@@ -36,6 +36,9 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class ParentContentElementProcessor implements DataProcessorInterface
 {
+    private const CTYPE_GRID_CARDS = 'ot-sitekit-base-container-grid-cards';
+    private const CTYPE_CARD_GRID = 'ot-sitekit-base-container-card-grid';
+
     /**
      * Process data for getting information about the parent content element
      *
@@ -93,12 +96,17 @@ class ParentContentElementProcessor implements DataProcessorInterface
         $processedData['parentElements'] = $parents;
         $processedData['directParent'] = $parents[0] ?? null;
 
-        // todo: Add card group
-        if($processedData['directParent']['CType'] === 'ot-sitekit-base-container-grid-cards') {
-            $processedData['isInCardsContainer'] = true;
-        } else {
-            $processedData['isInCardsContainer'] = false;
-        }
+        // Determine if we are inside a card container
+        $parentCType = $processedData['directParent']['CType'] ?? '';
+
+        $processedData['isInCardsContainer'] = in_array(
+            $parentCType,
+            [
+                self::CTYPE_GRID_CARDS,
+                self::CTYPE_CARD_GRID,
+            ],
+            true
+        );
 
         return $processedData;
     }

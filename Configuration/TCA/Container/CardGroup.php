@@ -27,7 +27,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'Card Groups',
                     'colPos' => 300,
                     'allowed' => [
-                        'CType' => 'ot_card',
+                        'CType' => 'ot_sitekitcecard',
                     ],
                 ],
             ],

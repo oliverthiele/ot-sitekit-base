@@ -1,4 +1,4 @@
-import * as bootstrap from '../../../../../../../../../../../Build/Default/node_modules/bootstrap';
+import * as bootstrap from 'bootstrap';
 
 export function initColorModeDropdown() {
 

@@ -12,16 +12,8 @@
 <f:section name="Main">
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-lg-top">
         <div class="container">
-            <f:comment> <!-- <![CDATA[
-                <span class="navbar-brand p-0 m-0"></span>
-            ]]>	--> </f:comment>
-            <f:link.page class="navbar-brand" pageUid="{settings.sitekit.pages.root}">
-                {settings.sitekit.project.companyName}
-                <f:comment> <!-- <![CDATA[
-                            <f:image src="EXT:.../Resources/Public/Svg/....svg"
-                            alt="Logo" width="116" height="36" />
-                        ]]>	--> </f:comment>
-            </f:link.page>
+            <skc:atom.navbar.brand settings="{settings}" class="m-0" />
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
                     aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

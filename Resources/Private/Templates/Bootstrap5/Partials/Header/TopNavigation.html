@@ -9,13 +9,13 @@
 <f:section name="Main">
     <div id="top-navigation" aria-label="{f:translate(key: 'serviceNavigation', extensionName: 'ot_sitekitbase')}">
         <div class="container g-0 d-flex">
-            <f:render partial="Page/Navigation/TopMenu/{settings.sitekit.components.page.topMenu}/Index"
+            <f:render partial="Navigation/TopMenu/{settings.sitekit.components.page.topMenu}/Index"
                       section="Main"
                       arguments="{topMenu : topMenu, settings : settings}"/>
-            <f:render partial="Page/Navigation/LanguageMenu/{settings.sitekit.components.page.languageMenu}/Index"
+            <f:render partial="Navigation/LanguageMenu/{settings.sitekit.components.page.languageMenu}/Index"
                       section="Main"
                       arguments="{languageMenu : languageMenu, settings : settings}"/>
-            <f:render partial="Page/Features/ColorMode/{settings.sitekit.components.page.colorMode}/Index"
+            <f:render partial="Features/ColorMode/{settings.sitekit.components.page.colorMode}/Index"
                       section="Main"
                       arguments="{_all}"/>
         </div>

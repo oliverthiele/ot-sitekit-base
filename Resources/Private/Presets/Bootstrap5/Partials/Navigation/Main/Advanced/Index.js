@@ -1,6 +1,6 @@
 // Build/Default/src/js/Components/Navbar/initNavbarAdvanced.js
 
-import * as bootstrap from '../../../../../../../../../../../Build/Default/node_modules/bootstrap';
+import * as bootstrap from 'bootstrap';
 
 export function initNavbarAdvanced() {
 

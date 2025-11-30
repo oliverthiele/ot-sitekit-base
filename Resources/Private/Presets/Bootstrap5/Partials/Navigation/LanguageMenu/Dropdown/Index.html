@@ -10,7 +10,7 @@
 <f:layout name="DefaultLayout"/>
 
 <f:section name="Main">
-    <f:if condition="{languageMenu}">
+    <f:if condition="{languageMenu} && {settings.sitekit.menus.languageMenu.enabled} == 1">
 
         <f:variable name="class-dropdownToggle-label" value="d-none"/>
 

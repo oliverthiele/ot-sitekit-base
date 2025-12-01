@@ -116,8 +116,10 @@ class ParentContentElementProcessor implements DataProcessorInterface
      * Optionally allows specifying the fields to select.
      *
      * @param int $uid The unique identifier of the content record to fetch.
-     * @param array<int, string> $fields An optional array of field names to select. Defaults to all fields ('*') if empty.
-     * @return array<string, mixed>|null The fetched content record as an associative array, or null if no record is found.
+     * @param array<int, string> $fields An optional array of field names to select.
+     *                                    Defaults to all fields ('*') if empty.
+     * @return array<string, mixed>|null The fetched content record as an associative array,
+     *                                   or null if no record is found.
      * @throws Exception
      */
     protected function getContentRecord(int $uid, array $fields = []): ?array

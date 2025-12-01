@@ -79,7 +79,22 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
     }
 
     /**
-     * @return array{exists: bool, publicUrl: string, variants: array<string, string>, widths: array<string, int>, suggestPictureTag: bool, ratioClass: string, metadata: array{uid: int, alternative: string, title: string, description: string, link: string}, original: mixed}
+     * @return array{
+     *     exists: bool,
+     *     publicUrl: string,
+     *     variants: array<string, string>,
+     *     widths: array<string, int>,
+     *     suggestPictureTag: bool,
+     *     ratioClass: string,
+     *     metadata: array{
+     *         uid: int,
+     *         alternative: string,
+     *         title: string,
+     *         description: string,
+     *         link: string
+     *     },
+     *     original: mixed
+     * }
      */
     public function render(): array
     {

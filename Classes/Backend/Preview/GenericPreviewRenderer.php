@@ -45,12 +45,6 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
         private readonly ViewFactoryInterface $viewFactory,
         private readonly FileRepository $fileRepository
     ) {
-        if (!$this->viewFactory instanceof ViewFactoryInterface) {
-            throw new \RuntimeException('ViewFactoryInterface not properly injected');
-        }
-        if (!$this->fileRepository instanceof FileRepository) {
-            throw new \RuntimeException('FileRepository not properly injected');
-        }
     }
 
     public function renderPageModulePreviewContent(GridColumnItem $item): string

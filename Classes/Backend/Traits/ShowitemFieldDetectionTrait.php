@@ -29,7 +29,7 @@ trait ShowitemFieldDetectionTrait
      * Extracts and returns the list of unique fields used in the 'showitem' configuration for a specific content type.
      *
      * @param string $cType The content type identifier for which the 'showitem' configuration should be processed.
-     * @return array The array of unique field names extracted from the 'showitem' configuration.
+     * @return array<int, string> The array of unique field names extracted from the 'showitem' configuration.
      */
     protected function getUsedFieldsFromShowitem(string $cType): array
     {

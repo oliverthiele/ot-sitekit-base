@@ -113,7 +113,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
         try {
             if ($image instanceof FileReference) {
                 $originalFile = $image->getOriginalFile();
-                if (!$originalFile instanceof FileInterface || !$originalFile->exists()) {
+                if (!$originalFile->exists()) {
                     $this->logger->warning('Referenced file is missing for FileReference UID: ' . $image->getUid());
                     return $result;
                 }

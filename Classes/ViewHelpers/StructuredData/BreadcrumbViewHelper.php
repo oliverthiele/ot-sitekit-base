@@ -97,6 +97,10 @@ final class BreadcrumbViewHelper extends AbstractViewHelper
 
         $json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
+        if ($json === false) {
+            return '';
+        }
+
         if ($addScriptTag === true) {
             $json = '<script type="application/ld+json">' . PHP_EOL . $json . PHP_EOL . '</script>' . PHP_EOL;
         }

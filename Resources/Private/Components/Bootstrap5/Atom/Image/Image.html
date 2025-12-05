@@ -1,0 +1,156 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:sk="http://typo3.org/ns/OliverThiele/OtSitekitbase/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="image" type="mixed" optional="{true}"/>
+<f:argument name="data" type="array" optional="{true}" default="{}"/>
+
+<f:comment><!-- Layout --></f:comment>
+<f:argument name="maxWidth" type="mixed" optional="{true}"
+            description="Explicit width override in pixels (int or array). Overrides numColumns."/>
+<f:argument name="numColumns" type="mixed" optional="{true}"
+            description="Number of columns to divide the container width by (int or array). Default is 1."/>
+<f:argument name="aspectRatio" type="string" optional="{true}" default=""
+            description="Force ratio class e.g. '16x9'. Has priority over auto-detection."/>
+<f:argument name="loading" type="string" optional="{true}" default="lazy"/>
+<f:argument name="class" type="string" optional="{true}" default="img-fluid"/>
+
+<f:comment><!-- A11Y & Content --></f:comment>
+<f:argument name="alt" type="string" optional="{true}" default=""/>
+<f:argument name="title" type="string" optional="{true}" default=""/>
+<f:argument name="link" type="string" optional="{true}" default=""/>
+<f:argument name="showCaption" type="boolean" optional="{true}" default="{false}"/>
+<f:argument name="role" type="string" optional="{true}" default=""/>
+<f:argument name="ariaHidden" type="boolean" optional="{true}" default="{false}"/>
+
+
+<f:spaceless>
+
+    <f:variable name="imgInfo"
+                value="{sk:getImageInfo(image: image, data: data, maxWidth: maxWidth, numColumns: numColumns, defaultCropVariant: 'default')}"/>
+
+    <f:if condition="{imgInfo.exists}">
+        <f:comment><!-- Metadata Logic --></f:comment>
+        <f:variable name="finalAlt" value="{f:if(condition: alt, then: alt, else: imgInfo.metadata.alternative)}"/>
+        <f:variable name="finalTitle" value="{f:if(condition: title, then: title, else: imgInfo.metadata.title)}"/>
+        <f:variable name="finalLink" value="{f:if(condition: link, then: link, else: imgInfo.metadata.link)}"/>
+        <f:variable name="finalDesc" value="{imgInfo.metadata.description}"/>
+
+        <f:comment><!-- A11y Logic --></f:comment>
+        <f:variable name="ariaAttr" value="{f:if(condition: ariaHidden, then: 'true')}"/>
+        <f:variable name="roleAttr" value="{role}"/>
+        <f:if condition="{ariaHidden} && !{roleAttr}">
+            <f:variable name="roleAttr" value="presentation"/>
+        </f:if>
+
+        <f:comment><!-- Wrapper Decisions --></f:comment>
+        <f:variable name="doRenderFigure" value="{f:if(condition: '{showCaption} && {finalDesc}', then: 1, else: 0)}"/>
+
+        <f:comment><!-- Ratio Logic: Manual Arg > Auto Detected --></f:comment>
+        <f:variable name="finalRatioClass"
+                    value="{f:if(condition: aspectRatio, then: 'ratio ratio-{aspectRatio}', else: imgInfo.ratioClass)}"/>
+
+        <f:comment><!-- CSS Class Logic --></f:comment>
+        <f:variable name="imgClass" value="{class}"/>
+        <f:if condition="{finalRatioClass}">
+            <f:variable name="imgClass" value="{class} object-fit-cover"/>
+        </f:if>
+
+
+        <f:comment><!-- START RENDERING --></f:comment>
+        <f:if condition="{doRenderFigure}">
+            <figure class="figure {f:if(condition: finalRatioClass, then: 'w-100')}">
+        </f:if>
+
+        <f:if condition="{finalLink}">
+            <f:then>
+                <f:link.typolink parameter="{finalLink}" title="{finalTitle}"
+                                 class="image-link {f:if(condition: finalRatioClass, then: 'd-block h-100')}">
+                    <f:render section="RatioWrapper" arguments="{_all}"/>
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:render section="RatioWrapper" arguments="{_all}"/>
+            </f:else>
+        </f:if>
+
+        <f:if condition="{doRenderFigure}">
+            <figcaption class="figure-caption">{finalDesc -> f:format.nl2br()}</figcaption>
+            </figure>
+        </f:if>
+    </f:if>
+</f:spaceless>
+
+<f:section name="RatioWrapper">
+    <f:if condition="{finalRatioClass}">
+        <f:then>
+            <div class="{finalRatioClass}">
+                <f:render section="ImageRender" arguments="{_all}"/>
+            </div>
+        </f:then>
+        <f:else>
+            <f:render section="ImageRender" arguments="{_all}"/>
+        </f:else>
+    </f:if>
+</f:section>
+
+<f:section name="ImageRender">
+    <f:if condition="{imgInfo.suggestPictureTag}">
+        <f:then>
+            <f:comment><!-- ART DIRECTION: Different Crops --></f:comment>
+            <picture>
+                <source
+                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.xxl, maxWidth: imgInfo.widths.xxl)}"
+                    media="(min-width: 1400px)">
+                <source
+                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.xl, maxWidth: imgInfo.widths.xl)}"
+                    media="(min-width: 1200px)">
+                <source
+                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.lg, maxWidth: imgInfo.widths.lg)}"
+                    media="(min-width: 992px)">
+                <source
+                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.md, maxWidth: imgInfo.widths.md)}"
+                    media="(min-width: 768px)">
+                <source
+                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.sm, maxWidth: imgInfo.widths.sm)}"
+                    media="(min-width: 576px)">
+
+                <f:image image="{image}" cropVariant="{imgInfo.variants.xs}" maxWidth="{imgInfo.widths.xs}"
+                         loading="{loading}" class="{imgClass}" alt="{finalAlt}" title="{finalTitle}"
+                         additionalAttributes="{decoding: 'async', aria-hidden: ariaAttr, role: roleAttr}"/>
+            </picture>
+        </f:then>
+        <f:else>
+            <f:comment><!-- RESOLUTION SWITCHING: Same crop, responsive widths via srcset --></f:comment>
+            <f:variable name="srcsetVal">{f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth:
+                imgInfo.widths.xxl)} {imgInfo.widths.xxl}w, {f:uri.image(image: image, cropVariant: imgInfo.variants.xs,
+                maxWidth: imgInfo.widths.xl)} {imgInfo.widths.xl}w, {f:uri.image(image: image, cropVariant:
+                imgInfo.variants.xs, maxWidth: imgInfo.widths.lg)} {imgInfo.widths.lg}w, {f:uri.image(image: image,
+                cropVariant: imgInfo.variants.xs, maxWidth: imgInfo.widths.md)} {imgInfo.widths.md}w,
+                {f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth: imgInfo.widths.sm)}
+                {imgInfo.widths.sm}w, {f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth:
+                imgInfo.widths.xs)} {imgInfo.widths.xs}w
+            </f:variable>
+
+            <f:variable name="sizesVal">(min-width: 1400px) {imgInfo.widths.xxl}px, (min-width: 1200px)
+                {imgInfo.widths.xl}px, (min-width: 992px) {imgInfo.widths.lg}px, (min-width: 768px)
+                {imgInfo.widths.md}px, (min-width: 576px) {imgInfo.widths.sm}px, {imgInfo.widths.xs}px
+            </f:variable>
+
+            <f:image image="{image}"
+                     cropVariant="{imgInfo.variants.xs}"
+                     maxWidth="{imgInfo.widths.xxl}"
+                     loading="{loading}"
+                     class="{imgClass}"
+                     alt="{finalAlt}"
+                     title="{finalTitle}"
+                     additionalAttributes="{decoding: 'async', aria-hidden: ariaAttr, role: roleAttr, srcset: srcsetVal, sizes: sizesVal}"/>
+        </f:else>
+    </f:if>
+
+    <f:comment> <!-- <![CDATA[
+        <f:asset.script identifier="debug-img" src="EXT:ot_sitekitbase/Resources/Public/JavaScript/debugImg.js"/>
+    ]]>	--> </f:comment>
+</f:section>
+</html>

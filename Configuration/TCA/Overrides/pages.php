@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 defined('TYPO3') or die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -21,7 +23,7 @@ $tempColumns = [
         // 'description' => $ll . 'pages.menuImage.description',
         'config' => [
             'type' => 'file',
-            'allowed' => ['jpg','jpeg','png','gif','svg'],
+            'allowed' => ['jpg', 'jpeg', 'png', 'gif', 'svg'],
             'maxitems' => 1,
         ],
     ],

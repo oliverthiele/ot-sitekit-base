@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="caption" type="string" optional="{true}" default="" />
+<f:argument name="position" type="string" optional="{true}" default="" />
+
+<figure>
+    <f:slot />
+    <f:if condition="{caption} != ''">
+        <f:if condition="{position} == 'end'">
+            <f:then>
+                <f:variable name="css" value=" text-end"/>
+            </f:then>
+            <f:else>
+                <f:variable name="css" value=""/>
+            </f:else>
+        </f:if>
+        <figcaption class="figure-caption{css}">
+            {caption}
+        </figcaption>
+    </f:if>
+</figure>
+</html>

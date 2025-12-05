@@ -4,7 +4,7 @@
 <f:section name="Main">
     <f:if condition="{menu}">
         <nav class="container g-0" aria-labelledby="header-u{data.uid}">
-            <ul class="row row-cols-1 row-cols-md-3 g-{settings.sitekit.gutterSize} list-unstyled">
+            <ul class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-{settings.sitekit.gutterSize} list-unstyled">
                 <f:for each="{menu}" as="page">
                     <li class="col">
                         <f:render section="Card" arguments="{_all}"/>
@@ -18,31 +18,16 @@
 
 <f:section name="Card">
     <div class="card h-100">
-        <f:if condition="{page.files}">
+        <f:if condition="{page.menuImages}">
             <f:then>
-            <figure class="ratio ratio-4x3 m-0">
 
-                <picture>
-                    <source
-                        srcset="{f:uri.image(image: page.files.0, width: '600c', cropVariant: 'default')}"
-                        media="(min-width: 600px)"/>
-                    <f:image image="{page.files.0}"
-                             loading="{f:if(condition: '{data.lazy_loading_disabled}', then: 'eager', else: 'lazy')}"
-                             additionalAttributes="{decoding: 'async'}"
-                             cropVariant="{data.image_crop}"
-                             maxWidth="360"
-                             alt=""
-                             class="card-img-top img-fluid"/>
-                </picture>
-                <f:if condition="{page.files.0.description}">
-                    <figcaption>
-                        <ul class="list-unstyled">
-                            <li><span class="caption-title">{page.files.0.title}</span></li>
-                            <li><span class="caption-description">{f:if(condition: '{page.files.0.description}', then: '{page.files.0.description}', else: '{page.files.0.alternative}')}</span></li>
-                        </ul>
-                    </figcaption>
-                </f:if>
-            </figure>
+                <f:comment> <!-- <![CDATA[
+                    maxWidth="{xxl: 416}"
+                ]]>	--> </f:comment>
+                <skc:atom.image image="{page.menuImages.0}" class="card-img-top img-fluid"
+                                showCaption="false" aspectRatio="4x3"
+                                numColumns="{md:2, xl:3}"
+                                role="presentation" ariaHidden="true" />
             </f:then>
             <f:else>
                 <div class="ratio ratio-4x3 m-0" aria-hidden="true" role="presentation"></div>

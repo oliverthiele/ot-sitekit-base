@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -27,7 +29,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.ot-sitekit-base-container-grid-cards.colPos.300', //Grid Cards',
                     'colPos' => 300,
                     'allowed' => [
-                        'CType' => 'ot_card, ot_sitekitcecard, ot_sitekitcetexticon,',
+                        'CType' => 'ot_sitekitcecard, ot_sitekitcetexticon,',
                     ],
                 ],
             ],

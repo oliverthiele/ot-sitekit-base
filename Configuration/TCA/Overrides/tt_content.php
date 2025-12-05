@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 defined('TYPO3') or die();
 
 use OliverThiele\OtSitekitbase\Backend\Preview\GenericPreviewRenderer;
@@ -24,7 +26,6 @@ require_once GeneralUtility::getFileAbsFileName(
 $ceWithResponsiveImages = [
     'OR' => [
         'FIELD:CType:=:ot_sitekitcetextmedia',
-        'FIELD:CType:=:ot_card', // deprecated, use ot_sitekitcecard instead
         'FIELD:CType:=:ot_sitekitcecard',
     ],
 ];
@@ -141,7 +142,6 @@ $tempColumns = [
                     'value' => 'visually-hidden',
                     'group' => 'groupSpecial',
                     'icon' => 'ot-icon-universal-access-regular',
-
                 ],
             ],
             'itemGroups' => [
@@ -267,7 +267,7 @@ ExtensionManagementUtility::addFieldsToPalette(
 
 $GLOBALS['TCA']['tt_content']['palettes']['ot-crop-variants'] = [
     'label' => $ll . 'palette.ot-crop-variants.label',
-    'description' =>  $ll . 'palette.ot-crop-variants.description',
+    'description' => $ll . 'palette.ot-crop-variants.description',
     'showitem' => 'crop_variant_xs, crop_variant_sm, crop_variant_md, crop_variant_lg, crop_variant_xl, crop_variant_xxl',
 ];
 

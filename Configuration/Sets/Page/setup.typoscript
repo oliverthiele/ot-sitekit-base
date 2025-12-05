@@ -32,9 +32,16 @@ page {
   10 = PAGEVIEW
   10 {
     paths {
+      # Base extension, with standard Bootstrap 5 layouts
       60 = EXT:ot_sitekitbase/Resources/Private/Templates/{$sitekit.frameworks.frontend.directory}/
-      61 = EXT:ot_sitekitbase/Resources/Private/Components/{$sitekit.frameworks.frontend.directory}/
-      # 70 = EXT:ot_sitekitbasetheme123/Resources/Private/Templates/…
+
+      # Preset = Directories with partials, SCSS, JS
+      61 = EXT:ot_sitekitbase/Resources/Private/Presets/{$sitekit.frameworks.frontend.directory}/
+
+      # Themes use "70"
+      # 70 = EXT:ot_sitekitbasetheme/Resources/Private/Templates/…
+
+      # The final sitepackage use "80"
       # 80 = EXT:my_sitepackage/Resources/Private/Templates/…
     }
 

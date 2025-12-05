@@ -2,6 +2,25 @@
 
 declare(strict_types=1);
 
+/**
+ * Copyright notice
+ *
+ * (c) 2025 Oliver Thiele <mail@oliver-thiele.de>, Web Development Oliver Thiele
+ * All rights reserved
+ * This script is part of the TYPO3 project. The TYPO3 project is
+ * free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * The GNU General Public License can be found at
+ * http://www.gnu.org/copyleft/gpl.html.
+ * This script is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * This copyright notice MUST APPEAR in all copies of the script!
+ */
+
 namespace OliverThiele\OtSitekitbase\DataProcessing;
 
 use Doctrine\DBAL\Exception;
@@ -17,6 +36,9 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class ParentContentElementProcessor implements DataProcessorInterface
 {
+    private const CTYPE_GRID_CARDS = 'ot-sitekit-base-container-grid-cards';
+    private const CTYPE_CARD_GRID = 'ot-sitekit-base-container-card-grid';
+
     /**
      * Process data for getting information about the parent content element
      *
@@ -37,7 +59,7 @@ class ParentContentElementProcessor implements DataProcessorInterface
             return $processedData;
         }
 
-        $record = $cObj->data ?? [];
+        $record = $cObj->data;
         if (empty($record['uid'])) {
             return $processedData;
         }
@@ -74,6 +96,18 @@ class ParentContentElementProcessor implements DataProcessorInterface
         $processedData['parentElements'] = $parents;
         $processedData['directParent'] = $parents[0] ?? null;
 
+        // Determine if we are inside a card container
+        $parentCType = $processedData['directParent']['CType'] ?? '';
+
+        $processedData['isInCardsContainer'] = in_array(
+            $parentCType,
+            [
+                self::CTYPE_GRID_CARDS,
+                self::CTYPE_CARD_GRID,
+            ],
+            true
+        );
+
         return $processedData;
     }
 
@@ -82,8 +116,10 @@ class ParentContentElementProcessor implements DataProcessorInterface
      * Optionally allows specifying the fields to select.
      *
      * @param int $uid The unique identifier of the content record to fetch.
-     * @param string[] $fields An optional array of field names to select. Defaults to all fields ('*') if empty.
-     * @return array|null The fetched content record as an associative array, or null if no record is found.
+     * @param array<int, string> $fields An optional array of field names to select.
+     *                                    Defaults to all fields ('*') if empty.
+     * @return array<string, mixed>|null The fetched content record as an associative array,
+     *                                   or null if no record is found.
      * @throws Exception
      */
     protected function getContentRecord(int $uid, array $fields = []): ?array

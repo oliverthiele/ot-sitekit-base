@@ -30,17 +30,17 @@ $ceWithResponsiveImages = [
     ],
 ];
 
-$cropVariants =  [
-    ['label' => 'vererbt', 'value' => ''],
-    ['label' => 'Original', 'value' => 'org'],
-    ['label' => 'Free', 'value' => 'free'],
-    // ['label' => 'Hero', 'value' => 'hero'],
+$cropVariants = [
+    ['label' => $ll . 'cropVariants.0-xs','value' => ''],
+    ['label' => $ll . 'cropVariants.1', 'value' => 'org'],
+    ['label' => $ll . 'cropVariants.2', 'value' => 'free'],
     ['label' => '1:1', 'value' => '1:1'],
     ['label' => '16:9', 'value' => '16:9'],
     ['label' => '4:3', 'value' => '4:3'],
     ['label' => '3:2', 'value' => '3:2'],
     ['label' => '3:4', 'value' => '3:4'],
     ['label' => '2:3', 'value' => '2:3'],
+    // ['label' => 'Hero', 'value' => 'hero'], // Used in EXT:ot_heroimage
 ];
 
 $tempColumns = [
@@ -155,7 +155,7 @@ $tempColumns = [
     ],
     'crop_variant_xs' => [
         'exclude' => true,
-        'label' => 'Crop Variant XS',
+        'label' => $ll . 'cropVariantXs',
         'displayCond' => $ceWithResponsiveImages,
         'onChange' => 'reload',
         'config' => [
@@ -168,7 +168,7 @@ $tempColumns = [
     ],
     'crop_variant_sm' => [
         'exclude' => true,
-        'label' => 'Crop Variant SM',
+        'label' => $ll . 'cropVariantSm',
         'displayCond' => $ceWithResponsiveImages,
         'onChange' => 'reload',
         'config' => [
@@ -181,7 +181,7 @@ $tempColumns = [
     ],
     'crop_variant_md' => [
         'exclude' => true,
-        'label' => 'Crop Variant MD',
+        'label' => $ll . 'cropVariantMd',
         'displayCond' => $ceWithResponsiveImages,
         'onChange' => 'reload',
         'config' => [
@@ -194,7 +194,7 @@ $tempColumns = [
     ],
     'crop_variant_lg' => [
         'exclude' => true,
-        'label' => 'Crop Variant LG',
+        'label' => $ll . 'cropVariantLg',
         'displayCond' => $ceWithResponsiveImages,
         'onChange' => 'reload',
         'config' => [
@@ -207,7 +207,7 @@ $tempColumns = [
     ],
     'crop_variant_xl' => [
         'exclude' => true,
-        'label' => 'Crop Variant XL',
+        'label' => $ll . 'cropVariantXl',
         'displayCond' => $ceWithResponsiveImages,
         'onChange' => 'reload',
         'config' => [
@@ -220,7 +220,7 @@ $tempColumns = [
     ],
     'crop_variant_xxl' => [
         'exclude' => true,
-        'label' => 'Crop Variant XXL',
+        'label' => $ll . 'cropVariantXxl',
         'displayCond' => $ceWithResponsiveImages,
         'onChange' => 'reload',
         'config' => [
@@ -270,6 +270,8 @@ $GLOBALS['TCA']['tt_content']['palettes']['ot-crop-variants'] = [
     'description' => $ll . 'palette.ot-crop-variants.description',
     'showitem' => 'crop_variant_xs, crop_variant_sm, crop_variant_md, crop_variant_lg, crop_variant_xl, crop_variant_xxl',
 ];
+
+$GLOBALS['TCA']['tt_content']['columns']['crop_variant_xs']['config']['items'][0]['label'] = $ll . 'cropVariants.0';
 
 // Own generic preview renderer
 foreach (

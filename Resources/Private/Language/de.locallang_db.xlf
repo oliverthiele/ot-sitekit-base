@@ -249,9 +249,49 @@
 				<source>Crop Variants</source>
 				<target>Bildausschnitt-Varianten</target>
 			</trans-unit>
-			<trans-unit id="palette.ot-crop-variants.description" resname="palette.ot-crop-variants.description">
+			<trans-unit id="palette.ot-crop-variants.description" resname="palette.ot-crop-variants.description" approved="yes">
 				<source>Select the crop variant for the different breakpoints.</source>
 				<target>Wählen Sie die Bildausschnitt-Variante für die verschiedenen Breakpoints aus.</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.0" resname="cropVariants.0" approved="yes">
+				<source>Standard (Original)</source>
+				<target>Standard (Original)</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.0-xs" resname="cropVariants.0-xs" approved="yes">
+				<source>Inherited</source>
+				<target>Vererbt</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.1" resname="cropVariants.1" approved="yes">
+				<source>Original</source>
+				<target>Original</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.2" resname="cropVariants.2" approved="yes">
+				<source>Free</source>
+				<target>Frei</target>
+			</trans-unit>
+			<trans-unit id="cropVariantXs" resname="cropVariantXs" approved="yes">
+				<source>Crop Variant XS</source>
+				<target>Bildausschnitt-Variante XS</target>
+			</trans-unit>
+			<trans-unit id="cropVariantSm" resname="cropVariantSm" approved="yes">
+				<source>Crop Variant SM</source>
+				<target>Bildausschnitt-Variante SM</target>
+			</trans-unit>
+			<trans-unit id="cropVariantMd" resname="cropVariantMd" approved="yes">
+				<source>Crop Variant MD</source>
+				<target>Bildausschnitt-Variante MD</target>
+			</trans-unit>
+			<trans-unit id="cropVariantLg" resname="cropVariantLg" approved="yes">
+				<source>Crop Variant LG</source>
+				<target>Bildausschnitt-Variante LG</target>
+			</trans-unit>
+			<trans-unit id="cropVariantXl" resname="cropVariantXl" approved="yes">
+				<source>Crop Variant XL</source>
+				<target>Bildausschnitt-Variante XL</target>
+			</trans-unit>
+			<trans-unit id="cropVariantXxl" resname="cropVariantXxl" approved="yes">
+				<source>Crop Variant XXL</source>
+				<target>Bildausschnitt-Variante XXL</target>
 			</trans-unit>
 		</body>
 	</file>

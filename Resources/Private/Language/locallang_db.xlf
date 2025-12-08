@@ -215,12 +215,52 @@
 				<source>Dark</source>
 			</trans-unit>
 			<!-- TCA tt_content -->
+			<trans-unit id="ot_text_columns" resname="ot_text_columns">
+				<source>Text Columns</source>
+			</trans-unit>
+			<trans-unit id="ot_text_columns.singleColumn" resname="ot_text_columns.singleColumn">
+				<source>Single Column</source>
+			</trans-unit>
+			<trans-unit id="ot_text_columns.multiColumn" resname="ot_text_columns.multiColumn">
+				<source>Multi-Column</source>
+			</trans-unit>
 			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label">
 				<source>Crop Variants</source>
 			</trans-unit>
 			<trans-unit id="palette.ot-crop-variants.description" resname="palette.ot-crop-variants.description">
 				<source>Select the crop variant for the different breakpoints.</source>
 			</trans-unit>
+			<trans-unit id="cropVariants.0" resname="cropVariants.0">
+				<source>Standard (Original)</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.0-xs" resname="cropVariants.0-xs">
+				<source>Inherited</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.1" resname="cropVariants.1">
+				<source>Original</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.2" resname="cropVariants.2">
+				<source>Free</source>
+			</trans-unit>
+			<trans-unit id="cropVariantXs" resname="cropVariantXs">
+				<source>Crop Variant XS</source>
+			</trans-unit>
+			<trans-unit id="cropVariantSm" resname="cropVariantSm">
+				<source>Crop Variant SM</source>
+			</trans-unit>
+			<trans-unit id="cropVariantMd" resname="cropVariantMd">
+				<source>Crop Variant MD</source>
+			</trans-unit>
+			<trans-unit id="cropVariantLg" resname="cropVariantLg">
+				<source>Crop Variant LG</source>
+			</trans-unit>
+			<trans-unit id="cropVariantXl" resname="cropVariantXl">
+				<source>Crop Variant XL</source>
+			</trans-unit>
+			<trans-unit id="cropVariantXxl" resname="cropVariantXxl">
+				<source>Crop Variant XXL</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

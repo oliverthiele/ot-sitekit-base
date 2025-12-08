@@ -79,9 +79,15 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
             $assets = $this->fileRepository->findByRelation('tt_content', 'assets', $record['uid']);
         }
 
+        $images = [];
+        if ($this->isFieldUsedInShowitem($cType, 'image')) {
+            $images = $this->fileRepository->findByRelation('tt_content', 'image', $record['uid']);
+        }
+
         $view->assignMultiple([
             'record' => $record,
             'assets' => $assets,
+            'images' => $images,
         ]);
 
         return $view->render();

@@ -11,6 +11,8 @@
             description="Explicit width override in pixels (int or array). Overrides numColumns."/>
 <f:argument name="numColumns" type="mixed" optional="{true}"
             description="Number of columns to divide the container width by (int or array). Default is 1."/>
+<f:argument name="gridColumns" type="mixed" optional="{true}"
+            description="Bootstrap grid columns (1-12) to calculate width (int or array). Overrides numColumns but can be overridden by maxWidth."/>
 <f:argument name="aspectRatio" type="string" optional="{true}" default=""
             description="Force ratio class e.g. '16x9'. Has priority over auto-detection."/>
 <f:argument name="loading" type="string" optional="{true}" default="lazy"/>
@@ -20,7 +22,7 @@
 <f:argument name="alt" type="string" optional="{true}" default=""/>
 <f:argument name="title" type="string" optional="{true}" default=""/>
 <f:argument name="link" type="string" optional="{true}" default=""/>
-<f:argument name="showCaption" type="boolean" optional="{true}" default="{false}"/>
+<f:argument name="showCaption" type="boolean" optional="{true}" default="{true}"/>
 <f:argument name="role" type="string" optional="{true}" default=""/>
 <f:argument name="ariaHidden" type="boolean" optional="{true}" default="{false}"/>
 
@@ -28,129 +30,290 @@
 <f:spaceless>
 
     <f:variable name="imgInfo"
-                value="{sk:getImageInfo(image: image, data: data, maxWidth: maxWidth, numColumns: numColumns, defaultCropVariant: 'default')}"/>
+                value="{sk:getImageInfo(
+                    image: image, data: data,
+                    maxWidth: maxWidth,
+                    numColumns: numColumns,
+                    gridColumns: gridColumns,
+                    defaultCropVariant: 'default'
+                )}"/>
 
     <f:if condition="{imgInfo.exists}">
-        <f:comment><!-- Metadata Logic --></f:comment>
-        <f:variable name="finalAlt" value="{f:if(condition: alt, then: alt, else: imgInfo.metadata.alternative)}"/>
-        <f:variable name="finalTitle" value="{f:if(condition: title, then: title, else: imgInfo.metadata.title)}"/>
-        <f:variable name="finalLink" value="{f:if(condition: link, then: link, else: imgInfo.metadata.link)}"/>
-        <f:variable name="finalDesc" value="{imgInfo.metadata.description}"/>
-
-        <f:comment><!-- A11y Logic --></f:comment>
-        <f:variable name="ariaAttr" value="{f:if(condition: ariaHidden, then: 'true')}"/>
-        <f:variable name="roleAttr" value="{role}"/>
-        <f:if condition="{ariaHidden} && !{roleAttr}">
-            <f:variable name="roleAttr" value="presentation"/>
-        </f:if>
-
-        <f:comment><!-- Wrapper Decisions --></f:comment>
-        <f:variable name="doRenderFigure" value="{f:if(condition: '{showCaption} && {finalDesc}', then: 1, else: 0)}"/>
-
-        <f:comment><!-- Ratio Logic: Manual Arg > Auto Detected --></f:comment>
-        <f:variable name="finalRatioClass"
-                    value="{f:if(condition: aspectRatio, then: 'ratio ratio-{aspectRatio}', else: imgInfo.ratioClass)}"/>
-
-        <f:comment><!-- CSS Class Logic --></f:comment>
-        <f:variable name="imgClass" value="{class}"/>
-        <f:if condition="{finalRatioClass}">
-            <f:variable name="imgClass" value="{class} object-fit-cover"/>
-        </f:if>
-
-
-        <f:comment><!-- START RENDERING --></f:comment>
-        <f:if condition="{doRenderFigure}">
-            <figure class="figure {f:if(condition: finalRatioClass, then: 'w-100')}">
-        </f:if>
-
-        <f:if condition="{finalLink}">
+        <f:comment><!-- SVG: Simple rendering without srcset (TYPO3 v13 can crop SVGs) --></f:comment>
+        <f:if condition="{imgInfo.isSvg}">
             <f:then>
-                <f:link.typolink parameter="{finalLink}" title="{finalTitle}"
-                                 class="image-link {f:if(condition: finalRatioClass, then: 'd-block h-100')}">
-                    <f:render section="RatioWrapper" arguments="{_all}"/>
-                </f:link.typolink>
+                <f:comment><!-- SVG: Check if multiple crops are needed --></f:comment>
+                <f:variable name="finalAlt"
+                            value="{f:if(condition: alt, then: alt, else: imgInfo.metadata.alternative)}"/>
+                <f:variable name="finalTitle"
+                            value="{f:if(condition: title, then: title, else: imgInfo.metadata.title)}"/>
+                <f:variable name="finalLink" value="{f:if(condition: link, then: link, else: imgInfo.metadata.link)}"/>
+                <f:variable name="finalDesc" value="{imgInfo.metadata.description}"/>
+                <f:variable name="doRenderFigure"
+                            value="{f:if(condition: '{showCaption} && {finalDesc}', then: 1, else: 0)}"/>
+
+                <f:if condition="{doRenderFigure}">
+                    <figure class="figure w-100">
+                </f:if>
+
+                <f:if condition="{imgInfo.suggestPictureTag}">
+                    <f:then>
+                        <f:comment><!-- Multiple crops: Render multiple SVGs with display classes --></f:comment>
+                        <f:if condition="{finalLink}">
+                            <f:then>
+                                <f:variable name="svgLinkClass"
+                                            value="image-link d-block{f:if(condition: doRenderFigure, then: ' figure-img')}"/>
+                                <f:link.typolink parameter="{finalLink}" title="{finalTitle}" class="{svgLinkClass}">
+                                    <f:for each="{imgInfo.aspectRatioGroups}" as="group">
+                                        <f:render section="SVGGroupRender" arguments="{_all}"/>
+                                    </f:for>
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:for each="{imgInfo.aspectRatioGroups}" as="group">
+                                    <f:render section="SVGGroupRender" arguments="{_all}"/>
+                                </f:for>
+                            </f:else>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        <f:comment><!-- Single crop: Simple SVG rendering --></f:comment>
+                        <f:if condition="{finalLink}">
+                            <f:then>
+                                <f:variable name="svgLinkClass"
+                                            value="image-link d-block{f:if(condition: doRenderFigure, then: ' figure-img')}"/>
+                                <f:link.typolink parameter="{finalLink}" title="{finalTitle}" class="{svgLinkClass}">
+                                    <f:image image="{image}" cropVariant="{imgInfo.variants.xs}" loading="{loading}"
+                                             class="{class}" alt="{finalAlt}" title="{finalTitle}"/>
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="svgClass"
+                                            value="{class}{f:if(condition: '{doRenderFigure}', then: ' figure-img')}"/>
+                                <f:image image="{image}" cropVariant="{imgInfo.variants.xs}" loading="{loading}"
+                                         class="{svgClass}" alt="{finalAlt}" title="{finalTitle}"/>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+
+                <f:if condition="{doRenderFigure}">
+                    <figcaption class="figure-caption">{finalDesc -> f:format.nl2br()}</figcaption>
+                    </figure>
+                </f:if>
             </f:then>
             <f:else>
-                <f:render section="RatioWrapper" arguments="{_all}"/>
-            </f:else>
-        </f:if>
+                <f:comment><!-- Regular image rendering --></f:comment>
+                <f:comment><!-- Metadata Logic --></f:comment>
+                <f:variable name="finalAlt"
+                            value="{f:if(condition: alt, then: alt, else: imgInfo.metadata.alternative)}"/>
+                <f:variable name="finalTitle"
+                            value="{f:if(condition: title, then: title, else: imgInfo.metadata.title)}"/>
+                <f:variable name="finalLink" value="{f:if(condition: link, then: link, else: imgInfo.metadata.link)}"/>
+                <f:variable name="finalDesc" value="{imgInfo.metadata.description}"/>
 
-        <f:if condition="{doRenderFigure}">
-            <figcaption class="figure-caption">{finalDesc -> f:format.nl2br()}</figcaption>
-            </figure>
+                <f:comment><!-- A11y Logic --></f:comment>
+                <f:variable name="ariaAttr" value="{f:if(condition: ariaHidden, then: 'true')}"/>
+                <f:variable name="roleAttr" value="{role}"/>
+                <f:if condition="{ariaHidden} && !{roleAttr}">
+                    <f:variable name="roleAttr" value="presentation"/>
+                </f:if>
+
+                <f:comment><!-- Wrapper Decisions --></f:comment>
+                <f:variable name="doRenderFigure"
+                            value="{f:if(condition: '{showCaption} && {finalDesc}', then: 1, else: 0)}"/>
+
+                <f:comment><!-- Ratio Logic: Manual Arg > Auto Detected --></f:comment>
+                <f:variable name="finalRatioClass"
+                            value="{f:if(condition: aspectRatio, then: 'ratio ratio-{aspectRatio}', else: imgInfo.ratioClass)}"/>
+
+                <f:comment><!-- CSS Class Logic --></f:comment>
+                <f:variable name="imgClass" value="{class}"/>
+                <f:if condition="{finalRatioClass}">
+                    <f:variable name="imgClass" value="{class} object-fit-cover"/>
+                </f:if>
+
+
+                <f:comment><!-- START RENDERING --></f:comment>
+                <f:if condition="{doRenderFigure}">
+                    <f:comment><!-- Always add w-100 to figure to prevent inline-block collapse --></f:comment>
+                    <figure class="figure w-100">
+                </f:if>
+
+                <f:render section="RatioWrapper" arguments="{_all}"/>
+
+                <f:if condition="{doRenderFigure}">
+                    <figcaption class="figure-caption">{finalDesc -> f:format.nl2br()}</figcaption>
+                    </figure>
+                </f:if>
+            </f:else>
         </f:if>
     </f:if>
 </f:spaceless>
 
 <f:section name="RatioWrapper">
-    <f:if condition="{finalRatioClass}">
+    <f:comment><!-- Check if we use aspectRatioGroups (new optimized rendering) --></f:comment>
+    <f:if condition="{imgInfo.aspectRatioGroups -> f:count()} > 0 && {imgInfo.suggestPictureTag}">
         <f:then>
-            <div class="{finalRatioClass}">
-                <f:render section="ImageRender" arguments="{_all}"/>
-            </div>
+            <f:comment><!-- NEW: Optimized rendering with aspect ratio groups --></f:comment>
+            <f:comment><!-- Wrap all groups in link if needed --></f:comment>
+            <f:if condition="{finalLink}">
+                <f:then>
+                    <f:variable name="linkClass"
+                                value="image-link d-block{f:if(condition: doRenderFigure, then: ' figure-img')}"/>
+                    <f:link.typolink parameter="{finalLink}" title="{finalTitle}" class="{linkClass}">
+                        <f:for each="{imgInfo.aspectRatioGroups}" as="group">
+                            <f:render section="ImageGroupRender" arguments="{_all}"/>
+                        </f:for>
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:for each="{imgInfo.aspectRatioGroups}" as="group">
+                        <f:render section="ImageGroupRender" arguments="{_all}"/>
+                    </f:for>
+                </f:else>
+            </f:if>
         </f:then>
         <f:else>
-            <f:render section="ImageRender" arguments="{_all}"/>
+            <f:comment><!-- FALLBACK: Old rendering with optional ratio wrapper and link --></f:comment>
+            <f:if condition="{finalLink}">
+                <f:then>
+                    <f:variable name="linkClass"
+                                value="image-link{f:if(condition: finalRatioClass, then: ' d-block h-100', else: ' d-block')}{f:if(condition: doRenderFigure, then: ' figure-img')}"/>
+                    <f:link.typolink parameter="{finalLink}" title="{finalTitle}" class="{linkClass}">
+                        <f:render section="LegacyImageRender" arguments="{_all}"/>
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:render section="LegacyImageRender" arguments="{_all}"/>
+                </f:else>
+            </f:if>
         </f:else>
     </f:if>
 </f:section>
 
-<f:section name="ImageRender">
-    <f:if condition="{imgInfo.suggestPictureTag}">
+<f:section name="LegacyImageRender">
+    <f:comment><!-- Optional ratio wrapper for legacy rendering --></f:comment>
+    <f:if condition="{finalRatioClass}">
         <f:then>
-            <f:comment><!-- ART DIRECTION: Different Crops --></f:comment>
-            <picture>
-                <source
-                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.xxl, maxWidth: imgInfo.widths.xxl)}"
-                    media="(min-width: 1400px)">
-                <source
-                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.xl, maxWidth: imgInfo.widths.xl)}"
-                    media="(min-width: 1200px)">
-                <source
-                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.lg, maxWidth: imgInfo.widths.lg)}"
-                    media="(min-width: 992px)">
-                <source
-                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.md, maxWidth: imgInfo.widths.md)}"
-                    media="(min-width: 768px)">
-                <source
-                    srcset="{f:uri.image(image: image, cropVariant: imgInfo.variants.sm, maxWidth: imgInfo.widths.sm)}"
-                    media="(min-width: 576px)">
-
-                <f:image image="{image}" cropVariant="{imgInfo.variants.xs}" maxWidth="{imgInfo.widths.xs}"
-                         loading="{loading}" class="{imgClass}" alt="{finalAlt}" title="{finalTitle}"
-                         additionalAttributes="{decoding: 'async', aria-hidden: ariaAttr, role: roleAttr}"/>
-            </picture>
+            <f:variable name="ratioClass"
+                        value="{finalRatioClass}{f:if(condition: '{doRenderFigure} && !{finalLink}', then: ' figure-img')}"/>
+            <div class="{ratioClass}">
+                <f:render section="LegacyImageContent" arguments="{_all}"/>
+            </div>
         </f:then>
         <f:else>
-            <f:comment><!-- RESOLUTION SWITCHING: Same crop, responsive widths via srcset --></f:comment>
-            <f:variable name="srcsetVal">{f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth:
-                imgInfo.widths.xxl)} {imgInfo.widths.xxl}w, {f:uri.image(image: image, cropVariant: imgInfo.variants.xs,
-                maxWidth: imgInfo.widths.xl)} {imgInfo.widths.xl}w, {f:uri.image(image: image, cropVariant:
-                imgInfo.variants.xs, maxWidth: imgInfo.widths.lg)} {imgInfo.widths.lg}w, {f:uri.image(image: image,
-                cropVariant: imgInfo.variants.xs, maxWidth: imgInfo.widths.md)} {imgInfo.widths.md}w,
-                {f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth: imgInfo.widths.sm)}
-                {imgInfo.widths.sm}w, {f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth:
-                imgInfo.widths.xs)} {imgInfo.widths.xs}w
-            </f:variable>
+            <f:render section="LegacyImageContent" arguments="{_all}"/>
+        </f:else>
+    </f:if>
+</f:section>
 
-            <f:variable name="sizesVal">(min-width: 1400px) {imgInfo.widths.xxl}px, (min-width: 1200px)
-                {imgInfo.widths.xl}px, (min-width: 992px) {imgInfo.widths.lg}px, (min-width: 768px)
-                {imgInfo.widths.md}px, (min-width: 576px) {imgInfo.widths.sm}px, {imgInfo.widths.xs}px
-            </f:variable>
+<f:section name="LegacyImageContent">
+    <f:comment><!-- FALLBACK: Simple img + srcset (used when all crops are the same) --></f:comment>
+    <f:variable name="srcsetVal">{f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth:
+        imgInfo.widths.xxl)} {imgInfo.widths.xxl}w, {f:uri.image(image: image, cropVariant: imgInfo.variants.xs,
+        maxWidth: imgInfo.widths.xl)} {imgInfo.widths.xl}w, {f:uri.image(image: image, cropVariant:
+        imgInfo.variants.xs, maxWidth: imgInfo.widths.lg)} {imgInfo.widths.lg}w, {f:uri.image(image: image,
+        cropVariant: imgInfo.variants.xs, maxWidth: imgInfo.widths.md)} {imgInfo.widths.md}w,
+        {f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth: imgInfo.widths.sm)}
+        {imgInfo.widths.sm}w, {f:uri.image(image: image, cropVariant: imgInfo.variants.xs, maxWidth:
+        imgInfo.widths.xs)} {imgInfo.widths.xs}w
+    </f:variable>
 
+    <f:variable name="sizesVal">(min-width: 1400px) {imgInfo.widths.xxl}px, (min-width: 1200px)
+        {imgInfo.widths.xl}px, (min-width: 992px) {imgInfo.widths.lg}px, (min-width: 768px)
+        {imgInfo.widths.md}px, (min-width: 576px) {imgInfo.widths.sm}px, {imgInfo.widths.xs}px
+    </f:variable>
+
+    <f:comment><!-- Add figure-img to img if no ratio wrapper and no link --></f:comment>
+    <f:variable name="finalImgClass"
+                value="{imgClass}{f:if(condition: '{doRenderFigure} && !{finalLink} && !{finalRatioClass}', then: ' figure-img')}"/>
+
+    <f:image image="{image}"
+             cropVariant="{imgInfo.variants.xs}"
+             maxWidth="{imgInfo.widths.xxl}"
+             loading="{loading}"
+             class="{finalImgClass}"
+             alt="{finalAlt}"
+             title="{finalTitle}"
+             additionalAttributes="{decoding: 'async', aria-hidden: ariaAttr, role: roleAttr, srcset: srcsetVal, sizes: sizesVal}"/>
+</f:section>
+
+<f:section name="ImageGroupRender">
+    <f:comment><!-- Render one img-tag for a group of breakpoints with same aspect ratio --></f:comment>
+    <f:variable name="groupClass"
+                value="{group.ratioClass}{f:if(condition: group.ratioClass, then: ' ')}{group.displayClass}{f:if(condition: '{doRenderFigure} && !{finalLink}', then: ' figure-img')}"/>
+    <f:if condition="{group.ratioClass}">
+        <f:then>
+            <div class="{groupClass}">
+                <f:render section="SingleImageWithSrcset" arguments="{_all}"/>
+            </div>
+        </f:then>
+        <f:else>
+            <f:comment><!-- No ratio class: render img directly with display class --></f:comment>
+            <div class="{groupClass}">
+                <f:render section="SingleImageWithSrcset" arguments="{_all}"/>
+            </div>
+        </f:else>
+    </f:if>
+</f:section>
+
+<f:section name="SingleImageWithSrcset">
+    <f:comment><!-- Build srcset from group's optimized entries --></f:comment>
+    <f:variable name="srcsetVal" value=""/>
+    <f:variable name="sizesVal" value=""/>
+    <f:variable name="bpWidths" value="{xs: 0, sm: 576, md: 768, lg: 992, xl: 1200, xxl: 1400}"/>
+
+    <f:if condition="{group.srcsetEntries -> f:count()} > 1">
+        <f:then>
+            <f:comment><!-- Multiple entries: build srcset --></f:comment>
+            <f:for each="{group.srcsetEntries}" as="entry" iteration="iter">
+                <f:variable name="srcsetVal">{srcsetVal}{f:uri.image(image: image, cropVariant: group.cropVariant,
+                    maxWidth: entry.width)} {entry.width}w{f:if(condition: iter.isLast, else: ', ')}
+                </f:variable>
+                <f:variable name="bpWidth" value="{bpWidths.{entry.breakpoint}}"/>
+                <f:if condition="{iter.isLast}">
+                    <f:then>
+                        <f:variable name="sizesVal">{sizesVal}{entry.width}px</f:variable>
+                    </f:then>
+                    <f:else>
+                        <f:variable name="sizesVal">{sizesVal}(min-width: {bpWidth}px) {entry.width}px,</f:variable>
+                    </f:else>
+                </f:if>
+            </f:for>
+
+            <f:variable name="firstEntry" value="{group.srcsetEntries.0}"/>
             <f:image image="{image}"
-                     cropVariant="{imgInfo.variants.xs}"
-                     maxWidth="{imgInfo.widths.xxl}"
+                     cropVariant="{group.cropVariant}"
+                     maxWidth="{firstEntry.width}"
                      loading="{loading}"
                      class="{imgClass}"
                      alt="{finalAlt}"
                      title="{finalTitle}"
                      additionalAttributes="{decoding: 'async', aria-hidden: ariaAttr, role: roleAttr, srcset: srcsetVal, sizes: sizesVal}"/>
+        </f:then>
+        <f:else>
+            <f:comment><!-- Single entry: simple img tag --></f:comment>
+            <f:variable name="entry" value="{group.srcsetEntries.0}"/>
+            <f:image image="{image}"
+                     cropVariant="{group.cropVariant}"
+                     maxWidth="{entry.width}"
+                     loading="{loading}"
+                     class="{imgClass}"
+                     alt="{finalAlt}"
+                     title="{finalTitle}"
+                     additionalAttributes="{decoding: 'async', aria-hidden: ariaAttr, role: roleAttr}"/>
         </f:else>
     </f:if>
+</f:section>
 
-    <f:comment> <!-- <![CDATA[
-        <f:asset.script identifier="debug-img" src="EXT:ot_sitekitbase/Resources/Public/JavaScript/debugImg.js"/>
-    ]]>	--> </f:comment>
+<f:section name="SVGGroupRender">
+    <f:comment><!-- Render SVG for a group of breakpoints with same crop variant --></f:comment>
+    <f:variable name="svgGroupClass"
+                value="{group.displayClass}{f:if(condition: '{doRenderFigure} && !{finalLink}', then: ' figure-img')}"/>
+    <div class="{svgGroupClass}">
+        <f:image image="{image}" cropVariant="{group.cropVariant}" loading="{loading}" class="{class}" alt="{finalAlt}"
+                 title="{finalTitle}"/>
+    </div>
 </f:section>
 </html>

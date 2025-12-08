@@ -10,7 +10,16 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
-    {data.bodytext -> f:format.html()}
+    <f:if condition="{data.ot_text_columns} != ''">
+        <f:then>
+            <div class="auto-column-text">
+                {data.bodytext -> f:format.html()}
+            </div>
+        </f:then>
+        <f:else>
+            {data.bodytext -> f:format.html()}
+        </f:else>
+    </f:if>
     <f:if condition="{irreButtons}">
         <f:render partial="IrreButtons" section="Main" arguments="{data : data, irreButtons : irreButtons}"/>
     </f:if>

@@ -1,24 +1,97 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
-<f:for each="{files}" as="file">
-    <f:comment> <!-- <![CDATA[
-        Types:
-        2 = Image
-    ]]>	--> </f:comment>
-    <f:link.typolink parameter="{file.link}">
-        <f:switch expression="{file.type}">
-            <f:case value="2">
-                <f:render partial="Media/Type/Image" arguments="{file:file,data:data}"/>
-            </f:case>
-            <f:case value="video">
-                <f:render partial="Media/Type/Video" arguments="{file:file,data:data}"/>
-            </f:case>
-            <f:case value="audio">
-                <f:render partial="Media/Type/Audio" arguments="{file:file,data:data}"/>
-            </f:case>
-        </f:switch>
-    </f:link.typolink>
-</f:for>
-</html>
 
+<f:comment> <!-- <![CDATA[
+    This partial is called by various content elements. Many content elements, such as the "Card" element, can only
+     display one image in a meaningful way. This is handled by the "OneMedia" section. As an alternative, I would also
+     like to implement an image changer and a "Gallery" element that displays multiple images at a later date.
+]]>	--> </f:comment>
+
+
+<f:comment> <!-- <![CDATA[
+    Check whether one image, several images as a slider or all images should be displayed.
+    If a single 'file' is passed, render it directly (used when iterating externally).
+]]>	--> </f:comment>
+
+<f:if condition="{file}">
+    <f:then>
+        <f:comment><!-- Single file passed: render directly --></f:comment>
+        <f:render section="OneMedia" arguments="{_all}"/>
+    </f:then>
+    <f:else>
+        <f:comment><!-- Files array passed: use mode logic --></f:comment>
+        <f:switch expression="{mode}">
+            <f:case value="firstImage">
+                <f:render section="FirstImage" arguments="{_all}"/>
+            </f:case>
+            <f:case value="slider">
+                <f:render section="Slider" arguments="{_all}"/>
+            </f:case>
+            <f:defaultCase>
+                <f:render section="AllImages" arguments="{_all}"/>
+            </f:defaultCase>
+        </f:switch>
+    </f:else>
+</f:if>
+
+<f:comment> <!-- <![CDATA[
+    In "FirstImage" mode, only the first image is displayed.
+    In "Slider" mode, all images are displayed as a slider. (todo: Implement slider)
+    In "AllImages" mode, all images are displayed. (todo: Implement gallery)
+    Class can be specified in the content element.
+]]>	--> </f:comment>
+<f:section name="FirstImage">
+    <f:render section="OneMedia"
+              arguments="{
+                file:files.0,
+                maxImageWidth: maxImageWidth,
+                data:data,
+                class:class,
+                numColumns:numColumns,
+                gridColumns:gridColumns
+              }"/>
+</f:section>
+<f:section name="Slider">
+    <f:for each="{files}" as="file" iteration="fileIterator">
+        <f:render section="OneMedia"
+                  arguments="{file:file, maxImageWidth: maxImageWidth, data:data, class:class, numColumns:numColumns, gridColumns:gridColumns}"/>
+    </f:for>
+</f:section>
+<f:section name="AllImages">
+    <f:for each="{files}" as="file" iteration="fileIterator">
+        <f:render section="OneMedia"
+                  arguments="{file:file, maxImageWidth: maxImageWidth, data:data, class:class, numColumns:numColumns, gridColumns:gridColumns}"/>
+    </f:for>
+</f:section>
+
+<f:comment> <!--
+    File Types:
+    2 = Image
+    3 = Audio
+    4 = Video
+--> </f:comment>
+
+<f:section name="OneMedia">
+    <f:switch expression="{file.type}">
+        <f:case value="2">
+            <f:render partial="Media/Type/Image"
+                      arguments="{
+                        file:file,
+                        maxImageWidth:maxImageWidth,
+                        data:data,
+                        class:class,
+                        numColumns:numColumns,
+                        gridColumns:gridColumns
+                      }"/>
+        </f:case>
+        <f:case value="3">
+            <f:render partial="Media/Type/Audio" arguments="{file:file, data:data, class:class}"/>
+        </f:case>
+        <f:case value="4">
+            <f:render partial="Media/Type/Video" arguments="{file:file, data:data, class:class}"/>
+        </f:case>
+    </f:switch>
+</f:section>
+
+</html>

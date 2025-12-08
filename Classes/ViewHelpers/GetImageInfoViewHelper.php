@@ -76,6 +76,14 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             false,
             null
         );
+        $this->registerArgument(
+            'gridColumns',
+            'mixed',
+            'Bootstrap grid columns (1-12) to calculate width (int or array).
+                       Overrides numColumns but can be overridden by maxWidth.',
+            false,
+            null
+        );
     }
 
     /**
@@ -86,6 +94,14 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
      *     widths: array<string, int>,
      *     suggestPictureTag: bool,
      *     ratioClass: string,
+     *     aspectRatioGroups: array<int, array{
+     *         aspectRatio: string,
+     *         ratioClass: string,
+     *         breakpoints: array<string>,
+     *         displayClass: string,
+     *         cropVariant: string,
+     *         srcsetEntries: array<int, array{width: int, breakpoint: string}>
+     *     }>,
      *     metadata: array{
      *         uid: int,
      *         alternative: string,
@@ -103,6 +119,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
         $defaultCrop = $this->arguments['defaultCropVariant'];
         $maxWidthInput = $this->arguments['maxWidth'];
         $numColumnsInput = $this->arguments['numColumns'];
+        $gridColumnsInput = $this->arguments['gridColumns'];
 
         $result = [
             'exists' => false,
@@ -111,6 +128,8 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             'widths' => [],
             'suggestPictureTag' => false,
             'ratioClass' => '',
+            'aspectRatioGroups' => [],
+            'isSvg' => false,
             'metadata' => [
                 'uid' => 0,
                 'alternative' => '',
@@ -138,7 +157,17 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
                 $result['metadata']['title'] = $image->getTitle();
                 $result['metadata']['description'] = $image->getDescription();
                 $result['metadata']['link'] = $image->getLink();
+
+                // Check if it's an SVG
+                $mimeType = $image->getMimeType();
+                if (str_starts_with($mimeType, 'image/svg')) {
+                    $result['isSvg'] = true;
+                }
             } elseif (is_string($image)) {
+                // Check if it's an SVG (for string paths)
+                if (str_ends_with(strtolower($image), '.svg')) {
+                    $result['isSvg'] = true;
+                }
                 $absPath = GeneralUtility::getFileAbsFileName($image);
                 if (empty($absPath) || !file_exists($absPath)) {
                     $this->logger->warning('File not found at path: ' . $image);
@@ -183,30 +212,46 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             $inputCols = ['xs' => (int)$numColumnsInput];
         }
 
+        $inputGridCols = [];
+        if (is_array($gridColumnsInput)) {
+            $inputGridCols = $gridColumnsInput;
+        } elseif (is_numeric($gridColumnsInput)) {
+            $inputGridCols = ['xs' => (int)$gridColumnsInput];
+        }
+
         // State tracking for inheritance
-        // track either an explicit pixel width OR a number of columns.
+        // Priority: maxWidth > gridColumns > numColumns
         $currentColCount = 1;
+        $currentGridColCount = null;
         $currentPixelOverride = null;
 
         foreach ($breakpoints as $bp) {
-            // 1. Check for new column definition (sets new standard)
+            // 1. Check for numColumns definition
             if (isset($inputCols[$bp]) && $inputCols[$bp] > 0) {
-                $currentColCount = (float)$inputCols[$bp]; // float also allows 1.5 columns in theory
-                $currentPixelOverride = null; // Column mode wins, reset pixel override
+                $currentColCount = (float)$inputCols[$bp];
+                $currentGridColCount = null;
+                $currentPixelOverride = null;
             }
 
-            // 2. Check for new pixel definition (sets new standard and overwrites Col mode)
+            // 2. Check for gridColumns definition (overrides numColumns)
+            if (isset($inputGridCols[$bp]) && $inputGridCols[$bp] > 0) {
+                $currentGridColCount = (float)$inputGridCols[$bp];
+                $currentPixelOverride = null;
+            }
+
+            // 3. Check for pixel definition (overrides everything)
             if (isset($inputWidths[$bp]) && $inputWidths[$bp] > 0) {
                 $currentPixelOverride = (int)$inputWidths[$bp];
             }
 
-            // 3. Calculation for this breakpoint
+            // 4. Calculation for this breakpoint
             if ($currentPixelOverride !== null) {
                 $result['widths'][$bp] = $currentPixelOverride;
+            } elseif ($currentGridColCount !== null) {
+                // Calculate based on Bootstrap grid columns (1-12)
+                $result['widths'][$bp] = (int)ceil($defaultBootstrapWidths[$bp] * ($currentGridColCount / 12));
             } else {
-                // Berechne basierend auf Default Container Width / Spalten
-                // ceil() verwenden, damit wir bei krummen Werten immer leicht größer sind
-                // (Performance vs. Schärfe -> Schärfe gewinnt)
+                // Calculate based on number of columns (divide container)
                 $result['widths'][$bp] = (int)ceil($defaultBootstrapWidths[$bp] / $currentColCount);
             }
         }
@@ -245,6 +290,146 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             $result['ratioClass'] = 'ratio ratio-' . $ratioString;
         }
 
+        // 4. Aspect Ratio Grouping for optimized img-tags
+        // Group breakpoints by their aspect ratio and crop variant
+        $result['aspectRatioGroups'] = $this->buildAspectRatioGroups(
+            $breakpoints,
+            $result['variants'],
+            $result['widths'],
+            $ratiosFound
+        );
+
         return $result;
+    }
+
+    /**
+     * Groups breakpoints by aspect ratio and creates optimized srcset entries
+     *
+     * @param array<string> $breakpoints
+     * @param array<string, string> $variants
+     * @param array<string, int> $widths
+     * @param array<string> $ratiosFound
+     * @return array<int, array{
+     *     aspectRatio: string,
+     *     ratioClass: string,
+     *     breakpoints: array<string>,
+     *     displayClass: string,
+     *     cropVariant: string,
+     *     srcsetEntries: array<int, array{width: int, breakpoint: string}>
+     * }>
+     */
+    private function buildAspectRatioGroups(
+        array $breakpoints,
+        array $variants,
+        array $widths,
+        array $ratiosFound
+    ): array {
+        $groups = [];
+        $currentGroup = null;
+        $bpMinWidths = ['xs' => 0, 'sm' => 576, 'md' => 768, 'lg' => 992, 'xl' => 1200, 'xxl' => 1400];
+
+        foreach ($breakpoints as $index => $bp) {
+            $cropVariant = $variants[$bp];
+            $aspectRatio = $ratiosFound[$index];
+
+            // Check if we need to start a new group (different crop or aspect ratio)
+            if (
+                $currentGroup === null ||
+                $currentGroup['cropVariant'] !== $cropVariant ||
+                $currentGroup['aspectRatio'] !== $aspectRatio
+            ) {
+                // Finalize previous group if exists
+                if ($currentGroup !== null) {
+                    $groups[] = $currentGroup;
+                }
+
+                // Start new group
+                $ratioClass = '';
+                if ($aspectRatio !== 'free') {
+                    $ratioClass = 'ratio ratio-' . str_replace(':', 'x', $aspectRatio);
+                }
+
+                $currentGroup = [
+                    'aspectRatio' => $aspectRatio,
+                    'ratioClass' => $ratioClass,
+                    'breakpoints' => [$bp],
+                    'displayClass' => '',
+                    'cropVariant' => $cropVariant,
+                    'srcsetEntries' => []
+                ];
+            } else {
+                // Add to current group
+                $currentGroup['breakpoints'][] = $bp;
+            }
+        }
+
+        // Add last group
+        if ($currentGroup !== null) {
+            $groups[] = $currentGroup;
+        }
+
+        // Calculate display classes for each group
+        $groupCount = count($groups);
+        foreach ($groups as $i => &$group) {
+            $firstBp = $group['breakpoints'][0];
+            $lastBp = $group['breakpoints'][count($group['breakpoints']) - 1];
+
+            if ($groupCount === 1) {
+                // Only one group: always visible
+                $group['displayClass'] = '';
+            } elseif ($i === 0) {
+                // First group: hide from next group's first breakpoint
+                $nextGroupFirstBp = $groups[$i + 1]['breakpoints'][0];
+                $group['displayClass'] = 'd-' . $nextGroupFirstBp . '-none';
+            } elseif ($i === $groupCount - 1) {
+                // Last group: show from this group's first breakpoint
+                $group['displayClass'] = 'd-none d-' . $firstBp . '-block';
+            } else {
+                // Middle group: show from first bp, hide from next group's first bp
+                $nextGroupFirstBp = $groups[$i + 1]['breakpoints'][0];
+                $group['displayClass'] = 'd-none d-' . $firstBp . '-block d-' . $nextGroupFirstBp . '-none';
+            }
+
+            // Build optimized srcset entries (remove near-duplicates)
+            $group['srcsetEntries'] = $this->buildOptimizedSrcset($group['breakpoints'], $widths);
+        }
+
+        return $groups;
+    }
+
+    /**
+     * Builds optimized srcset entries by removing near-duplicate widths
+     *
+     * @param array<string> $breakpoints
+     * @param array<string, int> $widths
+     * @return array<int, array{width: int, breakpoint: string}>
+     */
+    private function buildOptimizedSrcset(array $breakpoints, array $widths): array
+    {
+        $entries = [];
+        $threshold = 0.15; // 15% difference threshold
+
+        foreach ($breakpoints as $bp) {
+            $width = $widths[$bp];
+            $shouldAdd = true;
+
+            // Check if this width is too similar to an existing one
+            foreach ($entries as $entry) {
+                $diff = abs($width - $entry['width']) / $entry['width'];
+                if ($diff < $threshold) {
+                    $shouldAdd = false;
+                    break;
+                }
+            }
+
+            if ($shouldAdd) {
+                $entries[] = [
+                    'width' => $width,
+                    'breakpoint' => $bp
+                ];
+            }
+        }
+
+        return $entries;
     }
 }

@@ -58,6 +58,19 @@ $tempColumns = [
             ],
         ],
     ],
+    'ot_text_columns' => [
+        'exclude' => true,
+        'label' => $ll . 'ot_text_columns',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                ['label' => $ll . 'ot_text_columns.singleColumn', 'value' => ''],
+                ['label' => $ll . 'ot_text_columns.multiColumn', 'value' => 'auto-column-text'],
+            ],
+            'size' => 1,
+        ],
+    ],
     'header_style' => [
         'exclude' => true,
         'label' => $ll . 'header_style',
@@ -288,3 +301,11 @@ foreach (
 ) {
     $GLOBALS['TCA']['tt_content']['types'][$cType]['previewRenderer'] = GenericPreviewRenderer::class;
 }
+
+// Add ot_text_columns to the content types text and textmedia
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    'ot_text_columns',
+    'text,textmedia',
+    'after:bodytext'
+);

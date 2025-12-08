@@ -245,7 +245,19 @@
 				<target>Überschrift Größe und Primärfarbe</target>
 			</trans-unit>
 			<!-- TCA tt_content -->
-			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label">
+			<trans-unit id="ot_text_columns" resname="ot_text_columns">
+				<source>Text Columns</source>
+				<target>Textspalten</target>
+			</trans-unit>
+			<trans-unit id="ot_text_columns.singleColumn" resname="ot_text_columns.singleColumn">
+				<source>Single Column</source>
+				<target>Einzelne Spalte</target>
+			</trans-unit>
+			<trans-unit id="ot_text_columns.multiColumn" resname="ot_text_columns.multiColumn">
+				<source>Multi-Column</source>
+				<target>Mehrspaltig</target>
+			</trans-unit>
+			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label" approved="yes">
 				<source>Crop Variants</source>
 				<target>Bildausschnitt-Varianten</target>
 			</trans-unit>

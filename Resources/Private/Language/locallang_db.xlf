@@ -215,6 +215,15 @@
 				<source>Dark</source>
 			</trans-unit>
 			<!-- TCA tt_content -->
+			<trans-unit id="ot_text_columns" resname="ot_text_columns">
+				<source>Text Columns</source>
+			</trans-unit>
+			<trans-unit id="ot_text_columns.singleColumn" resname="ot_text_columns.singleColumn">
+				<source>Single Column</source>
+			</trans-unit>
+			<trans-unit id="ot_text_columns.multiColumn" resname="ot_text_columns.multiColumn">
+				<source>Multi-Column</source>
+			</trans-unit>
 			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label">
 				<source>Crop Variants</source>
 			</trans-unit>

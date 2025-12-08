@@ -42,7 +42,7 @@ final class ComponentCollection extends AbstractComponentCollection
 
             if ($site instanceof Site) {
                 $settings = $site->getSettings();
-                $sitekitDirectory = $settings->get('ot-sitekit-base.frameworks.frontend.directory');
+                $sitekitDirectory = $settings->get('sitekit.frameworks.frontend.directory');
                 if ($sitekitDirectory !== '') {
                     $directory = $sitekitDirectory . '/';
                 }

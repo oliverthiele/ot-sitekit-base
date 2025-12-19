@@ -18,7 +18,7 @@
             <div class="container">
                 <nav class="navbar {navbarExpand} bg-body-primary text sticky-top __mainmenu" aria-label="{f:translate(key: 'mainNavigation', extensionName: 'ot_sitekitbase', default: 'Main navigation')}">
                     <div class="container-fluid g-0">
-                        <f:render partial="Navigation/Main/{settings.sitekit.components.page.mainNavigation}/Brand" section="Default" arguments="{_all}"/>
+                        <skc:atom.navbar.brand settings="{settings}" class="m-0" />
                         <f:render partial="Navigation/Main/{settings.sitekit.components.page.mainNavigation}/Toggler" section="Default" arguments="{_all}"/>
 
                         <div class="collapse navbar-collapse" id="navbarMain">

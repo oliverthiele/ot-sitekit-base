@@ -4,28 +4,31 @@ categories:
     parent: Sitekit
   Sitekit.project.brand:
     parent: Sitekit.project
+  SocialMedia.settings:
+    parent: Sitekit.project
   Sitekit.pages:
     parent: Sitekit
   Sitekit.templates:
     parent: Sitekit
   Sitekit.menus:
     parent: Sitekit
-  Sitekit.menus.mainMenu:
+  Sitekit.menus.main:
     parent: Sitekit.menus
-  Sitekit.menus.topMenu:
+  Sitekit.menus.top:
     parent: Sitekit.menus
-  Sitekit.menus.languageMenu:
+  Sitekit.menus.language:
     parent: Sitekit.menus
-  Sitekit.menus.subpagesMenu:
+  Sitekit.menus.footer:
+    parent: Sitekit.menus
+  Sitekit.menus.subpages:
     parent: Sitekit.menus
   Sitekit.features:
     parent: Sitekit
   Sitekit.features.search:
     parent: Sitekit.features
-  Sitekit.features.colorMode:
+  Sitekit.features.colorModes:
     parent: Sitekit.features
-  SocialMedia.settings:
-    parent: Sitekit
+
   Sitekit.contentElements:
     parent: Sitekit
 
@@ -76,22 +79,8 @@ settings:
 
   sitekit.project.brand.logo.file.svg:
     category: Sitekit.project.brand
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.brand.logo.file.svg.description'
     type: string
     default: 'EXT:ot_sitekitbase/Resources/Public/Icons/Extension.svg'
-
-
-  sitekit.pages.root:
-    category: Sitekit.pages
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.pages.root.description'
-    type: page
-    default: 1
-
-  sitekit.pages.footerNavigationRootPage:
-    category: Sitekit.pages
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.pages.footerNavigationRootPage.description'
-    type: page
-    default: 1
 
   sitekit.pages.termsAndConditions:
     category: Sitekit.pages
@@ -128,13 +117,31 @@ settings:
 
   sitekit.frameworks.frontend.directory:
     category: Sitekit.templates
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.frameworks.frontend.directory.description'
     type: string
     default: 'Bootstrap5'
 
-  sitekit.gutterSize:
+
+  sitekit.layout.pageHeader.variant:
     category: Sitekit.templates
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.gutterSize.description'
+    type: string
+    default: 1
+    enum:
+      1: 'Row 1: Menu Top | Row 2: Logo, Menu Main, Search'
+      2: 'Row 1: Logo, Menu Top | Row 2: Menu Main, Search'
+#      1: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.layout.pageHeader.variant.1'
+#      2: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.layout.pageHeader.variant.2'
+
+#  sitekit.layout.pageFooter.variant:
+#    category: Sitekit.templates
+#    type: string
+#    default: 1
+#    enum:
+#      1: '1'
+#      2: '2'
+
+
+  sitekit.layout.gutterSize:
+    category: Sitekit.templates
     type: string
     default: 3
     enum:
@@ -145,18 +152,22 @@ settings:
       4: '4'
       5: '5'
 
-  sitekit.components.page.mainNavigation:
-    category: Sitekit.menus.mainMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.components.page.mainNavigation.description'
-    default: 'Default'
+  # Main Navigation
+  sitekit.menus.main.rootPage:
+    category: Sitekit.menus.main
+    type: page
+    default: 0
+
+  sitekit.menus.main.variant:
+    category: Sitekit.menus.main
     type: string
+    default: 'Default'
     enum:
       Default: 'Default'
       Advanced: 'Advanced (WCAG)'
 
-  sitekit.menus.mainMenu.collapsing:
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menu.mainMenu.collapsing.description'
-    category: Sitekit.menus.mainMenu
+  sitekit.menus.main.collapsing:
+    category: Sitekit.menus.main
     type: string
     default: 'lg'
     enum:
@@ -166,131 +177,120 @@ settings:
       'xl': 'xl'
       'xxl': 'xxl'
 
-  sitekit.menus.mainMenu.levels:
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.mainMenu.levels.description'
-    category: Sitekit.menus.mainMenu
+  sitekit.menus.main.levels:
+    category: Sitekit.menus.main
     type: string
     default: 2
     enum:
       1: 1
       2: 2
 
-  sitekit.menus.mainMenu.includeSpacer:
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.mainMenu.includeSpacer.description'
-    category: Sitekit.menus.mainMenu
+  sitekit.menus.main.includeSpacer:
+    category: Sitekit.menus.main
     type: bool
     default: false
 
-  sitekit.menus.mainMenu.logo.width:
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.mainMenu.logo.width.description'
-    category: Sitekit.menus.mainMenu
+  sitekit.menus.main.logo.width:
+    category: Sitekit.menus.main
     type: int
     default: 40
 
-  sitekit.menus.mainMenu.logo.height:
-    category: Sitekit.menus.mainMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.mainMenu.logo.height.description'
+  sitekit.menus.main.logo.height:
+    category: Sitekit.menus.main
     type: int
     default: 40
 
+  # Top Navigation
+  sitekit.menus.top.rootPage:
+    category: Sitekit.menus.top
+    type: page
+    default: 0
 
-  sitekit.components.page.topMenu:
-    category: Sitekit.menus.topMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.components.page.topMenu.description'
-    default: 'Default'
+  sitekit.menus.top.variant:
+    category: Sitekit.menus.top
     type: string
+    default: 'Default'
     enum:
       Default: 'Default'
 
-  sitekit.pages.topMenuRootPage:
-    category: Sitekit.menus.topMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.pages.topMenuRootPage.description'
-    type: page
-    default: 1
-
-
-  sitekit.menus.languageMenu.enabled:
-    category: Sitekit.menus.languageMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.languageMenu.enabled.description'
+  # Language Navigation
+  sitekit.menus.language.enabled:
+    category: Sitekit.menus.language
     type: bool
     default: false
 
-  sitekit.components.page.languageMenu:
-    category: Sitekit.menus.languageMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.components.page.languageMenu.description'
-    default: 'Default'
+  sitekit.menus.language.variant:
+    category: Sitekit.menus.language
     type: string
+    default: 'Default'
     enum:
       Default: 'Default'
       Dropdown: 'Dropdown (WCAG)'
 
-  sitekit.menus.languageMenu.dropdownToggle.label.enabled:
-    category: Sitekit.menus.languageMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.languageMenu.dropdownToggle.label.enabled.description'
+  sitekit.menus.language.dropdownToggle.label.enabled:
+    category: Sitekit.menus.language
     type: bool
     default: false
 
-  sitekit.menus.subpagesMenu:
-    category: Sitekit.menus.subpagesMenu
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.menus.subpagesMenu.description'
-    default: 'Default'
-    type: string
-    enum:
-      Default: 'Default'
-      Cards: 'Cards (WCAG)'
-
-
-
+  # Footer Navigation
+  sitekit.menus.footer.rootPage:
+    category: Sitekit.menus.footer
+    type: page
+    default: 0
 
   sitekit.features.search.enabled:
     category: Sitekit.features.search
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.features.search.enabled.description'
     type: bool
     default: false
 
-  sitekit.features.colorMode.enabled:
-    category: Sitekit.features.colorMode
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.features.colorMode.enabled.description'
+  sitekit.features.colorModes.enabled:
+    category: Sitekit.features.colorModes
     type: bool
     default: true
 
-  sitekit.components.page.colorMode:
-    category: Sitekit.features.colorMode
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.components.page.colorMode.description'
+  sitekit.features.colorModes.variant:
+    category: Sitekit.features.colorModes
     default: 'Default'
     type: string
     enum:
       Default: 'Default (WCAG)'
 
-  sitekit.features.colorMode.dropdownToggle.label.enabled:
-    category: Sitekit.features.colorMode
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.features.colorMode.dropdownToggle.label.enabled.description'
+  sitekit.features.colorModes.dropdownToggle.label.enabled:
+    category: Sitekit.features.colorModes
     type: bool
     default: false
 
 
-
-  socialMedia.facebook.account:
+  sitekit.project.socialMedia.facebook.account:
     category: SocialMedia.settings
     type: string
     default: ''
 
-  socialMedia.x.account:
+  sitekit.project.socialMedia.x.account:
     category: SocialMedia.settings
     type: string
     default: ''
 
-  socialMedia.instagram.account:
+  sitekit.project.socialMedia.instagram.account:
     category: SocialMedia.settings
     type: string
     default: ''
 
-  socialMedia.linkedIn.account:
+  sitekit.project.socialMedia.linkedIn.account:
     category: SocialMedia.settings
     type: string
     default: ''
 
-  contentElements.menuSubpages.rowCols:
+  # Subpages Navigation
+  sitekit.contentElements.menu_subpages.variant:
+    category: Sitekit.contentElements
+    type: string
+    default: 'Default'
+    enum:
+      Default: 'Default'
+      Cards: 'Cards (WCAG)'
+
+  sitekit.contentElements.menu_subpages.rowCols:
     category: Sitekit.contentElements
     type: string
     default: 'row-cols-1 row-cols-md-2  row-cols-xl-3'

@@ -19,17 +19,17 @@ Resources/Private/Presets
 ### JS Import
 
 ```js
-import { initNavbarAdvanced } from '@sitekit-presets/Bootstrap5/Partials/Navigation/Main/Advanced/Index.js';
-import { initLanguageMenuDropdown } from '@sitekit-presets/Bootstrap5/Partials/Navigation/LanguageMenu/Dropdown/Index.js';
-import { initColorModeDropdown } from '@sitekit-presets/Bootstrap5/Partials/Features/ColorMode/Default/Index.js';
+import { initNavbarAdvanced } from '@sitekit-presets/Bootstrap5/Partials/Menus/Main/Advanced/Index.js';
+import { initLanguageMenuDropdown } from '@sitekit-presets/Bootstrap5/Partials/Menus/Language/Dropdown/Index.js';
+import { initColorModeDropdown } from '@sitekit-presets/Bootstrap5/Partials/Features/ColorModes/Default/Index.js';
 ```
 
 ### CSS Import
 
 ```scss
-@import "@sitekit-presets/Bootstrap5/Partials/Navigation/Main/Advanced/Index.scss";
-@import "@sitekit-presets/Bootstrap5/Partials/Navigation/LanguageMenu/Dropdown/Index.scss";
-@import "@sitekit-presets/Bootstrap5/Partials/Features/ColorMode/Default/Index.scss";
+@import "@sitekit-presets/Bootstrap5/Partials/Menus/Main/Advanced/Index.scss";
+@import "@sitekit-presets/Bootstrap5/Partials/Menus/Language/Dropdown/Index.scss";
+@import "@sitekit-presets/Bootstrap5/Partials/Features/ColorModes/Default/Index.scss";
 ```
 
 `@sitekit-presets` can only work if the frontend build can resolve the path,

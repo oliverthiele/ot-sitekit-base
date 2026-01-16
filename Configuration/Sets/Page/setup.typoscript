@@ -33,7 +33,7 @@ page {
   10 {
     paths {
       # Base extension, with standard Bootstrap 5 layouts
-      60 = EXT:ot_sitekitbase/Resources/Private/Templates/{$sitekit.frameworks.frontend.directory}/
+      60 = EXT:ot_sitekitbase/Resources/Private/PageView/{$sitekit.frameworks.frontend.directory}/
 
       # Preset = Directories with partials, SCSS, JS
       61 = EXT:ot_sitekitbase/Resources/Private/Presets/{$sitekit.frameworks.frontend.directory}/
@@ -55,43 +55,53 @@ page {
       200 = menu
       200 {
         special = directory
-        special.value = {$sitekit.pages.root}
-        levels = 2
-        as = mainMenu
-      }
-
-      210 = menu
-      210 {
-        special = directory
-        special.value = {$sitekit.pages.topMenuRootPage}
-        levels = 1
-        as = topMenu
+        special.value = {$sitekit.menus.main.rootPage}
+        levels = {$sitekit.menus.main.levels}
+        as = menuMain
       }
 
       300 = menu
       300 {
         special = rootline
-        as = breadcrumb
-      }
-
-      400 = language-menu
-      400 {
-        as = languageMenu
+        as = menuBreadcrumb
       }
 
     }
   }
 }
 
+# If the root page for the top navigation is set, the data processor is activated
+[traverse(site('configuration'), 'settings/sitekit/menus/top/rootPage') > 0]
+  page.10.dataProcessing {
+    1768425232 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1768425232 {
+      special = directory
+      special.value = {$sitekit.menus.top.rootPage}
+      levels = 1
+      as = menuTop
+    }
+  }
+[GLOBAL]
+
 # If the root page for the footer navigation is set, the data processor is activated
-[traverse(site('configuration'), 'settings/sitekit/pages/footerNavigationRootPage') > 0]
+[traverse(site('configuration'), 'settings/sitekit/menus/footer/rootPage') > 0]
   page.10.dataProcessing {
     1749220162 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
     1749220162 {
       special = directory
-      special.value = {$sitekit.pages.footerNavigationRootPage}
+      special.value = {$sitekit.menus.footer.rootPage}
       levels = 1
-      as = footerNavigation
+      as = menuFooter
     }
   }
 [GLOBAL]
+
+# sitekit.menus.language.enabled
+[traverse(site('configuration'), 'settings/sitekit/menus/language/enabled') == 1]
+  page.10.dataProcessing {
+    400 = language-menu
+    400 {
+      as = menuLanguage
+    }
+  }
+[end]

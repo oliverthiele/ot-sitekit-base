@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: PageHeader</title>
+</head>
+<body>
+
+<f:section name="Main">
+<f:render partial="Header/Variants/{settings.sitekit.layout.pageHeader.variant}" section="Main"
+          arguments="{
+                  menuMain : menuMain,
+                  menuLanguage : menuLanguage,
+                  menuTop : menuTop
+              }"/>
+
+<f:if condition="{content.hero-image.records}">
+    <div id="heroImage">
+        <f:for each="{content.hero-image.records}" as="contentElement">
+            <f:cObject
+                typoscriptObjectPath="{contentElement.mainType}"
+                table="{contentElement.mainType}"
+                data="{contentElement}"
+            />
+        </f:for>
+    </div>
+</f:if>
+</f:section>
+</body>
+</html>

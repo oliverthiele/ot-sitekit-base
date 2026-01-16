@@ -47,7 +47,7 @@
 				<source>Service navigation</source>
 				<target>Zusatznavigation</target>
 			</trans-unit>
-			<trans-unit id="topMenu" resname="topMenu" approved="yes">
+			<trans-unit id="menuTop" resname="menuTop" approved="yes">
 				<source>Top menu</source>
 				<target>Menü oben</target>
 			</trans-unit>
@@ -68,27 +68,27 @@
 				<target>auswählen</target>
 			</trans-unit>
 
-			<trans-unit id="colorMode" resname="colorMode" approved="yes">
+			<trans-unit id="colorModes" resname="colorModes" approved="yes">
 				<source>Color mode</source>
 				<target>Farbmodus</target>
 			</trans-unit>
-			<trans-unit id="colorMode_light" resname="colorMode_light" approved="yes">
+			<trans-unit id="colorModes_light" resname="colorModes_light" approved="yes">
 				<source>Light mode</source>
 				<target>Heller Modus</target>
 			</trans-unit>
-			<trans-unit id="colorMode_dark" resname="colorMode_dark" approved="yes">
+			<trans-unit id="colorModes_dark" resname="colorModes_dark" approved="yes">
 				<source>Dark mode</source>
 				<target>Dunkler Modus</target>
 			</trans-unit>
-			<trans-unit id="colorMode_current_light" resname="colorMode_current_light" approved="yes">
+			<trans-unit id="colorModes_current_light" resname="colorModes_current_light" approved="yes">
 				<source>Current color mode: light</source>
 				<target>Aktueller Farbmodus: Hell</target>
 			</trans-unit>
-			<trans-unit id="colorMode_current_dark" resname="colorMode_current_dark" approved="yes">
+			<trans-unit id="colorModes_current_dark" resname="colorModes_current_dark" approved="yes">
 				<source>Current color mode: dark</source>
 				<target>Aktueller Farbmodus: Dunkel</target>
 			</trans-unit>
-			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings" approved="yes">
+			<trans-unit id="colorModes_current_systemSettings" resname="colorModes_current_systemSettings" approved="yes">
 				<source>Current color mode: system settings</source>
 				<target>Aktueller Farbmodus: Systemeinstellungen</target>
 			</trans-unit>

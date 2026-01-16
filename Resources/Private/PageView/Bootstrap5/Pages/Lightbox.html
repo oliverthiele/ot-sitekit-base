@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Template: Lightbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<f:layout name="LightboxLayout"/>
+
+<f:section name="Main">
+    <div class="p-{settings.sitekit.gutterSize}">
+        <f:for each="{content.main.records}" as="contentElement">
+            <f:cObject
+                typoscriptObjectPath="{contentElement.mainType}"
+                table="{contentElement.mainType}"
+                data="{contentElement}"
+            />
+        </f:for>
+    </div>
+</f:section>
+
+</body>
+</html>

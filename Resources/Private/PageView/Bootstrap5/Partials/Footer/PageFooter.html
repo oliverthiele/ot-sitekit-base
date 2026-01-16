@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: PageFooter</title>
+</head>
+<body>
+
+<f:section name="Main">
+    <f:comment> <!-- <![CDATA[
+        todo {settings.sitekit.layout.pageFooter.variant}, if a second variant is defined
+    ]]>	--> </f:comment>
+    <f:render partial="Footer/Variants/1" section="Main"
+              arguments="{
+                  menuFooter : menuFooter,
+              }"/>
+</f:section>
+
+</body>
+</html>

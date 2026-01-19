@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Page Header Variant 1</title>
+</head>
+<body>
+
+<f:layout name="DefaultLayout"/>
+
+<f:section name="Main">
+    <!-- Page Header Variant 1 -->
+    <f:render partial="Header/SkipNavigation" section="Main"/>
+    <f:render partial="Header/TopNavigation" section="Main"
+              arguments="{menuLanguage : menuLanguage, menuTop : menuTop}"/>
+    <f:render partial="Header/MainNavigation" section="Main"
+              arguments="{menuMain : menuMain}"/>
+</f:section>
+<f:asset.css identifier=""></f:asset.css>
+</body>
+</html>

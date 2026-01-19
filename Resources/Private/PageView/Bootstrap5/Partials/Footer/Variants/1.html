@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: PageFooter Variant 1</title>
+</head>
+<body>
+<f:section name="Main">
+    <footer id="pageFooter" class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <address>
+                        {settings.sitekit.project.companyName}<br />
+                        <f:if condition="{settings.sitekit.project.companyName2}">
+                            {settings.sitekit.project.companyName2}<br />
+                        </f:if>
+                        <br />
+                        {settings.sitekit.project.addressLine1}<br />
+                        <f:if condition="{settings.sitekit.project.addressLine2}">
+                            {settings.sitekit.project.addressLine2}<br />
+                        </f:if>
+                        {settings.sitekit.project.postalCode} {settings.sitekit.project.city}
+
+                        <f:if condition="{settings.sitekit.project.telephone} || {settings.sitekit.project.email}">
+                            <br />
+                        </f:if>
+
+                        <f:if condition="{settings.sitekit.project.telephone}">
+                            <br />
+                            <f:translate key="telephone" extensionName="OtSitekitbase" default="Telephone"/>:
+                            <a href="tel:{settings.sitekit.project.telephone}">
+                                {settings.sitekit.project.telephone}
+                            </a>
+                        </f:if>
+
+                        <f:if condition="{settings.sitekit.project.email}">
+                            <br />
+                            <f:translate key="email" extensionName="OtSitekitbase" default="Email"/>:
+                            <a href="mailto: {settings.sitekit.project.email}">
+                                {settings.sitekit.project.email}
+                            </a>
+                        </f:if>
+                    </address>
+
+                    <f:comment> <!-- <![CDATA[
+                    <p>
+                        <f:translate key="fon.reception" extensionName="OtSitekitbase"/> <a href="tel:+49...">+49 ...</a><br />
+                        <br />
+                        E-Mail: <f:link.email email=""></f:link.email><br />
+                        Internet: <f:link.external uri=""></f:link.external>
+                    </p>
+
+                    <f:link.external uri="https://www.linkedin.com/company/.../"
+                                     target="_blank"
+                                     title="Visit our LinkedIn profile!"
+                                     rel="noopener noreferrer">
+                            <f:image class="img-fluid ot-icon-linkedin"
+                                     loading="lazy"
+                                     alt="LinkedIn Logo"
+                                     src="EXT:ot_sitekitbase/Resources/Public/Icons/FabLinkedIn.svg" />
+                    </f:link.external>
+
+                        <f:link.external uri="https://www.youtube.com/..."
+                                         target="_blank"
+                                         class="ms-3"
+                                         title="Visit our YouTube channel!"
+                                         rel="noopener noreferrer">
+                        </f:link.external>
+                    ]]>	--> </f:comment>
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0 col-lg-4 offset-lg-4">
+                    <f:if condition="{menuFooter}">
+                        <p><strong><f:translate key="legal" extensionName="OtSitekitbase"/></strong></p>
+                        <ul id="footerNavigation" class="nav flex-column">
+                            <f:for each="{menuFooter}" as="item">
+                                <li class="nav-item">
+                                    <a class="nav-link {f:if(condition: '{item.current} == 1 || {item.active} == 1', then: ' active')}" href="{item.link}">
+                                        {item.title}
+                                    </a>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </div>
+
+                <div class="col-12 text-center">
+                    <div class="mt-4 mb-0">© {settings.sitekit.project.companyName} <f:format.date date="now" format="Y"/></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</f:section>
+
+</body>
+</html>

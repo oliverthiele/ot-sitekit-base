@@ -37,7 +37,7 @@
 			<trans-unit id="serviceNavigation" resname="serviceNavigation">
 				<source>Service navigation</source>
 			</trans-unit>
-			<trans-unit id="topMenu" resname="topMenu">
+			<trans-unit id="menuTop" resname="menuTop">
 				<source>Top menu</source>
 			</trans-unit>
 			<trans-unit id="languageMenu" resname="languageMenu">
@@ -53,22 +53,22 @@
 				<source>choose</source>
 			</trans-unit>
 
-			<trans-unit id="colorMode" resname="colorMode">
-				<source>Color mode</source>
+			<trans-unit id="colorModes" resname="colorModes">
+				<source>Color Modes</source>
 			</trans-unit>
-			<trans-unit id="colorMode_light" resname="colorMode_light">
+			<trans-unit id="colorModes_light" resname="colorModes_light">
 				<source>Light mode</source>
 			</trans-unit>
-			<trans-unit id="colorMode_dark" resname="colorMode_dark">
+			<trans-unit id="colorModes_dark" resname="colorModes_dark">
 				<source>Dark mode</source>
 			</trans-unit>
-			<trans-unit id="colorMode_current_light" resname="colorMode_current_light">
+			<trans-unit id="colorModes_current_light" resname="colorModes_current_light">
 				<source>Current color mode: light</source>
 			</trans-unit>
-			<trans-unit id="colorMode_current_dark" resname="colorMode_current_dark">
+			<trans-unit id="colorModes_current_dark" resname="colorModes_current_dark">
 				<source>Current color mode: dark</source>
 			</trans-unit>
-			<trans-unit id="colorMode_current_systemSettings" resname="colorMode_current_systemSettings">
+			<trans-unit id="colorModes_current_systemSettings" resname="colorModes_current_systemSettings">
 				<source>Current color mode: system settings</source>
 			</trans-unit>
 

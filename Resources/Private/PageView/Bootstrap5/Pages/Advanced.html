@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Template: Advanced</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="This template has no container. Additional container elements with different widths can be added by the user.">
+</head>
+<body>
+
+<f:layout name="DefaultLayout"/>
+
+<f:section name="Main">
+    <div id="breadcrumb-wrapper" class="bg-light">
+        <div class="container py-{settings.sitekit.layout.gutterSize}">
+            <f:render partial="Menus/Breadcrumb/Default" section="Main" arguments="{breadcrumb : breadcrumb}"/>
+        </div>
+    </div>
+    <main id="mainContent" class="mt-{settings.sitekit.layout.gutterSize}">
+        <f:for each="{content.main.records}" as="contentElement">
+            <f:cObject
+                typoscriptObjectPath="{contentElement.mainType}"
+                table="{contentElement.mainType}"
+                data="{contentElement}"
+            />
+        </f:for>
+    </main>
+</f:section>
+
+</body>
+</html>

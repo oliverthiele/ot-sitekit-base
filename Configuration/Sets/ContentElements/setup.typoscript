@@ -17,11 +17,12 @@ lib.contentElement {
   settings {
     defaultHeaderType = 2
     sitekit {
-      gutterSize = {$sitekit.gutterSize}
-      contentElements.menuSubpages.rowCols = {$contentElements.menuSubpages.rowCols}
-      menus {
-        subpagesMenu {
-          variant = {$sitekit.menus.subpagesMenu}
+      gutterSize = {$sitekit.layout.gutterSize}
+      contentElements {
+        # CType!
+        menu_subpages {
+          rowCols = {$sitekit.contentElements.menu_subpages.rowCols}
+          variant = {$sitekit.contentElements.menu_subpages.variant}
         }
       }
     }
@@ -49,11 +50,12 @@ lib.sitekitContentElement {
   settings {
     defaultHeaderType = 2
     sitekit {
-      gutterSize = {$sitekit.gutterSize}
-      contentElements.menuSubpages.rowCols = {$contentElements.menuSubpages.rowCols}
-      menus {
-        subpagesMenu {
-          variant = {$sitekit.menus.subpagesMenu}
+      gutterSize = {$sitekit.layout.gutterSize}
+      contentElements {
+        # CType!
+        menu_subpages {
+          rowCols = {$sitekit.contentElements.menu_subpages.rowCols}
+          variant = {$sitekit.contentElements.menu_subpages.variant}
         }
       }
     }

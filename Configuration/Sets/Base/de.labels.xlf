@@ -33,10 +33,37 @@
 				<source>Menus</source>
 				<target>Menüs</target>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.main" resname="categories.Sitekit.menus.main">
+				<source>Main Menu</source>
+				<target>Hauptnavigation</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.top" resname="categories.Sitekit.menus.top">
+				<source>Top Menu</source>
+				<target>Top-Navigation</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.language" resname="categories.Sitekit.menus.language">
+				<source>Language Menu</source>
+				<target>Sprachmenü</target>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.subpages" resname="categories.Sitekit.menus.subpages">
+				<source>Subpages Menu</source>
+			</trans-unit>
+			<trans-unit id="categories.Sitekit.menus.footer" resname="categories.Sitekit.menus.footer">
+				<source>Footer Menu</source>
+				<target>Fußzeilen-Menü</target>
+			</trans-unit>
+
+			<trans-unit id="categories.Sitekit.features.colorModes" resname="categories.Sitekit.features.colorModes">
+				<source>Color Modes</source>
+				<target>Color Modes</target>
+			</trans-unit>
 			<trans-unit id="categories.SocialMedia.settings" resname="categories.SocialMedia.settings">
 				<source>Social Media</source>
 				<target>Social Media</target>
 			</trans-unit>
+
+
+
 			<trans-unit id="settings.sitekit.project.companyName" resname="settings.sitekit.project.companyName">
 				<source>Company Name</source>
 				<target>Firmenname</target>
@@ -85,22 +112,7 @@
 				<source>Email</source>
 				<target>E-Mail</target>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.pages.root" resname="settings.sitekit.pages.root">
-				<source>Root Page ID</source>
-				<target>Startseiten-ID</target>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.pages.root.description" resname="settings.sitekit.pages.root.description">
-				<source>The root page id for this website. It is the parent page id of the main navigation.</source>
-				<target>Die Root-Seiten-ID für diese Website. Es handelt sich um die übergeordnete Seiten-ID der Hauptnavigation.</target>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.pages.footerNavigationRootPage" resname="settings.sitekit.pages.footerNavigationRootPage">
-				<source>Footer Navigation Root Page</source>
-				<target>Fußzeilen-Navigation Einstiegsseite</target>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.pages.footerNavigationRootPage.description" resname="settings.sitekit.pages.footerNavigationRootPage.description">
-				<source>Page ID of the start page (doktype "Directory") used for building the footer navigation.</source>
-				<target>Seiten-ID der Startseite (Dokumenttyp „Verzeichnis“), die für die Erstellung der Fußzeilennavigation verwendet wird.</target>
-			</trans-unit>
+
 			<trans-unit id="settings.sitekit.pages.termsAndConditions" resname="settings.sitekit.pages.termsAndConditions">
 				<source>Terms and conditions</source>
 				<target>Allgemeine Geschäftsbedingungen</target>
@@ -121,32 +133,94 @@
 				<source>Parent directory to templates files. This path is also used by many Sitekit content elements.</source>
 				<target>Übergeordnetes Verzeichnis für Vorlagendateien. Dieser Pfad wird auch von vielen Sitekit-Inhaltselementen verwendet.</target>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.gutterSize" resname="settings.sitekit.gutterSize">
+			<trans-unit id="settings.sitekit.layout.utterSize" resname="settings.sitekit.layout.gutterSize">
 				<source>Gutter Size</source>
 				<target>Gutter Größe</target>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.gutterSize.description" resname="settings.sitekit.gutterSize.description">
-				<source>The gutter size (e.g. for card decks)</source>
-				<target>Die Gutter-Größe (z. B. für Card Container)</target>
+			<trans-unit id="settings.description.sitekit.layout.gutterSize" resname="settings.description.sitekit.layout.gutterSize">
+				<source>The default gutter size (e.g. for card decks)</source>
+				<target>Die Standard-Gutter-Größe (z. B. für Card Container)</target>
 			</trans-unit>
-			<trans-unit id="settings.socialMedia.facebook.account" resname="settings.socialMedia.facebook.account">
+			<trans-unit id="settings.sitekit.project.socialMedia.facebook.account" resname="settings.sitekit.project.socialMedia.facebook.account">
 				<source>Facebook Account</source>
 				<target>Facebook Account</target>
 			</trans-unit>
-			<trans-unit id="settings.socialMedia.x.account" resname="settings.socialMedia.x.account">
+			<trans-unit id="settings.sitekit.project.socialMedia.x.account" resname="settings.sitekit.project.socialMedia.x.account">
 				<source>X/Twitter Account</source>
 				<target>X/Twitter Account</target>
 			</trans-unit>
-			<trans-unit id="settings.socialMedia.instagram.account" resname="settings.socialMedia.instagram.account">
+			<trans-unit id="settings.sitekit.project.socialMedia.instagram.account" resname="settings.sitekit.project.socialMedia.instagram.account">
 				<source>Instagram Account</source>
 				<target>Instagram Account</target>
 			</trans-unit>
-			<trans-unit id="settings.socialMedia.linkedIn.account" resname="settings.socialMedia.linkedIn.account">
+			<trans-unit id="settings.sitekit.project.socialMedia.linkedIn.account" resname="settings.sitekit.project.socialMedia.linkedIn.account">
 				<source>LinkedIn Account</source>
 				<target>LinkedIn Account</target>
 			</trans-unit>
 
 			<trans-unit id="settings.contentElements.menuSubpages.rowCols" resname="settings.contentElements.menuSubpages.rowCols">
+				<source>Row Cols</source>
+				<target>Row Cols</target>
+			</trans-unit>
+
+
+			<!-- Main Menu -->
+			<trans-unit id="settings.sitekit.menus.main.rootPage" resname="settings.sitekit.menus.main.rootPage">
+				<source>Root Page</source>
+				<target>Root-Seite</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.description.rootPage" resname="settings.sitekit.menus.main.description.rootPage">
+				<source>Page ID of the start page (doktype "Directory") used for building the main navigation.</source>
+				<target>Seiten-ID der Startseite (Dokumenttyp „Verzeichnis“), die für die Erstellung der Hauptnavigation verwendet wird.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.sitekit.menus.main.variant" resname="settings.sitekit.menus.main.variant">
+				<source>Variant</source>
+				<target>Variante</target>
+			</trans-unit>
+
+			<trans-unit id="settings.sitekit.menus.footer.rootPage" resname="settings.sitekit.menus.footer.rootPage">
+				<source>Footer Navigation Root Page</source>
+				<target>Fußzeilen-Navigation Einstiegsseite</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.footer.description.rootPage" resname="settings.sitekit.menus.footer.description.rootPage">
+				<source>Page ID of the start page (doktype "Directory") used for building the footer navigation.</source>
+				<target>Seiten-ID der Startseite (Dokumenttyp „Verzeichnis“), die für die Erstellung der Fußzeilennavigation verwendet wird.</target>
+			</trans-unit>
+
+			<!-- Features -->
+			<!-- Search -->
+			<trans-unit id="settings.sitekit.features.search.enabled" resname="settings.sitekit.features.search.enabled">
+				<source>Enabled</source>
+				<target>Aktiviert</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.features.search.enabled" resname="settings.settings.description.sitekit.features.search.enabled">
+				<source>Enables search on the website.</source>
+				<target>Ermöglicht die Suche auf der Website.</target>
+			</trans-unit>
+
+			<!-- Color Modes -->
+			<trans-unit id="settings.sitekit.features.colorModes.variant" resname="settings.sitekit.features.colorModes.variant">
+				<source>Color Modes Variant</source>
+				<target>Color Modes Variante</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.features.colorModes.variant" resname="settings.description.sitekit.features.colorModes.variant">
+				<source>Based on the Bootstrap Color Modes: `https://getbootstrap.com/docs/5.3/customize/color-modes/`</source>
+				<target>Basierend auf dem Bootstrap-Farbmodus: `https://getbootstrap.com/docs/5.3/customize/color-modes/`</target>
+			</trans-unit>
+
+			<!-- Content Elements -->
+
+			<!-- Menu Subpages -->
+			<trans-unit id="settings.sitekit.contentElements.menu_subpages.variant" resname="settings.sitekit.contentElements.menu_subpages.variant">
+				<source>Variant</source>
+				<target>Variante</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.menu_subpages" resname="settings.description.sitekit.menus.menu_subpages">
+				<source>Layout of the menu for subpages.</source>
+				<target>Layout des Menüs für Unterseiten.</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.contentElements.menu_subpages.rowCols" resname="settings.sitekit.contentElements.menu_subpages.rowCols">
 				<source>Row Cols</source>
 				<target>Row Cols</target>
 			</trans-unit>

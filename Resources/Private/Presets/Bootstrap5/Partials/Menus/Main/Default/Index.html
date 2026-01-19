@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Partial: Index</title>
+</head>
+<body>
+
+<f:layout name="DefaultLayout" />
+
+<f:section name="Main">
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-lg-top navbar-dark custom-navbar">
+        <div class="container">
+            <skc:atom.navbar.brand settings="{settings}" class="m-0" />
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <f:for each="{menuMain}" as="page" iteration="pageIterator">
+                        <f:if condition="{page.hasSubpages} == 1">
+                            <f:then>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle{f:if(condition: '{pageIterator.isFirst}', then: ' ps-0')}" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        {page.title}
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <f:for each="{page.children}" as="subpage">
+                                            <f:if condition="{subpage.spacer} == 1">
+                                                <f:then>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:if condition="{subpage.current} == 1">
+                                                        <f:then>
+                                                            <li><a class="dropdown-item active" href="{subpage.link}">{subpage.title}</a></li>
+                                                        </f:then>
+                                                        <f:else>
+                                                            <li><a class="dropdown-item" href="{subpage.link}">{subpage.title}</a></li>
+                                                        </f:else>
+                                                    </f:if>
+                                                </f:else>
+                                            </f:if>
+                                        </f:for>
+                                    </ul>
+                                </li>
+                            </f:then>
+                            <f:else>
+                                <li class="nav-item">
+                                    <f:if condition="{page.active} == 1">
+                                        <f:then>
+                                            <a class="nav-link active" aria-current="page" href="{page.link}">{page.title}</a>
+                                        </f:then>
+                                        <f:else>
+                                            <a class="nav-link" href="{page.link}">{page.title}</a>
+                                        </f:else>
+                                    </f:if>
+                                </li>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </ul>
+                <f:comment> <!-- <![CDATA[
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                ]]>	--> </f:comment>
+            </div>
+        </div>
+    </nav>
+</f:section>
+</body>
+</html>
+
+
+<f:comment> <!-- <![CDATA[
+    <f:asset.script identifier="EXT:ot_sitekitbase/Resources/Private/Components/Page/Navigation/Main/Default/Index.js"/>
+]]>	--> </f:comment>

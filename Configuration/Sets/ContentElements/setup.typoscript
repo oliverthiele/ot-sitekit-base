@@ -17,7 +17,9 @@ lib.contentElement {
   settings {
     defaultHeaderType = 2
     sitekit {
-      gutterSize = {$sitekit.layout.gutterSize}
+      layout {
+        gutterSize = {$sitekit.layout.gutterSize}
+      }
       contentElements {
         # CType!
         menu_subpages {
@@ -50,7 +52,9 @@ lib.sitekitContentElement {
   settings {
     defaultHeaderType = 2
     sitekit {
-      gutterSize = {$sitekit.layout.gutterSize}
+      layout {
+        gutterSize = {$sitekit.layout.gutterSize}
+      }
       contentElements {
         # CType!
         menu_subpages {

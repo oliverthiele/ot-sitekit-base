@@ -4,7 +4,7 @@
 <f:section name="Main">
     <f:if condition="{menu}">
         <nav class="container g-0" aria-labelledby="header-u{data.uid}">
-            <ul class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-{settings.sitekit.gutterSize} list-unstyled">
+            <ul class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-{settings.sitekit.layout.gutterSize} list-unstyled">
                 <f:for each="{menu}" as="page">
                     <li class="col">
                         <f:render section="Card" arguments="{_all}"/>

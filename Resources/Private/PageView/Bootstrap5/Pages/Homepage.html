@@ -11,7 +11,7 @@
 <f:layout name="DefaultLayout"/>
 
 <f:section name="Main">
-    <main id="mainContent" class="container mt-{settings.sitekit.gutterSize}">
+    <main id="mainContent" class="container mt-{settings.sitekit.layout.gutterSize}">
         <f:for each="{content.main.records}" as="contentElement">
             <f:cObject
                 typoscriptObjectPath="{contentElement.mainType}"

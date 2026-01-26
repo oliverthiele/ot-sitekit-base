@@ -10,7 +10,8 @@
 <f:layout name="DefaultLayout" />
 
 <f:section name="Main">
-    <nav class="navbar navbar-expand-lg shadow-sm sticky-lg-top navbar-dark custom-navbar">
+    <f:variable name="navbarExpand" value="navbar-expand-{settings.sitekit.menus.main.collapsing}"/>
+    <nav class="navbar {navbarExpand} bg-body-primary {settings.sitekit.menus.main.backgroundColor} shadow-sm sticky-lg-top custom-navbar">
         <div class="container">
             <skc:atom.navbar.brand settings="{settings}" class="m-0" />
 

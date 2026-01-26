@@ -168,6 +168,12 @@
 			<trans-unit id="settings.description.sitekit.menus.main.variant" resname="settings.description.sitekit.menus.main.variant">
 				<source>Based on the Bootstrap Navbar: `https://getbootstrap.com/docs/5.3/components/navbar/`</source>
 			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.backgroundColor" resname="settings.sitekit.menus.main.backgroundColor">
+				<source>Navbar Background</source>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.backgroundColor" resname="settings.description.sitekit.menus.main.backgroundColor">
+				<source>Controls the color of the burger menu for mobile navigation.</source>
+			</trans-unit>
 			<trans-unit id="settings.sitekit.menus.main.collapsing" resname="settings.sitekit.menus.main.collapsing">
 				<source>Responsive Collapsing</source>
 			</trans-unit>

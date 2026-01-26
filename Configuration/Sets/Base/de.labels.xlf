@@ -205,6 +205,15 @@
 				<source>Based on the Bootstrap Navbar: `https://getbootstrap.com/docs/5.3/components/navbar/`</source>
 				<target>Basierend auf der Bootstrap-Navigationsleiste: `https://getbootstrap.com/docs/5.3/components/navbar/`</target>
 			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.backgroundColor" resname="settings.sitekit.menus.main.backgroundColor">
+				<source>Navbar Background</source>
+				<target>Navigationsleistenhintergrund</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.backgroundColor" resname="settings.description.sitekit.menus.main.backgroundColor">
+				<source>Controls the color of the burger menu for mobile navigation.</source>
+				<target>Steuert die Farbe des Burger-Menüs für die Mobil-Navigation.</target>
+			</trans-unit>
+
 			<trans-unit id="settings.sitekit.menus.main.collapsing" resname="settings.sitekit.menus.main.collapsing">
 				<source>Responsive Collapsing</source>
 				<target>Responsives Zusammenklappen</target>

@@ -10,6 +10,7 @@ categories:
     parent: Sitekit
   Sitekit.templates:
     parent: Sitekit
+
   Sitekit.menus:
     parent: Sitekit
   Sitekit.menus.main:
@@ -20,8 +21,7 @@ categories:
     parent: Sitekit.menus
   Sitekit.menus.footer:
     parent: Sitekit.menus
-  Sitekit.menus.subpages:
-    parent: Sitekit.menus
+
   Sitekit.features:
     parent: Sitekit
   Sitekit.features.search:
@@ -31,29 +31,27 @@ categories:
 
   Sitekit.contentElements:
     parent: Sitekit
+  Sitekit.contentElements.menu_subpages:
+    parent: Sitekit.contentElements
 
 settings:
   sitekit.project.companyName:
     category: Sitekit.project
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.companyName.description'
     type: string
     default: 'Company Name'
 
   sitekit.project.companyName2:
     category: Sitekit.project
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.companyName2.description'
     type: string
     default: ''
 
   sitekit.project.addressLine1:
     category: Sitekit.project
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.addressLine1.description'
     type: string
     default: ''
 
   sitekit.project.addressLine2:
     category: Sitekit.project
-    description: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.project.addressLine2.description'
     type: string
     default: ''
 
@@ -85,17 +83,17 @@ settings:
   sitekit.pages.termsAndConditions:
     category: Sitekit.pages
     type: page
-    default: 1
+    default: 0
 
   sitekit.pages.legalNotice:
     category: Sitekit.pages
     type: page
-    default: 1
+    default: 0
 
   sitekit.pages.privacyPolicy:
     category: Sitekit.pages
     type: page
-    default: 1
+    default: 0
 
   sitekit.content.contentElementsPageAdvanced:
     label: 'Content Elements for Backend Layout "Advanced"'
@@ -120,7 +118,6 @@ settings:
     type: string
     default: 'Bootstrap5'
 
-
   sitekit.layout.pageHeader.variant:
     category: Sitekit.templates
     type: string
@@ -139,11 +136,22 @@ settings:
 #      1: '1'
 #      2: '2'
 
-
   sitekit.layout.gutterSize:
     category: Sitekit.templates
     type: string
     default: 3
+    enum:
+      0: '0'
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+
+  sitekit.layout.radius:
+    category: Sitekit.templates
+    type: string
+    default: 2
     enum:
       0: '0'
       1: '1'
@@ -283,7 +291,7 @@ settings:
 
   # Subpages Navigation
   sitekit.contentElements.menu_subpages.variant:
-    category: Sitekit.contentElements
+    category: Sitekit.contentElements.menu_subpages
     type: string
     default: 'Default'
     enum:
@@ -291,6 +299,6 @@ settings:
       Cards: 'Cards (WCAG)'
 
   sitekit.contentElements.menu_subpages.rowCols:
-    category: Sitekit.contentElements
+    category: Sitekit.contentElements.menu_subpages
     type: string
     default: 'row-cols-1 row-cols-md-2  row-cols-xl-3'

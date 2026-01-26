@@ -27,6 +27,12 @@
 			<trans-unit id="categories.Sitekit.contentElements" resname="categories.Sitekit.contentElements">
 				<source>Content Elements</source>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.contentElements.menu_subpages" resname="categories.Sitekit.contentElements.menu_subpages">
+				<source>Menu Subpages</source>
+			</trans-unit>
+			<trans-unit id="categories.description.Sitekit.contentElements.menu_subpages" resname="categories.description.Sitekit.contentElements.menu_subpages">
+				<source>CType `menu_subpages`</source>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.menus" resname="categories.Sitekit.menus">
 				<source>Menus</source>
 			</trans-unit>
@@ -74,25 +80,25 @@
 			<trans-unit id="settings.Sitekit.project.companyName" resname="settings.sitekit.project.companyName">
 				<source>Company Name</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.project.companyName.description" resname="settings.sitekit.project.companyName.description">
+			<trans-unit id="settings.description.sitekit.project.companyName" resname="settings.description.sitekit.project.companyName">
 				<source>The name of the company will be used in the Navbar, Footer, ….</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.project.companyName2" resname="settings.settings.sitekit.project.companyName2">
+			<trans-unit id="settings.sitekit.project.companyName2" resname="settings.sitekit.project.companyName2">
 				<source>Company Name Row 2</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.project.companyName2.description" resname="settings.settings.sitekit.project.companyName2.description">
+			<trans-unit id="settings.description.sitekit.project.companyName2" resname="settings.description.sitekit.project.companyName2">
 				<source>e.g. for owner / slogan</source>
 			</trans-unit>
 			<trans-unit id="settings.sitekit.project.addressLine1" resname="settings.sitekit.project.addressLine1">
 				<source>Address Line 1</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.project.addressLine1.description" resname="settings.settings.sitekit.project.addressLine1.description">
+			<trans-unit id="settings.description.sitekit.project.addressLine1" resname="settings.description.sitekit.project.addressLine1">
 				<source>Street and House number</source>
 			</trans-unit>
 			<trans-unit id="settings.sitekit.project.addressLine2" resname="settings.sitekit.project.addressLine2">
 				<source>Address Line 2</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.project.addressLine2.description" resname="settings.settings.sitekit.project.addressLine2.description">
+			<trans-unit id="settings.description.sitekit.project.addressLine2" resname="settings.description.sitekit.project.addressLine2">
 				<source>Additional address information</source>
 			</trans-unit>
 			<trans-unit id="settings.sitekit.project.postalCode" resname="settings.sitekit.project.postalCode">
@@ -107,6 +113,7 @@
 			<trans-unit id="settings.sitekit.project.email" resname="settings.sitekit.project.email">
 				<source>Email</source>
 			</trans-unit>
+
 			<!-- Brand -->
 			<trans-unit id="settings.sitekit.project.brand.logo.file.svg" resname="settings.Sitekit.project.brand.logo.file.svg">
 				<source>Logo SVG</source>
@@ -139,10 +146,22 @@
 			<trans-unit id="settings.description.sitekit.layout.gutterSize" resname="settings.description.sitekit.layout.gutterSize">
 				<source>The default gutter size (e.g. for card decks)</source>
 			</trans-unit>
+			<trans-unit id="settings.sitekit.layout.radius" resname="settings.sitekit.layout.radius">
+				<source>Radius</source>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.layout.radius" resname="settings.description.sitekit.layout.radius">
+				<source>The default border radius for borders, buttons, images, …. This entry sets the class `border-radius` in various places (e.g., card frames, buttons).</source>
+			</trans-unit>
 
 
 			<!-- Menus -->
 			<!-- Main Menu -->
+			<trans-unit id="settings.sitekit.menus.main.rootPage" resname="settings.sitekit.menus.main.rootPage">
+				<source>Root Page</source>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.rootPage" resname="settings.description.sitekit.menus.main.rootPage">
+				<source>Page ID of the start page (doktype "Directory") used for building the main navigation.</source>
+			</trans-unit>
 			<trans-unit id="settings.sitekit.menus.main.variant" resname="settings.sitekit.menus.main.variant">
 				<source>Variant</source>
 			</trans-unit>
@@ -195,23 +214,6 @@
 				<source>Based on the Bootstrap Nav: `https://getbootstrap.com/docs/5.3/components/navs-tabs/`</source>
 			</trans-unit>
 
-
-			<!-- Main Menu -->
-			<trans-unit id="settings.sitekit.menus.main.rootPage" resname="settings.sitekit.menus.main.rootPage">
-				<source>Root Page</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.rootPage" resname="settings.description.sitekit.menus.main.rootPage">
-				<source>Page ID of the start page (doktype "Directory") used for building the main navigation.</source>
-			</trans-unit>
-
-			<trans-unit id="settings.sitekit.menus.main.variant" resname="settings.sitekit.menus.main.variant">
-				<source>Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.variant" resname="settings.description.sitekit.menus.main.variant">
-				<source>Standard ist die Bootstrap 5 Navbar `https://getbootstrap.com/docs/5.3/components/navbar/`.</source>
-			</trans-unit>
-
-
 			<!-- Language Menu -->
 			<trans-unit id="settings.sitekit.menus.language.enabled" resname="settings.sitekit.menus.language.enabled">
 				<source>Enabled</source>
@@ -241,13 +243,12 @@
 				<source>Page ID of the start page (doktype "Directory") used for building the footer navigation.</source>
 			</trans-unit>
 
-
 			<!-- Features -->
 			<!-- Search -->
 			<trans-unit id="settings.sitekit.features.search.enabled" resname="settings.sitekit.features.search.enabled">
 				<source>Enabled</source>
 			</trans-unit>
-			<trans-unit id="settings.description.sitekit.features.search.enabled" resname="settings.settings.description.sitekit.features.search.enabled">
+			<trans-unit id="settings.description.sitekit.features.search.enabled" resname="settings.description.sitekit.features.search.enabled">
 				<source>Enables search on the website.</source>
 			</trans-unit>
 
@@ -292,7 +293,7 @@
 			<trans-unit id="settings.sitekit.contentElements.menu_subpages.variant" resname="settings.sitekit.contentElements.menu_subpages.variant">
 				<source>Variant</source>
 			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.menu_subpages" resname="settings.description.sitekit.menus.menu_subpages">
+			<trans-unit id="settings.description.sitekit.contentElements.menu_subpages.variant" resname="settings.description.sitekit.contentElements.menu_subpages.variant">
 				<source>Layout of the menu for subpages.</source>
 			</trans-unit>
 

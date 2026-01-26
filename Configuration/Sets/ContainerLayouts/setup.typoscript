@@ -1,0 +1,28 @@
+# Layout Container
+
+## 80 % width for desktop, 100 % width for mobile
+tt_content.ot-sitekit-base-container-layout-width-80 =< lib.sitekitContentElement
+tt_content.ot-sitekit-base-container-layout-width-80 {
+  templateName = Width80
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/Layout/
+  }
+
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+}
+
+## 60 % width for desktop, 100 % width for mobile
+tt_content.ot-sitekit-base-container-layout-width-60 =< lib.sitekitContentElement
+tt_content.ot-sitekit-base-container-layout-width-60 {
+  templateName = Width60
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/Layout/
+  }
+
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+}
+

@@ -7,10 +7,10 @@
 </head>
 <body>
 <f:section name="Main">
-    <f:if condition="{breadcrumb}">
+    <f:if condition="{menuBreadcrumb}">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb m-0">
-                <f:for each="{breadcrumb}" as="page">
+                <f:for each="{menuBreadcrumb}" as="page">
                     <f:if condition="{page.current} == 1">
                         <f:then>
                             <li class="breadcrumb-item active" aria-current="page">{page.title}</li>

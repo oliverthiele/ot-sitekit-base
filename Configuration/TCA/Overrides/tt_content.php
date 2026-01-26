@@ -22,6 +22,9 @@ require_once GeneralUtility::getFileAbsFileName(
 require_once GeneralUtility::getFileAbsFileName(
     'EXT:ot_sitekitbase/Configuration/TCA/Container/Columns.php'
 );
+require_once GeneralUtility::getFileAbsFileName(
+    'EXT:ot_sitekitbase/Configuration/TCA/Container/Layouts.php'
+);
 
 $ceWithResponsiveImages = [
     'OR' => [

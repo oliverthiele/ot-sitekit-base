@@ -147,10 +147,10 @@
 			<trans-unit id="container.2cols" resname="container.2cols">
 				<source>Container [2 columns]</source>
 			</trans-unit>
-			<trans-unit id="container.3cols" resname="container.3cols" approved="yes">
+			<trans-unit id="container.3cols" resname="container.3cols">
 				<source>Container [3 columns]</source>
 			</trans-unit>
-			<trans-unit id="container.4cols" resname="container.4cols" approved="yes">
+			<trans-unit id="container.4cols" resname="container.4cols">
 				<source>Container [4 columns]</source>
 			</trans-unit>
 			<trans-unit id="container.special" resname="container.special">
@@ -174,12 +174,26 @@
 			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4">
 				<source>Content Container: 2 columns 8-4</source>
 			</trans-unit>
+			<!-- Container 3 columns -->
+			<trans-unit id="container.cols.3.4-4-4" resname="container.cols.3.4-4-4">
+				<source>Content Container: 3 columns 3-3-3</source>
+			</trans-unit>
+			<trans-unit id="container.cols.3.4-4-4.description" resname="container.cols.3.4-4-4.description">
+				<source>3 x 33% in Desktop View</source>
+			</trans-unit>
+			<trans-unit id="container.cols.3.3-6-3" resname="container.cols.3.3-6-3">
+				<source>Content Container: 3 columns 3-6-3</source>
+			</trans-unit>
+			<trans-unit id="container.cols.3.3-6-3.description" resname="container.cols.3.3-6-3.description">
+				<source>25% on the left and right, and 50% in the middle</source>
+			</trans-unit>
+			<!-- Container 4 columns -->
 			<trans-unit id="container.cols.4.3-3-3-3" resname="container.cols.4.3-3-3-3">
 				<source>Content Container: 4 columns</source>
 				<target>Content Container: 4 Spalten</target>
 			</trans-unit>
 			<trans-unit id="container.cols.4.3-3-3-3.description" resname="container.cols.4.description">
-				<source>4 x 25 % in Desktop View</source>
+				<source>4 x 25% in Desktop View</source>
 				<target>4 x 25 % in der Desktop-Ansicht</target>
 			</trans-unit>
 			<trans-unit id="container.cols.fixed-background" resname="container.cols.fixed-background">
@@ -188,11 +202,26 @@
 			<trans-unit id="container.labels.fixedBackgroundColumn" resname="container.labels.fixedBackgroundColumn">
 				<source>Container with fixed background</source>
 			</trans-unit>
+			<trans-unit id="container.labels.column1" resname="container.labels.column1">
+				<source>Column 1</source>
+			</trans-unit>
+			<trans-unit id="container.labels.column2" resname="container.labels.column2">
+				<source>Column 2</source>
+			</trans-unit>
+			<trans-unit id="container.labels.column3" resname="container.labels.column3">
+				<source>Column 3</source>
+			</trans-unit>
+			<trans-unit id="container.labels.column4" resname="container.labels.column4">
+				<source>Column 4</source>
+			</trans-unit>
 			<trans-unit id="container.labels.twoColumns" resname="container.labels.twoColumns">
 				<source>Two columns</source>
 			</trans-unit>
 			<trans-unit id="container.labels.leftColumn" resname="container.labels.leftColumn">
 				<source>Left column</source>
+			</trans-unit>
+			<trans-unit id="container.labels.middleColumn" resname="container.labels.middleColumn">
+				<source>Middle column</source>
 			</trans-unit>
 			<trans-unit id="container.labels.rightColumn" resname="container.labels.rightColumn">
 				<source>Right column</source>

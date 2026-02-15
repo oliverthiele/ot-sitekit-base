@@ -141,13 +141,33 @@
 				<source>Main Content</source>
 				<target>Haupt-Inhalt</target>
 			</trans-unit>
+			<trans-unit id="container.labels.column1" resname="container.labels.column1" approved="yes">
+				<source>Column 1</source>
+				<target>Spalte 1</target>
+			</trans-unit>
+			<trans-unit id="container.labels.column2" resname="container.labels.column2" approved="yes">
+				<source>Column 2</source>
+				<target>Spalte 2</target>
+			</trans-unit>
+			<trans-unit id="container.labels.column3" resname="container.labels.column3" approved="yes">
+				<source>Column 3</source>
+				<target>Spalte 3</target>
+			</trans-unit>
+			<trans-unit id="container.labels.column4" resname="container.labels.column4" approved="yes">
+				<source>Column 4</source>
+				<target>Spalte 4</target>
+			</trans-unit>
 			<trans-unit id="column.left" resname="column.left" approved="yes">
 				<source>Left Column</source>
-				<target>Linkee Spalte</target>
+				<target>Linke Spalte</target>
 			</trans-unit>
 			<trans-unit id="column.right" resname="column.right" approved="yes">
 				<source>Right Column</source>
 				<target>Rechte Spalte</target>
+			</trans-unit>
+			<trans-unit id="container.labels.middleColumn" resname="container.labels.middleColumn">
+				<source>Middle column</source>
+				<target>Mittlere Spalte</target>
 			</trans-unit>
 			<trans-unit id="column.aside" resname="column.aside" approved="yes">
 				<source>Aside Content</source>
@@ -202,6 +222,24 @@
 				<source>Content Container: 2 columns 8-4</source>
 				<target>Content Container: 2 Spalten 8-4</target>
 			</trans-unit>
+			<!-- Container 3 columns -->
+			<trans-unit id="container.cols.3.4-4-4" resname="container.cols.3.4-4-4" approved="yes">
+				<source>Content Container: 3 columns 3-3-3</source>
+				<target>Content Container: 3 Spalten 3-3-3</target>
+			</trans-unit>
+			<trans-unit id="container.cols.3.4-4-4.description" resname="container.cols.3.4-4-4.description" approved="yes">
+				<source>3 x 33% in Desktop View</source>
+				<target>3 x 33 % in der Desktop-Ansicht</target>
+			</trans-unit>
+			<trans-unit id="container.cols.3.3-6-3" resname="container.cols.3.3-6-3" approved="yes">
+				<source>Content Container: 3 columns 3-6-3</source>
+				<target>Content Container: 3 Spalten 3-6-3</target>
+			</trans-unit>
+			<trans-unit id="container.cols.3.3-6-3.description" resname="container.cols.3.3-6-3.description" approved="yes">
+				<source>25% on the left and right, and 50% in the middle</source>
+				<target>Links und rechts 25 % und in der Mitte 50 %</target>
+			</trans-unit>
+			<!-- Container 4 columns -->
 			<trans-unit id="container.cols.4.3-3-3-3" resname="container.cols.4.3-3-3-3" approved="yes">
 				<source>Content Container: 4 columns</source>
 				<target>Content Container: 4 Spalten</target>

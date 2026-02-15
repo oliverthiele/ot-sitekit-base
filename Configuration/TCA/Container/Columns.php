@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
@@ -91,6 +90,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => 'BT Container',
                     'colPos' => 100,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesFullContainerWidth,
                     ],
@@ -122,6 +122,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => 'BT Container Fluid',
                     'colPos' => 100,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesFullContainerWidth,
                     ],
@@ -153,6 +154,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => 'Container with background-color',
                     'colPos' => 100,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesFullContainerWidth .
                             'ot-sitekit-base-container-1-col-container, ot-sitekit-base-container-1-col-container-fluid,',
@@ -185,6 +187,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => 'Article',
                     'colPos' => 100,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesFullContainerWidth,
                     ],
@@ -217,6 +220,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => 'Section',
                     'colPos' => 100,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesFullContainerWidth,
                     ],
@@ -247,15 +251,17 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         [
             [
                 [
-                    'name' => 'Left',
+                    'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 200,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Right',
+                    'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 201,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
@@ -279,15 +285,17 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         [
             [
                 [
-                    'name' => 'Left',
+                    'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 200,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Right',
+                    'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 201,
+                    'colspan' => 2,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
@@ -311,15 +319,17 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         [
             [
                 [
-                    'name' => 'Left',
+                    'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 200,
+                    'colspan' => 2,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Right',
+                    'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 201,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
@@ -341,68 +351,30 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     (
     new ContainerConfiguration(
         'ot-sitekit-base-container-3-cols-33-33-33',
-        '3 Columns 33 % / 33 % / 33 %',
-        'Container with max. 3 columns.',
+        $ll . 'container.cols.3.4-4-4',
+        $ll . 'container.cols.3.4-4-4.description',
         [
             [
                 [
-                    'name' => 'Left',
+                    'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 300,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Middle',
+                    'name' => $ll . 'container.labels.middleColumn',
                     'colPos' => 301,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Right',
+                    'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 302,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
-                ],
-            ],
-        ]
-    )
-    )
-        ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
-        ->setGroup('container3Cols')
-);
-//</editor-fold>
-/**
- * 3 Columns 25 %, 50 %, 25 %
- */
-//<editor-fold desc="Container Extension Configuration: 3 columns">
-GeneralUtility::makeInstance(Registry::class)->configureContainer(
-    (
-    new ContainerConfiguration(
-        'ot-sitekit-base-container-3-cols-25-50-25',
-        '3 Columns 25 % / 50 % / 25 %',
-        'Container with max. 3 columns.',
-        [
-            [
-                [
-                    'name' => 'Left',
-                    'colPos' => 300,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
-                ],
-                [
-                    'name' => 'Middle',
-                    'colPos' => 301,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
-                ],
-                [
-                    'name' => 'Right',
-                    'colPos' => 302,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
@@ -417,7 +389,52 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 //</editor-fold>
 
 /**
- * 4 Columns 4 x 25 %
+ * 3 Columns 25 %, 50 %, 25 %
+ */
+//<editor-fold desc="Container Extension Configuration: 3 columns">
+GeneralUtility::makeInstance(Registry::class)->configureContainer(
+    (
+    new ContainerConfiguration(
+        'ot-sitekit-base-container-3-cols-25-50-25',
+        $ll . 'container.cols.3.3-6-3',
+        $ll . 'container.cols.3.3-6-3.description',
+        [
+            [
+                [
+                    'name' => $ll . 'container.labels.leftColumn',
+                    'colPos' => 300,
+                    'colspan' => 1,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => $ll . 'container.labels.middleColumn',
+                    'colPos' => 301,
+                    'colspan' => 2,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => $ll . 'container.labels.rightColumn',
+                    'colPos' => 302,
+                    'colspan' => 1,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+            ],
+        ]
+    )
+    )
+        ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
+        ->setGroup('container3Cols')
+);
+//</editor-fold>
+
+/**
+ * 4 Columns 4 x 25%
  */
 //<editor-fold desc="Container Extension Configuration: 4 columns">
 GeneralUtility::makeInstance(Registry::class)->configureContainer(
@@ -429,29 +446,33 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         [
             [
                 [
-                    'name' => 'Column 1',
+                    'name' => $ll . 'container.labels.column1',
                     'colPos' => 400,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Column 2',
+                    'name' => $ll . 'container.labels.column2',
                     'colPos' => 401,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Column 3',
+                    'name' => $ll . 'container.labels.column3',
                     'colPos' => 402,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
                 ],
                 [
-                    'name' => 'Column 4',
+                    'name' => $ll . 'container.labels.column4',
                     'colPos' => 403,
+                    'colspan' => 1,
                     'allowed' => [
                         'CType' => $CTypesForSmallerColumns,
                     ],
@@ -460,7 +481,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         ]
     )
     )
-        ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
+        ->setIcon('EXT:container/Resources/Public/Icons/container-4col.svg')
         ->setGroup('container4Cols')
 );
 //</editor-fold>

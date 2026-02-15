@@ -59,6 +59,13 @@ $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['
         'label' => $ll . 'container.ot-sitekit-base-container-grid-cards.ot_layout.3', // 'Maximal Vierspaltig',
     ],
 ];
+// Show the header layout field for the parentElement array
+// Label replacement not working yet
+$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['showitem'] = str_replace(
+    'header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.div_formlabel,',
+    'header;LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:grid_cards_container,header_layout,',
+    $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['showitem']
+);
 
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['showitem'] = str_replace(
     'tabs.appearance,',

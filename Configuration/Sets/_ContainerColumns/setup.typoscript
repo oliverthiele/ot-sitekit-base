@@ -16,7 +16,7 @@ tt_content.ot-sitekit-base-container {
   }
 }
 
-# 1 column
+## 1 column
 
 tt_content.ot-sitekit-base-container-1-col-article  =< tt_content.ot-sitekit-base-container
 tt_content.ot-sitekit-base-container-1-col-article {
@@ -33,7 +33,7 @@ tt_content.ot-sitekit-base-container-1-col-bgcolor {
   templateName = 1ColBgColor
 }
 
-# 2 columns
+## 2 columns
 
 tt_content.ot-sitekit-base-container =< lib.sitekitContentElement
 tt_content.ot-sitekit-base-container {
@@ -51,7 +51,7 @@ tt_content.ot-sitekit-base-container {
   }
 }
 
-## 50 % / 50 %
+### 50 % / 50 %
 
 tt_content.ot-sitekit-base-container-2-cols-50-50 =< tt_content.ot-sitekit-base-container
 tt_content.ot-sitekit-base-container-2-cols-50-50 {
@@ -72,7 +72,7 @@ tt_content.ot-sitekit-base-container-2-cols-50-50 {
 }
 
 
-## 33 % / 66 %
+### 33 % / 66 %
 
 tt_content.ot-sitekit-base-container-2-cols-33-66 =< tt_content.ot-sitekit-base-container
 tt_content.ot-sitekit-base-container-2-cols-33-66 {
@@ -85,7 +85,7 @@ tt_content.ot-sitekit-base-container-2-cols-33-66 {
 }
 
 
-## 66 % / 33 %
+### 66 % / 33 %
 
 tt_content.ot-sitekit-base-container-2-cols-66-33 =< tt_content.ot-sitekit-base-container
 tt_content.ot-sitekit-base-container-2-cols-66-33 {
@@ -98,9 +98,9 @@ tt_content.ot-sitekit-base-container-2-cols-66-33 {
 }
 
 
-# 3 columns
+## 3 columns
 
-## 33 % / 33% / 33%
+### 33 % / 33% / 33%
 
 tt_content.ot-sitekit-base-container-3-cols-33-33-33 =< tt_content.ot-sitekit-base-container
 tt_content.ot-sitekit-base-container-3-cols-33-33-33 {
@@ -110,5 +110,35 @@ tt_content.ot-sitekit-base-container-3-cols-33-33-33 {
     col1 = 4
     col2 = 4
     col3 = 4
+  }
+}
+
+### 25 % / 50% / 25%
+
+tt_content.ot-sitekit-base-container-3-cols-25-50-25 =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-3-cols-25-50-25 {
+  templateName = 3Cols
+  settings {
+    breakpoint = xl
+    col1 = 3
+    col2 = 6
+    col3 = 3
+  }
+}
+
+
+## 4 columns
+
+### 25 % / 25% / 25% / 25%
+
+tt_content.ot-sitekit-base-container-4-cols-25-25-25-25 =< tt_content.ot-sitekit-base-container
+tt_content.ot-sitekit-base-container-4-cols-25-25-25-25 {
+  templateName = 4Cols
+  settings {
+    breakpoint = xl
+    col1 = 3
+    col2 = 3
+    col3 = 3
+    col4 = 3
   }
 }

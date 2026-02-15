@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
@@ -38,7 +39,9 @@ $CTypesFullContainerWidth =
     ot-sitekit-base-container-2-cols-50-50,
     ot-sitekit-base-container-2-cols-33-66,
     ot-sitekit-base-container-2-cols-66-33,
-    ot-sitekit-base-container-3-cols-33-33-33,';
+    ot-sitekit-base-container-3-cols-33-33-33,
+    ot-sitekit-base-container-3-cols-25-50-25,
+    ot-sitekit-base-container-4-cols-25-25-25-25';
 
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [
@@ -100,6 +103,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
+        ->setGroup('pageContainer')
 );
 //</editor-fold>
 
@@ -130,6 +134,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
+        ->setGroup('pageContainer')
 );
 //</editor-fold>
 
@@ -161,7 +166,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -192,7 +197,8 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+//        ->setGroup('containerSpecial')
+//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -223,7 +229,8 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+//        ->setGroup('containerSpecial')
+//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -235,7 +242,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     (
     new ContainerConfiguration(
         'ot-sitekit-base-container-2-cols-50-50',
-        '2 Columns 50 % / 50 %',
+        $ll . 'container.cols.2.6-6',
         '',
         [
             [
@@ -258,6 +265,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-2col.svg')
+        ->setGroup('container2Cols')
 );
 //</editor-fold>
 
@@ -266,7 +274,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     (
     new ContainerConfiguration(
         'ot-sitekit-base-container-2-cols-33-66',
-        '2 Columns 33 % / 66 %',
+        $ll . 'container.cols.2.4-8',
         '',
         [
             [
@@ -289,6 +297,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-2col-right.svg')
+        ->setGroup('container2Cols')
 );
 //</editor-fold>
 
@@ -297,7 +306,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     (
     new ContainerConfiguration(
         'ot-sitekit-base-container-2-cols-66-33',
-        '2 Columns 66 % / 33 %',
+        $ll . 'container.cols.2.8-4',
         '',
         [
             [
@@ -320,11 +329,12 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-2col-left.svg')
+        ->setGroup('container2Cols')
 );
 //</editor-fold>
 
 /**
- * 3 Columns
+ * 3 Columns 3 x 33 %
  */
 //<editor-fold desc="Container Extension Configuration: 3 columns">
 GeneralUtility::makeInstance(Registry::class)->configureContainer(
@@ -361,5 +371,96 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
+        ->setGroup('container3Cols')
+);
+//</editor-fold>
+/**
+ * 3 Columns 25 %, 50 %, 25 %
+ */
+//<editor-fold desc="Container Extension Configuration: 3 columns">
+GeneralUtility::makeInstance(Registry::class)->configureContainer(
+    (
+    new ContainerConfiguration(
+        'ot-sitekit-base-container-3-cols-25-50-25',
+        '3 Columns 25 % / 50 % / 25 %',
+        'Container with max. 3 columns.',
+        [
+            [
+                [
+                    'name' => 'Left',
+                    'colPos' => 300,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => 'Middle',
+                    'colPos' => 301,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => 'Right',
+                    'colPos' => 302,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+            ],
+        ]
+    )
+    )
+        ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
+        ->setGroup('container3Cols')
+);
+//</editor-fold>
+
+/**
+ * 4 Columns 4 x 25 %
+ */
+//<editor-fold desc="Container Extension Configuration: 4 columns">
+GeneralUtility::makeInstance(Registry::class)->configureContainer(
+    (
+    new ContainerConfiguration(
+        'ot-sitekit-base-container-4-cols-25-25-25-25',
+        $ll . 'container.cols.4.3-3-3-3',
+        $ll . 'container.cols.4.3-3-3-3.description',
+        [
+            [
+                [
+                    'name' => 'Column 1',
+                    'colPos' => 400,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => 'Column 2',
+                    'colPos' => 401,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => 'Column 3',
+                    'colPos' => 402,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+                [
+                    'name' => 'Column 4',
+                    'colPos' => 403,
+                    'allowed' => [
+                        'CType' => $CTypesForSmallerColumns,
+                    ],
+                ],
+            ],
+        ]
+    )
+    )
+        ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
+        ->setGroup('container4Cols')
 );
 //</editor-fold>

@@ -27,6 +27,10 @@
 				<target> </target>
 			</trans-unit>
 			<!-- tt_content -->
+			<trans-unit id="grid_cards_container" resname="grid_cards_container">
+				<source>Header for all card elements in this container</source>
+				<target>Kopfzeile für alle Kartenelemente in diesem Container</target>
+			</trans-unit>
 			<trans-unit id="header_layout.default" resname="header_layout.default" approved="yes">
 				<source>Default</source>
 				<target>Standard</target>
@@ -174,21 +178,37 @@
 				<source>Container [2 columns]</source>
 				<target>Container [2 Spalten]</target>
 			</trans-unit>
+			<trans-unit id="container.3cols" resname="container.3cols" approved="yes">
+				<source>Container [3 columns]</source>
+				<target>Container [3 Spalten]</target>
+			</trans-unit>
+			<trans-unit id="container.4cols" resname="container.4cols" approved="yes">
+				<source>Container [4 columns]</source>
+				<target>Container [4 Spalten]</target>
+			</trans-unit>
 			<trans-unit id="container.special" resname="container.special" approved="yes">
 				<source>Container [Special]</source>
 				<target>Container [Spezial]</target>
 			</trans-unit>
 			<trans-unit id="container.cols.2.6-6" resname="container.cols.2.6-6" approved="yes">
-				<source>Content Container: 2 cols 6-6</source>
+				<source>Content Container: 2 columns 6-6</source>
 				<target>Content Container: 2 Spalten 6-6</target>
 			</trans-unit>
 			<trans-unit id="container.cols.2.4-8" resname="container.cols.2.4-8" approved="yes">
-				<source>Content Container: 2 cols 4-8</source>
+				<source>Content Container: 2 columns 4-8</source>
 				<target>Content Container: 2 Spalten 4-8</target>
 			</trans-unit>
 			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4" approved="yes">
-				<source>Content Container: 2 cols 8-4</source>
+				<source>Content Container: 2 columns 8-4</source>
 				<target>Content Container: 2 Spalten 8-4</target>
+			</trans-unit>
+			<trans-unit id="container.cols.4.3-3-3-3" resname="container.cols.4.3-3-3-3" approved="yes">
+				<source>Content Container: 4 columns</source>
+				<target>Content Container: 4 Spalten</target>
+			</trans-unit>
+			<trans-unit id="container.cols.4.3-3-3-3.description" resname="container.cols.4.description" approved="yes">
+				<source>4 x 25 % in Desktop View</source>
+				<target>4 x 25 % in der Desktop-Ansicht</target>
 			</trans-unit>
 			<trans-unit id="container.labels.twoColumns" resname="container.labels.twoColumns" approved="yes">
 				<source>Two columns</source>

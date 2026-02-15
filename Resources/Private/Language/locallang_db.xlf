@@ -26,6 +26,9 @@
 			<trans-unit id="header_layout.default" resname="header_layout.default">
 				<source>Default</source>
 			</trans-unit>
+			<trans-unit id="grid_cards_container" resname="grid_cards_container">
+				<source>Header for all card elements in this container</source>
+			</trans-unit>
 			<trans-unit id="header_layout.h1" resname="header_layout.h1">
 				<source>Heading 1. Order</source>
 			</trans-unit>
@@ -144,6 +147,12 @@
 			<trans-unit id="container.2cols" resname="container.2cols">
 				<source>Container [2 columns]</source>
 			</trans-unit>
+			<trans-unit id="container.3cols" resname="container.3cols" approved="yes">
+				<source>Container [3 columns]</source>
+			</trans-unit>
+			<trans-unit id="container.4cols" resname="container.4cols" approved="yes">
+				<source>Container [4 columns]</source>
+			</trans-unit>
 			<trans-unit id="container.special" resname="container.special">
 				<source>Container [Special]</source>
 			</trans-unit>
@@ -157,13 +166,21 @@
 
 
 			<trans-unit id="container.cols.2.6-6" resname="container.cols.2.6-6">
-				<source>Content Container: 2 cols 6-6</source>
+				<source>Content Container: 2 columns 6-6</source>
 			</trans-unit>
 			<trans-unit id="container.cols.2.4-8" resname="container.cols.2.4-8">
-				<source>Content Container: 2 cols 4-8</source>
+				<source>Content Container: 2 columns 4-8</source>
 			</trans-unit>
 			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4">
-				<source>Content Container: 2 cols 8-4</source>
+				<source>Content Container: 2 columns 8-4</source>
+			</trans-unit>
+			<trans-unit id="container.cols.4.3-3-3-3" resname="container.cols.4.3-3-3-3">
+				<source>Content Container: 4 columns</source>
+				<target>Content Container: 4 Spalten</target>
+			</trans-unit>
+			<trans-unit id="container.cols.4.3-3-3-3.description" resname="container.cols.4.description">
+				<source>4 x 25 % in Desktop View</source>
+				<target>4 x 25 % in der Desktop-Ansicht</target>
 			</trans-unit>
 			<trans-unit id="container.cols.fixed-background" resname="container.cols.fixed-background">
 				<source>Content Container: Fixed Background</source>

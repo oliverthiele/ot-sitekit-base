@@ -26,6 +26,58 @@ require_once GeneralUtility::getFileAbsFileName(
     'EXT:ot_sitekitbase/Configuration/TCA/Container/Layouts.php'
 );
 
+//<editor-fold desc="Additional containers groups">
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'pageContainer',
+    $ll . 'container.pageContainer',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'container1Col',
+    $ll . 'container.1col',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'container2Cols',
+    $ll . 'container.2cols',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'container3Cols',
+    $ll . 'container.3cols',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'container4Cols',
+    $ll . 'container.4cols',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'containerSpecial',
+    $ll . 'container.special',
+    'after:list'
+);
+//</editor-fold>
+
+
 $ceWithResponsiveImages = [
     'OR' => [
         'FIELD:CType:=:ot_sitekitcetextmedia',

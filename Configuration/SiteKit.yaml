@@ -1,0 +1,91 @@
+elements:
+  # Standard TYPO3 content elements
+  - ctype: header
+    groups: [group_content_wide, group_content_small, group_hero]
+    grid: { minCols: 2, requiresFullWidth: false }
+
+  - ctype: text
+    groups: [group_content_wide, group_content_small]
+    grid: { minCols: 3, requiresFullWidth: false }
+
+  - ctype: textmedia
+    groups: [group_content_wide, group_content_small]
+    grid: { minCols: 4, requiresFullWidth: false }
+
+  - ctype: div
+    groups: [group_content_wide, group_content_small]
+    grid: { minCols: 1, requiresFullWidth: false }
+
+  - ctype: list
+    groups: [group_content_wide, group_content_small]
+    grid: { minCols: 1, requiresFullWidth: false }
+
+  - ctype: felogin_login
+    groups: [group_content_wide, group_content_small]
+    grid: { minCols: 4, requiresFullWidth: false }
+
+  - ctype: form_formframework
+    groups: [group_content_wide]
+    grid: { minCols: 6, requiresFullWidth: false }
+
+  - ctype: menu_subpages
+    groups: [group_content_wide]
+    grid: { minCols: 6, requiresFullWidth: false }
+
+  - ctype: html
+    groups: [group_content_wide]
+    grid: { minCols: 1, requiresFullWidth: false }
+
+  # SiteKit wrapper containers (only for BackendLayout "Advanced")
+  - ctype: ot-sitekit-base-container-1-col-container
+    groups: [group_advanced]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-1-col-container-fluid
+    groups: [group_advanced]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-1-col-bgcolor
+    groups: [group_advanced]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-1-col-article
+    groups: [group_advanced, group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-1-col-section
+    groups: [group_advanced, group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  # SiteKit multi-column containers
+  - ctype: ot-sitekit-base-container-2-cols-50-50
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-2-cols-33-66
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-2-cols-66-33
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-3-cols-33-33-33
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-3-cols-25-50-25
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-4-cols-25-25-25-25
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-grid-cards
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-card-group
+    groups: [group_content_wide]
+    grid: { minCols: 12, requiresFullWidth: true }

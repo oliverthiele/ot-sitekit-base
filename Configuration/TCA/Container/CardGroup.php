@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') or die();
@@ -14,6 +15,8 @@ $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
  * # Bootstrap Card Groups
  * @see https://getbootstrap.com/docs/5.3/components/card/#grid-cards
  */
+$siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
+
 //<editor-fold desc="Container Extension Configuration: Card Groups">
 GeneralUtility::makeInstance(Registry::class)->configureContainer(
     (
@@ -27,7 +30,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'Card Groups',
                     'colPos' => 300,
                     'allowed' => [
-                        'CType' => 'ot_sitekitcecard',
+                        'CType' => $siteKitRegistry->getCTypesForGroups(['group_cards']),
                     ],
                 ],
             ],

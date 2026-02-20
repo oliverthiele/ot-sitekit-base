@@ -4,43 +4,14 @@ declare(strict_types=1);
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 
-$CTypesForSmallerColumns = '
-    header,
-    text,
-    menu_subpages,
-    div,
-    felogin_login,
-    form_formframework,
-    list,
-    ot_cefluidtemplates,
-    ot_sitekitceimgtextoverlay,
-    ot_sitekitcetexticon,
-    ot_sitekitcetextmedia,';
-
-$CTypesForBackendLayoutAdvanced = '
-    ot-sitekit-base-container-1-col-container,
-    ot-sitekit-base-container-1-col-container-fluid,
-    ot-sitekit-base-container-1-col-bgcolor,
-    ot-sitekit-base-container-1-col-article,
-    ot-sitekit-base-container-1-col-section,';
-
-$CTypesFullContainerWidth =
-    $CTypesForSmallerColumns . '
-    ot_jobs,
-    otfaq_list,
-    ot-sitekit-base-container-grid-cards,
-    ot-sitekit-base-container-1-col-article,
-    ot-sitekit-base-container-1-col-section,
-    ot-sitekit-base-container-2-cols-50-50,
-    ot-sitekit-base-container-2-cols-33-66,
-    ot-sitekit-base-container-2-cols-66-33,
-    ot-sitekit-base-container-3-cols-33-33-33,
-    ot-sitekit-base-container-3-cols-25-50-25,
-    ot-sitekit-base-container-4-cols-25-25-25-25';
+$siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
+$CTypesForSmallerColumns = $siteKitRegistry->getCTypesForGroups(['group_content_small']);
+$CTypesFullContainerWidth = $siteKitRegistry->getCTypesForGroups(['group_content_wide']);
 
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [

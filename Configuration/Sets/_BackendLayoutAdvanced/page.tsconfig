@@ -17,7 +17,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = {$sitekit.content.contentElementsHero}
+                      CType = __SITEKIT:group_hero__
                     }
                   }
                 }
@@ -31,7 +31,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = {$sitekit.content.contentElementsPageAdvanced}
+                      CType = __SITEKIT:group_advanced__
                     }
                   }
                 }

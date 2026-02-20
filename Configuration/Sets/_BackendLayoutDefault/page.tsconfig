@@ -17,7 +17,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = {$sitekit.content.contentElementsHero}
+                      CType = __SITEKIT:group_hero__
                     }
                   }
                 }
@@ -32,7 +32,7 @@ mod {
                     colspan = 1
                     disallowed = *
                     allowed {
-                      CType = {$sitekit.content.contentElementsFullWidthContainer}
+                      CType = __SITEKIT:group_content_wide__
                     }
                   }
                 }

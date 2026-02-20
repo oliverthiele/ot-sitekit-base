@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+
+$siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 
 /**
  * # Grid Cards
@@ -29,7 +32,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.ot-sitekit-base-container-grid-cards.colPos.300', //Grid Cards',
                     'colPos' => 300,
                     'allowed' => [
-                        'CType' => 'ot_sitekitcecard, ot_sitekitcetexticon,',
+                        'CType' => $siteKitRegistry->getCTypesForGroups(['group_cards']),
                     ],
                 ],
             ],

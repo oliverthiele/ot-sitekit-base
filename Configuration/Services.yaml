@@ -24,3 +24,8 @@ services:
     tags:
       - name: 'data.processor'
         identifier: 'parent-content-element'
+
+  OliverThiele\OtSitekitbase\SiteKit\EventListener\SiteKitPageTsConfigListener:
+    tags:
+      - name: event.listener
+        identifier: 'ot_sitekitbase.sitekit.page-tsconfig'

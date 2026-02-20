@@ -82,7 +82,10 @@ final class SiteKitRegistry
             $ctype = (string)$override['ctype'];
 
             if (isset($override['removeFromGroups']) && is_array($override['removeFromGroups'])) {
-                foreach ($override['removeFromGroups'] as $group) {
+                $groups = in_array('*', $override['removeFromGroups'], true)
+                    ? array_keys($map)
+                    : $override['removeFromGroups'];
+                foreach ($groups as $group) {
                     $group = (string)$group;
                     if (isset($map[$group])) {
                         $map[$group] = array_values(

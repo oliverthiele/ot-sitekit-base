@@ -131,6 +131,31 @@ final class SiteKitRegistry
     }
 
     /**
+     * Merges any number of CType strings (comma-separated lists or single values)
+     * into one clean, deduplicated, comma-separated string.
+     *
+     * Accepts variables returned by getCTypesForGroups() as well as plain strings,
+     * comma-separated literals, or a mix of all three:
+     *
+     *   $registry->mergeCTypes($CTypesWide, $CTypesAdvanced, 'my-ctype, other-ctype')
+     */
+    public function mergeCTypes(string ...$parts): string
+    {
+        $cTypes = [];
+
+        foreach ($parts as $part) {
+            foreach (explode(',', $part) as $item) {
+                $item = trim($item);
+                if ($item !== '') {
+                    $cTypes[] = $item;
+                }
+            }
+        }
+
+        return implode(', ', array_unique($cTypes));
+    }
+
+    /**
      * Recursively scans a ContentBlocks directory for SiteKit.yaml files.
      * Each SiteKit.yaml must be accompanied by a config.yaml in the same directory.
      * The CType is derived from the ContentBlock name: "vendor/element-name" → "vendorelementname" → "vendor_elementname"

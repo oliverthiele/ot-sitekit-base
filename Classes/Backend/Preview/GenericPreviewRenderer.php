@@ -25,7 +25,9 @@ namespace OliverThiele\OtSitekitbase\Backend\Preview;
 
 use OliverThiele\OtSitekitbase\Backend\Traits\ShowitemFieldDetectionTrait;
 use TYPO3\CMS\Backend\Preview\PreviewRendererInterface;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
+use TYPO3\CMS\Core\Http\ServerRequestFactory;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\View\ViewFactoryData;
@@ -50,6 +52,24 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $record = $item->getRecord();
+
+        $request = ServerRequestFactory::fromGlobals();
+        /** @var UriBuilder $uriBuilder */
+        $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
+
+        $editUri = $uriBuilder->buildUriFromRoute(
+            'record_edit',
+            [
+                'edit' => [
+                    'tt_content' => [
+                        (int)$record['uid'] => 'edit',
+                    ],
+                ],
+                'returnUrl' => (string)$request->getUri(),
+            ]
+        );
+
+
         $cType = $record['CType'];
 
         $templateFile = $this->getTemplateFileNameForCType($cType);
@@ -88,6 +108,7 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
             'record' => $record,
             'assets' => $assets,
             'images' => $images,
+            'editUri' => (string)$editUri,
         ]);
 
         return $view->render();
@@ -97,7 +118,21 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
     {
         $record = $item->getRecord();
 
-        return '<div class="text-muted small">UID: ' . $record['uid'] .
+        switch ($record['header_layout']) {
+            case '100':
+                $headerIndicator = '<span class="badge text-bg-dark me-3">' .'Header disabled' . '</span>';
+                break;
+            case '0':
+                $headerIndicator = '<span class="badge text-bg-info me-3">' . 'H2' . '</span>';
+                break;
+            default:
+                $headerIndicator = '<span class="badge text-bg-primary me-3">H' . $record['header_layout'] . '</span>';
+        }
+
+
+
+        return '<div class="text-muted small">' . $headerIndicator .
+            'UID: ' . $record['uid'] .
             ' &middot; CType: ' . $record['CType'] .
             '</div>';
     }

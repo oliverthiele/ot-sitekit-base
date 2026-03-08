@@ -29,7 +29,8 @@
     </f:switch>
 </f:variable>
 
-<section class="{cssClasses}">
+<section id="ce-{data.uid}" class="{cssClasses}">
+    <span class="anchor" id="c{data.uid}"></span>
     <f:for each="{children_100}" as="record">
         {record.renderedContent -> f:format.raw()}
     </f:for>

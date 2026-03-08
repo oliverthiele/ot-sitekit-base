@@ -16,7 +16,8 @@
             <f:variable name="cssClasses" value=" bg-primary" />
         </f:defaultCase>
     </f:switch>
-    <div class="ot-container-bg-color overflow-hidden ot-content-element-margin-bottom pt-{settings.sitekit.layout.gutterSize}{cssClasses}">
+    <div id="ce-{data.uid}" class="ot-container-bg-color overflow-hidden ot-content-element-margin-bottom pt-{settings.sitekit.layout.gutterSize}{cssClasses}">
+        <span class="anchor" id="c{data.uid}"></span>
         <f:for each="{children_100}" as="record">
             {record.renderedContent -> f:format.raw()}
         </f:for>

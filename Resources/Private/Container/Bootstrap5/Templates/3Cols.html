@@ -1,7 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true" lang="en">
-<div class="row">
+<div id="ce-{data.uid}" class="row">
+    <span class="anchor" id="c{data.uid}"></span>
     <f:if condition="{settings.breakpoint} != ''">
         <f:then>
             <f:variable name="cssBreakpoint" value="{settings.breakpoint}-"/>

@@ -72,6 +72,23 @@
 				<source>Current color mode: system settings</source>
 			</trans-unit>
 
+			<!-- Video Atom -->
+			<trans-unit id="video.error.notAvailable" resname="video.error.notAvailable">
+				<source>Video not available</source>
+			</trans-unit>
+			<trans-unit id="video.controls.label" resname="video.controls.label">
+				<source>Video controls</source>
+			</trans-unit>
+			<trans-unit id="video.controls.playPause" resname="video.controls.playPause">
+				<source>Play / Pause</source>
+			</trans-unit>
+			<trans-unit id="video.controls.expand" resname="video.controls.expand">
+				<source>Open in fullscreen</source>
+			</trans-unit>
+			<trans-unit id="video.controls.close" resname="video.controls.close">
+				<source>Close</source>
+			</trans-unit>
+
 			<!-- Content Elements -->
 
 			<!-- Uploads -->

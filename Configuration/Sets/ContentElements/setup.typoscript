@@ -31,6 +31,17 @@ lib.contentElement {
   }
 }
 
+# Derive video data from FilesProcessor output for content elements with media assets.
+# Only runs when the assets field is non-empty — silent no-op when no video file is present.
+lib.contentElement.dataProcessing {
+  1760003341 = ot-video
+  1760003341 {
+    as = video
+    filesVariable = files
+    if.isTrue.field = assets
+  }
+}
+
 # Render definition for SiteKit content elements
 lib.sitekitContentElement < lib.contentElement
 lib.sitekitContentElement {
@@ -66,22 +77,21 @@ lib.sitekitContentElement {
   }
 
   dataProcessing {
-    1701706720 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-    1701706720 {
-      if.isTrue.field = tx_otirrebuttons_domain_model_buttons
-      table = tx_otirrebuttons_domain_model_button
-      where.data = field:_ORIG_uid // field:uid
-      where.intval = 1
-      where.wrap = tx_otirrebuttons_domain_model_button.parent_id=|
+    1701706720 = ot-irrebuttons-processor
+    1701706720.if.isTrue.field = tx_otirrebuttons_domain_model_buttons
 
-      orderBy = sorting
-      as = irreButtons
-    }
     1760003339 = parent-content-element
     1760003339 {
       parentField = tx_container_parent
       fields = uid,CType,ot_layout,header,header_layout,frame_class
       maxDepth = 3
+    }
+
+    1760003341 = ot-video
+    1760003341 {
+      as = video
+      filesVariable = files
+      if.isTrue.field = assets
     }
   }
 }

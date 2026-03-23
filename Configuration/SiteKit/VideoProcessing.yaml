@@ -1,0 +1,81 @@
+# Default configuration for sitekit:video:process CLI command.
+# Override per project by passing --config path/to/VideoProcessing.yaml.
+# Only changed values need to be specified — this file is deep-merged as base.
+
+# Root folder scanned for video-set subfolders.
+# Leave empty here; set in your project config or via --folder option.
+# Path resolution order:
+#   1. Absolute path          → used directly
+#   2. Relative path          → {projectRoot}/{path}
+#   3. Relative path fallback → {projectRoot}/public/{path}  (Composer/public webroot)
+rootFolder: ""
+
+# Path to ffmpeg binary. Empty = auto-detect via $PATH.
+ffmpegBinary: ""
+
+poster:
+  enabled: true
+  # Frame number to extract as poster (1 = first frame, 2 = second frame, ...).
+  # Frame 2 is safer for videos that start with a black frame.
+  # Internally: ffmpeg -vf "select=eq(n\,{frame-1})"
+  frame: 2
+  # Output format: jpg | webp
+  format: jpg
+  # JPEG/WebP quality (1–100). Mapped to ffmpeg -q:v internally.
+  quality: 85
+  # Overwrite existing poster file.
+  overwrite: false
+
+resolutions:
+  # H.264 (MP4): CRF mode — adapts bitrate to scene complexity.
+  #   Lower crf = better quality, larger file. Typical range: 18–28. 21–23 is a good default.
+  #   maxrate caps peak bitrate; bufsize = 2× maxrate is a safe rule of thumb.
+  #   twoPass: true — better bitrate distribution; takes ~2× longer. Requires maxrate.
+  #
+  # VP9 (WebM): crfWebm — same concept, typical range: 28–40. 31–35 is a good default.
+  #   deadlineWebm: good | best | realtime  (good = balanced speed/quality)
+  #   twoPassWebm: true — recommended for VP9 to hit the target bitrate accurately.
+  #
+  # The command never upscales: a resolution is skipped when the source is shorter.
+  - height: 1080
+    suffix: 1080p
+    crf: 21
+    maxrate: "4000k"
+    bufsize: "8000k"
+    audioBitrate: "192k"
+    preset: slow
+    twoPass: false
+    crfWebm: 31
+    deadlineWebm: good
+    twoPassWebm: false
+  - height: 720
+    suffix: 720p
+    crf: 23
+    maxrate: "2500k"
+    bufsize: "5000k"
+    audioBitrate: "128k"
+    preset: slow
+    twoPass: false
+    crfWebm: 33
+    deadlineWebm: good
+    twoPassWebm: false
+  - height: 480
+    suffix: 480p
+    crf: 24
+    maxrate: "1200k"
+    bufsize: "2400k"
+    audioBitrate: "96k"
+    preset: slow
+    twoPass: true
+    crfWebm: 35
+    deadlineWebm: good
+    twoPassWebm: true
+
+formats:
+  # H.264 MP4 — broad compatibility, always recommended.
+  mp4: true
+  # VP9 WebM — better compression but requires libvpx in ffmpeg.
+  webm: true
+
+# Create a commented meta.yaml skeleton if none exists in the video-set folder.
+metaYamlSkeleton: true

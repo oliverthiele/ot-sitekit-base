@@ -3,6 +3,7 @@
       xmlns:sk="http://typo3.org/ns/OliverThiele/OtSitekitbase/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
 
+<f:argument name="pageUid" type="int" optional="{false}" default=""/>
 <f:argument name="settings" type="array" optional="{true}" default="{}"/>
 <f:argument name="class" type="string" optional="{true}" default=""/>
 
@@ -10,16 +11,22 @@
     <f:variable name="additionalClasses" value=" {class}"/>
 </f:if>
 
-<f:link.page class="navbar-brand{additionalClasses}"
-             pageUid="{settings.sitekit.pages.root}">
-    <f:if condition="{settings.sitekit.project.brand.logo.file.svg}">
-        <f:image src="{settings.sitekit.project.brand.logo.file.svg}"
-                 alt=""
-                 width="{settings.sitekit.menus.main.logo.width}"
-                 height="{settings.sitekit.menus.main.logo.height}"/>
-    </f:if>
-    <f:if condition="{settings.sitekit.project.companyName} != ''">
-        {settings.sitekit.project.companyName}
+<f:link.page class="navbar-brand{additionalClasses}" pageUid="{pageUid}">
+    <f:if condition="{f:slot()}">
+        <f:then>
+            <f:slot/>
+        </f:then>
+        <f:else>
+            <f:if condition="{settings.sitekit.project.brand.logo.file.svg}">
+                <f:image src="{settings.sitekit.project.brand.logo.file.svg}"
+                         alt="{settings.sitekit.project.companyName}"
+                         width="{settings.sitekit.menus.main.logo.width}"
+                         height="{settings.sitekit.menus.main.logo.height}"/>
+            </f:if>
+            <f:if condition="{settings.sitekit.project.companyName} != ''">
+                {settings.sitekit.project.companyName}
+            </f:if>
+        </f:else>
     </f:if>
 </f:link.page>
 </html>

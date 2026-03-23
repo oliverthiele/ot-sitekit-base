@@ -31,8 +31,11 @@
                 <nav class="navbar {navbarExpand} {settings.sitekit.menus.main.backgroundColor} bg-body-primary text sticky-top __mainmenu"
                      aria-label="{f:translate(key: 'mainNavigation', extensionName: 'OtSitekitbase')}">
                     <div class="container-fluid g-0">
-                        <f:render partial="Menus/Main/{settings.sitekit.menus.main.variant}/Brand" section="Default" arguments="{_all}"/>
-                        <f:render partial="Menus/Main/{settings.sitekit.menus.main.variant}/Toggler" section="Default" arguments="{_all}"/>
+
+                        <skc:atom.navbar.brand pageUid="{homepage}" settings="{settings}"/>
+
+                        <f:render partial="Menus/Main/{settings.sitekit.menus.main.variant}/Toggler"
+                                  section="Default"/>
 
                         <div class="collapse navbar-collapse" id="navbarMain">
                             <ul class="navbar-nav mb-2 mb-lg-0{cssAlignment}">

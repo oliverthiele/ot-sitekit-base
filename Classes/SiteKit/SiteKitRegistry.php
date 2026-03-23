@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace OliverThiele\OtSitekitbase\SiteKit;
 
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -165,8 +163,8 @@ final class SiteKitRegistry
      */
     private function scanContentBlocks(string $contentBlocksDir, array &$map): void
     {
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($contentBlocksDir, RecursiveDirectoryIterator::SKIP_DOTS)
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($contentBlocksDir, \RecursiveDirectoryIterator::SKIP_DOTS)
         );
 
         foreach ($iterator as $file) {

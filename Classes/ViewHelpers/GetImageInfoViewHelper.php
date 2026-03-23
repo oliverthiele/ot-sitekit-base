@@ -25,10 +25,8 @@ namespace OliverThiele\OtSitekitbase\ViewHelpers;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
-use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareInterface
@@ -137,7 +135,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
                 'description' => '',
                 'link' => '',
             ],
-            'original' => $image
+            'original' => $image,
         ];
 
         if (empty($image)) {
@@ -148,10 +146,10 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             if ($image instanceof FileReference) {
                 $originalFile = $image->getOriginalFile();
                 if (!$originalFile->exists()) {
-                    $this->logger->warning('Referenced file is missing for FileReference UID: ' . $image->getUid());
+                    $this->logger?->warning('Referenced file is missing for FileReference UID: ' . $image->getUid());
                     return $result;
                 }
-                $result['publicUrl'] = $image->getPublicUrl();
+                $result['publicUrl'] = (string)($image->getPublicUrl() ?? '');
                 $result['metadata']['uid'] = $image->getUid();
                 $result['metadata']['alternative'] = $image->getAlternative();
                 $result['metadata']['title'] = $image->getTitle();
@@ -170,7 +168,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
                 }
                 $absPath = GeneralUtility::getFileAbsFileName($image);
                 if (empty($absPath) || !file_exists($absPath)) {
-                    $this->logger->warning('File not found at path: ' . $image);
+                    $this->logger?->warning('File not found at path: ' . $image);
                     return $result;
                 }
                 $result['publicUrl'] = $image;
@@ -178,12 +176,11 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
                 return $result;
             }
         } catch (\Throwable $e) {
-            $this->logger->error('Error resolving image: ' . $e->getMessage());
+            $this->logger?->error('Error resolving image: ' . $e->getMessage());
             return $result;
         }
 
         $result['exists'] = true;
-
 
         // 2. Width calculation (Smart Inheritance & Columns)
         $breakpoints = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
@@ -194,7 +191,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             'md' => 696,
             'lg' => 936,
             'xl' => 1116,
-            'xxl' => 1296
+            'xxl' => 1296,
         ];
 
         // Normalise inputs
@@ -267,7 +264,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             }
             $result['variants'][$bp] = $currentVariant;
 
-            if (strpos((string)$currentVariant, ':') !== false) {
+            if (str_contains((string)$currentVariant, ':')) {
                 $ratiosFound[] = $currentVariant;
             } else {
                 $ratiosFound[] = 'free';
@@ -355,7 +352,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
                     'breakpoints' => [$bp],
                     'displayClass' => '',
                     'cropVariant' => $cropVariant,
-                    'srcsetEntries' => []
+                    'srcsetEntries' => [],
                 ];
             } else {
                 // Add to current group
@@ -425,7 +422,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
             if ($shouldAdd) {
                 $entries[] = [
                     'width' => $width,
-                    'breakpoint' => $bp
+                    'breakpoint' => $bp,
                 ];
             }
         }

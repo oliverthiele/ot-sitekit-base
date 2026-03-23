@@ -69,7 +69,6 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
             ]
         );
 
-
         $cType = $record['CType'];
 
         $templateFile = $this->getTemplateFileNameForCType($cType);
@@ -120,7 +119,7 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
         switch ($record['header_layout']) {
             case '100':
-                $headerIndicator = '<span class="badge text-bg-dark me-3">' .'Header disabled' . '</span>';
+                $headerIndicator = '<span class="badge text-bg-dark me-3">' . 'Header disabled' . '</span>';
                 break;
             case '0':
                 $headerIndicator = '<span class="badge text-bg-info me-3">' . 'H2' . '</span>';
@@ -128,8 +127,6 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
             default:
                 $headerIndicator = '<span class="badge text-bg-primary me-3">H' . $record['header_layout'] . '</span>';
         }
-
-
 
         return '<div class="text-muted small">' . $headerIndicator .
             'UID: ' . $record['uid'] .

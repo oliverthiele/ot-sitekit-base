@@ -29,7 +29,6 @@
             description="Shows the expand button (opens best quality in a dialog). Only effective when customControls=1. Driven by data.image_zoom in content elements."/>
 
 <f:spaceless>
-    <f:debug>{_all}</f:debug>
     <f:comment><!-- Pre-compute display flags --></f:comment>
     <f:variable name="isError" value="{f:if(condition: '{video.state} == \'error\'', then: 1, else: 0)}"/>
     <f:variable name="isVideoMissing" value="{f:if(condition: '{video.state} == \'videoMissing\'', then: 1, else: 0)}"/>

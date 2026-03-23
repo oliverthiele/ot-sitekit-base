@@ -14,6 +14,18 @@
 
         <f:variable name="navbarExpand" value="navbar-expand-{settings.sitekit.menus.main.collapsing}"/>
 
+        <f:switch expression="{settings.sitekit.menus.main.alignment}">
+            <f:case value="start">
+                <f:variable name="cssAlignment" value=" me-auto"/>
+            </f:case>
+            <f:case value="center">
+                <f:variable name="cssAlignment" value=" mx-auto"/>
+            </f:case>
+            <f:case value="end">
+                <f:variable name="cssAlignment" value=" ms-auto"/>
+            </f:case>
+        </f:switch>
+
         <div id="main-navigation" class="bg-primary shadow-sm sticky-top">
             <div class="container">
                 <nav class="navbar {navbarExpand} {settings.sitekit.menus.main.backgroundColor} bg-body-primary text sticky-top __mainmenu"
@@ -23,7 +35,7 @@
                         <f:render partial="Menus/Main/{settings.sitekit.menus.main.variant}/Toggler" section="Default" arguments="{_all}"/>
 
                         <div class="collapse navbar-collapse" id="navbarMain">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <ul class="navbar-nav mb-2 mb-lg-0{cssAlignment}">
                                 <f:for each="{menuMain}" as="item">
                                     <f:render section="NavItem_Level_0" arguments="{item : item}"/>
                                 </f:for>

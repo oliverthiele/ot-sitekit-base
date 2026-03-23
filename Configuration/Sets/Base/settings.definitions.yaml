@@ -175,6 +175,15 @@ settings:
       'xl': 'xl'
       'xxl': 'xxl'
 
+  sitekit.menus.main.alignment:
+    category: Sitekit.menus.main
+    type: string
+    default: 'right'
+    enum:
+      'start': 'Left / Start'
+      'center': 'Center'
+      'end': 'Right / End'
+
   sitekit.menus.main.levels:
     category: Sitekit.menus.main
     type: string

@@ -218,6 +218,22 @@
 				<source>Responsive Collapsing</source>
 				<target>Responsives Zusammenklappen</target>
 			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment" resname="settings.sitekit.menus.main.alignment">
+				<source>Alignment</source>
+				<target>Ausrichtung</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment.enum.left" resname="settings.sitekit.menus.main.alignment.enum.left">
+				<source>Left</source>
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment.enum.centered" resname="settings.sitekit.menus.main.alignment.enum.centered">
+				<source>Centered</source>
+				<target>Zentriert</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment.enum.right" resname="settings.sitekit.menus.main.alignment.enum.right">
+				<source>Right</source>
+				<target>Rechts</target>
+			</trans-unit>
 			<trans-unit id="settings.description.sitekit.menus.main.collapsing" resname="settings.description.sitekit.menus.main.collapsing">
 				<source>Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing.</source>
 				<target>Navigationsleisten erfordern eine umschließende .navbar mit .navbar-expand{-sm|-md|-lg|-xl|-xxl}, um responsiv ein- und ausklappbar zu sein.</target>

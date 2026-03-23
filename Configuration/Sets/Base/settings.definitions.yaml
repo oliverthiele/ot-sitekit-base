@@ -146,7 +146,7 @@ settings:
   sitekit.menus.main.rootPage:
     category: Sitekit.menus.main
     type: page
-    default: 0
+    default: 1
 
   sitekit.menus.main.variant:
     category: Sitekit.menus.main

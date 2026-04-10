@@ -1,0 +1,55 @@
+# ============================================================
+# PHPStan configuration for ot-sitekit-base (TYPO3 Extension)
+# ============================================================
+
+includes:
+  # TYPO3-specific PHPStan rules
+  - ../../vendor/saschaegerer/phpstan-typo3/extension.neon
+
+parameters:
+  # ----------------------------------------------------------------
+  # General settings
+  # ----------------------------------------------------------------
+  level: 8
+  treatPhpDocTypesAsCertain: false
+  paths:
+    - Classes/
+  tmpDir: ../../var/cache/phpstan/ot-sitekit-base
+  reportUnmatchedIgnoredErrors: false
+  checkUninitializedProperties: true
+
+  # ----------------------------------------------------------------
+  # Treat missing classes or constants as non-fatal
+  # (useful when analysing in non-TYPO3 context, e.g. DDEV CLI)
+  # ----------------------------------------------------------------
+  ignoreErrors:
+    # TYPO3 globals (appear in middleware or CLI context)
+    - '#\$GLOBALS\[''TYPO3_REQUEST''\]#'
+    - '#Constant TYPO3_MODE not found#'
+
+    # TYPO3 utility stubs (if not autoloaded)
+    - '#Call to an undefined method TYPO3\\CMS\\Core\\Utility\\GeneralUtility::#'
+
+    # ViewHelper context - resolved at runtime
+    - '#TYPO3Fluid\\Fluid\\Core\\ViewHelper\\AbstractViewHelper#'
+
+    # Null-coalesce warnings for known defined array keys (defensive code)
+    - identifier: nullCoalesce.offset
+
+    # Known false positives for TYPO3 logging / PSR-Logger
+    - '#Call to an undefined method Psr\\Log\\LoggerInterface::#'
+
+    # Dynamic array keys in settings or configuration (TYPO3 Site Settings)
+    - '#has no value type specified in iterable type array#'
+
+    # Symfony Command pattern: $io is always assigned in execute() before any use
+    - message: '#uninitialized property \$io#'
+      path: Classes/Command/VideoProcessCommand.php
+
+  # ----------------------------------------------------------------
+  # Expected extensions and autoload
+  # ----------------------------------------------------------------
+  scanDirectories:
+    - ../../vendor
+  scanFiles:
+    - ../../vendor/autoload.php

@@ -9,7 +9,12 @@
 
 <f:section name="Main">
     <f:comment><!-- Preset --></f:comment>
-    <f:render partial="Menus/Main/{settings.sitekit.menus.main.variant}/Index" arguments="{menuMain: menuMain}" section="Main" />
+    <f:render partial="Menus/Main/{settings.sitekit.menus.main.variant}/Index"
+              arguments="{
+                menuMain: menuMain,
+                homepage: homepage
+              }"
+              section="Main" />
 </f:section>
 
 </body>

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace OliverThiele\OtSitekitbase\SiteKit;
 
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -134,6 +132,31 @@ final class SiteKitRegistry
     }
 
     /**
+     * Merges any number of CType strings (comma-separated lists or single values)
+     * into one clean, deduplicated, comma-separated string.
+     *
+     * Accepts variables returned by getCTypesForGroups() as well as plain strings,
+     * comma-separated literals, or a mix of all three:
+     *
+     *   $registry->mergeCTypes($CTypesWide, $CTypesAdvanced, 'my-ctype, other-ctype')
+     */
+    public function mergeCTypes(string ...$parts): string
+    {
+        $cTypes = [];
+
+        foreach ($parts as $part) {
+            foreach (explode(',', $part) as $item) {
+                $item = trim($item);
+                if ($item !== '') {
+                    $cTypes[] = $item;
+                }
+            }
+        }
+
+        return implode(', ', array_unique($cTypes));
+    }
+
+    /**
      * Recursively scans a ContentBlocks directory for SiteKit.yaml files.
      * Each SiteKit.yaml must be accompanied by a config.yaml in the same directory.
      * The CType is derived from the ContentBlock name: "vendor/element-name" → "vendorelementname" → "vendor_elementname"
@@ -143,8 +166,8 @@ final class SiteKitRegistry
      */
     private function scanContentBlocks(string $contentBlocksDir, array &$map): void
     {
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($contentBlocksDir, RecursiveDirectoryIterator::SKIP_DOTS)
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($contentBlocksDir, \RecursiveDirectoryIterator::SKIP_DOTS)
         );
 
         foreach ($iterator as $file) {

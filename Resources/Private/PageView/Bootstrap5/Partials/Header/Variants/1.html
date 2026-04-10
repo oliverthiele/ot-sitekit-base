@@ -1,5 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
 <head>
     <meta charset="utf-8">
@@ -13,10 +13,19 @@
     <!-- Page Header Variant 1 -->
     <f:render partial="Header/SkipNavigation" section="Main"/>
     <f:render partial="Header/TopNavigation" section="Main"
-              arguments="{menuLanguage : menuLanguage, menuTop : menuTop}"/>
+              arguments="{
+                  menuLanguage : menuLanguage,
+                  menuTop : menuTop,
+                  homepage : homepage
+              }"/>
     <f:render partial="Header/MainNavigation" section="Main"
-              arguments="{menuMain : menuMain}"/>
+              arguments="{
+                  menuMain : menuMain,
+                  homepage : homepage
+              }"/>
 </f:section>
-<f:asset.css identifier=""></f:asset.css>
+<f:comment> <!--
+    <f:asset.css identifier=""></f:asset.css>
+--> </f:comment>
 </body>
 </html>

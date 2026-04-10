@@ -77,7 +77,6 @@ ExtensionManagementUtility::addTcaSelectItemGroup(
 );
 //</editor-fold>
 
-
 $ceWithResponsiveImages = [
     'OR' => [
         'FIELD:CType:=:ot_sitekitcetextmedia',
@@ -86,7 +85,7 @@ $ceWithResponsiveImages = [
 ];
 
 $cropVariants = [
-    ['label' => $ll . 'cropVariants.0-xs','value' => ''],
+    ['label' => $ll . 'cropVariants.0-xs', 'value' => ''],
     ['label' => $ll . 'cropVariants.1', 'value' => 'org'],
     ['label' => $ll . 'cropVariants.2', 'value' => 'free'],
     ['label' => '1:1', 'value' => '1:1'],

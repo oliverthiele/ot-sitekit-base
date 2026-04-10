@@ -177,6 +177,19 @@
 			<trans-unit id="settings.sitekit.menus.main.collapsing" resname="settings.sitekit.menus.main.collapsing">
 				<source>Responsive Collapsing</source>
 			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment" resname="settings.sitekit.menus.main.alignment">
+				<source>Alignment</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment.enum.left" resname="settings.sitekit.menus.main.alignment.enum.left">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment.enum.centered" resname="settings.sitekit.menus.main.alignment.enum.centered">
+				<source>Centered</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.alignment.enum.right" resname="settings.sitekit.menus.main.alignment.enum.right">
+				<source>Right</source>
+			</trans-unit>
+
 			<trans-unit id="settings.description.sitekit.menus.main.collapsing" resname="settings.description.sitekit.menus.main.collapsing">
 				<source>Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing.</source>
 			</trans-unit>

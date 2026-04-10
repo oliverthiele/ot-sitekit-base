@@ -11,16 +11,30 @@
 
 <f:section name="Main">
     <f:variable name="navbarExpand" value="navbar-expand-{settings.sitekit.menus.main.collapsing}"/>
-    <nav class="navbar {navbarExpand} bg-body-primary {settings.sitekit.menus.main.backgroundColor} shadow-sm sticky-lg-top custom-navbar">
+
+    <f:switch expression="{settings.sitekit.menus.main.alignment}">
+        <f:case value="start">
+            <f:variable name="cssAlignment" value=" me-auto"/>
+        </f:case>
+        <f:case value="center">
+            <f:variable name="cssAlignment" value=" mx-auto"/>
+        </f:case>
+        <f:case value="end">
+            <f:variable name="cssAlignment" value=" ms-auto"/>
+        </f:case>
+    </f:switch>
+
+    <nav class="navbar {navbarExpand} bg-primary {settings.sitekit.menus.main.backgroundColor} shadow-sm sticky-lg-top custom-navbar">
         <div class="container">
-            <skc:atom.navbar.brand settings="{settings}" class="m-0" />
+
+            <skc:atom.navbar.brand pageUid="{homepage}" settings="{settings}"/>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
                     aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0{cssAlignment}">
                     <f:for each="{menuMain}" as="page" iteration="pageIterator">
                         <f:if condition="{page.hasSubpages} == 1">
                             <f:then>

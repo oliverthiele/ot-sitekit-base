@@ -12,6 +12,7 @@ $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 $CTypesForSmallerColumns = $siteKitRegistry->getCTypesForGroups(['group_content_small']);
 $CTypesFullContainerWidth = $siteKitRegistry->getCTypesForGroups(['group_content_wide']);
+$CTypesAdvanced = $siteKitRegistry->getCTypesForGroups(['group_advanced']);
 
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [
@@ -109,7 +110,6 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         ->setGroup('pageContainer')
 );
 //</editor-fold>
-
 /**
  * Container for <div> with background-color
  */
@@ -127,8 +127,12 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'colPos' => 100,
                     'colspan' => 1,
                     'allowed' => [
-                        'CType' => $CTypesFullContainerWidth .
-                            'ot-sitekit-base-container-1-col-container, ot-sitekit-base-container-1-col-container-fluid,',
+                        'CType' => $siteKitRegistry->mergeCTypes(
+                            $CTypesFullContainerWidth,
+                            $CTypesAdvanced
+//                            ,'ot-sitekit-base-container-1-col-container',
+//                            'ot-sitekit-base-container-1-col-container-fluid',
+                        ),
                     ],
                     'disallowed' => [
                         'CType' => '',
@@ -139,7 +143,6 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 

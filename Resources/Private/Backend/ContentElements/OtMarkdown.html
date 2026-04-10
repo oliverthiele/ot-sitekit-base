@@ -4,11 +4,9 @@
 <f:spaceless>
     <a href="{editUri}">
         <f:render partial="Header" arguments="{record: record}"/>
-        <f:format.crop maxCharacters="2000"
-                       respectWordBoundaries="true"
-                       append="&nbsp;…"
-                       respectHtml="true">{record.bodytext -> f:format.raw()}
-        </f:format.crop>
+        {record.bodytext -> f:format.raw() -> f:format.crop(
+            maxCharacters: '2000', respectWordBoundaries: 'true', append: '&nbsp;…', respectHtml: 'true'
+        )}
     </a>
     <f:render partial="RecordDetails" arguments="{record: record}"/>
 </f:spaceless>

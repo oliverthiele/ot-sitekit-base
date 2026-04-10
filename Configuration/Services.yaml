@@ -25,6 +25,11 @@ services:
       - name: 'data.processor'
         identifier: 'parent-content-element'
 
+  OliverThiele\OtSitekitbase\DataProcessing\VideoProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'ot-video'
+
   OliverThiele\OtSitekitbase\SiteKit\EventListener\SiteKitPageTsConfigListener:
     tags:
       - name: event.listener

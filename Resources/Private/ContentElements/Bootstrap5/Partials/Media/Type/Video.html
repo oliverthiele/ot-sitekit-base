@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:skc="http://typo3.org/ns/OliverThiele/OtSitekitbase/Components"
+      lang="en" data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+<f:comment><!--
+    Overrides EXT:fluid_styled_content Media/Type/Video.html.
+
+    The VideoProcessor (ot-video, timestamp 1760003341) runs via lib.contentElement.dataProcessing
+    and scans the video file's parent folder for companions (multiple resolutions, WebM variants,
+    poster.jpg, VTT tracks, transcript, meta.yaml). The result is passed here as {video}.
+
+    Fallback: if VideoProcessor found no video ({video} is empty or unset), a minimal
+    <video> tag is rendered directly from the FAL FileReference {file}.
+
+    For full features (structured data, IntersectionObserver autoplay, multiple resolutions)
+    organize assets in a dedicated folder following the VideoProcessor folder convention.
+--></f:comment>
+
+<f:if condition="{video.sources}">
+    <f:then>
+        <f:comment><!-- Full render via VideoProcessor data --></f:comment>
+        <f:comment><!--
+            Map ot_layout to Bootstrap column count for the media part.
+            Layouts with text beside media split the width; layouts with media above/below
+            text use the full container width (12 columns).
+            The stackingBreakpoint (md) defines below which breakpoint columns collapse to 12.
+        --></f:comment>
+        <f:variable name="mediaColumns" value="12"/>
+        <f:switch expression="{data.ot_layout}">
+            <f:case value="50-media-50-text"><f:variable name="mediaColumns" value="6"/></f:case>
+            <f:case value="33-media-66-text"><f:variable name="mediaColumns" value="4"/></f:case>
+            <f:case value="25-media-75-text"><f:variable name="mediaColumns" value="3"/></f:case>
+            <f:case value="50-text-50-media"><f:variable name="mediaColumns" value="6"/></f:case>
+            <f:case value="66-text-33-media"><f:variable name="mediaColumns" value="4"/></f:case>
+            <f:case value="75-text-25-media"><f:variable name="mediaColumns" value="3"/></f:case>
+        </f:switch>
+        <f:comment><!-- autoplay: FAL checkbox overrides meta.yaml (editor decision beats folder default) --></f:comment>
+        <f:variable name="isAutoplay" value="{f:if(condition: file.properties.autoplay, then: 1, else: video.autoplay)}"/>
+
+        <skc:atom.video
+            video="{video}"
+            autoplay="{isAutoplay}"
+            loop="{video.loop}"
+            decorative="{video.decorative}"
+            customControls="0"
+            expandable="{f:if(condition: data.image_zoom, then: 1, else: 0)}"
+            showCaption="1"
+            aspectRatio="{f:if(condition: video.aspectRatio, then: video.aspectRatio, else: '16x9')}"
+            columns="{mediaColumns}"
+        />
+    </f:then>
+    <f:else>
+        <f:comment><!--
+            Fallback: VideoProcessor found no video sources in the folder
+            (e.g. single file uploaded to a shared folder without naming convention).
+            Render directly from the FAL FileReference.
+        --></f:comment>
+        <f:variable name="hasCaption" value="{f:if(condition: file.description, then: 1, else: 0)}"/>
+        <f:variable name="isAutoplay" value="{f:if(condition: file.properties.autoplay, then: 1, else: 0)}"/>
+
+        <f:if condition="{hasCaption}">
+            <figure class="figure w-100">
+        </f:if>
+
+        <div class="sk-video ratio ratio-16x9<f:if condition="{isAutoplay}"> sk-video--autoplay</f:if>"
+             <f:if condition="{isAutoplay}">data-js="videoAutoplay"</f:if>
+        >
+            <video class="sk-video-element"
+                   preload="none"
+                   <f:if condition="{isAutoplay}">muted playsinline</f:if>
+                   <f:if condition="!{isAutoplay}">controls</f:if>
+                   <f:if condition="{file.title}">aria-label="{file.title}"</f:if>
+            >
+                <source src="{file.publicUrl}" type="{file.mimeType}">
+            </video>
+        </div>
+
+        <f:if condition="{hasCaption}">
+            <figcaption class="figure-caption">{file.description -> f:format.nl2br()}</figcaption>
+            </figure>
+        </f:if>
+    </f:else>
+</f:if>
+
+</f:spaceless>
+</html>

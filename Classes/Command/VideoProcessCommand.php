@@ -79,6 +79,8 @@ YAML;
     private bool $isDryRun = false;
     private bool $isForce = false;
     private bool $isForceDisk = false;
+    private bool $isPosterOnly = false;
+    private ?float $posterAt = null;
 
     protected function configure(): void
     {
@@ -112,6 +114,18 @@ YAML;
                 null,
                 InputOption::VALUE_NONE,
                 'Skip the disk space check.'
+            )
+            ->addOption(
+                'poster-only',
+                null,
+                InputOption::VALUE_NONE,
+                'Generate poster images only — skip resolution variants. Use with --force to overwrite existing posters.'
+            )
+            ->addOption(
+                'poster-at',
+                null,
+                InputOption::VALUE_REQUIRED,
+                'Extract poster at this position in seconds (e.g. 5 or 12.5). Overrides poster.frame from config.'
             );
     }
 
@@ -121,6 +135,12 @@ YAML;
         $this->isDryRun = (bool)$input->getOption('dry-run');
         $this->isForce = (bool)$input->getOption('force');
         $this->isForceDisk = (bool)$input->getOption('force-disk');
+        $this->isPosterOnly = (bool)$input->getOption('poster-only');
+
+        $posterAtRaw = $input->getOption('poster-at');
+        if ($posterAtRaw !== null && is_numeric($posterAtRaw) && (float)$posterAtRaw >= 0) {
+            $this->posterAt = (float)$posterAtRaw;
+        }
 
         $this->io->title(
             $this->isDryRun
@@ -473,7 +493,9 @@ YAML;
             $generated += $this->processPoster($videoSetPath);
         }
 
-        $generated += $this->processResolutions($videoSetPath);
+        if (!$this->isPosterOnly) {
+            $generated += $this->processResolutions($videoSetPath);
+        }
 
         if ((bool)($this->configuration['metaYamlSkeleton'] ?? true)) {
             $generated += $this->processMetaYamlSkeleton($videoSetPath);
@@ -509,31 +531,58 @@ YAML;
             return 0;
         }
 
-        // Frame number is 1-based in config; ffmpeg select filter is 0-based
-        $frameNumber = max(0, (int)($this->configuration['poster']['frame'] ?? 2) - 1);
-
-        $this->io->writeln(
-            '    <comment>→</comment>  poster.' . $format
-            . '  wird generiert  (Frame ' . ($frameNumber + 1) . ')'
-        );
-
-        if ($this->isDryRun) {
-            return 1;
-        }
-
         $quality = max(1, min(100, (int)($this->configuration['poster']['quality'] ?? 85)));
         // Map quality 1–100 to ffmpeg -q:v 31–1 (inverse scale)
         $ffmpegQuality = max(1, (int)round(31 - $quality * 30 / 100));
 
-        $process = new Process([
-            $this->ffmpegBinary,
-            '-i', $sourceVideo,
-            '-vf', 'select=eq(n\\,' . $frameNumber . ')',
-            '-vframes', '1',
-            '-q:v', (string)$ffmpegQuality,
-            '-y',
-            $posterPath,
-        ]);
+        if ($this->posterAt !== null) {
+            // --poster-at: seek to exact timestamp (seconds). -ss before -i = fast seek.
+            $seekPosition = number_format($this->posterAt, 3, '.', '');
+            $positionLabel = sprintf(
+                '%02d:%06.3f',
+                (int)($this->posterAt / 60),
+                fmod($this->posterAt, 60.0)
+            );
+            $this->io->writeln(
+                '    <comment>→</comment>  poster.' . $format
+                . '  wird generiert  (' . $positionLabel . ' s)'
+            );
+
+            if ($this->isDryRun) {
+                return 1;
+            }
+
+            $process = new Process([
+                $this->ffmpegBinary,
+                '-ss', $seekPosition,
+                '-i', $sourceVideo,
+                '-vframes', '1',
+                '-q:v', (string)$ffmpegQuality,
+                '-y',
+                $posterPath,
+            ]);
+        } else {
+            // Frame-based extraction from config (1-based → 0-based for ffmpeg select filter)
+            $frameNumber = max(0, (int)($this->configuration['poster']['frame'] ?? 2) - 1);
+            $this->io->writeln(
+                '    <comment>→</comment>  poster.' . $format
+                . '  wird generiert  (Frame ' . ($frameNumber + 1) . ')'
+            );
+
+            if ($this->isDryRun) {
+                return 1;
+            }
+
+            $process = new Process([
+                $this->ffmpegBinary,
+                '-i', $sourceVideo,
+                '-vf', 'select=eq(n\\,' . $frameNumber . ')',
+                '-vframes', '1',
+                '-q:v', (string)$ffmpegQuality,
+                '-y',
+                $posterPath,
+            ]);
+        }
         $process->setTimeout(60);
         $process->run();
 

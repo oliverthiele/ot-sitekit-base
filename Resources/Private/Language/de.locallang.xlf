@@ -114,6 +114,10 @@
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
+			<trans-unit id="video.license.label" resname="video.license.label" approved="yes">
+				<source>License</source>
+				<target>Lizenz</target>
+			</trans-unit>
 
 			<!-- Content Elements -->
 

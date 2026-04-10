@@ -88,6 +88,9 @@
 			<trans-unit id="video.controls.close" resname="video.controls.close">
 				<source>Close</source>
 			</trans-unit>
+			<trans-unit id="video.license.label" resname="video.license.label">
+				<source>License</source>
+			</trans-unit>
 
 			<!-- Content Elements -->
 

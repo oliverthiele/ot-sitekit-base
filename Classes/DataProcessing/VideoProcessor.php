@@ -435,6 +435,8 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
         $isAutoplay  = (bool)($metaData['autoplay'] ?? false);
         $isDecorative = (bool)($metaData['decorative'] ?? false);
         $showControls = (bool)($metaData['controls'] ?? true);
+        $license     = (string)($metaData['license'] ?? '');
+        $licenseUrl  = (string)($metaData['licenseUrl'] ?? '');
 
         // JSON-LD requires at minimum: name, description, thumbnailUrl, uploadDate
         $hasStructuredData = $title !== '' && $description !== '' && $uploadDate !== '' && $hasPoster;
@@ -447,6 +449,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
                 $description,
                 $uploadDate,
                 $duration,
+                $licenseUrl,
                 $resolvedPoster,
                 $sources,
                 $transcripts,
@@ -478,6 +481,8 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
             'sources'            => $sources,
             'tracks'             => $tracks,
             'transcripts'        => $transcripts,
+            'license'            => $license,
+            'licenseUrl'         => $licenseUrl,
             'hasStructuredData'  => $hasStructuredData,
             'structuredDataJson' => $structuredDataJson,
         ];
@@ -637,6 +642,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
         string $description,
         string $uploadDate,
         string $duration,
+        string $licenseUrl,
         FileInterface $posterFile,
         array $sources,
         array $transcripts,
@@ -654,6 +660,10 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
 
         if ($duration !== '') {
             $data['duration'] = $duration;
+        }
+
+        if ($licenseUrl !== '') {
+            $data['license'] = $licenseUrl;
         }
 
         // contentUrl points to the highest-quality source (first entry after sorting)
@@ -708,6 +718,8 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
             'sources'            => [],
             'tracks'             => [],
             'transcripts'        => [],
+            'license'            => '',
+            'licenseUrl'         => '',
             'hasStructuredData'  => false,
             'structuredDataJson' => '',
         ];

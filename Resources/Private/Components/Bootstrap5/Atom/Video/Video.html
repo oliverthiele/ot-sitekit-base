@@ -89,6 +89,23 @@
                     <f:render section="VideoElement" arguments="{_all}"/>
                 </f:if>
 
+                <f:comment><!-- License notice: always shown when video.license is set, regardless of decorative --></f:comment>
+                <f:if condition="{video.license}">
+                    <div class="sk-video-license">
+                        <button class="sk-video-license-btn"
+                                type="button"
+                                aria-label="{f:translate(key: 'video.license.label', extensionName: 'OtSitekitbase')}">
+                            ©
+                        </button>
+                        <div class="sk-video-license-popup">
+                            <f:if condition="{video.licenseUrl}">
+                                <f:then><a href="{video.licenseUrl}" target="_blank" rel="noopener noreferrer">{video.license}</a></f:then>
+                                <f:else>{video.license}</f:else>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:if>
+
                 <f:comment><!-- Custom controls: play/pause + expand. Only when showCustomControls is active. --></f:comment>
                 <f:if condition="{showCustomControls} && !{decorative} && !{isVideoMissing}">
                     <div class="sk-video-controls" aria-label="{f:translate(key: 'video.controls.label', extensionName: 'OtSitekitbase')}">

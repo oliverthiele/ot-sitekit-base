@@ -23,9 +23,9 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => $ll . 'container.ot-sitekit-base-container-layout-width-80.colPos.100',
                     'colPos' => 100,
-//                    'allowed' => [
-//                        'CType' => '*',
-//                    ],
+                    //                    'allowed' => [
+                    //                        'CType' => '*',
+                    //                    ],
                 ],
             ],
         ]
@@ -50,9 +50,9 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => $ll . 'container.ot-sitekit-base-container-layout-width-60.colPos.100',
                     'colPos' => 100,
-//                    'allowed' => [
-//                        'CType' => '*',
-//                    ],
+                    //                    'allowed' => [
+                    //                        'CType' => '*',
+                    //                    ],
                 ],
             ],
         ]

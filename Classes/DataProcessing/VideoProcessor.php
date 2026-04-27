@@ -30,6 +30,7 @@ use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Resource\Folder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -229,7 +230,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
                 ? $processedFile->getOriginalFile()
                 : $processedFile;
             if ($fileObject instanceof AbstractFile
-                && $fileObject->getType() === AbstractFile::FILETYPE_VIDEO
+                && $fileObject->getType() === FileType::VIDEO->value
             ) {
                 return true;
             }
@@ -264,7 +265,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
                 continue;
             }
 
-            if ($fileObject->getType() !== AbstractFile::FILETYPE_VIDEO) {
+            if ($fileObject->getType() !== FileType::VIDEO->value) {
                 continue;
             }
 
@@ -311,7 +312,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
             }
 
             $fileObject = $processedFile->getOriginalFile();
-            if ($fileObject->getType() !== AbstractFile::FILETYPE_VIDEO) {
+            if ($fileObject->getType() !== FileType::VIDEO->value) {
                 continue;
             }
 

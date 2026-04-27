@@ -1,25 +1,89 @@
-# ot-sitekit-base
+# OT SiteKit Base — TYPO3 Modular Site System
 
-Requirements:
+A base extension for TYPO3 v13/v14 that provides the foundation for a modular,
+scalable and maintainable site
+architecture based on TYPO3 SiteSets and small, focused extensions.
 
-- TYPO3 v13
+> ⚠️ **Early Development Status**
+>
+> This extension is currently in active development and primarily intended for
+> **internal project usage**.
+> Breaking changes may occur at any time without prior notice.
+> No public API stability or backward compatibility is guaranteed yet.
+>
+> Use at your own risk. No public support is provided at this stage.
 
-Basic extension for TYPO3 for a kind of modular system for websites.
+[![TYPO3](https://img.shields.io/badge/TYPO3-13.4%20%7C%2014.x-orange.svg)](https://typo3.org/)
+[![PHP](https://img.shields.io/badge/PHP-8.3%2B-blue.svg)](https://php.net/)
+[![License](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
 
-This extension is designed to quickly create accessible and
-search engine optimised websites. In contrast to the extension
-‘Bootstrap Package’, for example, not everything is in one package, but
-distributed across many small extensions, which can then be integrated per
-installation, but also omitted. Everything was either rebuilt with TYPO3 v13
-Feature or adapted accordingly.
+---
 
-The most important features for the extensions:
+## Why OT SiteKit Base?
 
-- All extensions for the site kit are kept compatible with each other
-- Each extension uses the site sets added in TYPO3 v13
-- Each content element is a separate extension
-- Each content element uses fields that are also used by other extensions, so
-  that switching between CTypes is easier and the database does not
-  unnecessarily get new fields all the time.
-- Content elements supplied by TYPO3 will only be activated after they have been
-  revised and checked for accessibility, best practice, SEO and responsiveness.
+TYPO3 projects often grow into large, monolithic setups where content elements,
+configuration and logic are tightly
+coupled. This makes long-term maintenance, upgrades and refactoring increasingly
+difficult.
+
+OT SiteKit Base follows a different approach:
+
+- **Strict modularization** — each content element is its own extension
+- **Shared field concepts** — consistent data structures across extensions
+- **SiteSet-based configuration** — no legacy TypoScript dependency chains
+- **Composable architecture** — pick only what a project actually needs
+
+The goal is not to provide a "one-size-fits-all" solution, but a **system
+architecture** that scales across projects and
+teams.
+
+---
+
+## Core Concepts
+
+- **Small, focused extensions**
+    - Each content element is developed and versioned independently
+    - Extensions can be combined or omitted per project
+
+- **Consistent field reuse**
+    - Shared fields across content elements
+    - Easier CType switching without data loss
+    - Avoid unnecessary database growth
+
+- **SiteSets as configuration backbone**
+    - TYPO3 v13+ native configuration approach
+    - No manual TypoScript includes required
+
+- **Controlled activation of TYPO3 core elements**
+    - Core content elements are only enabled after review
+    - Ensures accessibility, SEO and best practices
+
+---
+
+## Features
+
+- Modular TYPO3 architecture based on independent extensions
+- Shared field definitions across content elements
+- TYPO3 SiteSet integration (v13+)
+- Structured content element ecosystem
+- Focus on accessibility, SEO and maintainability
+- Designed for long-term project evolution and refactoring
+
+---
+
+## Requirements
+
+| Requirement | Version   |
+|-------------|-----------|
+| TYPO3       | 13.4 / 14 |
+| PHP         | 8.3+      |
+
+---
+
+## Installation (Development Only)
+
+```bash
+composer require oliverthiele/ot-sitekit-base:dev-typo3-v13
+# or
+composer require oliverthiele/ot-sitekit-base:dev-typo3-v14
+```

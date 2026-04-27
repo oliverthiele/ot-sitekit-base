@@ -130,8 +130,8 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                         'CType' => $siteKitRegistry->mergeCTypes(
                             $CTypesFullContainerWidth,
                             $CTypesAdvanced
-//                            ,'ot-sitekit-base-container-1-col-container',
-//                            'ot-sitekit-base-container-1-col-container-fluid',
+                            //                            ,'ot-sitekit-base-container-1-col-container',
+                            //                            'ot-sitekit-base-container-1-col-container-fluid',
                         ),
                     ],
                     'disallowed' => [
@@ -174,8 +174,8 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-//        ->setGroup('containerSpecial')
-//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+    //        ->setGroup('containerSpecial')
+    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 
@@ -207,8 +207,8 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
-//        ->setGroup('containerSpecial')
-//        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
+    //        ->setGroup('containerSpecial')
+    //        ->setBackendTemplate($extKey . '/Resources/Private/Templates/Container/Backend/CardDeck.html')
 );
 //</editor-fold>
 

@@ -51,7 +51,9 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
+        // TYPO3 v13: getRecord() returns array; v14+: returns RecordInterface — normalize to array
         $record = $item->getRecord();
+        $row = is_array($record) ? $record : $item->getRow();
 
         $request = ServerRequestFactory::fromGlobals();
         /** @var UriBuilder $uriBuilder */
@@ -62,14 +64,14 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
             [
                 'edit' => [
                     'tt_content' => [
-                        (int)$record['uid'] => 'edit',
+                        (int)$row['uid'] => 'edit',
                     ],
                 ],
                 'returnUrl' => (string)$request->getUri(),
             ]
         );
 
-        $cType = $record['CType'];
+        $cType = $row['CType'];
 
         $templateFile = $this->getTemplateFileNameForCType($cType);
         $templatePath = GeneralUtility::getFileAbsFileName(
@@ -95,16 +97,16 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
         $assets = [];
         if ($this->isFieldUsedInShowitem($cType, 'assets')) {
-            $assets = $this->fileRepository->findByRelation('tt_content', 'assets', $record['uid']);
+            $assets = $this->fileRepository->findByRelation('tt_content', 'assets', $row['uid']);
         }
 
         $images = [];
         if ($this->isFieldUsedInShowitem($cType, 'image')) {
-            $images = $this->fileRepository->findByRelation('tt_content', 'image', $record['uid']);
+            $images = $this->fileRepository->findByRelation('tt_content', 'image', $row['uid']);
         }
 
         $view->assignMultiple([
-            'record' => $record,
+            'record' => $row,
             'assets' => $assets,
             'images' => $images,
             'editUri' => (string)$editUri,
@@ -115,9 +117,11 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
     public function renderPageModulePreviewFooter(GridColumnItem $item): string
     {
+        // TYPO3 v13: getRecord() returns array; v14+: returns RecordInterface — normalize to array
         $record = $item->getRecord();
+        $row = is_array($record) ? $record : $item->getRow();
 
-        switch ($record['header_layout']) {
+        switch ($row['header_layout']) {
             case '100':
                 $headerIndicator = '<span class="badge text-bg-dark me-3">' . 'Header disabled' . '</span>';
                 break;
@@ -125,12 +129,12 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
                 $headerIndicator = '<span class="badge text-bg-info me-3">' . 'H2' . '</span>';
                 break;
             default:
-                $headerIndicator = '<span class="badge text-bg-primary me-3">H' . $record['header_layout'] . '</span>';
+                $headerIndicator = '<span class="badge text-bg-primary me-3">H' . $row['header_layout'] . '</span>';
         }
 
         return '<div class="text-muted small">' . $headerIndicator .
-            'UID: ' . $record['uid'] .
-            ' &middot; CType: ' . $record['CType'] .
+            'UID: ' . $row['uid'] .
+            ' &middot; CType: ' . $row['CType'] .
             '</div>';
     }
 

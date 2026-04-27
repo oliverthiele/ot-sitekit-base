@@ -12,6 +12,10 @@
 			"homepage": "https://www.oliver-thiele.de/"
 		}
 	],
+	"require": {
+		"php": ">=8.3",
+		"typo3/cms-core": "^13.4||^14.3"
+	},
 	"autoload": {
 		"psr-4": {
 			"OliverThiele\\OtSitekitbase\\": "Classes/"

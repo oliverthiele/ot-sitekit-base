@@ -2,12 +2,10 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true" lang="en">
 <f:spaceless>
+    <span class="anchor" id="c{data.uid}"></span>
     <div id="ce-{data.uid}" class="card-group ot-content-element-margin-bottom">
-        <span class="anchor" id="c{data.uid}"></span>
         <f:for each="{children_300}" as="record">
-            <div class="col">
-                {record.renderedContent -> f:format.raw()}
-            </div>
+            {record.renderedContent -> f:format.raw()}
         </f:for>
     </div>
 </f:spaceless>

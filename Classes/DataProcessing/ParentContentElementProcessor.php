@@ -38,6 +38,7 @@ class ParentContentElementProcessor implements DataProcessorInterface
 {
     private const CTYPE_GRID_CARDS = 'ot-sitekit-base-container-grid-cards';
     private const CTYPE_CARD_GRID = 'ot-sitekit-base-container-card-grid';
+    private const CTYPE_CARD_GROUP = 'ot-sitekit-base-container-card-group';
 
     /**
      * Process data for getting information about the parent content element
@@ -104,6 +105,7 @@ class ParentContentElementProcessor implements DataProcessorInterface
             [
                 self::CTYPE_GRID_CARDS,
                 self::CTYPE_CARD_GRID,
+                self::CTYPE_CARD_GROUP,
             ],
             true
         );

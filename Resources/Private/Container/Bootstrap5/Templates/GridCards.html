@@ -26,8 +26,8 @@
     </f:else>
 </f:if>
 
+<span class="anchor" id="c{data.uid}"></span>
 <div id="ce-{data.uid}" class="row {columnClasses} g-{gutterSize} ot-content-element-margin-bottom">
-    <span class="anchor" id="c{data.uid}"></span>
     <f:for each="{children_300}" as="record">
         <div class="col">
             {record.renderedContent -> f:format.raw()}

@@ -82,9 +82,17 @@
 			</trans-unit>
 
 			<!-- Categorie Project -->
-			<trans-unit id="settings.sitekit.layout.pageHeader.variant" resname="settings.sitekit.layout.pageHeader.variant">
+			<trans-unit id="settings.sitekit.layout.pageHeader.variant" resname="settings.sitekit.layout.pageHeader.variant" approved="yes">
 				<source>Page Header Variant</source>
 				<target>Seitenkopf-Variante</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop" resname="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop" approved="yes">
+				<source>Row 1: Menu Top | Row 2: Logo, Menu Main, Search</source>
+				<target>Zeile 1: Top-Menü | Zeile 2: Logo, Hauptmenü, Suche</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop" resname="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop" approved="yes">
+				<source>Row 1: Logo, Menu Top | Row 2: Menu Main, Search</source>
+				<target>Zeile 1: Logo, Top-Menü | Zeile 2: Hauptmenü, Suche</target>
 			</trans-unit>
 
             <!-- Categorie Project -->
@@ -204,6 +212,22 @@
 			<trans-unit id="settings.description.sitekit.menus.main.variant" resname="settings.description.sitekit.menus.main.variant">
 				<source>Based on the Bootstrap Navbar: `https://getbootstrap.com/docs/5.3/components/navbar/`</source>
 				<target>Basierend auf der Bootstrap-Navigationsleiste: `https://getbootstrap.com/docs/5.3/components/navbar/`</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.toggler.variant" resname="settings.sitekit.menus.main.toggler.variant" approved="yes">
+				<source>Toggler Variant</source>
+				<target>Toggler-Variante</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.toggler.variant" resname="settings.description.sitekit.menus.main.toggler.variant" approved="yes">
+				<source>Visual style of the mobile navigation toggle button.</source>
+				<target>Visueller Stil des mobilen Navigations-Toggle-Buttons.</target>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.navBrand" resname="settings.sitekit.menus.main.navBrand" approved="yes">
+				<source>Navbar Brand</source>
+				<target>Navbar-Brand</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.navBrand" resname="settings.description.sitekit.menus.main.navBrand" approved="yes">
+				<source>Element shown in the navbar brand area (logo, home icon, or nothing).</source>
+				<target>Element im Navbar-Brand-Bereich (Logo, Home-Icon oder nichts).</target>
 			</trans-unit>
 			<trans-unit id="settings.sitekit.menus.main.backgroundColor" resname="settings.sitekit.menus.main.backgroundColor">
 				<source>Navbar Background</source>

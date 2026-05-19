@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="pageUid" type="int" optional="{false}" default=""/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+<f:argument name="class" type="string" optional="{true}" default=""/>
+<f:argument name="navBrand" type="string" optional="{true}" default="Default"/>
+
+<f:switch expression="{navBrand}">
+    <f:case value="HomeIcon">
+        <skc:atom.navbar.brand.homeIcon pageUid="{pageUid}" settings="{settings}" class="{class}"/>
+    </f:case>
+    <f:case value="None"></f:case>
+    <f:defaultCase>
+        <skc:atom.navbar.brand.default pageUid="{pageUid}" settings="{settings}" class="{class}"/>
+    </f:defaultCase>
+</f:switch>
+</html>

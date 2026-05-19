@@ -103,12 +103,12 @@ settings:
   sitekit.layout.pageHeader.variant:
     category: Sitekit.templates
     type: string
-    default: 1
+    default: 'TwoRowMenuTop'
     enum:
-      1: 'Row 1: Menu Top | Row 2: Logo, Menu Main, Search'
-      2: 'Row 1: Logo, Menu Top | Row 2: Menu Main, Search'
-#      1: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.layout.pageHeader.variant.1'
-#      2: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.layout.pageHeader.variant.2'
+      TwoRowMenuTop: 'Row 1: Menu Top | Row 2: Logo, Menu Main, Search'
+      TwoRowLogoTop: 'Row 1: Logo, Menu Top | Row 2: Menu Main, Search'
+#      TwoRowMenuTop: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop'
+#      TwoRowLogoTop: 'LLL:EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf:settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop'
 
 #  sitekit.layout.pageFooter.variant:
 #    category: Sitekit.templates
@@ -155,6 +155,23 @@ settings:
     enum:
       Default: 'Default'
       Advanced: 'Advanced (WCAG)'
+
+  sitekit.menus.main.toggler.variant:
+    category: Sitekit.menus.main
+    type: string
+    default: 'Default'
+    enum:
+      Default: 'Default'
+      Animated: 'Animated (3 lines → X)'
+
+  sitekit.menus.main.navBrand:
+    category: Sitekit.menus.main
+    type: string
+    default: 'Default'
+    enum:
+      Default: 'Default (Logo + Company Name)'
+      HomeIcon: 'Home Icon'
+      None: 'None'
 
   sitekit.menus.main.backgroundColor:
     category: Sitekit.menus.main

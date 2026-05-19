@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="targetId" type="string" optional="{true}" default="navbarMain"/>
+
+<button class="navbar-toggler sk-navbar-toggler-animated"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#{targetId}"
+        aria-controls="{targetId}"
+        aria-expanded="false"
+        aria-label="{f:translate(key: 'toggleNavigation', extensionName: 'OtSitekitbase', default: 'Toggle navigation')}">
+    <span class="sk-navbar-toggler-bar"></span>
+    <span class="sk-navbar-toggler-bar"></span>
+    <span class="sk-navbar-toggler-bar"></span>
+</button>
+</html>

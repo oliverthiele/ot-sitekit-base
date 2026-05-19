@@ -69,10 +69,10 @@
 			<trans-unit id="settings.sitekit.layout.pageHeader.variant" resname="settings.sitekit.layout.pageHeader.variant">
 				<source>Page Header Variant</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.layout.pageHeader.variant.1" resname="settings.sitekit.layout.pageHeader.variant.1">
+			<trans-unit id="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop" resname="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop">
 				<source>Row 1: Menu Top | Row 2: Logo, Menu Main, Search</source>
 			</trans-unit>
-			<trans-unit id="settings.sitekit.layout.pageHeader.variant.2" resname="settings.sitekit.layout.pageHeader.variant.2">
+			<trans-unit id="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop" resname="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop">
 				<source>Row 1: Logo, Menu Top | Row 2: Menu Main, Search</source>
 			</trans-unit>
 
@@ -167,6 +167,18 @@
 			</trans-unit>
 			<trans-unit id="settings.description.sitekit.menus.main.variant" resname="settings.description.sitekit.menus.main.variant">
 				<source>Based on the Bootstrap Navbar: `https://getbootstrap.com/docs/5.3/components/navbar/`</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.toggler.variant" resname="settings.sitekit.menus.main.toggler.variant">
+				<source>Toggler Variant</source>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.toggler.variant" resname="settings.description.sitekit.menus.main.toggler.variant">
+				<source>Visual style of the mobile navigation toggle button.</source>
+			</trans-unit>
+			<trans-unit id="settings.sitekit.menus.main.navBrand" resname="settings.sitekit.menus.main.navBrand">
+				<source>Navbar Brand</source>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.menus.main.navBrand" resname="settings.description.sitekit.menus.main.navBrand">
+				<source>Element shown in the navbar brand area (logo, home icon, or nothing).</source>
 			</trans-unit>
 			<trans-unit id="settings.sitekit.menus.main.backgroundColor" resname="settings.sitekit.menus.main.backgroundColor">
 				<source>Navbar Background</source>

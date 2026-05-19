@@ -1,0 +1,31 @@
+.sk-navbar-toggler-animated {
+    border: none;
+    padding: 0.25rem 0.5rem;
+
+    .sk-navbar-toggler-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: currentColor;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        & + .sk-navbar-toggler-bar {
+            margin-top: 5px;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        .sk-navbar-toggler-bar:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .sk-navbar-toggler-bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .sk-navbar-toggler-bar:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+}

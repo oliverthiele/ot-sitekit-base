@@ -80,7 +80,7 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
         if (!is_file($templatePath)) {
             $templatePath = GeneralUtility::getFileAbsFileName(
-                'EXT:ot_sitekitbase/Resources/Private/Backend/ContentElements/Default.html'
+                'EXT:ot_sitekitbase/Resources/Private/Backend/ContentElements/Default.fluid.html'
             );
         }
 
@@ -145,7 +145,7 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
     private function getTemplateFileNameForCType(string $cType): string
     {
-        return str_replace(' ', '', ucwords(str_replace('_', ' ', $cType))) . '.html';
+        return str_replace(' ', '', ucwords(str_replace('_', ' ', $cType))) . '.fluid.html';
     }
 
     private function isFieldUsedInShowitem(string $cType, string $fieldName): bool

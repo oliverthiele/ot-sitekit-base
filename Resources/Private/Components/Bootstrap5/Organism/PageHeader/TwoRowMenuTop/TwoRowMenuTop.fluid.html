@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="menuMain" type="array" optional="{true}" default="{}"/>
+<f:argument name="menuTop" type="array" optional="{true}" default="{}"/>
+<f:argument name="menuLanguage" type="array" optional="{true}" default="{}"/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+<f:argument name="homepage" type="int" optional="{true}" default="0"/>
+
+<header id="pageHeader">
+    <skc:atom.skipNavigation/>
+
+    <skc:molecule.topBar
+        menuTop="{menuTop}"
+        menuLanguage="{menuLanguage}"
+        settings="{settings}"
+        homepage="{homepage}"/>
+
+    <skc:molecule.mainMenu
+        menuMain="{menuMain}"
+        settings="{settings}"
+        homepage="{homepage}"
+        navBrand="{settings.sitekit.menus.main.navBrand}"/>
+</header>
+</html>

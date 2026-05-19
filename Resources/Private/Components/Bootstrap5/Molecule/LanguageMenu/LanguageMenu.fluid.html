@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="menuLanguage" type="array" optional="{true}" default="{}"/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+
+<f:switch expression="{settings.sitekit.menus.language.variant}">
+    <f:case value="Dropdown">
+        <skc:molecule.languageMenu.dropdown menuLanguage="{menuLanguage}" settings="{settings}"/>
+    </f:case>
+    <f:defaultCase>
+        <skc:molecule.languageMenu.default menuLanguage="{menuLanguage}" settings="{settings}"/>
+    </f:defaultCase>
+</f:switch>
+</html>

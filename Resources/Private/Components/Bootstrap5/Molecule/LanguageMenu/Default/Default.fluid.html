@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="menuLanguage" type="array" optional="{true}" default="{}"/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+
+<f:if condition="{menuLanguage} && {settings.sitekit.menus.language.enabled} == 1">
+    <ul id="languageNavigation" class="nav sk-language-menu">
+        <f:for each="{menuLanguage}" as="language" key="key">
+            <f:if condition="{language.available} == 1">
+                <f:if condition="{language.active} == 1">
+                    <f:then>
+                        <li class="nav-item d-none d-sm-block">
+                            <a class="nav-link py-0 disabled active"
+                               aria-disabled="true">{language.navigationTitle}</a>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <li class="nav-item">
+                            <a href="{language.link}"
+                               class="nav-link py-0"
+                               lang="{language.twoLetterIsoCode}">
+                                {language.navigationTitle}
+                            </a>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:if>
+        </f:for>
+    </ul>
+</f:if>
+</html>

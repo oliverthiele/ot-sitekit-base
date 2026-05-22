@@ -31,6 +31,8 @@ categories:
 
   Sitekit.contentElements:
     parent: Sitekit
+  Sitekit.contentElements.bullets:
+    parent: Sitekit.contentElements
   Sitekit.contentElements.menu_subpages:
     parent: Sitekit.contentElements
 
@@ -306,6 +308,11 @@ settings:
     default: ''
 
   # Subpages Navigation
+  sitekit.contentElements.bullets.listIconIdentifier:
+    category: Sitekit.contentElements.bullets
+    type: string
+    default: ''
+
   sitekit.contentElements.menu_subpages.variant:
     category: Sitekit.contentElements.menu_subpages
     type: string

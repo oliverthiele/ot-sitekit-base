@@ -27,6 +27,12 @@
 			<trans-unit id="categories.Sitekit.contentElements" resname="categories.Sitekit.contentElements">
 				<source>Content Elements</source>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.contentElements.bullets" resname="categories.Sitekit.contentElements.bullets">
+				<source>Bullets</source>
+			</trans-unit>
+			<trans-unit id="categories.description.Sitekit.contentElements.bullets" resname="categories.description.Sitekit.contentElements.bullets">
+				<source>CType `bullets`</source>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.contentElements.menu_subpages" resname="categories.Sitekit.contentElements.menu_subpages">
 				<source>Menu Subpages</source>
 			</trans-unit>
@@ -319,6 +325,14 @@
 			</trans-unit>
 
 			<!-- Content Elements -->
+
+			<!-- Bullets -->
+			<trans-unit id="settings.sitekit.contentElements.bullets.listIconIdentifier" resname="settings.sitekit.contentElements.bullets.listIconIdentifier">
+				<source>List Icon Identifier</source>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.contentElements.bullets.listIconIdentifier" resname="settings.description.sitekit.contentElements.bullets.listIconIdentifier">
+				<source>Icon identifier for bullet list items (e.g. "circle-fill"). Leave empty to use the default CSS list style.</source>
+			</trans-unit>
 
 			<!-- Menu Subpages -->
 			<trans-unit id="settings.sitekit.contentElements.menu_subpages.variant" resname="settings.sitekit.contentElements.menu_subpages.variant">

@@ -33,6 +33,14 @@
 				<source>Content Elements</source>
 				<target>Inhaltselemente</target>
 			</trans-unit>
+			<trans-unit id="categories.Sitekit.contentElements.bullets" resname="categories.Sitekit.contentElements.bullets">
+				<source>Bullets</source>
+				<target>Punkteliste</target>
+			</trans-unit>
+			<trans-unit id="categories.description.Sitekit.contentElements.bullets" resname="categories.description.Sitekit.contentElements.bullets">
+				<source>CType `bullets`</source>
+				<target>CType `bullets`</target>
+			</trans-unit>
 			<trans-unit id="categories.Sitekit.contentElements.menu_subpages" resname="categories.Sitekit.contentElements.menu_subpages" approved="yes">
 				<source>Menu Subpages</source>
 				<target>Menü der Unterseiten</target>
@@ -397,6 +405,16 @@
 			</trans-unit>
 
 			<!-- Content Elements -->
+
+			<!-- Bullets -->
+			<trans-unit id="settings.sitekit.contentElements.bullets.listIconIdentifier" resname="settings.sitekit.contentElements.bullets.listIconIdentifier">
+				<source>List Icon Identifier</source>
+				<target>Listen-Icon-Identifier</target>
+			</trans-unit>
+			<trans-unit id="settings.description.sitekit.contentElements.bullets.listIconIdentifier" resname="settings.description.sitekit.contentElements.bullets.listIconIdentifier">
+				<source>Icon identifier for bullet list items (e.g. "circle-fill"). Leave empty to use the default CSS list style.</source>
+				<target>Icon-Identifier für Listenelemente (z. B. "circle-fill"). Leer lassen, um den Standard-CSS-Listenstil zu verwenden.</target>
+			</trans-unit>
 
 			<!-- Menu Subpages -->
 			<trans-unit id="settings.sitekit.contentElements.menu_subpages.variant" resname="settings.sitekit.contentElements.menu_subpages.variant">

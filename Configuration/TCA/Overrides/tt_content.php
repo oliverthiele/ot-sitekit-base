@@ -312,6 +312,7 @@ foreach ($headerItems as $key => $item) {
     $GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][$key] = $item;
 }
 
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['default'] = 2;
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['onChange'] = 'reload';
 
 $GLOBALS['TCA']['tt_content']['columns']['header_position']['displayCond'] = 'FIELD:header_layout:!=:100';

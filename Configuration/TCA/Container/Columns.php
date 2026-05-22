@@ -5,6 +5,7 @@ declare(strict_types=1);
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
@@ -13,6 +14,19 @@ $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 $CTypesForSmallerColumns = $siteKitRegistry->getCTypesForGroups(['group_content_small']);
 $CTypesFullContainerWidth = $siteKitRegistry->getCTypesForGroups(['group_content_wide']);
 $CTypesAdvanced = $siteKitRegistry->getCTypesForGroups(['group_advanced']);
+
+// b13/container v4+ (TYPO3 v14) uses allowedContentTypes/disallowedContentTypes (string).
+// b13/container v3 (TYPO3 v13) uses allowed.CType/disallowed.CType (array).
+$typo3MajorVersion = (new Typo3Version())->getMajorVersion();
+if ($typo3MajorVersion >= 14) {
+    $restrictionWide = ['allowedContentTypes' => $CTypesFullContainerWidth];
+    $restrictionBgColor = ['allowedContentTypes' => $siteKitRegistry->mergeCTypes($CTypesFullContainerWidth, $CTypesAdvanced)];
+    $restrictionSmall = ['allowedContentTypes' => $CTypesForSmallerColumns];
+} else {
+    $restrictionWide = ['allowed' => ['CType' => $CTypesFullContainerWidth], 'disallowed' => ['CType' => '']];
+    $restrictionBgColor = ['allowed' => ['CType' => $siteKitRegistry->mergeCTypes($CTypesFullContainerWidth, $CTypesAdvanced)], 'disallowed' => ['CType' => '']];
+    $restrictionSmall = ['allowed' => ['CType' => $CTypesForSmallerColumns]];
+}
 
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [
@@ -63,12 +77,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'BT Container',
                     'colPos' => 100,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesFullContainerWidth,
-                    ],
-                    'disallowed' => [
-                        'CType' => '',
-                    ],
+                    ...$restrictionWide,
                 ],
             ],
         ]
@@ -95,12 +104,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'BT Container Fluid',
                     'colPos' => 100,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesFullContainerWidth,
-                    ],
-                    'disallowed' => [
-                        'CType' => '',
-                    ],
+                    ...$restrictionWide,
                 ],
             ],
         ]
@@ -110,6 +114,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         ->setGroup('pageContainer')
 );
 //</editor-fold>
+
 /**
  * Container for <div> with background-color
  */
@@ -126,17 +131,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'Container with background-color',
                     'colPos' => 100,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $siteKitRegistry->mergeCTypes(
-                            $CTypesFullContainerWidth,
-                            $CTypesAdvanced
-                            //                            ,'ot-sitekit-base-container-1-col-container',
-                            //                            'ot-sitekit-base-container-1-col-container-fluid',
-                        ),
-                    ],
-                    'disallowed' => [
-                        'CType' => '',
-                    ],
+                    ...$restrictionBgColor,
                 ],
             ],
         ]
@@ -162,12 +157,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'Article',
                     'colPos' => 100,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesFullContainerWidth,
-                    ],
-                    'disallowed' => [
-                        'CType' => '',
-                    ],
+                    ...$restrictionWide,
                 ],
             ],
         ]
@@ -195,12 +185,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => 'Section',
                     'colPos' => 100,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesFullContainerWidth,
-                    ],
-                    'disallowed' => [
-                        'CType' => '',
-                    ],
+                    ...$restrictionWide,
                 ],
             ],
         ]
@@ -228,17 +213,13 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 200,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 201,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
             ],
         ]
@@ -262,17 +243,13 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 200,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 201,
                     'colspan' => 2,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
             ],
         ]
@@ -296,17 +273,13 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 200,
                     'colspan' => 2,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 201,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
             ],
         ]
@@ -333,25 +306,19 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 300,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.middleColumn',
                     'colPos' => 301,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 302,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
             ],
         ]
@@ -378,25 +345,19 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.labels.leftColumn',
                     'colPos' => 300,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.middleColumn',
                     'colPos' => 301,
                     'colspan' => 2,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.rightColumn',
                     'colPos' => 302,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
             ],
         ]
@@ -423,33 +384,25 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                     'name' => $ll . 'container.labels.column1',
                     'colPos' => 400,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.column2',
                     'colPos' => 401,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.column3',
                     'colPos' => 402,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
                 [
                     'name' => $ll . 'container.labels.column4',
                     'colPos' => 403,
                     'colspan' => 1,
-                    'allowed' => [
-                        'CType' => $CTypesForSmallerColumns,
-                    ],
+                    ...$restrictionSmall,
                 ],
             ],
         ]

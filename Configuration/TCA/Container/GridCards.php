@@ -5,11 +5,20 @@ declare(strict_types=1);
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
+
+// b13/container v4+ (TYPO3 v14) uses allowedContentTypes (string).
+// b13/container v3 (TYPO3 v13) uses allowed.CType (array).
+$CTypesCards = $siteKitRegistry->getCTypesForGroups(['group_cards']);
+$typo3MajorVersion = (new Typo3Version())->getMajorVersion();
+$restrictionCards = $typo3MajorVersion >= 14
+    ? ['allowedContentTypes' => $CTypesCards]
+    : ['allowed' => ['CType' => $CTypesCards]];
 
 /**
  * # Grid Cards
@@ -31,9 +40,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => $ll . 'container.ot-sitekit-base-container-grid-cards.colPos.300', //Grid Cards',
                     'colPos' => 300,
-                    'allowed' => [
-                        'CType' => $siteKitRegistry->getCTypesForGroups(['group_cards']),
-                    ],
+                    ...$restrictionCards,
                 ],
             ],
         ]

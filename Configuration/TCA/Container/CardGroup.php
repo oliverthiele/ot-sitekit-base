@@ -5,6 +5,7 @@ declare(strict_types=1);
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') or die();
@@ -16,6 +17,14 @@ $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
  * @see https://getbootstrap.com/docs/5.3/components/card/#grid-cards
  */
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
+
+// b13/container v4+ (TYPO3 v14) uses allowedContentTypes (string).
+// b13/container v3 (TYPO3 v13) uses allowed.CType (array).
+$CTypesCards = $siteKitRegistry->getCTypesForGroups(['group_cards']);
+$typo3MajorVersion = (new Typo3Version())->getMajorVersion();
+$restrictionCards = $typo3MajorVersion >= 14
+    ? ['allowedContentTypes' => $CTypesCards]
+    : ['allowed' => ['CType' => $CTypesCards]];
 
 //<editor-fold desc="Container Extension Configuration: Card Groups">
 GeneralUtility::makeInstance(Registry::class)->configureContainer(
@@ -29,9 +38,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 [
                     'name' => 'Card Groups',
                     'colPos' => 300,
-                    'allowed' => [
-                        'CType' => $siteKitRegistry->getCTypesForGroups(['group_cards']),
-                    ],
+                    ...$restrictionCards,
                 ],
             ],
         ]

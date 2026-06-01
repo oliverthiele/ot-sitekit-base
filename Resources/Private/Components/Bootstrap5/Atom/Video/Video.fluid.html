@@ -169,6 +169,7 @@
            preload="none"
            <f:if condition="{loop}">loop</f:if>
            <f:if condition="{needsMuted}">muted playsinline</f:if>
+           <f:if condition="{autoplay}">autoplay</f:if>
            <f:if condition="!{decorative} && {video.title}">aria-label="{video.title}"</f:if>
            <f:if condition="{decorative}">aria-hidden="true" tabindex="-1"</f:if>
            <f:if condition="{hasTranscript} && !{decorative}">aria-describedby="{transcriptId}"</f:if>

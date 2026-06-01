@@ -64,10 +64,10 @@ final class BreadcrumbViewHelper extends AbstractViewHelper
         $httpScheme = $_SERVER['HTTP_SCHEME'] ?? null;
 
         if (
-            $httpScheme === 'https' ||
-            ($_SERVER['HTTPS'] ?? '') === 'on' ||
-            ($_SERVER['HTTPS'] ?? '') === '1' ||
-            ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https'
+            $httpScheme === 'https'
+            || ($_SERVER['HTTPS'] ?? '') === 'on'
+            || ($_SERVER['HTTPS'] ?? '') === '1'
+            || ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https'
         ) {
             $scheme = 'https://';
         } else {

@@ -331,9 +331,9 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
 
             // Check if we need to start a new group (different crop or aspect ratio)
             if (
-                $currentGroup === null ||
-                $currentGroup['cropVariant'] !== $cropVariant ||
-                $currentGroup['aspectRatio'] !== $aspectRatio
+                $currentGroup === null
+                || $currentGroup['cropVariant'] !== $cropVariant
+                || $currentGroup['aspectRatio'] !== $aspectRatio
             ) {
                 // Finalize previous group if exists
                 if ($currentGroup !== null) {

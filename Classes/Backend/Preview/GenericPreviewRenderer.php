@@ -132,10 +132,10 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
                 $headerIndicator = '<span class="badge text-bg-primary me-3">H' . $row['header_layout'] . '</span>';
         }
 
-        return '<div class="text-muted small">' . $headerIndicator .
-            'UID: ' . $row['uid'] .
-            ' &middot; CType: ' . $row['CType'] .
-            '</div>';
+        return '<div class="text-muted small">' . $headerIndicator
+            . 'UID: ' . $row['uid']
+            . ' &middot; CType: ' . $row['CType']
+            . '</div>';
     }
 
     public function wrapPageModulePreview(string $previewHeader, string $previewContent, GridColumnItem $item): string

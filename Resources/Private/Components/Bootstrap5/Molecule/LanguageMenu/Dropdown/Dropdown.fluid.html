@@ -20,6 +20,7 @@
                 <button class="btn btn-link nav-link dropdown-toggle"
                         type="button"
                         id="languageMenuDropdown"
+                        data-js="languageMenuToggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         aria-haspopup="true">
@@ -34,7 +35,7 @@
                         </f:for>
                     </span>
                 </button>
-                <ul id="languageNavigation" class="dropdown-menu"
+                <ul id="languageNavigation" class="dropdown-menu" data-js="languageMenuList"
                     aria-labelledby="languageMenuDropdown">
                     <f:for each="{menuLanguage}" as="language">
                         <f:if condition="{language.available} == 1">

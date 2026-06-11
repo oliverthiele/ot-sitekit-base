@@ -1,12 +1,10 @@
-// Build/Default/src/js/Components/Navbar/initNavbarAdvanced.js
-
 import * as bootstrap from 'bootstrap';
 
 export function initNavbarAdvanced() {
 
     // Für alle Navigationsbereiche (kann mehrfach vorkommen)
-    document.querySelectorAll('.navbar-nav').forEach(navbar => {
-      const focusableSelectors = '.nav-link, .dropdown-toggle-btn';
+    document.querySelectorAll('[data-js="mainMenuList"]').forEach(navbar => {
+      const focusableSelectors = '[data-js="mainMenuItem"]';
 
       const getFocusableItems = () => {
         return Array.from(navbar.querySelectorAll(focusableSelectors))
@@ -23,7 +21,7 @@ export function initNavbarAdvanced() {
 
         const direction = event.key === 'ArrowRight' ? 1 : -1;
 
-        // Fall: Fokus ist in einem Dropdown-Menü (z. B. auf .dropdown-item)
+        // Fall: Fokus ist in einem Dropdown-Menü (z. B. auf .dropdown-item)
         const isInDropdown = event.target.closest('.dropdown-menu');
         if (isInDropdown) {
           const toggleButtonId = isInDropdown.getAttribute('aria-labelledby');
@@ -90,9 +88,6 @@ export function initNavbarAdvanced() {
         targetItem?.focus();
       });
     });
-
-
-
 
     // ESC-Taste schließt das Hauptmenü (#navbarMain)
     document.addEventListener('keydown', (event) => {

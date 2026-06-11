@@ -2,8 +2,8 @@ import * as bootstrap from 'bootstrap';
 
 export function initLanguageMenuDropdown() {
 
-  const dropdownToggle = document.getElementById('languageMenuDropdown')
-  const dropdownMenu = document.getElementById('language-navigation')
+  const dropdownToggle = document.querySelector('[data-js="languageMenuToggle"]')
+  const dropdownMenu = document.querySelector('[data-js="languageMenuList"]')
   const items = dropdownMenu?.querySelectorAll('.dropdown-item:not([aria-disabled="true"])')
 
   if (!dropdownToggle || !dropdownMenu || !items?.length) return

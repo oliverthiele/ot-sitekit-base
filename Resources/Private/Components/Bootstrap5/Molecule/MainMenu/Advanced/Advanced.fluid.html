@@ -16,9 +16,9 @@
         <f:case value="end"><f:variable name="cssAlignment" value=" ms-auto"/></f:case>
     </f:switch>
 
-    <div id="main-navigation" class="bg-primary shadow-sm sticky-top">
+    <div id="mainNavigation" class="bg-primary shadow-sm sticky-top">
         <div class="container">
-            <nav class="navbar {navbarExpand} {settings.sitekit.menus.main.backgroundColor}"
+            <nav class="navbar sk-main-menu {navbarExpand} {settings.sitekit.menus.main.backgroundColor}"
                  aria-label="{f:translate(key: 'mainNavigation', extensionName: 'OtSitekitbase')}">
                 <div class="container-fluid g-0">
 
@@ -26,7 +26,7 @@
                     <skc:atom.navbar.toggler targetId="navbarMain" settings="{settings}"/>
 
                     <div class="collapse navbar-collapse" id="navbarMain">
-                        <ul class="navbar-nav mb-2 mb-lg-0{cssAlignment}">
+                        <ul class="navbar-nav mb-2 mb-lg-0{cssAlignment}" data-js="mainMenuList">
                             <f:for each="{menuMain}" as="item">
                                 <f:render section="NavItem" arguments="{item: item}"/>
                             </f:for>
@@ -47,6 +47,7 @@
                 <button class="dropdown-toggle-btn"
                         type="button"
                         id="dropdown-toggle-btn-u{item.data.uid}"
+                        data-js="mainMenuItem"
                         aria-haspopup="true"
                         aria-expanded="false"
                         aria-controls="submenu-u{item.data.uid}"
@@ -88,6 +89,7 @@
        {f:if(condition: '{item.current}', then: ' aria-current="page"')}
        {f:if(condition: '{item.target}', then: ' target="{item.target}"')}
        aria-label="{item.title}{targetBlankLabel}"
+       data-js="mainMenuItem"
        class="nav-link me-1{f:if(condition: '{item.active}', then: ' active')}{f:if(condition: '{item.current}', then: ' current')}">
         {item.title}
     </a>

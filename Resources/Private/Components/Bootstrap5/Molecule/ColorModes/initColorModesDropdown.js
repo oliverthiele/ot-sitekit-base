@@ -32,15 +32,15 @@ export function initColorModesDropdown() {
         btn.removeAttribute('aria-describedby')
       }
 
-      // Neu: Sichtbarkeit des .dropdown-item-label-is-active anpassen
-      const checkIcon = btn.querySelector('.dropdown-item-label-is-active')
+      // Neu: Sichtbarkeit des Active-Indicators anpassen
+      const checkIcon = btn.querySelector('[data-js="colorModeActiveIndicator"]')
       if (checkIcon) {
         checkIcon.classList.toggle('d-none', !isActive)
       }
     })
 
     // Aktualisiere den versteckten Screenreader-Status
-    const activeThemeStatus = document.getElementById('activeTheme')
+    const activeThemeStatus = document.querySelector('[data-js="colorModeStatus"]')
     if (activeThemeStatus) {
       const readable = theme === 'light'
         ? activeThemeStatus?.getAttribute('data-text-light') || 'Aktueller Modus: Hell'
@@ -51,8 +51,8 @@ export function initColorModesDropdown() {
 
   const updateActiveIcon = (theme) => {
     const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const iconContainer = btnToActive?.querySelector('.dropdown-item-icon')
-    const activeIconTarget = document.querySelector('.theme-icon-active')
+    const iconContainer = btnToActive?.querySelector('[data-js="colorModeOptionIcon"]')
+    const activeIconTarget = document.querySelector('[data-js="colorModeActiveIcon"]')
 
     if (iconContainer && activeIconTarget) {
       activeIconTarget.innerHTML = iconContainer.innerHTML
@@ -73,12 +73,12 @@ export function initColorModesDropdown() {
   }
 
   const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#colorModesDropdown')
+    const themeSwitcher = document.querySelector('[data-js="colorModeToggle"]')
     if (!themeSwitcher) {
       return
     }
 
-    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const themeSwitcherText = document.querySelector('[data-js="colorModeLabel"]')
     const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
 
     document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
@@ -122,4 +122,4 @@ export function initColorModesDropdown() {
         })
       })
   })
-  }
+}

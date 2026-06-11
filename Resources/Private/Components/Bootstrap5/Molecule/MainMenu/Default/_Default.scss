@@ -1,4 +1,4 @@
-.custom-navbar {
+.sk-main-menu {
     //--bs-navbar-color: #ffffff;               /* Text in first level */
     --bs-navbar-hover-color: #ffffff;
     --bs-navbar-disabled-color: rgba(255,255,255,0.5);
@@ -9,12 +9,12 @@
 }
 
 
-[data-bs-theme="light"] .custom-navbar {
+[data-bs-theme="light"] .sk-main-menu {
     --bs-navbar-color: #ffffff;
     background-color: var(--bs-primary) !important;
 }
 
-[data-bs-theme="dark"] .custom-navbar {
+[data-bs-theme="dark"] .sk-main-menu {
     --bs-navbar-color: #eeeeee;
     background-color: #004f75 !important;
 }

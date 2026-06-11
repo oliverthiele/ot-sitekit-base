@@ -106,6 +106,14 @@
 				<source>Play / Pause</source>
 				<target>Abspielen / Pausieren</target>
 			</trans-unit>
+			<trans-unit id="video.controls.mute" resname="video.controls.mute" approved="yes">
+				<source>Mute</source>
+				<target>Stummschalten</target>
+			</trans-unit>
+			<trans-unit id="video.controls.unmute" resname="video.controls.unmute" approved="yes">
+				<source>Unmute</source>
+				<target>Ton einschalten</target>
+			</trans-unit>
 			<trans-unit id="video.controls.expand" resname="video.controls.expand" approved="yes">
 				<source>Open in fullscreen</source>
 				<target>In Vollbild öffnen</target>

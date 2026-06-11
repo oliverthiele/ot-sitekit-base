@@ -82,6 +82,12 @@
 			<trans-unit id="video.controls.playPause" resname="video.controls.playPause">
 				<source>Play / Pause</source>
 			</trans-unit>
+			<trans-unit id="video.controls.mute" resname="video.controls.mute">
+				<source>Mute</source>
+			</trans-unit>
+			<trans-unit id="video.controls.unmute" resname="video.controls.unmute">
+				<source>Unmute</source>
+			</trans-unit>
 			<trans-unit id="video.controls.expand" resname="video.controls.expand">
 				<source>Open in fullscreen</source>
 			</trans-unit>

@@ -40,6 +40,10 @@ elements:
     groups: [group_content_wide]
     grid: { minCols: 1, requiresFullWidth: false }
 
+  - ctype: uploads
+    addToGroups: [ 'group_content_wide' ]
+    grid: { minCols: 6, requiresFullWidth: false }
+
   # SiteKit wrapper containers (only for BackendLayout "Advanced")
   - ctype: ot-sitekit-base-container-1-col-container
     groups: [group_advanced]

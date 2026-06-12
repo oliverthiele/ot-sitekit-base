@@ -12,7 +12,12 @@
     <skc:atom.skipNavigation/>
 
     <div class="container d-flex align-items-center justify-content-between py-2">
-        <skc:atom.navbar.brand pageUid="{homepage}" settings="{settings}"/>
+        <f:link.page class="sk-pageheader-logo" pageUid="{homepage}">
+            <f:image src="{settings.sitekit.project.brand.logo.file.svg}"
+                     alt="{settings.sitekit.project.companyName}"
+                     width="{settings.sitekit.menus.main.logo.width}"
+                     height="{settings.sitekit.menus.main.logo.height}"/>
+        </f:link.page>
         <skc:molecule.topBar
             menuTop="{menuTop}"
             menuLanguage="{menuLanguage}"

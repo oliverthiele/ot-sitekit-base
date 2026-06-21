@@ -53,7 +53,19 @@ elements:
     groups: [group_advanced]
     grid: { minCols: 12, requiresFullWidth: true }
 
-  - ctype: ot-sitekit-base-container-1-col-bgcolor
+  - ctype: ot-sitekit-base-container-bgcolor-primary
+    groups: [group_advanced]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-bgcolor-secondary
+    groups: [group_advanced]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-bgcolor-light
+    groups: [group_advanced]
+    grid: { minCols: 12, requiresFullWidth: true }
+
+  - ctype: ot-sitekit-base-container-bgcolor-dark
     groups: [group_advanced]
     grid: { minCols: 12, requiresFullWidth: true }
 

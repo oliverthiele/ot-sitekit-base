@@ -290,6 +290,60 @@
 				<target>Maximal vier Spalten</target>
 			</trans-unit>
 
+			<!-- Container Background Color -->
+			<trans-unit id="container.bgcolor.group" resname="container.bgcolor.group" approved="yes">
+				<source>Container [Background Color]</source>
+				<target>Container [Hintergrundfarbe]</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.primary.CType.label" resname="container.bgcolor.primary.CType.label" approved="yes">
+				<source>Background Color: Primary</source>
+				<target>Hintergrundfarbe: Primary</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.primary.CType.description" resname="container.bgcolor.primary.CType.description" approved="yes">
+				<source>Container with primary background color</source>
+				<target>Container mit primärer Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.primary.colPos.100" resname="container.bgcolor.primary.colPos.100" approved="yes">
+				<source>Content</source>
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.secondary.CType.label" resname="container.bgcolor.secondary.CType.label" approved="yes">
+				<source>Background Color: Secondary</source>
+				<target>Hintergrundfarbe: Secondary</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.secondary.CType.description" resname="container.bgcolor.secondary.CType.description" approved="yes">
+				<source>Container with secondary background color</source>
+				<target>Container mit sekundärer Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.secondary.colPos.100" resname="container.bgcolor.secondary.colPos.100" approved="yes">
+				<source>Content</source>
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.light.CType.label" resname="container.bgcolor.light.CType.label" approved="yes">
+				<source>Background Color: Light</source>
+				<target>Hintergrundfarbe: Light</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.light.CType.description" resname="container.bgcolor.light.CType.description" approved="yes">
+				<source>Container with light background color</source>
+				<target>Container mit heller Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.light.colPos.100" resname="container.bgcolor.light.colPos.100" approved="yes">
+				<source>Content</source>
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.dark.CType.label" resname="container.bgcolor.dark.CType.label" approved="yes">
+				<source>Background Color: Dark</source>
+				<target>Hintergrundfarbe: Dark</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.dark.CType.description" resname="container.bgcolor.dark.CType.description" approved="yes">
+				<source>Container with dark background color</source>
+				<target>Container mit dunkler Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.dark.colPos.100" resname="container.bgcolor.dark.colPos.100" approved="yes">
+				<source>Content</source>
+				<target>Inhalt</target>
+			</trans-unit>
+
 			<trans-unit id="header_style.groupAccessibility" resname="header_style.groupAccessibility" approved="yes">
 				<source>Accessibility</source>
 				<target>Barrierearm</target>

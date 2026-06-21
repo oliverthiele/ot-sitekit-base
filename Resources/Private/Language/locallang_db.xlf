@@ -248,17 +248,45 @@
 			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.3" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.3">
 				<source>Maximum four columns</source>
 			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.0" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.0">
-				<source>Standard (Primary)</source>
+			<!-- Container Background Color -->
+			<trans-unit id="container.bgcolor.group" resname="container.bgcolor.group">
+				<source>Container [Background Color]</source>
 			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.1" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.1">
-				<source>Secondary</source>
+			<trans-unit id="container.bgcolor.primary.CType.label" resname="container.bgcolor.primary.CType.label">
+				<source>Background Color: Primary</source>
 			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.2" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.2">
-				<source>Light</source>
+			<trans-unit id="container.bgcolor.primary.CType.description" resname="container.bgcolor.primary.CType.description">
+				<source>Container with primary background color</source>
 			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3">
-				<source>Dark</source>
+			<trans-unit id="container.bgcolor.primary.colPos.100" resname="container.bgcolor.primary.colPos.100">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.secondary.CType.label" resname="container.bgcolor.secondary.CType.label">
+				<source>Background Color: Secondary</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.secondary.CType.description" resname="container.bgcolor.secondary.CType.description">
+				<source>Container with secondary background color</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.secondary.colPos.100" resname="container.bgcolor.secondary.colPos.100">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.light.CType.label" resname="container.bgcolor.light.CType.label">
+				<source>Background Color: Light</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.light.CType.description" resname="container.bgcolor.light.CType.description">
+				<source>Container with light background color</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.light.colPos.100" resname="container.bgcolor.light.colPos.100">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.dark.CType.label" resname="container.bgcolor.dark.CType.label">
+				<source>Background Color: Dark</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.dark.CType.description" resname="container.bgcolor.dark.CType.description">
+				<source>Container with dark background color</source>
+			</trans-unit>
+			<trans-unit id="container.bgcolor.dark.colPos.100" resname="container.bgcolor.dark.colPos.100">
+				<source>Content</source>
 			</trans-unit>
 			<!-- TCA tt_content -->
 			<trans-unit id="ot_text_columns" resname="ot_text_columns">

@@ -13,49 +13,17 @@ $ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 $CTypesForSmallerColumns = $siteKitRegistry->getCTypesForGroups(['group_content_small']);
 $CTypesFullContainerWidth = $siteKitRegistry->getCTypesForGroups(['group_content_wide']);
-$CTypesAdvanced = $siteKitRegistry->getCTypesForGroups(['group_advanced']);
 
 // b13/container v4+ (TYPO3 v14) uses allowedContentTypes/disallowedContentTypes (string).
 // b13/container v3 (TYPO3 v13) uses allowed.CType/disallowed.CType (array).
 $typo3MajorVersion = (new Typo3Version())->getMajorVersion();
 if ($typo3MajorVersion >= 14) {
     $restrictionWide = ['allowedContentTypes' => $CTypesFullContainerWidth];
-    $restrictionBgColor = ['allowedContentTypes' => $siteKitRegistry->mergeCTypes($CTypesFullContainerWidth, $CTypesAdvanced)];
     $restrictionSmall = ['allowedContentTypes' => $CTypesForSmallerColumns];
 } else {
     $restrictionWide = ['allowed' => ['CType' => $CTypesFullContainerWidth], 'disallowed' => ['CType' => '']];
-    $restrictionBgColor = ['allowed' => ['CType' => $siteKitRegistry->mergeCTypes($CTypesFullContainerWidth, $CTypesAdvanced)], 'disallowed' => ['CType' => '']];
     $restrictionSmall = ['allowed' => ['CType' => $CTypesForSmallerColumns]];
 }
-
-$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['label'] = $ll . 'ot_layout';
-$GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-card-group']['columnsOverrides']['ot_layout']['config']['items'] = [
-    0 => [
-        'value' => '',
-        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.0', // 'Standard (Primary)',
-    ],
-    1 => [
-        'value' => 'secondary',
-        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.1',
-    ],
-    2 => [
-        'value' => 'light',
-        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.2',
-    ],
-    3 => [
-        'value' => 'dark',
-        'label' => $ll . 'container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3',
-    ],
-];
-
-// todo fix non working showitem
-//if (isset($GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-1-col-bgcolor']['showitem'])) {
-//    $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-1-col-bgcolor']['showitem'] = str_replace(
-//        'tabs.appearance,',
-//        'tabs.appearance,ot_layout,',
-//        $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-1-col-bgcolor']['showitem']
-//    );
-//}
 
 /**
  * 1 Column (only for Backend Layout "Advanced")
@@ -112,32 +80,6 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
     )
         ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
         ->setGroup('pageContainer')
-);
-//</editor-fold>
-
-/**
- * Container for <div> with background-color
- */
-//<editor-fold desc="Container Extension Configuration: 1 Column Container with background-color">
-GeneralUtility::makeInstance(Registry::class)->configureContainer(
-    (
-    new ContainerConfiguration(
-        'ot-sitekit-base-container-1-col-bgcolor',
-        'Container <div> with background-color',
-        'This container changes the background color.',
-        [
-            [
-                [
-                    'name' => 'Container with background-color',
-                    'colPos' => 100,
-                    'colspan' => 1,
-                    ...$restrictionBgColor,
-                ],
-            ],
-        ]
-    )
-    )
-        ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
 );
 //</editor-fold>
 

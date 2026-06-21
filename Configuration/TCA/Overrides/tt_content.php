@@ -25,6 +25,9 @@ require_once GeneralUtility::getFileAbsFileName(
 require_once GeneralUtility::getFileAbsFileName(
     'EXT:ot_sitekitbase/Configuration/TCA/Container/Layouts.php'
 );
+require_once GeneralUtility::getFileAbsFileName(
+    'EXT:ot_sitekitbase/Configuration/TCA/Container/BgColor.php'
+);
 
 //<editor-fold desc="Additional containers groups">
 
@@ -73,6 +76,14 @@ ExtensionManagementUtility::addTcaSelectItemGroup(
     'CType',
     'containerSpecial',
     $ll . 'container.special',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'containerBgColor',
+    $ll . 'container.bgcolor.group',
     'after:list'
 );
 //</editor-fold>

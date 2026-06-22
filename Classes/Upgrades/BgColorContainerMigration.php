@@ -24,7 +24,8 @@ final readonly class BgColorContainerMigration implements UpgradeWizardInterface
 
     public function __construct(
         private ConnectionPool $connectionPool,
-    ) {}
+    ) {
+    }
 
     public function getTitle(): string
     {

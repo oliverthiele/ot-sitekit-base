@@ -302,6 +302,34 @@
 				<source>Header size and primary color</source>
 				<target>Überschrift Größe und Primärfarbe</target>
 			</trans-unit>
+
+			<!-- Container Layout width 80 -->
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.CType.label" resname="container.ot-sitekit-base-container-layout-width-80.CType.label">
+				<source>Container Layout width 80%</source>
+				<target>Container Layout mit 80%</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.CType.description" resname="container.ot-sitekit-base-container-layout-width-80.CType.description">
+				<source>Structures a thematically self-contained area of content in a moderately narrowed, focused layout — creating a readable content zone that stands alone and makes sense on its own.</source>
+				<target>Strukturiert einen thematisch in sich geschlossenen Inhaltsbereich in einem mäßig eingegrenzten, fokussierten Layout – und schafft so einen gut lesbaren Inhaltsbereich, der für sich allein steht und in sich schlüssig ist.</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100" resname="container.ot-sitekit-base-container-layout-width-80.colPos.100">
+				<source>Container width 80%</source>
+				<target>Container mit 80%</target>
+			</trans-unit>
+			<!-- Container Layout width 60 -->
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-60.CType.label" resname="container.ot-sitekit-base-container-layout-width-60.CType.label">
+				<source>Container Layout width 60%</source>
+				<target>Container Layout mit 60%</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-60.CType.description" resname="container.ot-sitekit-base-container-layout-width-60.CType.description">
+				<source>Structures a thematically self-contained area of content at 60 % page width — creating a focused, readable content zone that stands alone and makes sense on its own.</source>
+				<target>Gestaltet einen thematisch in sich geschlossenen Inhaltsbereich mit einer Seitenbreite von 60 % – so entsteht eine fokussierte, gut lesbare Inhaltszone, die für sich allein steht und auch isoliert betrachtet Sinn ergibt.</target>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100" resname="container.ot-sitekit-base-container-layout-width-80.colPos.100">
+				<source>Container width 60%</source>
+				<target>Container mit 60%</target>
+			</trans-unit>
+
 			<!-- TCA tt_content -->
 			<trans-unit id="ot_text_columns" resname="ot_text_columns">
 				<source>Text Columns</source>

@@ -260,6 +260,28 @@
 			<trans-unit id="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3" resname="container.ot-sitekit-base-container-1-col-bgcolor.ot_layout.3">
 				<source>Dark</source>
 			</trans-unit>
+
+			<!-- Container Layout width 80 -->
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.CType.label" resname="container.ot-sitekit-base-container-layout-width-80.CType.label">
+				<source>Container Layout width 80%</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.CType.description" resname="container.ot-sitekit-base-container-layout-width-80.CType.description">
+				<source>Structures a thematically self-contained area of content in a moderately narrowed, focused layout — creating a readable content zone that stands alone and makes sense on its own.</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100" resname="container.ot-sitekit-base-container-layout-width-80.colPos.100">
+				<source>Container width 80%</source>
+			</trans-unit>
+			<!-- Container Layout width 60 -->
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-60.CType.label" resname="container.ot-sitekit-base-container-layout-width-60.CType.label">
+				<source>Container Layout width 60%</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-60.CType.description" resname="container.ot-sitekit-base-container-layout-width-60.CType.description">
+				<source>Structures a thematically self-contained area of content at 60 % page width — creating a focused, readable content zone that stands alone and makes sense on its own.</source>
+			</trans-unit>
+			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100" resname="container.ot-sitekit-base-container-layout-width-80.colPos.100">
+				<source>Container width 60%</source>
+			</trans-unit>
+
 			<!-- TCA tt_content -->
 			<trans-unit id="ot_text_columns" resname="ot_text_columns">
 				<source>Text Columns</source>

@@ -13,6 +13,10 @@
 				<source>Skip to main content</source>
 				<target>Zum Hauptinhalt springen</target>
 			</trans-unit>
+			<trans-unit id="mainNavigation" resname="mainNavigation">
+				<source>main Navigation</source>
+				<target>Hauptnavigation</target>
+			</trans-unit>
 			<trans-unit id="skipToPageFooter" resname="skipToPageFooter" approved="yes">
 				<source>Skip to page footer</source>
 				<target>Zum Seitenende springen</target>

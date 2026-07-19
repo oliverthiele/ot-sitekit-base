@@ -11,6 +11,9 @@
 			<trans-unit id="skipToMainContent" resname="skipToMainContent">
 				<source>Skip to main content</source>
 			</trans-unit>
+			<trans-unit id="mainNavigation" resname="mainNavigation">
+				<source>main Navigation</source>
+			</trans-unit>
 			<trans-unit id="skipToPageFooter" resname="skipToPageFooter">
 				<source>Skip to page footer</source>
 			</trans-unit>

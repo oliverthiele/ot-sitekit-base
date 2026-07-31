@@ -1,351 +1,506 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-	<file source-language="en" datatype="plaintext"
-		  original="EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf"
-		  date="2025-08-12T13:04:00Z" product-name="ot-sitekit-base">
-		<header/>
-		<body>
-			<!-- Categories -->
-			<trans-unit id="label" resname="label">
-				<source>Sitekit Basic Configuration</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit" resname="categories.Sitekit">
-				<source>Sitekit</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.project" resname="categories.Sitekit.project">
-				<source>Project</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.project.brand" resname="categories.Sitekit.project.brand">
-				<source>Brand</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.pages" resname="categories.Sitekit.pages">
-				<source>Pages</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.templates" resname="categories.Sitekit.templates">
-				<source>Templates and Layout</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.contentElements" resname="categories.Sitekit.contentElements">
-				<source>Content Elements</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.contentElements.bullets" resname="categories.Sitekit.contentElements.bullets">
-				<source>Bullets</source>
-			</trans-unit>
-			<trans-unit id="categories.description.Sitekit.contentElements.bullets" resname="categories.description.Sitekit.contentElements.bullets">
-				<source>CType `bullets`</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.contentElements.menu_subpages" resname="categories.Sitekit.contentElements.menu_subpages">
-				<source>Menu Subpages</source>
-			</trans-unit>
-			<trans-unit id="categories.description.Sitekit.contentElements.menu_subpages" resname="categories.description.Sitekit.contentElements.menu_subpages">
-				<source>CType `menu_subpages`</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.menus" resname="categories.Sitekit.menus">
-				<source>Menus</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.menus.main" resname="categories.Sitekit.menus.main">
-				<source>Main Menu</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.menus.top" resname="categories.Sitekit.menus.top">
-				<source>Top Menu</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.menus.language" resname="categories.Sitekit.menus.language">
-				<source>Language Menu</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.menus.subpages" resname="categories.Sitekit.menus.subpages">
-				<source>Subpages Menu</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.menus.footer" resname="categories.Sitekit.menus.footer">
-				<source>Footer Menu</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.features" resname="categories.Sitekit.features">
-				<source>Features</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.features.search" resname="categories.Sitekit.features.search">
-				<source>Search</source>
-			</trans-unit>
-			<trans-unit id="categories.Sitekit.features.colorModes" resname="categories.Sitekit.features.colorModes">
-				<source>Color Modes</source>
-			</trans-unit>
-			<trans-unit id="categories.SocialMedia.settings" resname="categories.SocialMedia.settings">
-				<source>Social Media</source>
-			</trans-unit>
-
-
-			<!-- Categorie Project -->
-			<trans-unit id="settings.sitekit.layout.pageHeader.variant" resname="settings.sitekit.layout.pageHeader.variant">
-				<source>Page Header Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop" resname="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop">
-				<source>Row 1: Menu Top | Row 2: Logo, Menu Main, Search</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop" resname="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop">
-				<source>Row 1: Logo, Menu Top | Row 2: Menu Main, Search</source>
-			</trans-unit>
-
-			<!-- Categorie Project -->
-			<trans-unit id="settings.Sitekit.project.companyName" resname="settings.sitekit.project.companyName">
-				<source>Company Name</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.project.companyName" resname="settings.description.sitekit.project.companyName">
-				<source>The name of the company will be used in the Navbar, Footer, ….</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.companyName2" resname="settings.sitekit.project.companyName2">
-				<source>Company Name Row 2</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.project.companyName2" resname="settings.description.sitekit.project.companyName2">
-				<source>e.g. for owner / slogan</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.addressLine1" resname="settings.sitekit.project.addressLine1">
-				<source>Address Line 1</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.project.addressLine1" resname="settings.description.sitekit.project.addressLine1">
-				<source>Street and House number</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.addressLine2" resname="settings.sitekit.project.addressLine2">
-				<source>Address Line 2</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.project.addressLine2" resname="settings.description.sitekit.project.addressLine2">
-				<source>Additional address information</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.postalCode" resname="settings.sitekit.project.postalCode">
-				<source>Postal Code</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.city" resname="settings.sitekit.project.city">
-				<source>City</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.telephone" resname="settings.sitekit.project.telephone">
-				<source>Telephone</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.email" resname="settings.sitekit.project.email">
-				<source>Email</source>
-			</trans-unit>
-
-			<!-- Brand -->
-			<trans-unit id="settings.sitekit.project.brand.logo.file.svg" resname="settings.Sitekit.project.brand.logo.file.svg">
-				<source>Logo SVG</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.project.brand.logo.file.svg" resname="settings.description.sitekit.project.brand.logo.file.svg">
-				<source>e.g. EXT:ot_sitekitbase/Resources/Public/Icons/Extension.svg</source>
-			</trans-unit>
-
-			<!-- Categorie Pages -->
-			<trans-unit id="settings.sitekit.pages.termsAndConditions" resname="settings.sitekit.pages.termsAndConditions">
-				<source>Terms and conditions</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.pages.legalNotice" resname="settings.sitekit.pages.legalNotice">
-				<source>Legal Notice</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.pages.privacyPolicy" resname="settings.sitekit.pages.privacyPolicy">
-				<source>Privacy Policy</source>
-			</trans-unit>
-
-			<!-- Templates and Layout -->
-			<trans-unit id="settings.sitekit.frameworks.frontend.directory" resname="settings.sitekit.frameworks.frontend.directory">
-				<source>Frontend Framework Directory</source>
-			</trans-unit>
-			<trans-unit id="settings.description.frameworks.frontend.directory" resname="settings.description.frameworks.frontend.directory">
-				<source>Parent directory to templates files. This path is also used by many Sitekit content elements.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.layout.gutterSize" resname="settings.sitekit.layout.gutterSize">
-				<source>Gutter Size</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.layout.gutterSize" resname="settings.description.sitekit.layout.gutterSize">
-				<source>The default gutter size (e.g. for card decks)</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.layout.radius" resname="settings.sitekit.layout.radius">
-				<source>Radius</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.layout.radius" resname="settings.description.sitekit.layout.radius">
-				<source>The default border radius for borders, buttons, images, …. This entry sets the class `border-radius` in various places (e.g., card frames, buttons).</source>
-			</trans-unit>
-
-
-			<!-- Menus -->
-			<!-- Main Menu -->
-			<trans-unit id="settings.sitekit.menus.main.rootPage" resname="settings.sitekit.menus.main.rootPage">
-				<source>Root Page</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.rootPage" resname="settings.description.sitekit.menus.main.rootPage">
-				<source>Page ID of the start page (doktype "Directory") used for building the main navigation.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.variant" resname="settings.sitekit.menus.main.variant">
-				<source>Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.variant" resname="settings.description.sitekit.menus.main.variant">
-				<source>Based on the Bootstrap Navbar: `https://getbootstrap.com/docs/5.3/components/navbar/`</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.toggler.variant" resname="settings.sitekit.menus.main.toggler.variant">
-				<source>Toggler Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.toggler.variant" resname="settings.description.sitekit.menus.main.toggler.variant">
-				<source>Visual style of the mobile navigation toggle button.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.navBrand" resname="settings.sitekit.menus.main.navBrand">
-				<source>Navbar Brand</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.navBrand" resname="settings.description.sitekit.menus.main.navBrand">
-				<source>Element shown in the navbar brand area (logo, home icon, or nothing).</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.backgroundColor" resname="settings.sitekit.menus.main.backgroundColor">
-				<source>Navbar Background</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.backgroundColor" resname="settings.description.sitekit.menus.main.backgroundColor">
-				<source>Controls the color of the burger menu for mobile navigation.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.collapsing" resname="settings.sitekit.menus.main.collapsing">
-				<source>Responsive Collapsing</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.alignment" resname="settings.sitekit.menus.main.alignment">
-				<source>Alignment</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.alignment.enum.left" resname="settings.sitekit.menus.main.alignment.enum.left">
-				<source>Left</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.alignment.enum.centered" resname="settings.sitekit.menus.main.alignment.enum.centered">
-				<source>Centered</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.alignment.enum.right" resname="settings.sitekit.menus.main.alignment.enum.right">
-				<source>Right</source>
-			</trans-unit>
-
-			<trans-unit id="settings.description.sitekit.menus.main.collapsing" resname="settings.description.sitekit.menus.main.collapsing">
-				<source>Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.levels" resname="settings.sitekit.menus.main.levels">
-				<source>Levels</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.levels" resname="settings.description.sitekit.menus.main.levels">
-				<source>Menu page depth</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.includeSpacer" resname="settings.sitekit.menus.main.includeSpacer">
-				<source>Include Spacer</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.includeSpacer" resname="settings.description.sitekit.menus.main.includeSpacer">
-				<source>Should spacers be taken into account in the menu?</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.logo.width" resname="settings.sitekit.menus.main.logo.width">
-				<source>Logo Width</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.logo.width" resname="settings.description.sitekit.menus.main.logo.width">
-				<source>Width in Pixels, e.g. {40} for 40px.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.main.logo.height" resname="settings.sitekit.menus.main.logo.height">
-				<source>Logo Height</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.main.logo.height" resname="settings.description.sitekit.menus.main.logo.height">
-				<source>Height in Pixels, e.g. {40} for 40px.</source>
-			</trans-unit>
-
-
-			<!-- Top Menu -->
-			<trans-unit id="settings.sitekit.menus.top.rootPage" resname="settings.sitekit.menus.top.rootPage">
-				<source>Root Page</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.top.rootPage" resname="settings.description.sitekit.menus.top.rootPage">
-				<source>Page ID of the start page (doktype "Directory") used for building the top menu.</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.top.variant" resname="settings.sitekit.menus.top.variant">
-				<source>Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.top.variant" resname="settings.description.sitekit.menus.top.variant">
-				<source>Based on the Bootstrap Nav: `https://getbootstrap.com/docs/5.3/components/navs-tabs/`</source>
-			</trans-unit>
-
-			<!-- Language Menu -->
-			<trans-unit id="settings.sitekit.menus.language.enabled" resname="settings.sitekit.menus.language.enabled">
-				<source>Enabled</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.language.enabled" resname="settings.description.sitekit.menus.language.enabled">
-				<source>Enables the Language Menu on the website.</source>
-			</trans-unit>
-
-			<trans-unit id="settings.sitekit.menus.language.variant" resname="settings.sitekit.menus.language.variant">
-				<source>Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.language.variant" resname="settings.description.sitekit.menus.language.variant">
-				<source>Based on the Bootstrap 5 Dropdown: `https://getbootstrap.com/docs/5.3/components/dropdowns/`</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.menus.language.dropdownToggle.label.enabled" resname="settings.sitekit.menus.language.dropdownToggle.label.enabled">
-				<source>Display Label</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.language.dropdownToggle.label.enabled" resname="settings.description.sitekit.menus.language.dropdownToggle.label.enabled">
-				<source>Display Label for Language Menu.</source>
-			</trans-unit>
-
-			<!-- Menu Footer -->
-			<trans-unit id="settings.sitekit.menus.footer.rootPage" resname="settings.sitekit.menus.footer.rootPage">
-				<source>Root Page</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.menus.footer.rootPage" resname="settings.description.sitekit.menus.footer.rootPage">
-				<source>Page ID of the start page (doktype "Directory") used for building the footer navigation.</source>
-			</trans-unit>
-
-			<!-- Features -->
-			<!-- Search -->
-			<trans-unit id="settings.sitekit.features.search.enabled" resname="settings.sitekit.features.search.enabled">
-				<source>Enabled</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.features.search.enabled" resname="settings.description.sitekit.features.search.enabled">
-				<source>Enables search on the website.</source>
-			</trans-unit>
-
-			<!-- Color Mode -->
-			<trans-unit id="settings.sitekit.features.colorModes.variant" resname="settings.sitekit.features.colorModes.variant">
-				<source>Color Modes Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.features.colorModes.variant" resname="settings.description.sitekit.features.colorModes.variant">
-				<source>Based on the Bootstrap colorModes: https://getbootstrap.com/docs/5.3/customize/color-modes/</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.features.colorModes.enabled" resname="settings.sitekit.features.colorModes.enabled">
-				<source>Enabled</source>
-			</trans-unit>
-			<trans-unit id="settings.description,sitekit.features.colorModes.enabled" resname="settings.description.sitekit.features.colorModes.enabled">
-				<source>Enables the Color Modes on the website (Dark Mode and Light Mode).</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.features.colorModes.dropdownToggle.label.enabled" resname="settings.sitekit.features.colorModes.dropdownToggle.label.enabled">
-				<source>Display Label</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.features.colorModes.dropdownToggle.label.enabled" resname="settings.description.sitekit.features.colorModes.dropdownToggle.label.enabled">
-				<source>Display Label for Color Modes.</source>
-			</trans-unit>
-
-
-			<!-- Social Media -->
-			<trans-unit id="settings.sitekit.project.socialMedia.facebook.account" resname="settings.sitekit.project.socialMedia.facebook.account">
-				<source>Facebook Account</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.socialMedia.x.account" resname="settings.sitekit.project.socialMedia.x.account">
-				<source>X/Twitter Account</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.socialMedia.instagram.account" resname="settings.sitekit.project.socialMedia.instagram.account">
-				<source>Instagram Account</source>
-			</trans-unit>
-			<trans-unit id="settings.sitekit.project.socialMedia.linkedIn.account" resname="settings.sitekit.project.socialMedia.linkedIn.account">
-				<source>LinkedIn Account</source>
-			</trans-unit>
-
-			<!-- Content Elements -->
-
-			<!-- Bullets -->
-			<trans-unit id="settings.sitekit.contentElements.bullets.listIconIdentifier" resname="settings.sitekit.contentElements.bullets.listIconIdentifier">
-				<source>List Icon Identifier</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.contentElements.bullets.listIconIdentifier" resname="settings.description.sitekit.contentElements.bullets.listIconIdentifier">
-				<source>Icon identifier for bullet list items (e.g. "circle-fill"). Leave empty to use the default CSS list style.</source>
-			</trans-unit>
-
-			<!-- Menu Subpages -->
-			<trans-unit id="settings.sitekit.contentElements.menu_subpages.variant" resname="settings.sitekit.contentElements.menu_subpages.variant">
-				<source>Variant</source>
-			</trans-unit>
-			<trans-unit id="settings.description.sitekit.contentElements.menu_subpages.variant" resname="settings.description.sitekit.contentElements.menu_subpages.variant">
-				<source>Layout of the menu for subpages.</source>
-			</trans-unit>
-
-			<trans-unit id="settings.sitekit.contentElements.menu_subpages.rowCols" resname="settings.sitekit.contentElements.menu_subpages.rowCols">
-				<source>Row Cols</source>
-			</trans-unit>
-
-		</body>
-	</file>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ot-sitekit-base-labels"
+        original="EXT:ot_sitekitbase/Configuration/Sets/Base/labels.xlf">
+    <unit id="label">
+      <segment>
+        <source>Sitekit Basic Configuration</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit">
+      <segment>
+        <source>Sitekit</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.project">
+      <segment>
+        <source>Project</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.project.brand">
+      <segment>
+        <source>Brand</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.pages">
+      <segment>
+        <source>Pages</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.templates">
+      <segment>
+        <source>Templates and Layout</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.contentElements">
+      <segment>
+        <source>Content Elements</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.contentElements.bullets">
+      <segment>
+        <source>Bullets</source>
+      </segment>
+    </unit>
+    <unit id="categories.description.Sitekit.contentElements.bullets">
+      <segment>
+        <source>CType `bullets`</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.contentElements.menu_subpages">
+      <segment>
+        <source>Menu Subpages</source>
+      </segment>
+    </unit>
+    <unit id="categories.description.Sitekit.contentElements.menu_subpages">
+      <segment>
+        <source>CType `menu_subpages`</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.menus">
+      <segment>
+        <source>Menus</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.menus.main">
+      <segment>
+        <source>Main Menu</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.menus.top">
+      <segment>
+        <source>Top Menu</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.menus.language">
+      <segment>
+        <source>Language Menu</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.menus.subpages">
+      <segment>
+        <source>Subpages Menu</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.menus.footer">
+      <segment>
+        <source>Footer Menu</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.features">
+      <segment>
+        <source>Features</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.features.search">
+      <segment>
+        <source>Search</source>
+      </segment>
+    </unit>
+    <unit id="categories.Sitekit.features.colorModes">
+      <segment>
+        <source>Color Modes</source>
+      </segment>
+    </unit>
+    <unit id="categories.SocialMedia.settings">
+      <segment>
+        <source>Social Media</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.layout.pageHeader.variant">
+      <segment>
+        <source>Page Header Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.layout.pageHeader.variant.TwoRowMenuTop">
+      <segment>
+        <source>Row 1: Menu Top | Row 2: Logo, Menu Main, Search</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.layout.pageHeader.variant.TwoRowLogoTop">
+      <segment>
+        <source>Row 1: Logo, Menu Top | Row 2: Menu Main, Search</source>
+      </segment>
+    </unit>
+    <unit id="settings.Sitekit.project.companyName">
+      <segment>
+        <source>Company Name</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.project.companyName">
+      <segment>
+        <source>The name of the company will be used in the Navbar, Footer, ….</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.companyName2">
+      <segment>
+        <source>Company Name Row 2</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.project.companyName2">
+      <segment>
+        <source>e.g. for owner / slogan</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.addressLine1">
+      <segment>
+        <source>Address Line 1</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.project.addressLine1">
+      <segment>
+        <source>Street and House number</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.addressLine2">
+      <segment>
+        <source>Address Line 2</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.project.addressLine2">
+      <segment>
+        <source>Additional address information</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.postalCode">
+      <segment>
+        <source>Postal Code</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.city">
+      <segment>
+        <source>City</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.telephone">
+      <segment>
+        <source>Telephone</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.email">
+      <segment>
+        <source>Email</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.brand.logo.file.svg">
+      <segment>
+        <source>Logo SVG</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.project.brand.logo.file.svg">
+      <segment>
+        <source>e.g. EXT:ot_sitekitbase/Resources/Public/Icons/Extension.svg</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.pages.termsAndConditions">
+      <segment>
+        <source>Terms and conditions</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.pages.legalNotice">
+      <segment>
+        <source>Legal Notice</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.pages.privacyPolicy">
+      <segment>
+        <source>Privacy Policy</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.frameworks.frontend.directory">
+      <segment>
+        <source>Frontend Framework Directory</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.frameworks.frontend.directory">
+      <segment>
+        <source>Parent directory to templates files. This path is also used by many Sitekit content elements.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.layout.gutterSize">
+      <segment>
+        <source>Gutter Size</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.layout.gutterSize">
+      <segment>
+        <source>The default gutter size (e.g. for card decks)</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.layout.radius">
+      <segment>
+        <source>Radius</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.layout.radius">
+      <segment>
+        <source>The default border radius for borders, buttons, images, …. This entry sets the class `border-radius` in various places (e.g., card frames, buttons).</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.rootPage">
+      <segment>
+        <source>Root Page</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.rootPage">
+      <segment>
+        <source>Page ID of the start page (doktype "Directory") used for building the main navigation.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.variant">
+      <segment>
+        <source>Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.variant">
+      <segment>
+        <source>Based on the Bootstrap Navbar: `https://getbootstrap.com/docs/5.3/components/navbar/`</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.toggler.variant">
+      <segment>
+        <source>Toggler Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.toggler.variant">
+      <segment>
+        <source>Visual style of the mobile navigation toggle button.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.navBrand">
+      <segment>
+        <source>Navbar Brand</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.navBrand">
+      <segment>
+        <source>Element shown in the navbar brand area (logo, home icon, or nothing).</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.backgroundColor">
+      <segment>
+        <source>Navbar Background</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.backgroundColor">
+      <segment>
+        <source>Controls the color of the burger menu for mobile navigation.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.collapsing">
+      <segment>
+        <source>Responsive Collapsing</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.alignment">
+      <segment>
+        <source>Alignment</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.alignment.enum.left">
+      <segment>
+        <source>Left</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.alignment.enum.centered">
+      <segment>
+        <source>Centered</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.alignment.enum.right">
+      <segment>
+        <source>Right</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.collapsing">
+      <segment>
+        <source>Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.levels">
+      <segment>
+        <source>Levels</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.levels">
+      <segment>
+        <source>Menu page depth</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.includeSpacer">
+      <segment>
+        <source>Include Spacer</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.includeSpacer">
+      <segment>
+        <source>Should spacers be taken into account in the menu?</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.logo.width">
+      <segment>
+        <source>Logo Width</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.logo.width">
+      <segment>
+        <source>Width in Pixels, e.g. {40} for 40px.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.main.logo.height">
+      <segment>
+        <source>Logo Height</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.main.logo.height">
+      <segment>
+        <source>Height in Pixels, e.g. {40} for 40px.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.top.rootPage">
+      <segment>
+        <source>Root Page</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.top.rootPage">
+      <segment>
+        <source>Page ID of the start page (doktype "Directory") used for building the top menu.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.top.variant">
+      <segment>
+        <source>Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.top.variant">
+      <segment>
+        <source>Based on the Bootstrap Nav: `https://getbootstrap.com/docs/5.3/components/navs-tabs/`</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.language.enabled">
+      <segment>
+        <source>Enabled</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.language.enabled">
+      <segment>
+        <source>Enables the Language Menu on the website.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.language.variant">
+      <segment>
+        <source>Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.language.variant">
+      <segment>
+        <source>Based on the Bootstrap 5 Dropdown: `https://getbootstrap.com/docs/5.3/components/dropdowns/`</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.language.dropdownToggle.label.enabled">
+      <segment>
+        <source>Display Label</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.language.dropdownToggle.label.enabled">
+      <segment>
+        <source>Display Label for Language Menu.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.menus.footer.rootPage">
+      <segment>
+        <source>Root Page</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.menus.footer.rootPage">
+      <segment>
+        <source>Page ID of the start page (doktype "Directory") used for building the footer navigation.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.features.search.enabled">
+      <segment>
+        <source>Enabled</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.features.search.enabled">
+      <segment>
+        <source>Enables search on the website.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.features.colorModes.variant">
+      <segment>
+        <source>Color Modes Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.features.colorModes.variant">
+      <segment>
+        <source>Based on the Bootstrap colorModes: https://getbootstrap.com/docs/5.3/customize/color-modes/</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.features.colorModes.enabled">
+      <segment>
+        <source>Enabled</source>
+      </segment>
+    </unit>
+    <unit id="settings.description,sitekit.features.colorModes.enabled">
+      <segment>
+        <source>Enables the Color Modes on the website (Dark Mode and Light Mode).</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.features.colorModes.dropdownToggle.label.enabled">
+      <segment>
+        <source>Display Label</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.features.colorModes.dropdownToggle.label.enabled">
+      <segment>
+        <source>Display Label for Color Modes.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.socialMedia.facebook.account">
+      <segment>
+        <source>Facebook Account</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.socialMedia.x.account">
+      <segment>
+        <source>X/Twitter Account</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.socialMedia.instagram.account">
+      <segment>
+        <source>Instagram Account</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.project.socialMedia.linkedIn.account">
+      <segment>
+        <source>LinkedIn Account</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.contentElements.bullets.listIconIdentifier">
+      <segment>
+        <source>List Icon Identifier</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.contentElements.bullets.listIconIdentifier">
+      <segment>
+        <source>Icon identifier for bullet list items (e.g. "circle-fill"). Leave empty to use the default CSS list style.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.contentElements.menu_subpages.variant">
+      <segment>
+        <source>Variant</source>
+      </segment>
+    </unit>
+    <unit id="settings.description.sitekit.contentElements.menu_subpages.variant">
+      <segment>
+        <source>Layout of the menu for subpages.</source>
+      </segment>
+    </unit>
+    <unit id="settings.sitekit.contentElements.menu_subpages.rowCols">
+      <segment>
+        <source>Row Cols</source>
+      </segment>
+    </unit>
+  </file>
 </xliff>

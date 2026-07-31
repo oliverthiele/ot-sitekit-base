@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext"
-        original="EXT:ot_sitekitbase/Configuration/Sets/ContainerLayouts/labels.xlf"
-        product-name="ot-sitekit-base">
-    <header/>
-    <body>
-      <trans-unit id="label" resname="label">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ot-sitekit-base-labels"
+        original="EXT:ot_sitekitbase/Configuration/Sets/ContainerLayouts/labels.xlf">
+    <unit id="label">
+      <segment>
         <source>Container Layouts</source>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

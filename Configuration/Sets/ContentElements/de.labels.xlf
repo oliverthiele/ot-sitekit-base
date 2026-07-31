@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="de" datatype="plaintext"
-        original="EXT:ot_sitekitbase/Configuration/Sets/ContentElements/labels.xlf"
-        product-name="ot-sitekit-base">
-    <header/>
-    <body>
-      <trans-unit id="label" resname="label" approved="yes">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="de">
+  <file id="ot-sitekit-base-labels"
+        original="EXT:ot_sitekitbase/Configuration/Sets/ContentElements/labels.xlf">
+    <unit id="label">
+      <segment>
         <source>Content Element Import</source>
         <target>Inhaltselemente-Import</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

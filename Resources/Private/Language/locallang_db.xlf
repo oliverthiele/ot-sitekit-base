@@ -1,362 +1,558 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en"
-		  datatype="plaintext" date="2025-03-11T12:37:17Z"
-		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf" product-name="ot-sitekit-base">
-		<header/>
-		<body>
-			<!-- Backend -->
-			<trans-unit id="backend.preview.listType" resname="backend.preview.listType">
-				<source>List Type:</source>
-			</trans-unit>
-			<!-- pages -->
-			<trans-unit id="pages.iconIdentifier.label" resname="pages.iconIdentifier.label">
-				<source>Icon Identifier</source>
-			</trans-unit>
-			<trans-unit id="pages.iconIdentifier.description" resname="pages.iconIdentifier.description">
-				<source> </source>
-			</trans-unit>
-			<trans-unit id="pages.menuImage.label" resname="pages.menuImage.label">
-				<source>Menu Image</source>
-			</trans-unit>
-			<trans-unit id="pages.menuImage.description" resname="pages.menuImage.description">
-				<source> </source>
-			</trans-unit>
-			<!-- tt_content -->
-			<trans-unit id="header_layout.default" resname="header_layout.default">
-				<source>Default</source>
-			</trans-unit>
-			<trans-unit id="grid_cards_container" resname="grid_cards_container">
-				<source>Header for all card elements in this container</source>
-			</trans-unit>
-			<trans-unit id="header_layout.h1" resname="header_layout.h1">
-				<source>Heading 1. Order</source>
-			</trans-unit>
-			<trans-unit id="header_layout.h2" resname="header_layout.h2">
-				<source>Heading 2. Order</source>
-			</trans-unit>
-			<trans-unit id="header_layout.h3" resname="header_layout.h3">
-				<source>Heading 3. Order</source>
-			</trans-unit>
-			<trans-unit id="header_layout.h4" resname="header_layout.h4">
-				<source>Heading 4. Order</source>
-			</trans-unit>
-			<trans-unit id="header_layout.h5" resname="header_layout.h5">
-				<source>Heading 5. Order</source>
-			</trans-unit>
-			<trans-unit id="header_style" resname="header_style">
-				<source>Style</source>
-			</trans-unit>
-			<trans-unit id="header_style.groupHeader" resname="header_style.groupHeader">
-				<source>Header</source>
-			</trans-unit>
-			<trans-unit id="header_style.groupDisplay" resname="header_style.groupDisplay">
-				<source>Display Classes</source>
-			</trans-unit>
-			<trans-unit id="header_style.groupSpecial" resname="header_style.groupSpecial">
-				<source>Special</source>
-			</trans-unit>
-			<trans-unit id="header_style.groupAccessibility" resname="header_style.groupAccessibility">
-				<source>Accessibility</source>
-			</trans-unit>
-			<trans-unit id="header_style.groupHeaderColor" resname="header_style.groupHeaderColor">
-				<source>Header Color</source>
-			</trans-unit>
-			<trans-unit id="header_style.groupHeaderSizePrimaryColor" resname="header_style.groupHeaderSizePrimaryColor">
-				<source>Header size and primary color</source>
-			</trans-unit>
-			<trans-unit id="header_style.default" resname="header_style.default">
-				<source>Default</source>
-			</trans-unit>
-			<trans-unit id="header_style.description" resname="header_style.description">
-				<source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
-			</trans-unit>
-			<trans-unit id="header_style.h1" resname="header_style.h1">
-				<source>h1</source>
-			</trans-unit>
-			<trans-unit id="header_style.h2" resname="header_style.h2">
-				<source>h2</source>
-			</trans-unit>
-			<trans-unit id="header_style.h3" resname="header_style.h3">
-				<source>h3</source>
-			</trans-unit>
-			<trans-unit id="header_style.h4" resname="header_style.h4">
-				<source>h4</source>
-			</trans-unit>
-			<trans-unit id="header_style.h5" resname="header_style.h5">
-				<source>h5</source>
-			</trans-unit>
-			<trans-unit id="header_style.h6" resname="header_style.h6">
-				<source>h6</source>
-			</trans-unit>
-			<trans-unit id="header_style.visuallyHidden" resname="header_style.visuallyHidden">
-				<source>Visually Hidden</source>
-			</trans-unit>
-			<trans-unit id="ot_layout" resname="ot_layout">
-				<source>Layout</source>
-			</trans-unit>
-			<trans-unit id="ot_layout.default" resname="ot_layout.default">
-				<source>Default</source>
-			</trans-unit>
-
-
-			<trans-unit id="backendLayout.advanced.title" resname="backendLayout.advanced.title">
-				<source>Advanced</source>
-			</trans-unit>
-			<trans-unit id="backendLayout.default.title" resname="backendLayout.default.title">
-				<source>Standard</source>
-			</trans-unit>
-			<trans-unit id="backendLayout.homepage.title" resname="backendLayout.homepage.title">
-				<source>Homepage</source>
-			</trans-unit>
-			<trans-unit id="backendLayout.smallContent.title" resname="backendLayout.smallContent.title">
-				<source>Small Content Column</source>
-			</trans-unit>
-
-			<trans-unit id="column.heroContent" resname="column.heroContent">
-				<source>Hero Image</source>
-			</trans-unit>
-			<trans-unit id="column.main" resname="column.main">
-				<source>Main Content</source>
-			</trans-unit>
-			<trans-unit id="column.left" resname="column.left">
-				<source>Left Column</source>
-			</trans-unit>
-			<trans-unit id="column.right" resname="column.right">
-				<source>Right Column</source>
-			</trans-unit>
-			<trans-unit id="column.aside" resname="column.aside">
-				<source>Aside Content</source>
-			</trans-unit>
-
-			<trans-unit id="tca.group.extras" resname="tca.group.extras">
-				<source>Extras</source>
-			</trans-unit>
-			<trans-unit id="container.pageContainer" resname="container.pageContainer">
-				<source>Container [Page]</source>
-			</trans-unit>
-			<trans-unit id="container.page.container" resname="container.page.container">
-				<source>Page Container: div.container</source>
-			</trans-unit>
-			<trans-unit id="container.page.containerFluid" resname="container.page.containerFluid">
-				<source>Page Container: div.container-fluid</source>
-			</trans-unit>
-			<trans-unit id="container.1col" resname="container.1col">
-				<source>Container [1 column]</source>
-			</trans-unit>
-			<trans-unit id="container.2cols" resname="container.2cols">
-				<source>Container [2 columns]</source>
-			</trans-unit>
-			<trans-unit id="container.3cols" resname="container.3cols">
-				<source>Container [3 columns]</source>
-			</trans-unit>
-			<trans-unit id="container.4cols" resname="container.4cols">
-				<source>Container [4 columns]</source>
-			</trans-unit>
-			<trans-unit id="container.special" resname="container.special">
-				<source>Container [Special]</source>
-			</trans-unit>
-
-			<trans-unit id="container.cols.1.article" resname="container.cols.1.article">
-				<source>Article-Container</source>
-			</trans-unit>
-			<trans-unit id="container.cols.1.section" resname="container.cols.1.section">
-				<source>Section-Container</source>
-			</trans-unit>
-
-
-			<trans-unit id="container.cols.2.6-6" resname="container.cols.2.6-6">
-				<source>Content Container: 2 columns 6-6</source>
-			</trans-unit>
-			<trans-unit id="container.cols.2.4-8" resname="container.cols.2.4-8">
-				<source>Content Container: 2 columns 4-8</source>
-			</trans-unit>
-			<trans-unit id="container.cols.2.8-4" resname="container.cols.2.8-4">
-				<source>Content Container: 2 columns 8-4</source>
-			</trans-unit>
-			<!-- Container 3 columns -->
-			<trans-unit id="container.cols.3.4-4-4" resname="container.cols.3.4-4-4">
-				<source>Content Container: 3 columns 3-3-3</source>
-			</trans-unit>
-			<trans-unit id="container.cols.3.4-4-4.description" resname="container.cols.3.4-4-4.description">
-				<source>3 x 33% in Desktop View</source>
-			</trans-unit>
-			<trans-unit id="container.cols.3.3-6-3" resname="container.cols.3.3-6-3">
-				<source>Content Container: 3 columns 3-6-3</source>
-			</trans-unit>
-			<trans-unit id="container.cols.3.3-6-3.description" resname="container.cols.3.3-6-3.description">
-				<source>25% on the left and right, and 50% in the middle</source>
-			</trans-unit>
-			<!-- Container 4 columns -->
-			<trans-unit id="container.cols.4.3-3-3-3" resname="container.cols.4.3-3-3-3">
-				<source>Content Container: 4 columns</source>
-				<target>Content Container: 4 Spalten</target>
-			</trans-unit>
-			<trans-unit id="container.cols.4.3-3-3-3.description" resname="container.cols.4.description">
-				<source>4 x 25% in Desktop View</source>
-				<target>4 x 25 % in der Desktop-Ansicht</target>
-			</trans-unit>
-			<trans-unit id="container.cols.fixed-background" resname="container.cols.fixed-background">
-				<source>Content Container: Fixed Background</source>
-			</trans-unit>
-			<trans-unit id="container.labels.fixedBackgroundColumn" resname="container.labels.fixedBackgroundColumn">
-				<source>Container with fixed background</source>
-			</trans-unit>
-			<trans-unit id="container.labels.column1" resname="container.labels.column1">
-				<source>Column 1</source>
-			</trans-unit>
-			<trans-unit id="container.labels.column2" resname="container.labels.column2">
-				<source>Column 2</source>
-			</trans-unit>
-			<trans-unit id="container.labels.column3" resname="container.labels.column3">
-				<source>Column 3</source>
-			</trans-unit>
-			<trans-unit id="container.labels.column4" resname="container.labels.column4">
-				<source>Column 4</source>
-			</trans-unit>
-			<trans-unit id="container.labels.twoColumns" resname="container.labels.twoColumns">
-				<source>Two columns</source>
-			</trans-unit>
-			<trans-unit id="container.labels.leftColumn" resname="container.labels.leftColumn">
-				<source>Left column</source>
-			</trans-unit>
-			<trans-unit id="container.labels.middleColumn" resname="container.labels.middleColumn">
-				<source>Middle column</source>
-			</trans-unit>
-			<trans-unit id="container.labels.rightColumn" resname="container.labels.rightColumn">
-				<source>Right column</source>
-			</trans-unit>
-
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.CType.label" resname="container.ot-sitekit-base-container-grid-cards.CType.label">
-				<source>Container: Grid</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.CType.description" resname="container.ot-sitekit-base-container-grid-cards.CType.description">
-				<source><![CDATA[Container for "Card" and "Text & Icon" Elements]]></source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.colPos.300" resname="container.ot-sitekit-base-container-grid-cards.colPos.300">
-				<source><![CDATA[Allowed: "Card" and "Text & Icon"]]></source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.0" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.0">
-				<source>Standard (maximum four columns)</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.1" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.1">
-				<source>Maximum two columns</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.2" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.2">
-				<source>Maximum three columns</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.3" resname="container.ot-sitekit-base-container-grid-cards.ot_layout.3">
-				<source>Maximum four columns</source>
-			</trans-unit>
-			<!-- Container Background Color -->
-			<trans-unit id="container.bgcolor.group" resname="container.bgcolor.group">
-				<source>Container [Background Color]</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.primary.CType.label" resname="container.bgcolor.primary.CType.label">
-				<source>Background Color: Primary</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.primary.CType.description" resname="container.bgcolor.primary.CType.description">
-				<source>Container with primary background color</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.primary.colPos.100" resname="container.bgcolor.primary.colPos.100">
-				<source>Content</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.secondary.CType.label" resname="container.bgcolor.secondary.CType.label">
-				<source>Background Color: Secondary</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.secondary.CType.description" resname="container.bgcolor.secondary.CType.description">
-				<source>Container with secondary background color</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.secondary.colPos.100" resname="container.bgcolor.secondary.colPos.100">
-				<source>Content</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.light.CType.label" resname="container.bgcolor.light.CType.label">
-				<source>Background Color: Light</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.light.CType.description" resname="container.bgcolor.light.CType.description">
-				<source>Container with light background color</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.light.colPos.100" resname="container.bgcolor.light.colPos.100">
-				<source>Content</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.dark.CType.label" resname="container.bgcolor.dark.CType.label">
-				<source>Background Color: Dark</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.dark.CType.description" resname="container.bgcolor.dark.CType.description">
-				<source>Container with dark background color</source>
-			</trans-unit>
-			<trans-unit id="container.bgcolor.dark.colPos.100" resname="container.bgcolor.dark.colPos.100">
-				<source>Content</source>
-			</trans-unit>
-
-			<!-- Container Layout width 80 -->
-			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.CType.label" resname="container.ot-sitekit-base-container-layout-width-80.CType.label">
-				<source>Container Layout width 80%</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.CType.description" resname="container.ot-sitekit-base-container-layout-width-80.CType.description">
-				<source>Structures a thematically self-contained area of content in a moderately narrowed, focused layout — creating a readable content zone that stands alone and makes sense on its own.</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100" resname="container.ot-sitekit-base-container-layout-width-80.colPos.100">
-				<source>Container width 80%</source>
-			</trans-unit>
-			<!-- Container Layout width 60 -->
-			<trans-unit id="container.ot-sitekit-base-container-layout-width-60.CType.label" resname="container.ot-sitekit-base-container-layout-width-60.CType.label">
-				<source>Container Layout width 60%</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-layout-width-60.CType.description" resname="container.ot-sitekit-base-container-layout-width-60.CType.description">
-				<source>Structures a thematically self-contained area of content at 60 % page width — creating a focused, readable content zone that stands alone and makes sense on its own.</source>
-			</trans-unit>
-			<trans-unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100" resname="container.ot-sitekit-base-container-layout-width-80.colPos.100">
-				<source>Container width 60%</source>
-			</trans-unit>
-
-			<!-- TCA tt_content -->
-			<trans-unit id="ot_text_columns" resname="ot_text_columns">
-				<source>Text Columns</source>
-			</trans-unit>
-			<trans-unit id="ot_text_columns.singleColumn" resname="ot_text_columns.singleColumn">
-				<source>Single Column</source>
-			</trans-unit>
-			<trans-unit id="ot_text_columns.multiColumn" resname="ot_text_columns.multiColumn">
-				<source>Multi-Column</source>
-			</trans-unit>
-			<trans-unit id="palette.ot-crop-variants.label" resname="palette.ot-crop-variants.label">
-				<source>Crop Variants</source>
-			</trans-unit>
-			<trans-unit id="palette.ot-crop-variants.description" resname="palette.ot-crop-variants.description">
-				<source>Select the crop variant for the different breakpoints.</source>
-			</trans-unit>
-			<trans-unit id="cropVariants.0" resname="cropVariants.0">
-				<source>Standard (Original)</source>
-			</trans-unit>
-			<trans-unit id="cropVariants.0-xs" resname="cropVariants.0-xs">
-				<source>Inherited</source>
-			</trans-unit>
-			<trans-unit id="cropVariants.1" resname="cropVariants.1">
-				<source>Original</source>
-			</trans-unit>
-			<trans-unit id="cropVariants.2" resname="cropVariants.2">
-				<source>Free</source>
-			</trans-unit>
-			<trans-unit id="cropVariantXs" resname="cropVariantXs">
-				<source>Crop Variant XS</source>
-			</trans-unit>
-			<trans-unit id="cropVariantSm" resname="cropVariantSm">
-				<source>Crop Variant SM</source>
-			</trans-unit>
-			<trans-unit id="cropVariantMd" resname="cropVariantMd">
-				<source>Crop Variant MD</source>
-			</trans-unit>
-			<trans-unit id="cropVariantLg" resname="cropVariantLg">
-				<source>Crop Variant LG</source>
-			</trans-unit>
-			<trans-unit id="cropVariantXl" resname="cropVariantXl">
-				<source>Crop Variant XL</source>
-			</trans-unit>
-			<trans-unit id="cropVariantXxl" resname="cropVariantXxl">
-				<source>Crop Variant XXL</source>
-			</trans-unit>
-
-		</body>
-	</file>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ot-sitekit-base-locallang-db"
+        original="EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf">
+    <unit id="backend.preview.listType">
+      <segment>
+        <source>List Type:</source>
+      </segment>
+    </unit>
+    <unit id="pages.iconIdentifier.label">
+      <segment>
+        <source>Icon Identifier</source>
+      </segment>
+    </unit>
+    <unit id="pages.iconIdentifier.description">
+      <segment>
+        <source> </source>
+      </segment>
+    </unit>
+    <unit id="pages.menuImage.label">
+      <segment>
+        <source>Menu Image</source>
+      </segment>
+    </unit>
+    <unit id="pages.menuImage.description">
+      <segment>
+        <source> </source>
+      </segment>
+    </unit>
+    <unit id="header_layout.default">
+      <segment>
+        <source>Default</source>
+      </segment>
+    </unit>
+    <unit id="grid_cards_container">
+      <segment>
+        <source>Header for all card elements in this container</source>
+      </segment>
+    </unit>
+    <unit id="header_layout.h1">
+      <segment>
+        <source>Heading 1. Order</source>
+      </segment>
+    </unit>
+    <unit id="header_layout.h2">
+      <segment>
+        <source>Heading 2. Order</source>
+      </segment>
+    </unit>
+    <unit id="header_layout.h3">
+      <segment>
+        <source>Heading 3. Order</source>
+      </segment>
+    </unit>
+    <unit id="header_layout.h4">
+      <segment>
+        <source>Heading 4. Order</source>
+      </segment>
+    </unit>
+    <unit id="header_layout.h5">
+      <segment>
+        <source>Heading 5. Order</source>
+      </segment>
+    </unit>
+    <unit id="header_style">
+      <segment>
+        <source>Style</source>
+      </segment>
+    </unit>
+    <unit id="header_style.groupHeader">
+      <segment>
+        <source>Header</source>
+      </segment>
+    </unit>
+    <unit id="header_style.groupDisplay">
+      <segment>
+        <source>Display Classes</source>
+      </segment>
+    </unit>
+    <unit id="header_style.groupSpecial">
+      <segment>
+        <source>Special</source>
+      </segment>
+    </unit>
+    <unit id="header_style.groupAccessibility">
+      <segment>
+        <source>Accessibility</source>
+      </segment>
+    </unit>
+    <unit id="header_style.groupHeaderColor">
+      <segment>
+        <source>Header Color</source>
+      </segment>
+    </unit>
+    <unit id="header_style.groupHeaderSizePrimaryColor">
+      <segment>
+        <source>Header size and primary color</source>
+      </segment>
+    </unit>
+    <unit id="header_style.default">
+      <segment>
+        <source>Default</source>
+      </segment>
+    </unit>
+    <unit id="header_style.description">
+      <segment>
+        <source>The visually-hidden class can be used if, for example, the hierarchy in subordinate accordions is to be output correctly.</source>
+      </segment>
+    </unit>
+    <unit id="header_style.h1">
+      <segment>
+        <source>h1</source>
+      </segment>
+    </unit>
+    <unit id="header_style.h2">
+      <segment>
+        <source>h2</source>
+      </segment>
+    </unit>
+    <unit id="header_style.h3">
+      <segment>
+        <source>h3</source>
+      </segment>
+    </unit>
+    <unit id="header_style.h4">
+      <segment>
+        <source>h4</source>
+      </segment>
+    </unit>
+    <unit id="header_style.h5">
+      <segment>
+        <source>h5</source>
+      </segment>
+    </unit>
+    <unit id="header_style.h6">
+      <segment>
+        <source>h6</source>
+      </segment>
+    </unit>
+    <unit id="header_style.visuallyHidden">
+      <segment>
+        <source>Visually Hidden</source>
+      </segment>
+    </unit>
+    <unit id="ot_layout">
+      <segment>
+        <source>Layout</source>
+      </segment>
+    </unit>
+    <unit id="ot_layout.default">
+      <segment>
+        <source>Default</source>
+      </segment>
+    </unit>
+    <unit id="backendLayout.advanced.title">
+      <segment>
+        <source>Advanced</source>
+      </segment>
+    </unit>
+    <unit id="backendLayout.default.title">
+      <segment>
+        <source>Standard</source>
+      </segment>
+    </unit>
+    <unit id="backendLayout.homepage.title">
+      <segment>
+        <source>Homepage</source>
+      </segment>
+    </unit>
+    <unit id="backendLayout.smallContent.title">
+      <segment>
+        <source>Small Content Column</source>
+      </segment>
+    </unit>
+    <unit id="column.heroContent">
+      <segment>
+        <source>Hero Image</source>
+      </segment>
+    </unit>
+    <unit id="column.main">
+      <segment>
+        <source>Main Content</source>
+      </segment>
+    </unit>
+    <unit id="column.left">
+      <segment>
+        <source>Left Column</source>
+      </segment>
+    </unit>
+    <unit id="column.right">
+      <segment>
+        <source>Right Column</source>
+      </segment>
+    </unit>
+    <unit id="column.aside">
+      <segment>
+        <source>Aside Content</source>
+      </segment>
+    </unit>
+    <unit id="tca.group.extras">
+      <segment>
+        <source>Extras</source>
+      </segment>
+    </unit>
+    <unit id="container.pageContainer">
+      <segment>
+        <source>Container [Page]</source>
+      </segment>
+    </unit>
+    <unit id="container.page.container">
+      <segment>
+        <source>Page Container: div.container</source>
+      </segment>
+    </unit>
+    <unit id="container.page.containerFluid">
+      <segment>
+        <source>Page Container: div.container-fluid</source>
+      </segment>
+    </unit>
+    <unit id="container.1col">
+      <segment>
+        <source>Container [1 column]</source>
+      </segment>
+    </unit>
+    <unit id="container.2cols">
+      <segment>
+        <source>Container [2 columns]</source>
+      </segment>
+    </unit>
+    <unit id="container.3cols">
+      <segment>
+        <source>Container [3 columns]</source>
+      </segment>
+    </unit>
+    <unit id="container.4cols">
+      <segment>
+        <source>Container [4 columns]</source>
+      </segment>
+    </unit>
+    <unit id="container.special">
+      <segment>
+        <source>Container [Special]</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.1.article">
+      <segment>
+        <source>Article-Container</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.1.section">
+      <segment>
+        <source>Section-Container</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.2.6-6">
+      <segment>
+        <source>Content Container: 2 columns 6-6</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.2.4-8">
+      <segment>
+        <source>Content Container: 2 columns 4-8</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.2.8-4">
+      <segment>
+        <source>Content Container: 2 columns 8-4</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.3.4-4-4">
+      <segment>
+        <source>Content Container: 3 columns 3-3-3</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.3.4-4-4.description">
+      <segment>
+        <source>3 x 33% in Desktop View</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.3.3-6-3">
+      <segment>
+        <source>Content Container: 3 columns 3-6-3</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.3.3-6-3.description">
+      <segment>
+        <source>25% on the left and right, and 50% in the middle</source>
+      </segment>
+    </unit>
+    <unit id="container.cols.4.3-3-3-3">
+      <segment>
+        <source>Content Container: 4 columns</source>
+        <target>Content Container: 4 Spalten</target>
+      </segment>
+    </unit>
+    <unit id="container.cols.4.3-3-3-3.description">
+      <segment>
+        <source>4 x 25% in Desktop View</source>
+        <target>4 x 25 % in der Desktop-Ansicht</target>
+      </segment>
+    </unit>
+    <unit id="container.cols.fixed-background">
+      <segment>
+        <source>Content Container: Fixed Background</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.fixedBackgroundColumn">
+      <segment>
+        <source>Container with fixed background</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.column1">
+      <segment>
+        <source>Column 1</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.column2">
+      <segment>
+        <source>Column 2</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.column3">
+      <segment>
+        <source>Column 3</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.column4">
+      <segment>
+        <source>Column 4</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.twoColumns">
+      <segment>
+        <source>Two columns</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.leftColumn">
+      <segment>
+        <source>Left column</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.middleColumn">
+      <segment>
+        <source>Middle column</source>
+      </segment>
+    </unit>
+    <unit id="container.labels.rightColumn">
+      <segment>
+        <source>Right column</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.CType.label">
+      <segment>
+        <source>Container: Grid</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.CType.description">
+      <segment>
+        <source><![CDATA[Container for "Card" and "Text & Icon" Elements]]></source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.colPos.300">
+      <segment>
+        <source><![CDATA[Allowed: "Card" and "Text & Icon"]]></source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.0">
+      <segment>
+        <source>Standard (maximum four columns)</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.1">
+      <segment>
+        <source>Maximum two columns</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.2">
+      <segment>
+        <source>Maximum three columns</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-grid-cards.ot_layout.3">
+      <segment>
+        <source>Maximum four columns</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.group">
+      <segment>
+        <source>Container [Background Color]</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.primary.CType.label">
+      <segment>
+        <source>Background Color: Primary</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.primary.CType.description">
+      <segment>
+        <source>Container with primary background color</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.primary.colPos.100">
+      <segment>
+        <source>Content</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.secondary.CType.label">
+      <segment>
+        <source>Background Color: Secondary</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.secondary.CType.description">
+      <segment>
+        <source>Container with secondary background color</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.secondary.colPos.100">
+      <segment>
+        <source>Content</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.light.CType.label">
+      <segment>
+        <source>Background Color: Light</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.light.CType.description">
+      <segment>
+        <source>Container with light background color</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.light.colPos.100">
+      <segment>
+        <source>Content</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.dark.CType.label">
+      <segment>
+        <source>Background Color: Dark</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.dark.CType.description">
+      <segment>
+        <source>Container with dark background color</source>
+      </segment>
+    </unit>
+    <unit id="container.bgcolor.dark.colPos.100">
+      <segment>
+        <source>Content</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-layout-width-80.CType.label">
+      <segment>
+        <source>Container Layout width 80%</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-layout-width-80.CType.description">
+      <segment>
+        <source>Structures a thematically self-contained area of content in a moderately narrowed, focused layout — creating a readable content zone that stands alone and makes sense on its own.</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-layout-width-80.colPos.100">
+      <segment>
+        <source>Container width 80%</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-layout-width-60.CType.label">
+      <segment>
+        <source>Container Layout width 60%</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-layout-width-60.CType.description">
+      <segment>
+        <source>Structures a thematically self-contained area of content at 60 % page width — creating a focused, readable content zone that stands alone and makes sense on its own.</source>
+      </segment>
+    </unit>
+    <unit id="container.ot-sitekit-base-container-layout-width-60.colPos.100">
+      <segment>
+        <source>Container width 60%</source>
+      </segment>
+    </unit>
+    <unit id="ot_text_columns">
+      <segment>
+        <source>Text Columns</source>
+      </segment>
+    </unit>
+    <unit id="ot_text_columns.singleColumn">
+      <segment>
+        <source>Single Column</source>
+      </segment>
+    </unit>
+    <unit id="ot_text_columns.multiColumn">
+      <segment>
+        <source>Multi-Column</source>
+      </segment>
+    </unit>
+    <unit id="palette.ot-crop-variants.label">
+      <segment>
+        <source>Crop Variants</source>
+      </segment>
+    </unit>
+    <unit id="palette.ot-crop-variants.description">
+      <segment>
+        <source>Select the crop variant for the different breakpoints.</source>
+      </segment>
+    </unit>
+    <unit id="cropVariants.0">
+      <segment>
+        <source>Standard (Original)</source>
+      </segment>
+    </unit>
+    <unit id="cropVariants.0-xs">
+      <segment>
+        <source>Inherited</source>
+      </segment>
+    </unit>
+    <unit id="cropVariants.1">
+      <segment>
+        <source>Original</source>
+      </segment>
+    </unit>
+    <unit id="cropVariants.2">
+      <segment>
+        <source>Free</source>
+      </segment>
+    </unit>
+    <unit id="cropVariantXs">
+      <segment>
+        <source>Crop Variant XS</source>
+      </segment>
+    </unit>
+    <unit id="cropVariantSm">
+      <segment>
+        <source>Crop Variant SM</source>
+      </segment>
+    </unit>
+    <unit id="cropVariantMd">
+      <segment>
+        <source>Crop Variant MD</source>
+      </segment>
+    </unit>
+    <unit id="cropVariantLg">
+      <segment>
+        <source>Crop Variant LG</source>
+      </segment>
+    </unit>
+    <unit id="cropVariantXl">
+      <segment>
+        <source>Crop Variant XL</source>
+      </segment>
+    </unit>
+    <unit id="cropVariantXxl">
+      <segment>
+        <source>Crop Variant XXL</source>
+      </segment>
+    </unit>
+  </file>
 </xliff>

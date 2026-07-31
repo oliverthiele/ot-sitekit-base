@@ -51,9 +51,7 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
-        // TYPO3 v13: getRecord() returns array; v14+: returns RecordInterface — normalize to array
-        $record = $item->getRecord();
-        $row = is_array($record) ? $record : $item->getRow();
+        $row = $item->getRow();
 
         $request = ServerRequestFactory::fromGlobals();
         /** @var UriBuilder $uriBuilder */
@@ -117,9 +115,7 @@ final class GenericPreviewRenderer implements PreviewRendererInterface
 
     public function renderPageModulePreviewFooter(GridColumnItem $item): string
     {
-        // TYPO3 v13: getRecord() returns array; v14+: returns RecordInterface — normalize to array
-        $record = $item->getRecord();
-        $row = is_array($record) ? $record : $item->getRow();
+        $row = $item->getRow();
 
         switch ($row['header_layout']) {
             case '100':

@@ -190,12 +190,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
         }
 
         try {
-            $folderObject = $this->resourceFactory->getFolderObjectFromCombinedIdentifier($folderIdentifier);
-            if (!($folderObject instanceof Folder)) {
-                $processedData[$outputKey] = $this->buildErrorState((int)($contentData['uid'] ?? 0));
-                return $processedData;
-            }
-            $folder = $folderObject;
+            $folder = $this->resourceFactory->getFolderObjectFromCombinedIdentifier($folderIdentifier);
         } catch (\Exception $exception) {
             $this->logger?->warning('VideoProcessor: Folder not found', [
                 'folder' => $folderIdentifier,
@@ -270,11 +265,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
             }
 
             try {
-                $parentFolder = $fileObject->getParentFolder();
-                if (!($parentFolder instanceof Folder)) {
-                    continue;
-                }
-                return $parentFolder;
+                return $fileObject->getParentFolder();
             } catch (\Exception $exception) {
                 $this->logger?->warning('VideoProcessor: Could not resolve parent folder of video file', [
                     'file'  => $fileObject->getIdentifier(),

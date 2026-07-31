@@ -37,6 +37,17 @@ resolutions:
   #   twoPassWebm: true — recommended for VP9 to hit the target bitrate accurately.
   #
   # The command never upscales: a resolution is skipped when the source is shorter.
+  - height: 2160
+    suffix: 2160p
+    crf: 21
+    maxrate: "8000k"
+    bufsize: "16000k"
+    audioBitrate: "192k"
+    preset: slow
+    twoPass: false
+    crfWebm: 24
+    deadlineWebm: good
+    twoPassWebm: true
   - height: 1080
     suffix: 1080p
     crf: 21

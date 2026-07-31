@@ -1,107 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext"
-		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang.xlf" date="2025-04-11T18:40:24Z"
-		  product-name="ot-sitekit-base">
-		<header/>
-		<body>
-			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation">
-				<source>Skip to main navigation</source>
-			</trans-unit>
-			<trans-unit id="skipToMainContent" resname="skipToMainContent">
-				<source>Skip to main content</source>
-			</trans-unit>
-			<trans-unit id="skipToPageFooter" resname="skipToPageFooter">
-				<source>Skip to page footer</source>
-			</trans-unit>
-			<trans-unit id="legal" resname="legal">
-				<source>Legal</source>
-			</trans-unit>
-			<trans-unit id="telephone" resname="telephone">
-				<source>Telephone</source>
-			</trans-unit>
-			<trans-unit id="email" resname="email">
-				<source>Email</source>
-			</trans-unit>
-
-			<trans-unit id="readMore" resname="readMore">
-				<source>Read more</source>
-			</trans-unit>
-			<trans-unit id="toSubpage" resname="toSubpage">
-				<source>to subpage</source>
-			</trans-unit>
-			<trans-unit id="openInNewTab" resname="openInNewTab">
-				<source>open in new tab</source>
-			</trans-unit>
-
-			<trans-unit id="serviceNavigation" resname="serviceNavigation">
-				<source>Service navigation</source>
-			</trans-unit>
-			<trans-unit id="menuTop" resname="menuTop">
-				<source>Top menu</source>
-			</trans-unit>
-			<trans-unit id="languageMenu" resname="languageMenu">
-				<source>Language menu</source>
-			</trans-unit>
-			<trans-unit id="language" resname="language">
-				<source>Language</source>
-			</trans-unit>
-			<trans-unit id="activate" resname="activate">
-				<source>activate</source>
-			</trans-unit>
-			<trans-unit id="choose" resname="choose">
-				<source>choose</source>
-			</trans-unit>
-
-			<trans-unit id="colorModes" resname="colorModes">
-				<source>Color Modes</source>
-			</trans-unit>
-			<trans-unit id="colorModes_light" resname="colorModes_light">
-				<source>Light mode</source>
-			</trans-unit>
-			<trans-unit id="colorModes_dark" resname="colorModes_dark">
-				<source>Dark mode</source>
-			</trans-unit>
-			<trans-unit id="colorModes_current_light" resname="colorModes_current_light">
-				<source>Current color mode: light</source>
-			</trans-unit>
-			<trans-unit id="colorModes_current_dark" resname="colorModes_current_dark">
-				<source>Current color mode: dark</source>
-			</trans-unit>
-			<trans-unit id="colorModes_current_systemSettings" resname="colorModes_current_systemSettings">
-				<source>Current color mode: system settings</source>
-			</trans-unit>
-
-			<!-- Video Atom -->
-			<trans-unit id="video.error.notAvailable" resname="video.error.notAvailable">
-				<source>Video not available</source>
-			</trans-unit>
-			<trans-unit id="video.controls.label" resname="video.controls.label">
-				<source>Video controls</source>
-			</trans-unit>
-			<trans-unit id="video.controls.playPause" resname="video.controls.playPause">
-				<source>Play / Pause</source>
-			</trans-unit>
-			<trans-unit id="video.controls.expand" resname="video.controls.expand">
-				<source>Open in fullscreen</source>
-			</trans-unit>
-			<trans-unit id="video.controls.close" resname="video.controls.close">
-				<source>Close</source>
-			</trans-unit>
-			<trans-unit id="video.license.label" resname="video.license.label">
-				<source>License</source>
-			</trans-unit>
-
-			<!-- Content Elements -->
-
-			<!-- Uploads -->
-			<trans-unit id="contentElements.uploads.fileType" resname="contentElements.uploads.fileType">
-				<source>File Type:</source>
-			</trans-unit>
-			<trans-unit id="contentElements.uploads.fileSize" resname="contentElements.uploads.fileSize">
-				<source>File Size:</source>
-			</trans-unit>
-
-		</body>
-	</file>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ot-sitekit-base-locallang"
+        original="EXT:ot_sitekitbase/Resources/Private/Language/locallang.xlf">
+    <unit id="skipToMainNavigation">
+      <segment>
+        <source>Skip to main navigation</source>
+      </segment>
+    </unit>
+    <unit id="homeLink">
+      <segment>
+        <source>Home</source>
+      </segment>
+    </unit>
+    <unit id="skipToMainContent">
+      <segment>
+        <source>Skip to main content</source>
+      </segment>
+    </unit>
+    <unit id="mainNavigation">
+      <segment>
+        <source>Main navigation</source>
+      </segment>
+    </unit>
+    <unit id="skipToPageFooter">
+      <segment>
+        <source>Skip to page footer</source>
+      </segment>
+    </unit>
+    <unit id="legal">
+      <segment>
+        <source>Legal</source>
+      </segment>
+    </unit>
+    <unit id="telephone">
+      <segment>
+        <source>Telephone</source>
+      </segment>
+    </unit>
+    <unit id="email">
+      <segment>
+        <source>Email</source>
+      </segment>
+    </unit>
+    <unit id="readMore">
+      <segment>
+        <source>Read more</source>
+      </segment>
+    </unit>
+    <unit id="toSubpage">
+      <segment>
+        <source>to subpage</source>
+      </segment>
+    </unit>
+    <unit id="openInNewTab">
+      <segment>
+        <source>open in new tab</source>
+      </segment>
+    </unit>
+    <unit id="serviceNavigation">
+      <segment>
+        <source>Service navigation</source>
+      </segment>
+    </unit>
+    <unit id="menuTop">
+      <segment>
+        <source>Top menu</source>
+      </segment>
+    </unit>
+    <unit id="languageMenu">
+      <segment>
+        <source>Language menu</source>
+      </segment>
+    </unit>
+    <unit id="language">
+      <segment>
+        <source>Language</source>
+      </segment>
+    </unit>
+    <unit id="activate">
+      <segment>
+        <source>activate</source>
+      </segment>
+    </unit>
+    <unit id="choose">
+      <segment>
+        <source>choose</source>
+      </segment>
+    </unit>
+    <unit id="colorModes">
+      <segment>
+        <source>Color Modes</source>
+      </segment>
+    </unit>
+    <unit id="colorModes_light">
+      <segment>
+        <source>Light mode</source>
+      </segment>
+    </unit>
+    <unit id="colorModes_dark">
+      <segment>
+        <source>Dark mode</source>
+      </segment>
+    </unit>
+    <unit id="colorModes_current_light">
+      <segment>
+        <source>Current color mode: light</source>
+      </segment>
+    </unit>
+    <unit id="colorModes_current_dark">
+      <segment>
+        <source>Current color mode: dark</source>
+      </segment>
+    </unit>
+    <unit id="colorModes_current_systemSettings">
+      <segment>
+        <source>Current color mode: system settings</source>
+      </segment>
+    </unit>
+    <unit id="video.error.notAvailable">
+      <segment>
+        <source>Video not available</source>
+      </segment>
+    </unit>
+    <unit id="video.controls.label">
+      <segment>
+        <source>Video controls</source>
+      </segment>
+    </unit>
+    <unit id="video.controls.playPause">
+      <segment>
+        <source>Play / Pause</source>
+      </segment>
+    </unit>
+    <unit id="video.controls.mute">
+      <segment>
+        <source>Mute</source>
+      </segment>
+    </unit>
+    <unit id="video.controls.unmute">
+      <segment>
+        <source>Unmute</source>
+      </segment>
+    </unit>
+    <unit id="video.controls.expand">
+      <segment>
+        <source>Open in fullscreen</source>
+      </segment>
+    </unit>
+    <unit id="video.controls.close">
+      <segment>
+        <source>Close</source>
+      </segment>
+    </unit>
+    <unit id="video.license.label">
+      <segment>
+        <source>License</source>
+      </segment>
+    </unit>
+    <unit id="contentElements.uploads.fileType">
+      <segment>
+        <source>File Type:</source>
+      </segment>
+    </unit>
+    <unit id="contentElements.uploads.fileSize">
+      <segment>
+        <source>File Size:</source>
+      </segment>
+    </unit>
+  </file>
 </xliff>

@@ -30,6 +30,7 @@ use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Resource\Folder;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -189,12 +190,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
         }
 
         try {
-            $folderObject = $this->resourceFactory->getFolderObjectFromCombinedIdentifier($folderIdentifier);
-            if (!($folderObject instanceof Folder)) {
-                $processedData[$outputKey] = $this->buildErrorState((int)($contentData['uid'] ?? 0));
-                return $processedData;
-            }
-            $folder = $folderObject;
+            $folder = $this->resourceFactory->getFolderObjectFromCombinedIdentifier($folderIdentifier);
         } catch (\Exception $exception) {
             $this->logger?->warning('VideoProcessor: Folder not found', [
                 'folder' => $folderIdentifier,
@@ -229,7 +225,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
                 ? $processedFile->getOriginalFile()
                 : $processedFile;
             if ($fileObject instanceof AbstractFile
-                && $fileObject->getType() === AbstractFile::FILETYPE_VIDEO
+                && $fileObject->getType() === FileType::VIDEO->value
             ) {
                 return true;
             }
@@ -264,16 +260,12 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
                 continue;
             }
 
-            if ($fileObject->getType() !== AbstractFile::FILETYPE_VIDEO) {
+            if ($fileObject->getType() !== FileType::VIDEO->value) {
                 continue;
             }
 
             try {
-                $parentFolder = $fileObject->getParentFolder();
-                if (!($parentFolder instanceof Folder)) {
-                    continue;
-                }
-                return $parentFolder;
+                return $fileObject->getParentFolder();
             } catch (\Exception $exception) {
                 $this->logger?->warning('VideoProcessor: Could not resolve parent folder of video file', [
                     'file'  => $fileObject->getIdentifier(),
@@ -311,7 +303,7 @@ class VideoProcessor implements DataProcessorInterface, LoggerAwareInterface
             }
 
             $fileObject = $processedFile->getOriginalFile();
-            if ($fileObject->getType() !== AbstractFile::FILETYPE_VIDEO) {
+            if ($fileObject->getType() !== FileType::VIDEO->value) {
                 continue;
             }
 

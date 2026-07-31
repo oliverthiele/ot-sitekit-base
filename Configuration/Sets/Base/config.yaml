@@ -1,3 +1,4 @@
 name: oliverthiele/ot-sitekit-base
 dependencies:
   - typo3/fluid-styled-content
+  - oliverthiele/ot-icons

@@ -1,0 +1,325 @@
+// ---------------------------------------------------------------------------
+// sk-video — Video Atom
+//
+// Bootstrap's .ratio sets position: relative + overflow: hidden on the wrapper
+// and position: absolute; inset: 0; width: 100%; height: 100% on direct children.
+// All child elements (.sk-video-element, .sk-video-poster, .sk-video-loader,
+// .sk-video-placeholder) inherit these rules automatically.
+// ---------------------------------------------------------------------------
+
+// Z-index layers within the ratio container
+$sk-video-z-element:     1;
+$sk-video-z-poster:      2;
+$sk-video-z-loader:      3;
+$sk-video-z-controls:    4;
+
+.sk-video {
+    cursor: default;
+
+    &.sk-video-autoplay {
+        cursor: pointer;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Video element
+// ---------------------------------------------------------------------------
+
+.sk-video-element {
+    z-index: $sk-video-z-element;
+    object-fit: cover;
+}
+
+// ---------------------------------------------------------------------------
+// Poster overlay (autoplay mode only)
+// Sits above the video and fades out once playback begins.
+// ---------------------------------------------------------------------------
+
+.sk-video-poster {
+    z-index: $sk-video-z-poster;
+    transition: opacity 0.5s ease;
+
+    .sk-video-autoplay.is-playing & {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.sk-video-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// ---------------------------------------------------------------------------
+// Loading spinner
+// Visible during the preload → canplay gap (is-loading state).
+// ---------------------------------------------------------------------------
+
+.sk-video-loader {
+    z-index: $sk-video-z-loader;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+
+    .sk-video-autoplay.is-loading & {
+        opacity: 1;
+    }
+}
+
+.sk-video-spinner {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: sk-video-spin 0.8s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+        border-top-color: rgba(255, 255, 255, 0.35);
+    }
+}
+
+@keyframes sk-video-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// SVG error placeholder
+// Rendered when both video sources and poster image are missing.
+// Scales automatically within any .ratio container.
+// ---------------------------------------------------------------------------
+
+.sk-video-placeholder {
+    background-color: #f0f0f0;
+}
+
+// ---------------------------------------------------------------------------
+// Custom controls overlay
+//
+// Non-autoplay: controls always visible (video needs a play button to start).
+// Autoplay:     controls hidden while playing; visible on hover/focus or when paused.
+// ---------------------------------------------------------------------------
+
+.sk-video-controls {
+    position: absolute;
+    inset: 0;
+    z-index: $sk-video-z-controls;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: .375rem;
+    padding: .625rem;
+    // Subtle gradient so buttons remain legible over bright video content
+    background: linear-gradient(to top, rgba(0, 0, 0, .45) 0%, transparent 55%);
+    opacity: 1;
+    transition: opacity .2s ease;
+    pointer-events: none; // container passes through; individual buttons capture events
+
+    // Hide controls while an autoplay video is playing and the cursor is away
+    .sk-video-autoplay.is-playing:not(:hover):not(:focus-within) & {
+        opacity: 0;
+    }
+
+    // Make the buttons themselves interactive
+    .sk-video-btn {
+        pointer-events: all;
+    }
+}
+
+.sk-video-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    background: rgba(0, 0, 0, .55);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background .15s ease, transform .1s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, .8);
+    }
+
+    &:active {
+        transform: scale(.92);
+    }
+
+    svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        fill: currentColor;
+        display: block;
+    }
+}
+
+// Play/pause icon toggle — driven by is-playing on the container
+.sk-video-icon-pause {
+    display: none;
+}
+
+.sk-video.is-playing {
+    .sk-video-icon-play  { display: none; }
+    .sk-video-icon-pause { display: block; }
+}
+
+// Mute icon toggle — driven by is-muted on the container (autoplay videos start muted)
+.sk-video-icon-volume-on {
+    display: none;
+}
+
+.sk-video:not(.is-muted) {
+    .sk-video-icon-volume-off { display: none; }
+    .sk-video-icon-volume-on  { display: block; }
+}
+
+// ---------------------------------------------------------------------------
+// License notice
+// Positioned bottom-left, opposite to the controls (bottom-right).
+// CSS-only popup — no JS required.
+// ---------------------------------------------------------------------------
+
+.sk-video-license {
+    // Bootstrap .ratio > * sets: position: absolute; top: 0; left: 0; width: 100%; height: 100%
+    // All four overrides are required to place this element top-left at natural size.
+    position: absolute;
+    top: .625rem;
+    left: .625rem;
+    width: auto;
+    height: auto;
+    z-index: $sk-video-z-controls;
+    opacity: 1;
+    transition: opacity .3s ease;
+
+    // Hide while video is playing; reappear on hover/focus (same pattern as custom controls)
+    .sk-video.is-playing:not(:hover):not(:focus-within) & {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.sk-video-license-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    background: rgba(0, 0, 0, .55);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: .75rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: background .15s ease;
+
+    &:hover,
+    &:focus-visible {
+        background: rgba(0, 0, 0, .8);
+    }
+}
+
+.sk-video-license-popup {
+    position: absolute;
+    top: calc(100% + .375rem);
+    left: 0;
+    min-width: 12rem;
+    max-width: 20rem;
+    padding: .375rem .625rem;
+    background: rgba(0, 0, 0, .85);
+    border-radius: .25rem;
+    color: #fff;
+    font-size: .75rem;
+    line-height: 1.4;
+    white-space: normal;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .15s ease;
+
+    a {
+        color: #aad4f5;
+        word-break: break-all;
+    }
+
+    .sk-video-license.is-open & {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Expand dialog
+// ---------------------------------------------------------------------------
+
+.sk-video-dialog {
+    position: fixed; // ensure <dialog> is truly centred in all browsers
+    padding: 0;
+    border: none;
+    border-radius: .375rem;
+    background: #000;
+    max-width: min(92vw, 1280px);
+    max-height: 92vh;
+    overflow: hidden;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, .88);
+    }
+}
+
+.sk-video-dialog-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sk-video-dialog-element {
+    display: block;
+    width: 100%;
+    max-width: min(92vw, 1280px);
+    max-height: 92vh;
+    height: auto;
+}
+
+.sk-video-dialog-close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background .15s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, .85);
+    }
+
+    svg {
+        width: .875rem;
+        height: .875rem;
+        fill: currentColor;
+        display: block;
+    }
+}

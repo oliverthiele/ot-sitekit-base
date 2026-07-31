@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ot-sitekit-base-labels"
+        original="EXT:ot_sitekitbase/Configuration/Sets/BackendLayouts/labels.xlf">
+    <unit id="label">
+      <segment>
+        <source>Configuration Backend Layouts</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

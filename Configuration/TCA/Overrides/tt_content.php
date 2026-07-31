@@ -8,7 +8,7 @@ use OliverThiele\OtSitekitbase\Backend\Preview\GenericPreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_sitekitbase.db:';
 
 /**
  * # Load Container Extension Configuration
@@ -24,6 +24,9 @@ require_once GeneralUtility::getFileAbsFileName(
 );
 require_once GeneralUtility::getFileAbsFileName(
     'EXT:ot_sitekitbase/Configuration/TCA/Container/Layouts.php'
+);
+require_once GeneralUtility::getFileAbsFileName(
+    'EXT:ot_sitekitbase/Configuration/TCA/Container/BgColor.php'
 );
 
 //<editor-fold desc="Additional containers groups">
@@ -73,6 +76,14 @@ ExtensionManagementUtility::addTcaSelectItemGroup(
     'CType',
     'containerSpecial',
     $ll . 'container.special',
+    'after:list'
+);
+
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'containerBgColor',
+    $ll . 'container.bgcolor.group',
     'after:list'
 );
 //</editor-fold>
@@ -312,6 +323,7 @@ foreach ($headerItems as $key => $item) {
     $GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['items'][$key] = $item;
 }
 
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['default'] = 2;
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['onChange'] = 'reload';
 
 $GLOBALS['TCA']['tt_content']['columns']['header_position']['displayCond'] = 'FIELD:header_layout:!=:100';

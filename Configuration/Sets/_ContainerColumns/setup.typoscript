@@ -28,11 +28,6 @@ tt_content.ot-sitekit-base-container-1-col-section {
   templateName = 1ColSection
 }
 
-tt_content.ot-sitekit-base-container-1-col-bgcolor =< tt_content.ot-sitekit-base-container
-tt_content.ot-sitekit-base-container-1-col-bgcolor {
-  templateName = 1ColBgColor
-}
-
 ## 2 columns
 
 tt_content.ot-sitekit-base-container =< lib.sitekitContentElement

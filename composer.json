@@ -1,7 +1,7 @@
 {
 	"name": "oliverthiele/ot-sitekit-base",
 	"type": "typo3-cms-extension",
-	"description": "TYPO3 Sitekit: Basic files for the sitekit extensions",
+	"description": "SiteKit Base - Foundation of the SiteKit system: Bootstrap 5 page templates, content element and container layouts, backend layouts and shared site settings.",
 	"homepage": "https://www.oliver-thiele.de/",
 	"license": "GPL-2.0-or-later",
 	"authors": [
@@ -12,6 +12,11 @@
 			"homepage": "https://www.oliver-thiele.de/"
 		}
 	],
+	"require": {
+		"php": ">=8.4",
+		"typo3/cms-core": "^14.3",
+		"oliverthiele/ot-icons": "^3.0"
+	},
 	"autoload": {
 		"psr-4": {
 			"OliverThiele\\OtSitekitbase\\": "Classes/"

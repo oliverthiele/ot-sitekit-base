@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="utf-8">
+    <title>Template: Bullets</title>
+</head>
+<body>
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <f:variable name="isOrdered" value="{f:if(condition: '{data.bullets_type} == 1', then: 1, else: 0)}"/>
+    <f:variable name="iconIdentifier" value="{settings.sitekit.contentElements.bullets.listIconIdentifier}"/>
+
+    <skc:atom.bulletList.default items="{bullets}" ordered="{isOrdered}">
+        <f:fragment name="icon">
+            <skc:atom.icon.default identifier="{iconIdentifier}"/>
+        </f:fragment>
+    </skc:atom.bulletList.default>
+</f:section>
+
+</body>
+</html>

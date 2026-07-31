@@ -70,7 +70,7 @@ final readonly class PagePropertiesAboveContentListener
             templateRootPaths: ['EXT:ot_sitekitbase/Resources/Private/Backend/Templates/PageModule/'],
             partialRootPaths: ['EXT:ot_sitekitbase/Resources/Private/Backend/Partials/'],
             layoutRootPaths: ['EXT:ot_sitekitbase/Resources/Private/Backend/Layouts/'],
-            templatePathAndFilename: 'EXT:ot_sitekitbase/Resources/Private/Backend/PageModule/PageHeader.html'
+            templatePathAndFilename: 'EXT:ot_sitekitbase/Resources/Private/Backend/PageModule/PageHeader.fluid.html'
         );
 
         // Create view

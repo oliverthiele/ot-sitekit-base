@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="menuTop" type="array" optional="{true}" default="{}"/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+<f:argument name="homepage" type="int" optional="{true}" default="0"/>
+
+<f:if condition="{menuTop}">
+    <ul class="nav ms-auto sk-menu-top"
+        aria-label="{f:translate(key: 'menuTop', extensionName: 'OtSitekitbase')}">
+        <f:for each="{menuTop}" as="item">
+            <f:variable name="targetBlankLabel" value=""/>
+            <f:if condition="{item.target} == '_blank'">
+                <f:variable name="targetBlankLabel"
+                            value=" ({f:translate(key: 'openInNewTab', extensionName: 'OtSitekitbase', default: 'open in new tab')})"/>
+            </f:if>
+            <li class="nav-item{f:if(condition: '{item.current} == 1', then: ' current')}{f:if(condition: '{item.active} == 1', then: ' active')}">
+                <a href="{item.link}"
+                   {f:if(condition: '{item.current} == 1', then: ' aria-current="page"')}
+                   {f:if(condition: '{item.target} != \'\'', then: ' target="{item.target}"')}
+                   class="nav-link{f:if(condition: '{item.active} == 1', then: ' active')}"
+                   aria-label="{item.title}{targetBlankLabel}"
+                   title="{item.title}">
+                    {item.title}
+                </a>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+</html>

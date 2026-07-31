@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:i="http://typo3.org/ns/OliverThiele/OtIcons/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="pageUid" type="int" optional="{false}" default=""/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+<f:argument name="class" type="string" optional="{true}" default=""/>
+
+<f:if condition="{class}">
+    <f:variable name="additionalClasses" value=" {class}"/>
+</f:if>
+
+<f:link.page class="navbar-brand sk-navbar-brand-home-icon{additionalClasses}"
+             pageUid="{pageUid}"
+             title="{f:translate(key: 'homeLink', extensionName: 'OtSitekitbase', default: 'Home')}"
+             aria-label="{f:translate(key: 'homeLink', extensionName: 'OtSitekitbase', default: 'Home')}">
+
+    <i:icon identifier="house" returnAs="inline" size="1x" aria-hidden="true"/>
+</f:link.page>
+</html>

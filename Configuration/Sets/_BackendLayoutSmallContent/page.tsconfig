@@ -2,7 +2,7 @@ mod {
   web_layout {
     BackendLayouts {
       SmallContent {
-        title =  LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:backendLayout.smallContent.title
+        title =  ot_sitekitbase.db:backendLayout.smallContent.title
         config {
           backend_layout {
             colCount = 1
@@ -12,7 +12,7 @@ mod {
                 columns {
                   1 {
                     identifier = hero-image
-                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:column.heroContent
+                    name = ot_sitekitbase.db:column.heroContent
                     colPos = 3
                     colspan = 1
                     disallowed = *
@@ -27,7 +27,7 @@ mod {
                 columns {
                   1 {
                     identifier = main
-                    name = LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:column.main
+                    name = ot_sitekitbase.db:column.main
                     colPos = 0
                     colspan = 1
                     disallowed = *

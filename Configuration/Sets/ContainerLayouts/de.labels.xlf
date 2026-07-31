@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="de">
+  <file id="ot-sitekit-base-labels"
+        original="EXT:ot_sitekitbase/Configuration/Sets/ContainerLayouts/labels.xlf">
+    <unit id="label">
+      <segment>
+        <source>Container Layouts</source>
+        <target>Container-Layouts</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

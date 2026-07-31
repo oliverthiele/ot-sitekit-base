@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="menuMain" type="array" optional="{true}" default="{}"/>
+<f:argument name="menuTop" type="array" optional="{true}" default="{}"/>
+<f:argument name="menuLanguage" type="array" optional="{true}" default="{}"/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+<f:argument name="homepage" type="int" optional="{true}" default="0"/>
+
+<header id="pageHeader">
+    <skc:atom.skipNavigation/>
+
+    <div class="container d-flex align-items-center justify-content-between py-2">
+        <f:link.page class="sk-pageheader-logo" pageUid="{homepage}">
+            <f:image src="{settings.sitekit.project.brand.logo.file.svg}"
+                     alt="{settings.sitekit.project.companyName}"
+                     width="{settings.sitekit.menus.main.logo.width}"
+                     height="{settings.sitekit.menus.main.logo.height}"/>
+        </f:link.page>
+        <skc:molecule.topBar
+            menuTop="{menuTop}"
+            menuLanguage="{menuLanguage}"
+            settings="{settings}"
+            homepage="{homepage}"/>
+    </div>
+</header>
+
+<skc:molecule.mainMenu
+    menuMain="{menuMain}"
+    settings="{settings}"
+    homepage="{homepage}"
+    navBrand="{settings.sitekit.menus.main.navBrand}"/>
+</html>

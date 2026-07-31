@@ -54,7 +54,20 @@ class VideoProcessCommand extends Command
 {
     private const VIDEO_EXTENSIONS = ['mp4', 'webm', 'mov', 'ogg'];
 
-    private const RESOLUTION_SUFFIXES = ['2160p', '4k', '1440p', '1080p', '720p', '480p', '360p'];
+    /**
+     * Maps resolution suffixes (as used in filenames) to their expected pixel height.
+     * Used both to strip suffixes from source filenames (deriveBaseName) and to
+     * detect mislabeled source files (checkSourceResolutionClaim).
+     */
+    private const RESOLUTION_SUFFIX_HEIGHTS = [
+        '2160p' => 2160,
+        '4k' => 2160,
+        '1440p' => 1440,
+        '1080p' => 1080,
+        '720p' => 720,
+        '480p' => 480,
+        '360p' => 360,
+    ];
 
     private const META_YAML_SKELETON = <<<'YAML'
 # title: "Titel des Videos"
@@ -67,6 +80,8 @@ class VideoProcessCommand extends Command
 # autoplay: false
 # decorative: false           # true = kein Ton, kein aria-label, keine strukturierten Daten
 # controls: true
+# license: "Creative Commons Attribution"     # Anzeigename der Lizenz (im Frontend als Hinweis sichtbar)
+# licenseUrl: "https://creativecommons.org/licenses/by/3.0/"  # Link auf die Lizenz, auch für schema.org
 YAML;
 
     private SymfonyStyle $io;
@@ -614,6 +629,10 @@ YAML;
         $baseName = $this->deriveBaseName($sourceVideo);
         $generated = 0;
 
+        if (!$this->isDryRun) {
+            $this->checkSourceResolutionClaim($sourceVideo, $sourceHeight);
+        }
+
         $mp4Enabled = (bool)($this->configuration['formats']['mp4'] ?? true);
         $webmEnabled = (bool)($this->configuration['formats']['webm'] ?? false);
 
@@ -880,7 +899,9 @@ YAML;
         ];
 
         if ($audioBitrate !== null) {
-            $args = array_merge($args, ['-c:a', 'libopus', '-b:a', $audioBitrate]);
+            // -ac 2: downmix to stereo — libopus rejects multi-channel layouts
+            // such as "5.1(side)" with the default mapping family.
+            $args = array_merge($args, ['-c:a', 'libopus', '-ac', '2', '-b:a', $audioBitrate]);
         } else {
             $args[] = '-an';
         }
@@ -919,8 +940,10 @@ YAML;
         }
 
         // Pass 2 — full encode, with or without audio depending on source
+        // -ac 2: downmix to stereo — libopus rejects multi-channel layouts
+        // such as "5.1(side)" with the default mapping family.
         $audioArgs = $audioBitrate !== null
-            ? ['-c:a', 'libopus', '-b:a', $audioBitrate]
+            ? ['-c:a', 'libopus', '-ac', '2', '-b:a', $audioBitrate]
             : ['-an'];
 
         $pass2 = new Process(array_merge(
@@ -1223,9 +1246,36 @@ YAML;
     private function deriveBaseName(string $sourceVideoPath): string
     {
         $nameWithoutExtension = pathinfo(basename($sourceVideoPath), PATHINFO_FILENAME);
-        $suffixPattern = implode('|', array_map('preg_quote', self::RESOLUTION_SUFFIXES));
+        $suffixPattern = implode('|', array_map('preg_quote', array_keys(self::RESOLUTION_SUFFIX_HEIGHTS)));
         $cleaned = preg_replace('/(_(' . $suffixPattern . ')([^a-zA-Z0-9].*)?)$/i', '', $nameWithoutExtension);
         return $cleaned ?? $nameWithoutExtension;
+    }
+
+    /**
+     * Warns when a source filename's resolution suffix (e.g. "_1080p") promises a higher
+     * resolution than the file actually contains. Such mislabeled files cause higher
+     * resolutions to be silently skipped by the "never upscale" rule.
+     */
+    private function checkSourceResolutionClaim(string $sourceVideo, int $sourceHeight): void
+    {
+        $nameWithoutExtension = pathinfo(basename($sourceVideo), PATHINFO_FILENAME);
+        $suffixPattern = implode('|', array_map('preg_quote', array_keys(self::RESOLUTION_SUFFIX_HEIGHTS)));
+
+        if (!preg_match('/_(' . $suffixPattern . ')$/i', $nameWithoutExtension, $matches)) {
+            return;
+        }
+
+        $claimedSuffix = strtolower($matches[1]);
+        $claimedHeight = self::RESOLUTION_SUFFIX_HEIGHTS[$claimedSuffix];
+
+        if ($sourceHeight > 0 && $sourceHeight < $claimedHeight) {
+            $this->io->writeln(sprintf(
+                '    <comment>⚠</comment>  %s  Dateiname suggeriert %s, tatsächliche Auflösung ist nur %dp',
+                basename($sourceVideo),
+                $claimedSuffix,
+                $sourceHeight
+            ));
+        }
     }
 
     // -------------------------------------------------------------------------

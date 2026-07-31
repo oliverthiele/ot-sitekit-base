@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="menuLanguage" type="array" optional="{true}" default="{}"/>
+<f:argument name="settings" type="array" optional="{true}" default="{}"/>
+
+<f:if condition="{menuLanguage} && {settings.sitekit.menus.language.enabled} == 1">
+    <f:variable name="labelClass" value="d-none"/>
+    <f:if condition="{settings.sitekit.menus.language.dropdownToggle.label.enabled}">
+        <f:variable name="labelClass"
+                    value="d-none d-{settings.sitekit.menus.main.collapsing}-inline"/>
+    </f:if>
+
+    <ul class="nav sk-language-menu"
+        aria-label="{f:translate(key: 'languageMenu', extensionName: 'OtSitekitbase')}">
+        <li class="nav-item px-2">
+            <div class="dropdown" role="group"
+                 aria-label="{f:translate(key: 'languageMenu', extensionName: 'OtSitekitbase')} {f:translate(key: 'choose', extensionName: 'OtSitekitbase')}">
+                <button class="btn btn-link nav-link dropdown-toggle"
+                        type="button"
+                        id="languageMenuDropdown"
+                        data-js="languageMenuToggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-haspopup="true">
+                    <span class="{labelClass} dropdown-toggle-label">
+                        {f:translate(key: 'language', extensionName: 'OtSitekitbase')}
+                    </span>
+                    <span class="dropdown-toggle-icon">
+                        <f:for each="{menuLanguage}" as="language">
+                            <f:if condition="{language.active} == 1">
+                                {language.twoLetterIsoCode}
+                            </f:if>
+                        </f:for>
+                    </span>
+                </button>
+                <ul id="languageNavigation" class="dropdown-menu" data-js="languageMenuList"
+                    aria-labelledby="languageMenuDropdown">
+                    <f:for each="{menuLanguage}" as="language">
+                        <f:if condition="{language.available} == 1">
+                            <f:if condition="{language.active} == 1">
+                                <f:then>
+                                    <li>
+                                        <a class="dropdown-item disabled active"
+                                           aria-disabled="true" aria-current="page">
+                                            <span class="dropdown-item-icon">{language.twoLetterIsoCode}</span>
+                                            <span class="ms-2 dropdown-item-label"
+                                                  lang="{language.twoLetterIsoCode}">{language.navigationTitle}</span>
+                                        </a>
+                                    </li>
+                                </f:then>
+                                <f:else>
+                                    <li>
+                                        <a href="{language.link}" class="dropdown-item">
+                                            <span class="dropdown-item-icon">{language.twoLetterIsoCode}</span>
+                                            <span class="ms-2 dropdown-item-label"
+                                                  lang="{language.twoLetterIsoCode}">{language.navigationTitle}</span>
+                                        </a>
+                                    </li>
+                                </f:else>
+                            </f:if>
+                        </f:if>
+                    </f:for>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</f:if>
+</html>

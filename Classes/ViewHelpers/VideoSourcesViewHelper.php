@@ -43,8 +43,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class VideoSourcesViewHelper extends AbstractViewHelper
 {
-    protected $escapeOutput = false;
-
     /** Bootstrap viewport min-widths in px */
     private const VIEWPORT_WIDTHS = [
         'xs'  => 0,
@@ -70,6 +68,7 @@ class VideoSourcesViewHelper extends AbstractViewHelper
     ];
 
     private const BREAKPOINT_ORDER = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
+    protected $escapeOutput = false;
 
     public function initializeArguments(): void
     {

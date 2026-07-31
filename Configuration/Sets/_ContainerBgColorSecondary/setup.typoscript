@@ -1,0 +1,10 @@
+tt_content.ot-sitekit-base-container-bgcolor-secondary =< lib.contentElement
+tt_content.ot-sitekit-base-container-bgcolor-secondary {
+  templateName = BgColor/Secondary
+  templateRootPaths {
+    10 = EXT:ot_sitekitbase/Resources/Private/Container/Bootstrap5/Templates/
+  }
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
+}

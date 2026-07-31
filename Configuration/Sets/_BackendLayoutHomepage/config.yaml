@@ -1,4 +1,3 @@
 name: oliverthiele/ot-sitekit-base-backend-layout-homepage
-label: 'Configuration Backend Layout: Homepage'
 dependencies:
   - oliverthiele/ot-sitekit-base

@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:argument name="items" type="array"/>
+<f:argument name="ordered" type="bool" optional="{true}" default="{false}"/>
+<f:argument name="additionalClasses" type="string" optional="{true}" default=""/>
+
+<f:variable name="listClass" value="sk-bullet-list{f:if(condition: additionalClasses, then: ' {additionalClasses}')}"/>
+<f:variable name="iconContent"><f:slot name="icon"/></f:variable>
+
+<f:if condition="{ordered}">
+    <f:then>
+        <ol class="{listClass}">
+            <f:for each="{items}" as="item">
+                <li class="sk-bullet-list-item">
+                    <f:if condition="{iconContent}">
+                        <span class="sk-bullet-list-icon" aria-hidden="true">{iconContent -> f:format.raw()}</span>
+                    </f:if>
+                    <span class="sk-bullet-list-text">{item}</span>
+                </li>
+            </f:for>
+        </ol>
+    </f:then>
+    <f:else>
+        <ul class="{listClass}">
+            <f:for each="{items}" as="item">
+                <li class="sk-bullet-list-item">
+                    <f:if condition="{iconContent}">
+                        <span class="sk-bullet-list-icon" aria-hidden="true">{iconContent -> f:format.raw()}</span>
+                    </f:if>
+                    <span class="sk-bullet-list-text">{item}</span>
+                </li>
+            </f:for>
+        </ul>
+    </f:else>
+</f:if>
+</html>

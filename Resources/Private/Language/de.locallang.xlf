@@ -1,135 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" datatype="plaintext"
-		  original="EXT:ot_sitekitbase/Resources/Private/Language/locallang.xlf" date="2025-04-11T18:40:24Z"
-		  product-name="ot-sitekit-base">
-		<header/>
-		<body>
-			<trans-unit id="skipToMainNavigation" resname="skipToMainNavigation" approved="yes">
-				<source>Skip to main navigation</source>
-				<target>Zum Hauptmenü springen</target>
-			</trans-unit>
-			<trans-unit id="skipToMainContent" resname="skipToMainContent" approved="yes">
-				<source>Skip to main content</source>
-				<target>Zum Hauptinhalt springen</target>
-			</trans-unit>
-			<trans-unit id="skipToPageFooter" resname="skipToPageFooter" approved="yes">
-				<source>Skip to page footer</source>
-				<target>Zum Seitenende springen</target>
-			</trans-unit>
-			<trans-unit id="legal" resname="legal" approved="yes">
-				<source>Legal</source>
-				<target>Rechtliches</target>
-			</trans-unit>
-			<trans-unit id="telephone" resname="telephone" approved="yes">
-				<source>Telephone</source>
-				<target>Telefon</target>
-			</trans-unit>
-			<trans-unit id="email" resname="email" approved="yes">
-				<source>Email</source>
-				<target>E-Mail</target>
-			</trans-unit>
-
-			<trans-unit id="readMore" resname="readMore" approved="yes">
-				<source>Read more</source>
-				<target>Weiterlesen</target>
-			</trans-unit>
-			<trans-unit id="toSubpage" resname="toSubpage" approved="yes">
-				<source>to subpage</source>
-				<target>zur Unterseite</target>
-			</trans-unit>
-			<trans-unit id="openInNewTab" resname="openInNewTab" approved="yes">
-				<source>open in new tab</source>
-				<target>öffnet im neuen Tab</target>
-			</trans-unit>
-
-			<trans-unit id="serviceNavigation" resname="serviceNavigation" approved="yes">
-				<source>Service navigation</source>
-				<target>Zusatznavigation</target>
-			</trans-unit>
-			<trans-unit id="menuTop" resname="menuTop" approved="yes">
-				<source>Top menu</source>
-				<target>Menü oben</target>
-			</trans-unit>
-			<trans-unit id="languageMenu" resname="languageMenu" approved="yes">
-				<source>Language menu</source>
-				<target>Sprachmenü</target>
-			</trans-unit>
-			<trans-unit id="language" resname="language" approved="yes">
-				<source>Language</source>
-				<target>Sprache</target>
-			</trans-unit>
-			<trans-unit id="activate" resname="activate" approved="yes">
-				<source>activate</source>
-				<target>aktivieren</target>
-			</trans-unit>
-			<trans-unit id="choose" resname="choose" approved="yes">
-				<source>choose</source>
-				<target>auswählen</target>
-			</trans-unit>
-
-			<trans-unit id="colorModes" resname="colorModes" approved="yes">
-				<source>Color mode</source>
-				<target>Farbmodus</target>
-			</trans-unit>
-			<trans-unit id="colorModes_light" resname="colorModes_light" approved="yes">
-				<source>Light mode</source>
-				<target>Heller Modus</target>
-			</trans-unit>
-			<trans-unit id="colorModes_dark" resname="colorModes_dark" approved="yes">
-				<source>Dark mode</source>
-				<target>Dunkler Modus</target>
-			</trans-unit>
-			<trans-unit id="colorModes_current_light" resname="colorModes_current_light" approved="yes">
-				<source>Current color mode: light</source>
-				<target>Aktueller Farbmodus: Hell</target>
-			</trans-unit>
-			<trans-unit id="colorModes_current_dark" resname="colorModes_current_dark" approved="yes">
-				<source>Current color mode: dark</source>
-				<target>Aktueller Farbmodus: Dunkel</target>
-			</trans-unit>
-			<trans-unit id="colorModes_current_systemSettings" resname="colorModes_current_systemSettings" approved="yes">
-				<source>Current color mode: system settings</source>
-				<target>Aktueller Farbmodus: Systemeinstellungen</target>
-			</trans-unit>
-
-			<!-- Video Atom -->
-			<trans-unit id="video.error.notAvailable" resname="video.error.notAvailable" approved="yes">
-				<source>Video not available</source>
-				<target>Video nicht verfügbar</target>
-			</trans-unit>
-			<trans-unit id="video.controls.label" resname="video.controls.label" approved="yes">
-				<source>Video controls</source>
-				<target>Video-Steuerung</target>
-			</trans-unit>
-			<trans-unit id="video.controls.playPause" resname="video.controls.playPause" approved="yes">
-				<source>Play / Pause</source>
-				<target>Abspielen / Pausieren</target>
-			</trans-unit>
-			<trans-unit id="video.controls.expand" resname="video.controls.expand" approved="yes">
-				<source>Open in fullscreen</source>
-				<target>In Vollbild öffnen</target>
-			</trans-unit>
-			<trans-unit id="video.controls.close" resname="video.controls.close" approved="yes">
-				<source>Close</source>
-				<target>Schließen</target>
-			</trans-unit>
-			<trans-unit id="video.license.label" resname="video.license.label" approved="yes">
-				<source>License</source>
-				<target>Lizenz</target>
-			</trans-unit>
-
-			<!-- Content Elements -->
-
-			<!-- Uploads -->
-			<trans-unit id="contentElements.uploads.fileType" resname="contentElements.uploads.fileType" approved="yes">
-				<source>File Type:</source>
-				<target>Dateityp:</target>
-			</trans-unit>
-			<trans-unit id="contentElements.uploads.fileSize" resname="contentElements.uploads.fileSize" approved="yes">
-				<source>File Size:</source>
-				<target>Dateigröße:</target>
-			</trans-unit>
-		</body>
-	</file>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="de">
+  <file id="ot-sitekit-base-locallang"
+        original="EXT:ot_sitekitbase/Resources/Private/Language/locallang.xlf">
+    <unit id="skipToMainNavigation">
+      <segment>
+        <source>Skip to main navigation</source>
+        <target>Zum Hauptmenü springen</target>
+      </segment>
+    </unit>
+    <unit id="homeLink">
+      <segment>
+        <source>Home</source>
+        <target>Startseite</target>
+      </segment>
+    </unit>
+    <unit id="skipToMainContent">
+      <segment>
+        <source>Skip to main content</source>
+        <target>Zum Hauptinhalt springen</target>
+      </segment>
+    </unit>
+    <unit id="mainNavigation">
+      <segment>
+        <source>Main navigation</source>
+        <target>Hauptnavigation</target>
+      </segment>
+    </unit>
+    <unit id="skipToPageFooter">
+      <segment>
+        <source>Skip to page footer</source>
+        <target>Zum Seitenende springen</target>
+      </segment>
+    </unit>
+    <unit id="legal">
+      <segment>
+        <source>Legal</source>
+        <target>Rechtliches</target>
+      </segment>
+    </unit>
+    <unit id="telephone">
+      <segment>
+        <source>Telephone</source>
+        <target>Telefon</target>
+      </segment>
+    </unit>
+    <unit id="email">
+      <segment>
+        <source>Email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="readMore">
+      <segment>
+        <source>Read more</source>
+        <target>Weiterlesen</target>
+      </segment>
+    </unit>
+    <unit id="toSubpage">
+      <segment>
+        <source>to subpage</source>
+        <target>zur Unterseite</target>
+      </segment>
+    </unit>
+    <unit id="openInNewTab">
+      <segment>
+        <source>open in new tab</source>
+        <target>öffnet im neuen Tab</target>
+      </segment>
+    </unit>
+    <unit id="serviceNavigation">
+      <segment>
+        <source>Service navigation</source>
+        <target>Zusatznavigation</target>
+      </segment>
+    </unit>
+    <unit id="menuTop">
+      <segment>
+        <source>Top menu</source>
+        <target>Menü oben</target>
+      </segment>
+    </unit>
+    <unit id="languageMenu">
+      <segment>
+        <source>Language menu</source>
+        <target>Sprachmenü</target>
+      </segment>
+    </unit>
+    <unit id="language">
+      <segment>
+        <source>Language</source>
+        <target>Sprache</target>
+      </segment>
+    </unit>
+    <unit id="activate">
+      <segment>
+        <source>activate</source>
+        <target>aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="choose">
+      <segment>
+        <source>choose</source>
+        <target>auswählen</target>
+      </segment>
+    </unit>
+    <unit id="colorModes">
+      <segment>
+        <source>Color Modes</source>
+        <target>Farbmodus</target>
+      </segment>
+    </unit>
+    <unit id="colorModes_light">
+      <segment>
+        <source>Light mode</source>
+        <target>Heller Modus</target>
+      </segment>
+    </unit>
+    <unit id="colorModes_dark">
+      <segment>
+        <source>Dark mode</source>
+        <target>Dunkler Modus</target>
+      </segment>
+    </unit>
+    <unit id="colorModes_current_light">
+      <segment>
+        <source>Current color mode: light</source>
+        <target>Aktueller Farbmodus: Hell</target>
+      </segment>
+    </unit>
+    <unit id="colorModes_current_dark">
+      <segment>
+        <source>Current color mode: dark</source>
+        <target>Aktueller Farbmodus: Dunkel</target>
+      </segment>
+    </unit>
+    <unit id="colorModes_current_systemSettings">
+      <segment>
+        <source>Current color mode: system settings</source>
+        <target>Aktueller Farbmodus: Systemeinstellungen</target>
+      </segment>
+    </unit>
+    <unit id="video.error.notAvailable">
+      <segment>
+        <source>Video not available</source>
+        <target>Video nicht verfügbar</target>
+      </segment>
+    </unit>
+    <unit id="video.controls.label">
+      <segment>
+        <source>Video controls</source>
+        <target>Video-Steuerung</target>
+      </segment>
+    </unit>
+    <unit id="video.controls.playPause">
+      <segment>
+        <source>Play / Pause</source>
+        <target>Abspielen / Pausieren</target>
+      </segment>
+    </unit>
+    <unit id="video.controls.mute">
+      <segment>
+        <source>Mute</source>
+        <target>Stummschalten</target>
+      </segment>
+    </unit>
+    <unit id="video.controls.unmute">
+      <segment>
+        <source>Unmute</source>
+        <target>Ton einschalten</target>
+      </segment>
+    </unit>
+    <unit id="video.controls.expand">
+      <segment>
+        <source>Open in fullscreen</source>
+        <target>In Vollbild öffnen</target>
+      </segment>
+    </unit>
+    <unit id="video.controls.close">
+      <segment>
+        <source>Close</source>
+        <target>Schließen</target>
+      </segment>
+    </unit>
+    <unit id="video.license.label">
+      <segment>
+        <source>License</source>
+        <target>Lizenz</target>
+      </segment>
+    </unit>
+    <unit id="contentElements.uploads.fileType">
+      <segment>
+        <source>File Type:</source>
+        <target>Dateityp:</target>
+      </segment>
+    </unit>
+    <unit id="contentElements.uploads.fileSize">
+      <segment>
+        <source>File Size:</source>
+        <target>Dateigröße:</target>
+      </segment>
+    </unit>
+  </file>
 </xliff>

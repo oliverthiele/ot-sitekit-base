@@ -2,10 +2,6 @@
 # PHPStan configuration for ot-sitekit-base (TYPO3 Extension)
 # ============================================================
 
-includes:
-  # TYPO3-specific PHPStan rules
-  - ../../vendor/saschaegerer/phpstan-typo3/extension.neon
-
 parameters:
   # ----------------------------------------------------------------
   # General settings

@@ -13,8 +13,8 @@ architecture based on TYPO3 SiteSets and small, focused extensions.
 >
 > Use at your own risk. No public support is provided at this stage.
 
-[![TYPO3](https://img.shields.io/badge/TYPO3-14.x%20%7C%2013.4-orange.svg)](https://typo3.org/)
-[![PHP](https://img.shields.io/badge/PHP-8.3%2B-blue.svg)](https://php.net/)
+[![TYPO3](https://img.shields.io/badge/TYPO3-14.3-orange.svg)](https://typo3.org/)
+[![PHP](https://img.shields.io/badge/PHP-8.4%2B-blue.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
 
 ---
@@ -75,8 +75,8 @@ teams.
 
 | Requirement | Version   |
 |-------------|-----------|
-| TYPO3       | 13.4 / 14 |
-| PHP         | 8.3+      |
+| TYPO3       | 14.3      |
+| PHP         | 8.4+      |
 
 ---
 

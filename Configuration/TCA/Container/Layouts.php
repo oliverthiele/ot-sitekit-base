@@ -6,7 +6,7 @@ use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_sitekitbase.db:';
 
 /**
  * # Width 80 %

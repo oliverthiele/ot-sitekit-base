@@ -8,7 +8,7 @@ use OliverThiele\OtSitekitbase\Backend\Preview\GenericPreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_sitekitbase.db:';
 
 /**
  * # Load Container Extension Configuration

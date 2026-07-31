@@ -10,7 +10,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') or die();
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_sitekitbase.db:';
 
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 $CTypesFullContainerWidth = $siteKitRegistry->getCTypesForGroups(['group_content_wide']);

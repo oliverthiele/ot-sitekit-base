@@ -8,7 +8,7 @@ use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_sitekitbase.db:';
 
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 
@@ -72,8 +72,8 @@ $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['
 // Show the header layout field for the parentElement array
 // Label replacement not working yet
 $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['showitem'] = str_replace(
-    'header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.div_formlabel,',
-    'header;LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:grid_cards_container,header_layout,',
+    'header;frontend.ttc:header.ALT.div_formlabel,',
+    'header;ot_sitekitbase.db:grid_cards_container,header_layout,',
     $GLOBALS['TCA']['tt_content']['types']['ot-sitekit-base-container-grid-cards']['showitem']
 );
 

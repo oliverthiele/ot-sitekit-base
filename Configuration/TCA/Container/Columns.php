@@ -8,7 +8,7 @@ use OliverThiele\OtSitekitbase\SiteKit\SiteKitRegistry;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-$ll = 'LLL:EXT:ot_sitekitbase/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_sitekitbase.db:';
 
 $siteKitRegistry = GeneralUtility::makeInstance(SiteKitRegistry::class);
 $CTypesForSmallerColumns = $siteKitRegistry->getCTypesForGroups(['group_content_small']);

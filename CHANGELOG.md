@@ -20,6 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Render the current page of the breadcrumb without a URL, so the detail
   view of a plugin no longer links its detail page without the record;
   search engines take the URL of the page itself
+- Remove the CDATA sections from `<f:comment>` in ten templates. Fluid 5
+  no longer strips them, so they commented nothing out and logged a
+  deprecation on every render; the HTML comment inside stays
 
 ### Changed
 

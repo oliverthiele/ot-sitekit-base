@@ -2,17 +2,17 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
 
-<f:comment> <!-- <![CDATA[
+<f:comment><!--
     This partial is called by various content elements. Many content elements, such as the "Card" element, can only
      display one image in a meaningful way. This is handled by the "OneMedia" section. As an alternative, I would also
      like to implement an image changer and a "Gallery" element that displays multiple images at a later date.
-]]>	--> </f:comment>
+--></f:comment>
 
 
-<f:comment> <!-- <![CDATA[
+<f:comment><!--
     Check whether one image, several images as a slider or all images should be displayed.
     If a single 'file' is passed, render it directly (used when iterating externally).
-]]>	--> </f:comment>
+--></f:comment>
 
 <f:if condition="{file}">
     <f:then>
@@ -35,12 +35,12 @@
     </f:else>
 </f:if>
 
-<f:comment> <!-- <![CDATA[
+<f:comment><!--
     In "FirstImage" mode, only the first image is displayed.
     In "Slider" mode, all images are displayed as a slider. (todo: Implement slider)
     In "AllImages" mode, all images are displayed. (todo: Implement gallery)
     Class can be specified in the content element.
-]]>	--> </f:comment>
+--></f:comment>
 <f:section name="FirstImage">
     <f:render section="OneMedia"
               arguments="{

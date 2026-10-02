@@ -14,6 +14,7 @@
 	],
 	"require": {
 		"php": ">=8.4",
+		"guzzlehttp/psr7": "^2.10.2 || ^3.0",
 		"typo3/cms-core": "^14.3",
 		"oliverthiele/ot-icons": "^3.0"
 	},

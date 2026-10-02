@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Render the breadcrumb as JSON-LD `BreadcrumbList` again: the page layout
+  passed a variable that does not exist, and the ViewHelper declared its
+  argument as string, which fails on the menu array under Fluid 5. It now
+  takes the items of the rootline menu, resolves their links against the
+  current request instead of `$_SERVER`, uses `https://schema.org`, and
+  escapes `<` and `>` in the JSON
+- Render the current page of the breadcrumb without a URL, so the detail
+  view of a plugin no longer links its detail page without the record;
+  search engines take the URL of the page itself
+
 ### Changed
 
 - Remove `ext_emconf.php`: TYPO3 14.2+ reads the extension metadata from

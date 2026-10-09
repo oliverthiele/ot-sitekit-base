@@ -1,6 +1,6 @@
 # OT SiteKit Base — TYPO3 Modular Site System
 
-A base extension for TYPO3 v13/v14 that provides the foundation for a modular,
+A base extension for TYPO3 v14 that provides the foundation for a modular,
 scalable and maintainable site
 architecture based on TYPO3 SiteSets and small, focused extensions.
 
@@ -14,8 +14,10 @@ architecture based on TYPO3 SiteSets and small, focused extensions.
 > Use at your own risk. No public support is provided at this stage.
 
 [![TYPO3](https://img.shields.io/badge/TYPO3-14.3-orange.svg)](https://typo3.org/)
-[![PHP](https://img.shields.io/badge/PHP-8.4%2B-blue.svg)](https://php.net/)
-[![License](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
+[![Packagist Version](https://img.shields.io/packagist/v/oliverthiele/ot-sitekit-base.svg)](https://packagist.org/packages/oliverthiele/ot-sitekit-base)
+[![PHP](https://img.shields.io/packagist/dependency-v/oliverthiele/ot-sitekit-base/php.svg)](https://php.net/)
+[![License](https://img.shields.io/packagist/l/oliverthiele/ot-sitekit-base.svg)](LICENSE)
+[![Changelog](https://img.shields.io/badge/Changelog-CHANGELOG.md-blue.svg)](CHANGELOG.md)
 
 ---
 

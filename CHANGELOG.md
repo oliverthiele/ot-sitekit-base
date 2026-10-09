@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-10-09
+
 ### Fixed
 
 - Render the breadcrumb as JSON-LD `BreadcrumbList` again: the page layout
@@ -29,6 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove `ext_emconf.php`: TYPO3 14.2+ reads the extension metadata from
   `composer.json` in classic mode as well (#108345), so the version and
   `providesPackages` are declared there now
+- Translate the remaining German code comments, the CLI output of
+  `sitekit:video:process` with its `meta.yaml` skeleton, and the labels of
+  the image debug overlay to English
 
 ## [1.0.0] — 2026-07-31
 
@@ -68,5 +73,6 @@ are therefore not covered by version numbers.
   redundant `instanceof Folder` checks in `VideoProcessor` that the declared
   return types already guarantee
 
-[Unreleased]: https://github.com/oliverthiele/ot-sitekit-base/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/oliverthiele/ot-sitekit-base/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/oliverthiele/ot-sitekit-base/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/oliverthiele/ot-sitekit-base/releases/tag/v1.0.0

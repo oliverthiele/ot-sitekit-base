@@ -2,7 +2,7 @@ import * as bootstrap from 'bootstrap';
 
 export function initNavbarAdvanced() {
 
-    // Für alle Navigationsbereiche (kann mehrfach vorkommen)
+    // For every navigation area (may occur more than once)
     document.querySelectorAll('[data-js="mainMenuList"]').forEach(navbar => {
       const focusableSelectors = '[data-js="mainMenuItem"]';
 
@@ -21,19 +21,19 @@ export function initNavbarAdvanced() {
 
         const direction = event.key === 'ArrowRight' ? 1 : -1;
 
-        // Fall: Fokus ist in einem Dropdown-Menü (z. B. auf .dropdown-item)
+        // Case: focus is inside a dropdown menu (e.g. on .dropdown-item)
         const isInDropdown = event.target.closest('.dropdown-menu');
         if (isInDropdown) {
           const toggleButtonId = isInDropdown.getAttribute('aria-labelledby');
           const toggleButton = document.getElementById(toggleButtonId);
 
-          // Dropdown schließen
+          // Close the dropdown
           const bsInstance = bootstrap.Dropdown.getInstance(toggleButton);
           if (bsInstance) {
             bsInstance.hide();
           }
 
-          // Fokus verschieben im Hauptmenü
+          // Move focus within the main menu
           const items = getFocusableItems();
           const currentIndex = items.indexOf(toggleButton);
           const newIndex = currentIndex + direction;
@@ -43,10 +43,10 @@ export function initNavbarAdvanced() {
             items[newIndex].focus();
           }
 
-          return; // vorzeitiger Exit
+          return; // early exit
         }
 
-        // Standard-Fokus-Navigation auf Top-Ebene
+        // Default focus navigation on the top level
         const items = getFocusableItems();
         const currentIndex = items.indexOf(document.activeElement);
         if (currentIndex === -1) return;
@@ -54,7 +54,7 @@ export function initNavbarAdvanced() {
         const newIndex = currentIndex + direction;
 
         if (newIndex < 0 || newIndex >= items.length) {
-          event.preventDefault(); // am Rand stoppen
+          event.preventDefault(); // stop at the edge
           return;
         }
 
@@ -63,7 +63,7 @@ export function initNavbarAdvanced() {
       });
     });
 
-    // Dropdown-Fokus beim Öffnen (Bootstrap)
+    // Dropdown focus when opening (Bootstrap)
     document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(button => {
       button.addEventListener('shown.bs.dropdown', () => {
         const menuId = button.getAttribute('aria-controls');
@@ -89,7 +89,7 @@ export function initNavbarAdvanced() {
       });
     });
 
-    // ESC-Taste schließt das Hauptmenü (#navbarMain)
+    // ESC key closes the main menu (#navbarMain)
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' || event.key === 'Esc') {
         const navbarCollapse = document.getElementById('navbarMain');

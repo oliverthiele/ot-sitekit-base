@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const debugImages = document.querySelectorAll('img.debug-image');
 
   debugImages.forEach((img) => {
-    // 1. Bestimme das „sichtbare Bildobjekt“:
-    // - Wenn ein Link drum herum: komplettes <a>
-    // - sonst: wenn eine .ratio drum herum: diese
-    // - sonst: direkt das <img>
+    // 1. Determine the "visible image object":
+    // - if a link surrounds it: the whole <a>
+    // - otherwise, if a .ratio surrounds it: that element
+    // - otherwise: the <img> itself
     let baseElement = img;
     const linkParent = img.closest('a');
     const ratioParent = img.closest('.ratio');
@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
       baseElement = ratioParent;
     }
 
-    // 2. Wrapper um dieses baseElement bauen
+    // 2. Build a wrapper around this baseElement
     const wrapper = document.createElement('div');
     wrapper.classList.add('debug-image-wrapper');
     wrapper.style.position = 'relative';
     wrapper.style.display = 'inline-block';
     wrapper.style.width = '100%';
 
-    // baseElement in Wrapper verschieben
+    // Move baseElement into the wrapper
     baseElement.parentNode.insertBefore(wrapper, baseElement);
     wrapper.appendChild(baseElement);
 
-    // 3. Overlay erzeugen und in Wrapper einfügen
+    // 3. Create the overlay and insert it into the wrapper
     const overlay = document.createElement('div');
     overlay.classList.add('debug-overlay');
     overlay.style.position = 'absolute';
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
       tmpImg.src = currentSrc;
       tmpImg.onload = () => {
         overlay.innerHTML =
-          `Gerenderte Breite: ${renderedWidth}px<br>` +
+          `Rendered width: ${renderedWidth}px<br>` +
           `devicePixelRatio: ${dpr}<br>` +
-          `Benötigte physische Breite: ${requiredPhysicalWidth}px<br>` +
-          `Verwendetes srcset-Bild: ${currentSrc.split('/').pop()}<br>` +
-          `Echte Größe: ${tmpImg.naturalWidth}×${tmpImg.naturalHeight}px`;
+          `Required physical width: ${requiredPhysicalWidth}px<br>` +
+          `srcset image used: ${currentSrc.split('/').pop()}<br>` +
+          `Natural size: ${tmpImg.naturalWidth}×${tmpImg.naturalHeight}px`;
       };
     };
 

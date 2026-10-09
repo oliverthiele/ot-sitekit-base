@@ -282,7 +282,7 @@ class GetImageInfoViewHelper extends AbstractViewHelper implements LoggerAwareIn
         // Only if ALL breakpoints have the same ratio
         $uniqueRatios = array_unique($ratiosFound);
         if (count($uniqueRatios) === 1 && $uniqueRatios[0] !== 'free') {
-            // Wandelt z.B. 16:9 in 16x9 um für Bootstrap Ratio Klasse
+            // Converts e.g. 16:9 to 16x9 for the Bootstrap ratio class
             $ratioString = str_replace(':', 'x', $uniqueRatios[0]);
             $result['ratioClass'] = 'ratio ratio-' . $ratioString;
         }

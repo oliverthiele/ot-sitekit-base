@@ -10,7 +10,7 @@ export function initLanguageMenuDropdown() {
 
   let currentIndex = 0
 
-  // Öffnet Menü mit Tastatur (Pfeil ↓ oder Space)
+  // Opens the menu via keyboard (arrow ↓ or Space)
   dropdownToggle.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowDown' || event.key === ' ') {
       event.preventDefault()
@@ -22,7 +22,7 @@ export function initLanguageMenuDropdown() {
   })
 
 
-  // Navigation innerhalb des Menüs
+  // Navigation inside the menu
   dropdownMenu.addEventListener('keydown', (event) => {
     const maxIndex = items.length - 1
 
@@ -52,7 +52,7 @@ export function initLanguageMenuDropdown() {
     }
   })
 
-  // Fokus beim Öffnen zurücksetzen
+  // Reset focus when opening
   dropdownToggle.addEventListener('click', () => {
     currentIndex = 0
   })

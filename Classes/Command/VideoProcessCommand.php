@@ -70,18 +70,18 @@ class VideoProcessCommand extends Command
     ];
 
     private const META_YAML_SKELETON = <<<'YAML'
-# title: "Titel des Videos"
-# description: "Kurze Beschreibung (für schema.org JSON-LD und aria-label)"
-# uploadDate: "2026-01-01"    # ISO 8601 Datum
-# duration: "PT0M30S"         # ISO 8601 Dauer, z.B. PT1M30S = 1 min 30 sec
+# title: "Title of the video"
+# description: "Short description (for schema.org JSON-LD and aria-label)"
+# uploadDate: "2026-01-01"    # ISO 8601 date
+# duration: "PT0M30S"         # ISO 8601 duration, e.g. PT1M30S = 1 min 30 sec
 # schemaType: "VideoObject"   # VideoObject | Clip | BroadcastEvent
 # aspectRatio: "16:9"         # 1:1 | 4:3 | 16:9 | 21:9
 # loop: false
 # autoplay: false
-# decorative: false           # true = kein Ton, kein aria-label, keine strukturierten Daten
+# decorative: false           # true = no sound, no aria-label, no structured data
 # controls: true
-# license: "Creative Commons Attribution"     # Anzeigename der Lizenz (im Frontend als Hinweis sichtbar)
-# licenseUrl: "https://creativecommons.org/licenses/by/3.0/"  # Link auf die Lizenz, auch für schema.org
+# license: "Creative Commons Attribution"     # Display name of the license (shown as a notice in the frontend)
+# licenseUrl: "https://creativecommons.org/licenses/by/3.0/"  # Link to the license, also used for schema.org
 YAML;
 
     private SymfonyStyle $io;
@@ -189,7 +189,7 @@ YAML;
         // Determine video sets to process
         $videoSets = $this->resolveVideoSets($rootFolder);
         if (empty($videoSets)) {
-            $this->io->warning('Keine Video-Sets gefunden in: ' . $rootFolder);
+            $this->io->warning('No video sets found in: ' . $rootFolder);
             return Command::SUCCESS;
         }
 
@@ -205,8 +205,8 @@ YAML;
             $totalGenerated += $this->processVideoSet($videoSetPath);
         }
 
-        $summary = count($videoSets) . ' Video-Set(s) · ' . $totalGenerated . ' Datei(en) '
-            . ($this->isDryRun ? 'würden generiert' : 'generiert');
+        $summary = count($videoSets) . ' Video-Set(s) · ' . $totalGenerated . ' file(s) '
+            . ($this->isDryRun ? 'would be generated' : 'generated');
 
         if ($this->isDryRun) {
             $this->io->note($summary);
@@ -227,34 +227,34 @@ YAML;
             . 'Configuration/SiteKit/VideoProcessing.yaml';
 
         if (!file_exists($defaultConfigPath)) {
-            $this->io->error('Extension-Default-Config nicht gefunden: ' . $defaultConfigPath);
+            $this->io->error('Extension default config not found: ' . $defaultConfigPath);
             return false;
         }
 
         try {
             $defaultConfig = Yaml::parseFile($defaultConfigPath);
         } catch (ParseException $exception) {
-            $this->io->error('Fehler beim Lesen der Default-Config: ' . $exception->getMessage());
+            $this->io->error('Error reading the default config: ' . $exception->getMessage());
             return false;
         }
 
         $this->configuration = is_array($defaultConfig) ? $defaultConfig : [];
 
         if ($projectConfigPath === '') {
-            $this->io->comment('Config: ' . $defaultConfigPath . ' (Extension-Default)');
+            $this->io->comment('Config: ' . $defaultConfigPath . ' (extension default)');
             return true;
         }
 
         $resolvedProjectPath = $this->resolveFilePath($projectConfigPath);
         if (!file_exists($resolvedProjectPath)) {
-            $this->io->error('Projekt-Config nicht gefunden: ' . $projectConfigPath);
+            $this->io->error('Project config not found: ' . $projectConfigPath);
             return false;
         }
 
         try {
             $projectConfig = Yaml::parseFile($resolvedProjectPath);
         } catch (ParseException $exception) {
-            $this->io->error('Fehler beim Lesen der Projekt-Config: ' . $exception->getMessage());
+            $this->io->error('Error reading the project config: ' . $exception->getMessage());
             return false;
         }
 
@@ -299,15 +299,15 @@ YAML;
             $ffmpegPath = $this->detectBinary('ffmpeg', $configuredBinary);
             if ($ffmpegPath === null) {
                 $this->io->error([
-                    'ffmpeg nicht gefunden.',
-                    'In DDEV: .ddev/config.yaml → webimage_extra_packages: [ffmpeg], dann: ddev restart',
-                    'Oder: ffmpegBinary in VideoProcessing.yaml auf den absoluten Pfad setzen.',
+                    'ffmpeg not found.',
+                    'In DDEV: .ddev/config.yaml → webimage_extra_packages: [ffmpeg], then: ddev restart',
+                    'Or: set ffmpegBinary in VideoProcessing.yaml to the absolute path.',
                 ]);
                 $passed = false;
             } else {
                 $this->ffmpegBinary = $ffmpegPath;
                 $version = $this->getFfmpegVersion($ffmpegPath);
-                $this->io->writeln('  <info>✓</info>  ffmpeg ' . $version . ' gefunden');
+                $this->io->writeln('  <info>✓</info>  ffmpeg ' . $version . ' found');
             }
 
             // ffprobe is always shipped alongside ffmpeg
@@ -316,7 +316,7 @@ YAML;
                 : '';
             $ffprobePath = $this->detectBinary('ffprobe', $configuredProbe);
             if ($ffprobePath === null) {
-                $this->io->error('ffprobe nicht gefunden (wird normalerweise mit ffmpeg mitgeliefert).');
+                $this->io->error('ffprobe not found (usually ships with ffmpeg).');
                 $passed = false;
             } else {
                 $this->ffprobeBinary = $ffprobePath;
@@ -327,8 +327,8 @@ YAML;
         $rootFolderConfig = (string)($this->configuration['rootFolder'] ?? '');
         if ($rootFolderConfig === '') {
             $this->io->error([
-                'rootFolder ist nicht konfiguriert.',
-                'Setze rootFolder in einer Projekt-Config (--config) oder nutze --folder.',
+                'rootFolder is not configured.',
+                'Set rootFolder in a project config (--config) or use --folder.',
             ]);
             $passed = false;
         } else {
@@ -336,11 +336,11 @@ YAML;
             if ($resolvedRoot === null) {
                 $projectRoot = Environment::getProjectPath();
                 $this->io->error([
-                    'rootFolder nicht gefunden: ' . $rootFolderConfig,
-                    'Geprüfte Pfade:',
-                    '  ' . $projectRoot . '/' . ltrim($rootFolderConfig, '/') . '  (nicht gefunden)',
-                    '  ' . $projectRoot . '/public/' . ltrim($rootFolderConfig, '/') . '  (nicht gefunden)',
-                    'Ordner anlegen oder rootFolder in der Config anpassen.',
+                    'rootFolder not found: ' . $rootFolderConfig,
+                    'Checked paths:',
+                    '  ' . $projectRoot . '/' . ltrim($rootFolderConfig, '/') . '  (not found)',
+                    '  ' . $projectRoot . '/public/' . ltrim($rootFolderConfig, '/') . '  (not found)',
+                    'Create the folder or adjust rootFolder in the config.',
                 ]);
                 $passed = false;
             } else {
@@ -419,7 +419,7 @@ YAML;
 
         $freeBytes = disk_free_space($rootFolder);
         if ($freeBytes === false) {
-            $this->io->warning('Freier Speicherplatz konnte nicht ermittelt werden — Prüfung übersprungen.');
+            $this->io->warning('Free disk space could not be determined — check skipped.');
             return true;
         }
 
@@ -427,16 +427,16 @@ YAML;
 
         if ($totalEstimatedBytes > $freeBytes) {
             $this->io->error([
-                'Zu wenig Speicherplatz.',
-                'Benötigt (Schätzung +20 %): ~' . $this->formatBytes($totalEstimatedBytes),
-                'Verfügbar:                   ' . $this->formatBytes($freeBytes),
-                'Tipp: --force-disk überspringt diese Prüfung (auf eigene Gefahr).',
+                'Not enough disk space.',
+                'Required (estimate +20 %): ~' . $this->formatBytes($totalEstimatedBytes),
+                'Available:                  ' . $this->formatBytes($freeBytes),
+                'Tip: --force-disk skips this check (at your own risk).',
             ]);
             return false;
         }
 
         $this->io->writeln(sprintf(
-            '  <info>✓</info>  Speicherplatz: ~%s benötigt, %s verfügbar',
+            '  <info>✓</info>  Disk space: ~%s required, %s available',
             $this->formatBytes($totalEstimatedBytes),
             $this->formatBytes($freeBytes)
         ));
@@ -536,13 +536,13 @@ YAML;
         $overwrite = (bool)($this->configuration['poster']['overwrite'] ?? false);
 
         if (file_exists($posterPath) && !$overwrite && !$this->isForce) {
-            $this->io->writeln('    <info>✓</info>  poster.' . $format . '  vorhanden');
+            $this->io->writeln('    <info>✓</info>  poster.' . $format . '  exists');
             return 0;
         }
 
         $sourceVideo = $this->findSourceVideo($videoSetPath);
         if ($sourceVideo === null) {
-            $this->io->writeln('    <error>✗</error>  poster.' . $format . '  kein Quell-Video gefunden');
+            $this->io->writeln('    <error>✗</error>  poster.' . $format . '  no source video found');
             return 0;
         }
 
@@ -560,7 +560,7 @@ YAML;
             );
             $this->io->writeln(
                 '    <comment>→</comment>  poster.' . $format
-                . '  wird generiert  (' . $positionLabel . ' s)'
+                . '  generating  (' . $positionLabel . ' s)'
             );
 
             if ($this->isDryRun) {
@@ -581,7 +581,7 @@ YAML;
             $frameNumber = max(0, (int)($this->configuration['poster']['frame'] ?? 2) - 1);
             $this->io->writeln(
                 '    <comment>→</comment>  poster.' . $format
-                . '  wird generiert  (Frame ' . ($frameNumber + 1) . ')'
+                . '  generating  (frame ' . ($frameNumber + 1) . ')'
             );
 
             if ($this->isDryRun) {
@@ -604,7 +604,7 @@ YAML;
         if (!$process->isSuccessful()) {
             $this->io->writeln(
                 '    <error>✗</error>  poster.' . $format
-                . '  Fehler: ' . trim($process->getErrorOutput())
+                . '  Error: ' . trim($process->getErrorOutput())
             );
             return 0;
         }
@@ -620,7 +620,7 @@ YAML;
     {
         $sourceVideo = $this->findSourceVideo($videoSetPath);
         if ($sourceVideo === null) {
-            $this->io->writeln('    <error>✗</error>  Kein Quell-Video gefunden — Auflösungen übersprungen');
+            $this->io->writeln('    <error>✗</error>  No source video found — resolutions skipped');
             return 0;
         }
 
@@ -698,7 +698,7 @@ YAML;
         if ($existingVariant !== null) {
             $isOurOwnOutput = ($existingVariant === $outputFileName);
             if (!$isOurOwnOutput || !$this->isForce) {
-                $this->io->writeln('    <info>✓</info>  ' . $existingVariant . '  vorhanden (' . $suffix . ')');
+                $this->io->writeln('    <info>✓</info>  ' . $existingVariant . '  exists (' . $suffix . ')');
                 return 0;
             }
         }
@@ -712,13 +712,13 @@ YAML;
             $twoPassWebm = (bool)($resolution['twoPassWebm'] ?? false);
 
             $this->io->writeln(sprintf(
-                '    <comment>→</comment>  %-44s wird generiert  (%dp, vp9 crf=%d, %s%s%s)',
+                '    <comment>→</comment>  %-44s generating  (%dp, vp9 crf=%d, %s%s%s)',
                 $outputFileName,
                 $height,
                 $crfWebm,
                 $deadline,
                 $twoPassWebm ? ', 2-pass' : '',
-                $sourceHasAudio ? '' : ', kein Ton'
+                $sourceHasAudio ? '' : ', no audio'
             ));
 
             if ($this->isDryRun) {
@@ -740,13 +740,13 @@ YAML;
             $modeLabel = $useCrf ? 'crf=' . $crf . ', max=' . $maxrate : $maxrate;
 
             $this->io->writeln(sprintf(
-                '    <comment>→</comment>  %-44s wird generiert  (%dp, %s, %s%s%s)',
+                '    <comment>→</comment>  %-44s generating  (%dp, %s, %s%s%s)',
                 $outputFileName,
                 $height,
                 $modeLabel,
                 $preset,
                 $twoPass ? ', 2-pass' : '',
-                $sourceHasAudio ? '' : ', kein Ton'
+                $sourceHasAudio ? '' : ', no audio'
             ));
 
             if ($this->isDryRun) {
@@ -759,7 +759,7 @@ YAML;
         }
 
         if (!$success) {
-            $this->io->writeln('    <error>✗</error>  ' . $outputFileName . '  Fehler beim Kodieren');
+            $this->io->writeln('    <error>✗</error>  ' . $outputFileName . '  encoding failed');
             return 0;
         }
 
@@ -770,7 +770,7 @@ YAML;
         if ($generatedSize !== false && $sourceSize !== false && $generatedSize >= $sourceSize) {
             @unlink($outputPath);
             $this->io->writeln(sprintf(
-                '    <comment>⚠</comment>  %s  gelöscht — Ausgabe (%s) wäre größer als Quelle (%s)',
+                '    <comment>⚠</comment>  %s  deleted — output (%s) would be larger than source (%s)',
                 $outputFileName,
                 $this->formatBytes((int)$generatedSize),
                 $this->formatBytes((int)$sourceSize)
@@ -973,11 +973,11 @@ YAML;
         $metaPath = $videoSetPath . 'meta.yaml';
 
         if (file_exists($metaPath)) {
-            $this->io->writeln('    <info>✓</info>  meta.yaml  vorhanden');
+            $this->io->writeln('    <info>✓</info>  meta.yaml  exists');
             return 0;
         }
 
-        $this->io->writeln('    <comment>→</comment>  meta.yaml  Skeleton wird angelegt');
+        $this->io->writeln('    <comment>→</comment>  meta.yaml  creating skeleton');
 
         if ($this->isDryRun) {
             return 1;
@@ -1270,7 +1270,7 @@ YAML;
 
         if ($sourceHeight > 0 && $sourceHeight < $claimedHeight) {
             $this->io->writeln(sprintf(
-                '    <comment>⚠</comment>  %s  Dateiname suggeriert %s, tatsächliche Auflösung ist nur %dp',
+                '    <comment>⚠</comment>  %s  file name suggests %s, actual resolution is only %dp',
                 basename($sourceVideo),
                 $claimedSuffix,
                 $sourceHeight

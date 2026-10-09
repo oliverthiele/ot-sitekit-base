@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+## [1.0.1] — 2026-10-09
+
+### Fixed
+
+- Render the breadcrumb as JSON-LD `BreadcrumbList` again: the page layout
+  passed a variable that does not exist, and the ViewHelper declared its
+  argument as string, which fails on the menu array under Fluid 5. It now
+  takes the items of the rootline menu, resolves their links against the
+  current request instead of `$_SERVER`, uses `https://schema.org`, and
+  escapes `<` and `>` in the JSON
+- Render the current page of the breadcrumb without a URL, so the detail
+  view of a plugin no longer links its detail page without the record;
+  search engines take the URL of the page itself
+- Remove the CDATA sections from `<f:comment>` in ten templates. Fluid 5
+  no longer strips them, so they commented nothing out and logged a
+  deprecation on every render; the HTML comment inside stays
+
+### Changed
+
+- Remove `ext_emconf.php`: TYPO3 14.2+ reads the extension metadata from
+  `composer.json` in classic mode as well (#108345), so the version and
+  `providesPackages` are declared there now
+- Translate the remaining German code comments, the CLI output of
+  `sitekit:video:process` with its `meta.yaml` skeleton, and the labels of
+  the image debug overlay to English
+
 ## [1.0.0] — 2026-07-31
 
 First tagged release. The extension was developed and tested in a small team
@@ -45,4 +73,6 @@ are therefore not covered by version numbers.
   redundant `instanceof Folder` checks in `VideoProcessor` that the declared
   return types already guarantee
 
+[Unreleased]: https://github.com/oliverthiele/ot-sitekit-base/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/oliverthiele/ot-sitekit-base/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/oliverthiele/ot-sitekit-base/releases/tag/v1.0.0
